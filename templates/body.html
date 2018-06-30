@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="{% if lang_code %}{{ lang_code }}{% else %}sk{% endif %}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="SPy o.z.">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo/favicon.ico') }}" sizes="16x16">
+    <title>{{ title }}</title>
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/python.css') }}" rel="stylesheet">
+    {% for lang in langs %}{% if lang != lang_code %}
+    <link rel="alternate" href="https://{{ CNAME }}{{ request.path|replace('/'+lang_code, '/'+lang, 1)|replace('index.html', '') }}" hreflang="{{ lang }}">
+    {% endif %}{% endfor %}
+    <link rel="canonical" href="https://{{ CNAME }}{{ request.path|replace('index.html', '') }}"/>
+    {% if redirect_url %}<meta http-equiv="refresh" content="0; URL='{{ redirect_url }}'" />{% endif %}
+  </head>
+
+  <body>
+
+    <nav class="navbar-nav navbar-expand-lg navbar-dark bg-dark" id="navbarHeader">
+      <div class="container d-flex justify-content-between">
+        <a href="{{ url_for('index') }}" class="navbar-brand d-flex align-items-center">
+          <img src="{{ url_for('static', filename='img/logo/spy_logo.svg') }}" class="header-logo" alt="Python logo" />
+          <strong>{{ _('Učíme s Hardvérom') }}</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-right navbar-nav justify-content-end">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ _('O projekte') }}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('ciele_projektu')}}">{{ _('Ciele projektu') }}</a>
+                <a class="dropdown-item" href="{{ url_for('zapojene_skoly')}}">{{ _('Zapojené školy') }}</a>
+                <a class="dropdown-item" href="{{ url_for('sutaz')}}">{{ _('Súťaž SPy CUP') }}</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <!-- <a class="dropdown-item" href="{{ url_for('partneri')}}">{{ _('Partneri a sponzori') }}</a> -->
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ _('O hardvéri') }}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('hardver_ako_pomocka')}}">{{ _('Hardvér ako edukačná pomôcka') }}</a>
+                <a class="dropdown-item" href="{{ url_for('microbit')}}">{{ _('Platforma BBC micro:bit') }}</a>
+                <a class="dropdown-item" href="{{ url_for('nodemcu')}}">{{ _('Platforma NodeMCU') }}</a>
+                <!-- <a class="dropdown-item" href="">{{ _('Iné platformy') }}</a> -->
+                <a class="dropdown-item" href="{{ url_for('hw_projekty')}}">{{ _('Hardvérové projekty') }}</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <!-- <a class="dropdown-item" href="{{ url_for('kde_kupit')}}">{{ _('Kde kúpiť') }}</a> -->
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('skolenia')}}">{{ _('Školenia') }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('materialy')}}">{{ _('Návody a materiály') }}</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ _('Zapoj sa!') }}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('zapoj_sa_skola')}}">{{ _('Ako škola') }}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('zapoj_sa_dobrovolnik')}}">{{ _('Ako dobrovoľník') }}</a>
+                <a class="dropdown-item" href="{{ url_for('zapoj_sa_rodic')}}">{{ _('Ako rodič') }}</a>
+                <a class="dropdown-item" href="{{ url_for('zapoj_sa_sponzor')}}">{{ _('Ako sponzor') }}</a>
+              </div>
+            </li>
+            <!-- <li class="nav-item"> -->
+              <!-- <a class="nav-link" href="{{ url_for('blog')}}">{{ _('Blog') }}</a> -->
+            <!-- </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('o_nas')}}">{{ _('O nás') }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
+    {% block content %}{% endblock %}
+    </main>
+
+    <hr class="featurette-divider">
+
+    <footer class="text-muted">
+      <div class="container">
+        <p>{{ _('Kontakt: <b>SPy o.z.</b> | <b>marek.mansell@gmail.com</b> | <b>+421 904 010 424</b>') }}<p>
+        <p><small>{{ _('Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a zapojiť sa môžeš aj Ty') }} - <a href="{{ url_for('zapoj_sa_dobrovolnik')}}">{{ _('návod ako nájdeš tu.</a>') }}</small></p>
+        <p class="float-right">
+          <a href="#top" class="btn btn-outline-primary btn-sm">{{ _('Späť na začiatok') }}</a>
+        </p>
+        <!-- <p>
+          <a href="https://github.com/micropythonsk/microbit.sk-website/edit/master/templates/index.html" class="btn btn-outline-secondary btn-sm">
+             {{ _('Upraviť túto stránku') }}
+          </a>
+          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new{% if lang_code == 'sk' %}?template=Bug_report.md{% else %}?template=Bug_report_en.md{% endif %}" class="btn btn-outline-secondary btn-sm">
+             {{ _('Nahlásiť problém') }}
+          </a>
+          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new{% if lang_code == 'sk' %}?template=Feature_request.md{% else %}?template=Feature_request_en.md{% endif%}" class="btn btn-outline-secondary btn-sm">
+             {{ _('Navrhnúť zlepšenie') }}
+          </a>
+          <a href="https://crowdin.com/project/bbc-microbit-micropython" class="btn btn-outline-secondary btn-sm">
+             {{ _('Pomôcť s prekladom') }}
+          </a>
+        </p> -->
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-slim.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/vendor/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/holder.min.js') }}"></script>
+  </body>
+</html>

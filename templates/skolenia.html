@@ -1,0 +1,126 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Školenia pre učiteľov') }}</h1>
+  </div>
+</div>
+
+<div class="container text-justify">
+
+  <h2 class="featurette-heading">{{ _('Naučiť sa programovať hardvér nie je náročné') }}</h2>
+    
+  <p class="lead">{{ _('Mnoho učiteľov sa obáva komplikovanosti vyučovania hardvéru, a to pritom úplne zbytočne. Rozsvietiť LED pásik, odmerať teplotu či dokonca naprogramovať si vlastného robota sa v skutočnosti dá naučiť v priebehu niekoľkých vyučovacích hodín. Svedčí o tom aj fakt, že BBC micro:bit plošne rozdávali už 11 a 12 ročným žiakom.') }}</p>
+
+  <h2 class="featurette-heading">{{ _('Semináre pre učiteľov informatiky') }}</h2>
+  <p>{{ _('Pravidelne organizujeme semináre pre učiteľov základných a stredných škôl, na ktorých si predstavíme zariadenie BBC micro:bit a jeho využiteľnosť na hodinách informatiky. Ak máte záujem o zorganizovanie semináru aj vo vašom meste, neváhajte nás kedykoľvek kontaktovať.') }}</p>
+
+  <p>{{ _('Na seminári začneme jednoduchšími úlohami, ktoré využívajú len vbudované senzory zariadenia a následne prejdeme k pripájaniu externých súčiastok, vďaka ktorým je možné vytvárať väčšie projekty s presahmi do iných predmetov ako napríklad fyzika, biológia alebo výtvarná výchova. Príkladmi takýchto projektov môže byť automatizovaný kvetináč, vlastná meteostanica či domáci bezpečnostný alarm. Vyskúšame si prácu v online prostredí, v ktorom vieme programovať micro:bit bez nutnosti inštalácie softvéru na počítači a následne prejdeme do prostredia “Mu”. Programovať budeme pomocou Blokového programovacieho jazyka (vhodný pre základné školy) a MicroPythonu.') }}</p>
+
+</div>
+
+<div class="container">
+
+  <h2 class="featurette-heading">{{ _('Plánované školenia pre učiteľov') }}</h2> 
+
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/mesta/kezmarok.png') }}" alt="Školenie v Kežmarku">
+            <div class="card-body">
+              <span class="badge badge-success">{{ _('Voľné miesta') }}</span>
+              <p class="card-text"><b>{{ _('Školenie v Kežmarku') }}</b></p>
+              <p class="card-text">{{ _('V rámci Summer IT Academy zorganizujeme v priestoroch CVČ Kežmarok bezplatné školenie na micro:bity pre učiteľov základných a stredných škôl') }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeicjP_YgQsP--rrXUd2u43jHjOohsgWTAN4W9_KaRymb-3Ew/viewform">{{ _('Prihlásiť sa') }}</a>
+                </div>
+                <small class="text-muted"><strong>{{ _('3. júl 2018 13:00-16:00 ') }}</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/mesta/nitra.png') }}" alt="Školenie v Nitre">
+            <div class="card-body">
+              <span class="badge badge-success">{{ _('Prihlasovanie zatiaľ nebolo spustené') }}</span>
+              <p class="card-text"><b>{{ _('Školenie v Nitre') }}</b></p>
+              <p class="card-text">{{ _('V spolupráci so združením ETeacher prebehne bezplatné školenie na micro:bity pre učiteľov základných a stredných škôl') }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary">{{ _('Plánujeme') }}</a>
+                </div>
+                <small class="text-muted"><strong>{{ _('Jeseň 2018') }}</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <h2 class="featurette-heading">{{ _('Uskutočnené školenia') }}</h2> 
+
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/mesta/martin.jpg') }}" alt="Školenie v Martine">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Školenie v Martine') }}</b></p>
+              <p class="card-text">{{ _('Školenie prebehlo v rámci konferencie Python Days v spolupráci so SPŠ a GVPT v Martine.') }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted"><strong>{{ _('1. jún 2018') }}</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/mesta/bratislava.jpg') }}" alt="Školenie v Bratislave">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Školenie v Bratislave') }}</b></p>
+              <p class="card-text">{{ _('Školenie bolo zaradene do programu konferencie PyCon - sekcia EduTrack v priestoroch FIIT STU.') }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted"><strong>{{ _('10. marec 2018') }}</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/mesta/banska_bystrica.png') }}" alt="Školenie v Banskej Bystrici">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Školenia v Banskej Bystrici') }}</b></p>
+              <p class="card-text">{{ _('V spolupráci s Nikou Klimovou sme zorganizovali dve školenia, jedno pre študentov učiteľstva informatiky na UMB a jedno pre učiteľov z regiónu, ktoré sa uskutočnilo v priestoroch ZŠ J. Bakossa.') }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted"><strong>{{ _('1. marec 2018') }}</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}

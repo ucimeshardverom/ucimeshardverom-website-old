@@ -1,0 +1,46 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Platforma NodeMCU') }}</h1>
+  </div>
+</div>
+
+<div class="container text-center">
+
+  <img class="featurette-image img-fluid mx-auto" style="max-width:500px" src="{{ url_for('static', filename='img/nodemcu/nodemcu.jpg') }}" alt="NodeMCU image">
+  <p class="text-muted">
+    <small>
+      Foto: <a href="https://commons.wikimedia.org/wiki/File:NodeMCU_DEVKIT_1.0.jpg" target="_blank">Vowstar</a> (CC-BY-SA)
+    </small>
+  </p>
+
+</div>
+
+<div class="container">
+
+  <div class="container text-justify" style="padding-top:30px">
+
+    <h2 class="featurette-heading">{{ _('O NodeMCU') }}</h2>
+
+    <p>{{ _('NodeMCU je vhodná pre pokročilých žiakov, ktorí už majú skúsenosti s hardvérom a programovaním. Túto platformu odporúčame najmä žiakom tretieho a štvrtého ročníka na strednej škole v rámci seminárov z informatiky.') }}</p>
+
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Samotná doska') }}</h2>
+      
+    <p>{{ _('NodeMCU je relatívne malá doska s viacerými elektronickými súčiastkami. Mozgom zariadenia je mikroprocesor ESP8266. Toto je miesto, kde budeme ukladať náš kód a kde sa bude vykonávať. Tento mikroprocesor má v sebe vbudovanú WiFi sieťovú kartu (s anténkou - viď obrázok), takže s ním budeme môcť komunikovať aj cez internet. ESP8266 sa dá použiť aj samostane, no všetky zvyšné súciastky na NodeMCU nám zľachšujú vývoj.') }}</p>
+
+    <p>{{ _('Na každej strane sa nachádza rada pinov (z angl. ‚pin‘), na ktoré sa dajú pripojiť LEDky, senzory, motorčeky, atď. Všetky nožičky by mali byť rovné a kolmé na rovinu dosky.') }}</p>
+
+  </div>
+
+</div>
+<!-- /END THE FEATURETTES -->
+{% endblock %}

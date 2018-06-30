@@ -1,0 +1,81 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Súťaž SPy CUP') }}</h1>
+  </div>
+</div>
+
+<div class="container text-justify">
+
+  <h2 class="featurette-heading">{{ _('O súťaži SPy CUP') }}</h2>
+  <p class="lead">{{ _('Súťaž SPy CUP je určená pre žiakov základných a stredných škôl, ktorí si či už individuálne alebo v tímoch vypracujú hardvérový projekt a popíšu svoj postup vo forme návodu (textová alebo video forma). Najlepšie projekty vystúpia v sekcii EduTrack v rámci medzinárodnej konferencie PyCon Slovakia.') }}</p>
+
+</div>
+
+<div class="container">
+
+  <hr class="featurette-divider">
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Príklady projektov') }}</h2>
+      
+    <ul>
+      <li><b>{{ _('Automatický požiarnik') }}</b></li>
+      <li><b>{{ _('Inteligentný skleník') }}</b></li>
+      <li><b>{{ _('Domáca meteo stanica') }}</b></li>
+    </ul>
+
+  </div>
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Prezentácia na konferencii PyCon') }}</h2>
+      
+    <p>{{ _('Finalisti budú mať na prezentácie 5 minút a 3 minúty na otázky porotcov a publika. Inšpirovať sa môžete prezentáciami žiakov z roky 2018 (prezentácie neboli v rámci súťaže SPy CUP).') }}</p>
+
+  </div>
+
+  <div class="container text-center">
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/s5aJKqaNlpA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  </div>
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Kategórie a hodnotiace kritéria') }}</h2>
+      
+    <p>{{ _('Všetky potrebné informácie o tom, ako pripraviť žiakov pre účasť v súťaži, aké kategórie projektov budú otvorené a ako budú nastavené hodnotiace kritériá budú zverejnené začiatkom školského roka 2018/2019.') }}</p>
+
+  </div>
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Technológie a platformy') }}</h2>
+      
+    <p>{{ _('Podporovanými platformami sú najmä BBC micro:bit, NodeMCU a RaspberryPi; naprogramované v jazykoch Python, MicroPython alebo ľubovoľnom blokovom programovacom prostredí, avšak presné pravidlá budú zvrejnené začiatkom školského roka 2018/2019.') }}</p>
+
+  </div>
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Termíny') }}</h2>
+
+    <strong>{{ _('Poznámka: termíny sú iba orientačné, do začiatku školského roka sa ešte môžu upraviť!') }}</strong>
+    <ul>
+      <li><b>15.12.2018</b> - {{ _('Prihlásenie sa do súťaže, zaslanie popisu problému, ktorý má projekt riešiť') }}</li>
+      <li><b>31.1.2019</b> - {{ _('Zaslanie materiálov k projektu (dokumentácia, fotky, videá)') }}</li>
+      <li><b>15.2.2019</b> - {{ _('Vyhlásenie finalistov, ktorí svoje projekty odprezentujú na konferencii PyCon') }}</li>
+      <li><b>15.3.2019</b> - {{ _('Prezentácie projektov na konferencii PyCon a vyhlásenie víťazov') }}</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}

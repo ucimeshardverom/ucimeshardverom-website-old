@@ -1,0 +1,119 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>Partneri a sponzori</h1>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="container text-justify" style="padding-top:30px">
+
+        <h2 class="featurette-heading">Ďakujeme</h2>
+        <p class="lead">{{ _('Projekt Učíme s Hardvérom, súťaž SPy CUP a ani konferencia PyCon so sekciou EduTrack by neboli možné bez sponzorov a partnerov, a preto im patrí veľká vďaka.') }}</p>
+
+        <p>{{ _('Ak máte záujem stať sa spozorom projektu, viac informácií nájdete ') }}<a href="{{ url_for('zapoj_sa_sponzor') }}">{{ _('tu.') }}</a></p>
+</div>
+
+<hr class="featurette-divider">   
+
+<div class="container">
+
+  <h2 class="featurette-heading">Sponzori projektu Učíme s Hardvérom</h2> 
+
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/materialy/ucebnica-nodemcu-micropython.png') }}" alt="Programujeme micro:bit v MicroPythone">
+            <div class="card-body text-center">
+              <p class="card-text"><b>{{ _('Mini Tech MBA') }}</b></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/materialy/ucebnica-nodemcu-micropython.png') }}" alt="Programujeme micro:bit v MicroPythone">
+            <div class="card-body text-center">
+              <p class="card-text"><b>{{ _('Random Firma') }}</b></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/materialy/ucebnica-nodemcu-micropython.png') }}" alt="Programujeme micro:bit v MicroPythone">
+            <div class="card-body text-center">
+              <p class="card-text"><b>{{ _('Iná random firma') }}</b></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <h2 class="featurette-heading">Partneri a podporovatelia projektu Učíme s Hardvérom</h2> 
+
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="https://www.fiit.stuba.sk/buxus/assets/images/web/icons/fiit_800.png" alt="Programujeme micro:bit v MicroPythone">
+            <div class="card-body text-center">
+              <p class="card-text"><b>{{ _('FIIT') }}</b></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="https://specials-images.forbesimg.com/imageserve/5a32a4a031358e6e1b1d6ecf/300x300.jpg?background=000000&cropX1=0&cropX2=416&cropY1=0&cropY2=416" alt="Programujeme micro:bit v MicroPythone">
+            <div class="card-body text-center">
+              <p class="card-text"><b>{{ _('Accenture') }}</b></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="https://www.nadaciapontis.sk/production/792/public/img/logo-fb.jpg" alt="Programujeme micro:bit v MicroPythone">
+            <div class="card-body text-center">
+              <p class="card-text"><b>{{ _('Nadácia Pontis') }}</b></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container text-justify">
+
+  <h2 class="featurette-heading">Individuálni donori</h2>
+    
+  <ul>
+    <li><b>Ferko Mrkvička</b>
+    <li><b>Adam Kráľ</b>
+    <li><b>Guido van Rossum</b>
+  </ul>
+
+</div>
+
+</div>
+<!-- /END THE FEATURETTES -->
+{% endblock %}

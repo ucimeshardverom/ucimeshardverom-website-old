@@ -1,0 +1,101 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('O nás') }}</h1>
+  </div>
+</div>
+
+<div class="container text-center" style="padding-bottom:30px">
+  <img src="{{ url_for('static', filename='img/random/volunteers_pycon_2016.jpg') }}">
+</div>
+
+<div class="container text-justify">
+
+  <h2 class="featurette-heading">{{ _('SPy o.z.') }}</h2>
+
+  <p class="lead">{{ _('Poslaním občianskeho združenia SPy (skratka "Slovak Python") je podpora vývojárov a používateľov programovacieho jazyka Python. Podporujeme a šírime používanie programovacieho jazyka Python a iných open source technológii a open source myšlienok v našej spoločnosti.') }}</p>
+
+  <p class="lead">{{ _('Našim cieľom je poskytovať pomoc a podporu úplným začiatočníkom a ľuďom, ktorí s programovaním začínajú. Ďalej si dávame za cieľ spolupracovať so školami a inými vzdelávacími inštitúciami a propagovať programovanie (nezávislé od programovacieho jazyka) u detí a mladých ľudí od čo najskoršieho možného veku.') }}</p>
+
+  <p class="lead">{{ _('Podporujeme oblasť softvérového vývoja u sociálne slabších alebo inak znevýhodnených sociálnych skupín. Venujeme sa praktickému využitiu softvérového vývoja.') }}</p>
+
+  <p class="lead">{{ _('Chceme spolupracovať na rôznych open source projektoch, vytvárať otvorený vzdelávací obsah použiteľný pri školskej výuke či samoštúdiu a zasadzovať sa o používanie otvorených technológii v spoločnosti a verejnom sektore.') }}</p>
+
+  <p class="lead">{{ _('Od roku 2015 sme zorganizovali desiatky stretnuti a projektov. Ak chcete vedieť viac, pozrite sa na <a href="https://spy.python.sk">našej stránke</a>. 
+  ') }}</p>
+
+</div>
+
+<div class="container">
+
+  <h2 class="featurette-heading">{{ _('Tím projektu Učím s Hardvérom') }}</h2>
+
+  <div class="album py-5 align-middle">
+    <div class="container">
+      
+      <div class="row">
+        
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/volunteers/marek_mansell.jpg') }}" alt="Marek Mansell Avatar">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Marek Mansell') }}</b></p>
+              <p class="card-text">{{ _('Podpredseda združenia SPy a študent FIIT STU') }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/volunteers/eva_klimekova.jpg') }}" alt="Eva Klimekova Avatar">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Eva Klimeková') }}</b></p>
+              <p class="card-text">{{ _('') }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2"></div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/volunteers/richard_kellner.jpg') }}" alt="Richard Kellner Avatar">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Richard kellner') }}</b></p>
+              <p class="card-text">{{ _('Predseda občianskeho združenia SPy') }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ url_for('static', filename='img/volunteers/jan_gondol.jpg') }}" alt="Jan Gondol Avatar">
+            <div class="card-body">
+              <p class="card-text"><b>{{ _('Ján Gondoľ') }}</b></p>
+              <p class="card-text">{{ _('Spoluzakladateľ združenia SPy a nadšenec pre open source licencie') }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}
