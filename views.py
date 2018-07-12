@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 import os
 from datetime import datetime
-from flask import Flask, g, request, render_template, abort, make_response
+from flask import Flask, g, request, render_template, abort, make_response, redirect, url_for
 from flask_babel import Babel, gettext
 
 app = Flask(__name__, static_url_path='/static')
@@ -98,9 +98,14 @@ def skolenia():
     return render_template('skolenia.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/ciele/')
+def ciele():
+    return render_template('ciele_projektu.html', **_get_template_variables(li_index='active'))
+
+
 @app.route('/ciele_projektu/')
 def ciele_projektu():
-    return render_template('ciele_projektu.html', **_get_template_variables(li_index='active'))
+    return redirect(url_for('ciele'))
 
 
 @app.route('/o_nas/')
@@ -138,9 +143,13 @@ def blog():
     return render_template('blog.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/mapa/')
+def mapa():
+    return render_template('zapojene_skoly.html', **_get_template_variables(li_index='active'))
+
 @app.route('/zapojene_skoly/')
 def zapojene_skoly():
-    return render_template('zapojene_skoly.html', **_get_template_variables(li_index='active'))
+    return redirect(url_for('mapa'))
 
 
 @app.route('/sutaz/')
@@ -168,9 +177,14 @@ def nodemcu():
     return render_template('nodemcu.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/projekty/')
+def projekty():
+    return render_template('hw_projekty.html', **_get_template_variables(li_index='active'))
+
+
 @app.route('/hw_projekty/')
 def hw_projekty():
-    return render_template('hw_projekty.html', **_get_template_variables(li_index='active'))
+    return redirect(url_for('ciele'))
 
 
 @app.route('/kde_kupit/')
