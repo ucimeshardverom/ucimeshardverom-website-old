@@ -7,6 +7,10 @@
   margin: 0 5px;
 }
 
+.bg-dark {
+    background-color: #114b5f !important;
+}
+
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);

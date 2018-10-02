@@ -1,0 +1,89 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Pilotný projekt') }}</h1>
+  </div>
+</div>
+
+<div class="container text-justify">
+
+  <h2 class="featurette-heading">{{ _('Pilotná fáza projektu Učíme s Hardvérom') }}</h2>
+  <p class="lead">{{ _('Na tejto stránke nájdete harmonogram pilotnej fázy, ako aj všetky dôležité materiály. Táto stránka ako aj materiály budú priebežne dopĺňané.') }}</p>
+
+</div>
+
+<div class="container">
+
+  <hr class="featurette-divider">
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Harmonogram') }}</h2>
+      
+    <ul>
+      <li><b>8.10.2018</b> - {{ _('Spustenie projektu a začiatok výučby') }}</li>
+      <li><b>8.10.2018</b> - {{ _('Vstupný formulár pre učiteľov a pre žiakov') }}</li>
+      <li><b>8.10.2018 - 2.11.2018</b> - {{ _('Výučba so základnou sadou HW') }}</li>
+      <li>{{ _('Formulár po skončení výučby so základnou sadou (učitelia aj žiaci)') }}</li>
+      <li><b>5.11.2018 - 7.12.2018</b> - {{ _('Výučba s rozšírenou sadou HW') }}</li>
+      <li>{{ _('Formulár po skončení výučby s rozšírenou sadou (učitelia aj žiaci)') }}</li>
+      <li><b>10.12.2018 - 21.12.2018</b> - {{ _('Výučba podľa vlastných materiálov (alebo prebraných z internetu) a začiatok práce žiakov na polročnom projekte') }}</li>
+      <li>{{ _('Formulár po skončení výučby z vlastných materiálov učiteľa (učitelia aj žiaci)') }}</li>
+      <li><b>8.1.2019 - 31.1.2019</b> - {{ _('Práca žiakov na polročných projektoch a prezentácie na hodinách informatiky') }}</li>
+      <li>{{ _('Formulár po skončení žiackych prezentácií a pilotného projektu (učitelia aj žiaci)') }}</li>
+      <li><b>15.1.2019 - 31.1.2019</b> - {{ _('Zasielanie žiackych prác do súťaže SPy Cup') }}</li>
+    </ul>
+
+  </div>
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Výučba so základnou sadou HW') }}</h2>
+      
+    <p>{{ _('V tejto časti výučby sa žiaci zoznámi so zariadením BBC micro:bit a jeho možnosťami') }}</p>
+
+    <ul>
+      <li><b>Vstupný formulár pred prvou hodinou</b></li>
+      <ul>
+        <li><a href="#">Pre učiteľov</a></li>
+        <li><a href="#">Pre žiakov</a></li>
+      </ul>
+      <li><b>Výučba</b></li>
+      <ul>  
+        <li>1. hodina - <a href="https://docs.google.com/document/d/1xYH_ONFYROkEGjJn7_8BSURxL9x9_a9zXX-fq37gvMw/edit?usp=sharing">Metodika</a></li></li>
+        <li>2. hodina - <a href="https://docs.google.com/document/d/1uvacTvkQnHcFlK-Kkme6Gf4Hso1fHnJ5MaIU1sidJZc/edit?usp=sharing">Metodika</a></li></li>
+        <li>3. hodina - <a href="https://docs.google.com/document/d/1WlijkPqXDQlf8O8zRSy8tXHKZov-TqvPcMKcsDfe3cM/edit?usp=sharing">Metodika</a></li></li>
+        <li>Formulár pre učiteľa po udučenej hodine (slúži na zlepšenie matodických materiálov) - <a href="#">pripravujeme</a>
+        <br>Počast trvania EU Code Week vypĺňajte <i>Formulár každej odučenej otvorenej hodiny (pre inú školu) Meet and Code</i> - najdete ho nižšie</li></li>
+      </ul>
+      <li><b>Formulár po prvej časti pilotného projektu</b></li>
+        <ul>
+          <li><a href="#">Pre učiteľov</a></li>
+          <li><a href="#">Pre žiakov</a></li>
+        </ul>
+    </ul>
+
+  </div>
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Školy zapojené do Meet and Code - EU Code Week') }}</h2>
+      
+    <p>{{ _('Školy zapojené do EU Code Week, ktoré získali cez grantovú schému Meet and Code bezplatne sadu HW do daru musia po každej odučenej hodine (ktorá je nahlásená do harmonogramu Meet and Code) vyplniť nasledovné formuláre') }}</p>
+
+    <ul>
+      <li><b>Vstupný formulár pred prvou hodinou (učiteľ aj žiaci, odkazy nájdete vyššie)</b></li>
+      <li><b>Formulár každej odučenej hodiny Meet and Code (vypĺňa učiteľ)</b> - <a href="#">pripravujeme</a></li></li>
+      <li><b>Formulár každej odučenej otvorenej hodiny (pre inú školu) Meet and Code (vypĺňa učiteľ)</b> - <a href="#">pripravujeme</a></li></li>
+      <li><b>Záverečná správa EU Code Week pre Meet and Code (vypĺňa učiteľ)</b> - <a href="#">pripravujeme</a></li></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}
