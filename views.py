@@ -191,6 +191,7 @@ def hw_projekty():
 def kde_kupit():
     return render_template('kde_kupit.html', **_get_template_variables(li_index='active'))
 
+@app.route('/pilot')
 @app.route('/pilot/')
 def pilot():
     return render_template('pilot.html', **_get_template_variables(li_index='active'))
