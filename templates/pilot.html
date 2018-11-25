@@ -44,48 +44,79 @@
     <h2 class="featurette-heading">{{ _('Výučba so základnou sadou HW') }}</h2>
       
     <p>{{ _('V tejto časti výučby sa žiaci zoznámi so zariadením BBC micro:bit a jeho možnosťami') }}</p>
-    
-    <div class="alert alert-warning" role="alert">
-      <p>{{ _('<strong>Upozornenie:</strong> Metodické materiály sú neustále v procese tvorby a zlepšovania, a jedným z cieľov pilotného projektu je ich otestovať, zlepšiť a dotvoriť. Preto, prosím, rátajte s tým, že budú priebežne aj počas trvania pilotného projektu upravované.') }}</p>
-    </div>
 
     <ul>
-      <li><b>Vstupný formulár pred prvou hodinou</b></li>
-      <ul>
-        <li>Pre učiteľov - <a href="https://goo.gl/forms/0NiHtwPc0hn6NnYH2">https://goo.gl/forms/0NiHtwPc0hn6NnYH2</a></li>
-        <li>Pre žiakov - <a href="https://goo.gl/forms/0G17oWTHL2wFhXy52">https://goo.gl/forms/0G17oWTHL2wFhXy52</a></li>
-      </ul>
       <li><b>Výučba</b></li>
       <ul>  
-        <li>1. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-01-ver1.pdf') }}">Metodiku nájdete tu</a></li></li>
-        <li>2. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-02-ver1.pdf') }}">Metodiku nájdete tu</a></li></li>
-        <li>3. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-03-ver1.pdf') }}">Metodiku nájdete tu</a></li></li>
-        <li>Formulár pre učiteľa po udučenej hodine (slúži na zlepšenie matodických materiálov) - <a href="#">pripravujeme</a>
-        <br>Počast trvania EU Code Week vypĺňajte <i>Formulár každej odučenej otvorenej hodiny (pre inú školu) Meet and Code</i> - najdete ho nižšie</li></li>
+        <li>1. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-01-ver1.pdf') }}">Zoznámenie sa s BBC micro:bit</a></li></li>
+        <li>2. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-02-ver1.pdf') }}">BBC micro:bit v pohybe</a></li></li>
+        <li>3. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-03-ver1.pdf') }}">Bezdrôtová komunikácia</a></li></li>
       </ul>
       <li><b>Formulár po prvej časti pilotného projektu</b></li>
         <ul>
-          <li><a href="#">Pre učiteľov - pripravujeme</a></li>
-          <li><a href="#">Pre žiakov - pripravujeme</a></li>
+          <li><a href="https://goo.gl/forms/ggWNBUq8SxHaNR6E3">Pre učiteľov</a></li>
+          <li><a href="https://goo.gl/forms/QjjHZpUdJbuEawho1">Pre žiakov</a></li>
         </ul>
+    </ul>
+
+  </div>
+
+  <strike>
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Výučba s krokosvorkovými káblikmi') }}</h2>
+      
+    <p>{{ _('V tejto časti výučby sa žiaci zoznámia s pripájaním hardvérových senzorov a aktorov k BBC micro:bit') }}</p>
+
+    <ul>
+      <li><b>Výučba</b></li>
+      <ul>  
+        <li>4. hodina - <a href="">Elektrické obvody a vodivosť materiálov</a></li></li>
+        <li>5. hodina - <a href="">Hra na reakcie</a></li></li>
+        <li>6. hodina - <a href="">Hra na precízne ruky</a></li></li>
+        <li>7. hodina - <a href="">Meranie vlhkosti pôdy</a></li></li>
+      </ul>
     </ul>
 
   </div>
 
   <div class="container text-justify">
 
-    <h2 class="featurette-heading">{{ _('Školy zapojené do Meet and Code - EU Code Week') }}</h2>
+    <h2 class="featurette-heading">{{ _('Výučba s LED pásikmi a reproduktormi') }}</h2>
       
-    <p>{{ _('Školy zapojené do EU Code Week, ktoré získali cez grantovú schému Meet and Code bezplatne sadu HW do daru musia po každej odučenej hodine (ktorá je nahlásená do harmonogramu Meet and Code) vyplniť nasledovné formuláre') }}</p>
+    <p>{{ _('V tejto časti výučby sa žiaci zoznámia s programovaním hudby a svetelných animácií') }}</p>
 
     <ul>
-      <li><b>Vstupný formulár pred prvou hodinou (učiteľ aj žiaci, odkazy nájdete vyššie)</b></li>
-      <li><b>Formulár každej odučenej hodiny Meet and Code (vypĺňa učiteľ)</b> - <a href="https://goo.gl/forms/lkZhdCUwIVkCJbSS2">https://goo.gl/forms/lkZhdCUwIVkCJbSS2</a></li></li>
-      <li><b>Formulár každej odučenej otvorenej hodiny (pre inú školu) Meet and Code (vypĺňa učiteľ)</b> - <a href="https://goo.gl/forms/mvXwJv2TbjAl9VPy2">https://goo.gl/forms/mvXwJv2TbjAl9VPy2</a></li></li>
-      <li><b>Záverečná správa EU Code Week pre Meet and Code (vypĺňa učiteľ)</b> - <a href="#">pripravujeme</a></li></li>
+      <li><b>Výučba</b></li>
+      <ul>  
+        <li>8. hodina - <a href="">Programovenie LED pásiku</a></li></li>
+        <li>9. hodina - <a href="">Programovanie hudby</a></li></li>
+        <li>10. hodina - <a href="">Bezdrôtový alarm otvorených dverí</a></li></li>
+        <li>BONUS - <a href="">Kartónová gitara</a></li></li>
+        <li>BONUS - <a href="">Whoopie cushion</a></li></li>
+      </ul>
     </ul>
 
   </div>
+
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Robotika') }}</h2>
+      
+    <p>{{ _('V tejto časti výučby sa žiaci zoznámia s robotom MOVE: mini') }}</p>
+
+    <ul>
+      <li><b>Výučba</b></li>
+      <ul>  
+        <li>11. hodina - <a href="">Robot na diaľkové ovládanie</a></li></li>
+        <li>12. hodina - <a href="">Meranie rýchlosti robota</a></li></li>
+        <li>BONUS - <a href="">Meranie rýchlosti robota</a></li></li>
+      </ul>
+    </ul>
+
+  </div>
+  </strike>
 
 </div>
 
