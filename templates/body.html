@@ -37,14 +37,13 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('ciele')}}">{{ _('Ciele projektu') }}</a>
                 <a class="dropdown-item" href="{{ url_for('mapa')}}">{{ _('Mapa škôl') }}</a>
-                <a class="dropdown-item" href="{{ url_for('sutaz')}}">{{ _('Súťaž SPy Cup') }}</a>
                 <!-- <div class="dropdown-divider"></div> -->
                 <!-- <a class="dropdown-item" href="{{ url_for('partneri')}}">{{ _('Partneri a sponzori') }}</a> -->
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ _('O hardvéri') }}
+                {{ _('Hardvér') }}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('hardver_ako_pomocka')}}">{{ _('Hardvér ako edukačná pomôcka') }}</a>
@@ -60,7 +59,10 @@
               <a class="nav-link" href="{{ url_for('skolenia')}}">{{ _('Školenia') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('materialy')}}">{{ _('Návody a materiály') }}</a>
+              <a class="nav-link" href="{{ url_for('materialy')}}">{{ _('Materiály') }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('sutaz')}}">{{ _('Súťaž') }}</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
