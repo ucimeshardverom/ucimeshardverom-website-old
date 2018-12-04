@@ -1,5 +1,15 @@
 {% extends "body.html" %}
 
+{% block header %}
+
+<meta property="og:url"                content="https://www.ucimeshardverom.sk/materialy/" />
+<meta property="og:type"               content="website" />
+<meta property="og:title"              content="Metodické materiály a návody" />
+<meta property="og:description"        content="Tieto materiály pre ZŠ a SŠ sú v súlade so štátnym vzdelávacím programom a boli navrhnuté tak, aby mohli byť využívané priamo na hodinách informatiky." />
+<meta property="og:image"              content="http://ucimeshardverom.sk{{ url_for('static', filename='img/materialy/microbit-makecode-01-04.jpg') }}" />
+
+{% endblock %}
+
 {% block content %}
 
 <div class="container text-center">
