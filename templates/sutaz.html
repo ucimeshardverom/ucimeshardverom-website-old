@@ -2,11 +2,13 @@
 
 {% block header %}
 
-<meta property="og:url"                content="https://www.ucimeshardverom.sk/sutaz/" />
-<meta property="og:type"               content="website" />
-<meta property="og:title"              content="Súťaž SPy Cup pre žiakov ZŠ a SŠ" />
-<meta property="og:description"        content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia." />
-<meta property="og:image"              content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}" />
+<meta content="https://www.ucimeshardverom.sk/sutaz/" property="og:url"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Súťaž SPy Cup pre žiakov ZŠ a SŠ"/>
+<meta property="og:description"
+      content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
+<meta property="og:image"
+      content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}"/>
 
 {% endblock %}
 
@@ -24,79 +26,159 @@
   <div class="container text-justify">
 
     <h2 class="featurette-heading">{{ _('O súťaži SPy Cup') }}</h2>
-    <p class="lead">{{ _('Súťaž SPy Cup je určená pre žiakov základných a stredných škôl, ktorí si individuálne alebo v tímoch vypracujú hardvérový projekt a popíšu svoj postup vo forme návodu. Najlepšie projekty vystúpia v sekcii EduSummit v rámci medzinárodnej konferencie PyCon Slovakia v Bratislave. Téma projektov nie je špecifikovaná a je na rozhodnutí tímu (odporúčame konzultáciu s učiteľom).') }}</p>
+    <p class="lead">{{ _('Súťaž SPy Cup je určená pre žiakov základných a stredných škôl, ktorí si individuálne alebo v
+      tímoch vypracujú hardvérový projekt a popíšu svoj postup vo forme návodu. Najlepšie projekty vystúpia v sekcii
+      EduSummit v rámci medzinárodnej konferencie PyCon Slovakia v Bratislave. Téma projektov nie je špecifikovaná a je
+      na rozhodnutí tímu (odporúčame konzultáciu s učiteľom).') }}</p>
 
     <hr class="featurette-divider">
 
     <div class="container text-center">
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/s5aJKqaNlpA" allow="autoplay; encrypted-media" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/s5aJKqaNlpA"
+                allow="autoplay; encrypted-media" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
       </div>
     </div>
 
     <br>
 
     <h3 class="featurette-heading">{{ _('Technológie a platformy') }}</h3>
-      
-    <p>{{ _('Podporovanými platformami sú najmä BBC micro:bit, NodeMCU a RaspberryPi; naprogramované v programovacích jazykoch Python, MicroPython alebo ľubovoľnom blokovom programovacom prostredí.') }}</p>
+
+    <p>{{ _('Podporovanými platformami sú najmä BBC micro:bit, NodeMCU a RaspberryPi; naprogramované v programovacích
+      jazykoch Python, MicroPython alebo ľubovoľnom blokovom programovacom prostredí.') }}</p>
 
     <h3 class="featurette-heading">{{ _('Súťažné kategórie') }}</h3>
-      
+    <p>Súťaž má dve hlavné kategórie, v rámci ktorých bude zverejnené poradie jednotlivých tímov.</p>
     <ol>
-      <li><b>{{ _('SPy Cup pre žiakov základných škôl/prima až kvarta') }}</b></li>
+      <li><b>{{ _('SPy Cup pre žiakov základných škôl (prima až kvarta)') }}</b></li>
       <li><b>{{ _('SPy Cup pre žiakov stredných škôl a gymnázií (kvinta až oktáva)') }}</b></li>
     </ol>
 
+    <p>Okrem hlavných kategórií budeme vyberať aj špeciálne ocenenia:</p>
+    <ol>
+      <li><b>{{ _('Cena za vizuálne najkrajší projekt') }}</b> - či už to bude pekne oblečený robot, vymaľovaná raketa
+        či umelecká kartónová gitara.
+      </li>
+      <li><b>{{ _('Cena za projekt riešiaci sociálny problém') }}</b> - ak v rámci Vášho projektu zapojíte alebo
+        pomôžete
+        ľuďom, ktorí sú nejakým spôsobom znevýhodnený.
+      </li>
+      <li><b>{{ _('Cena za Ekologický projekt') }}</b> - ak riešite projektom ekologické problémy
+      </li>
+      <li><b>{{ _('Cena za najzábavnejší projekt') }}</b> - ak spravíte vtipne spracovaný projekt alebo video a porota s
+        publikom sa bude váľať smiechom.
+      </li>
+    </ol>
+
     <h3 class="featurette-heading">{{ _('Účastníci') }}</h3>
-  
+
     <ul>
-      <li>{{ _('Súťaže sa môžu zúčastňovať jednotlivci alebo tímy zložené zo žiakov základných a stredných škôl.') }}</li>
+      <li>{{ _('Súťaže sa môžu zúčastňovať jednotlivci alebo tímy zložené zo žiakov základných a stredných škôl.') }}
+      </li>
       <li>{{ _('Tím má 1 až 3 členov.') }}</li>
       <li>{{ _('Každý účastník môže byť nanajvýš v jednom tíme.') }}</li>
     </ul>
 
-    <hr class="featurette-divider">
+    <!--<hr class="featurette-divider">-->
+
+    <div class="alert alert-success">
+      <h4 class="alert-heading">Prihlásenie do súťaže</h4>
+      <ul>
+        <li>
+          Žiaka (respektíve tím) do súťaže prihlasuje učiteľ informatiky (alebo vedúci krúžku). Každý žiak môže byť
+          nanajvýš v jednom tíme a každý tím konzultuje výber projektu s učiteľom.
+        </li>
+        <li>
+          Ak je na jednej škole viacero učiteľov informatiky, ktorí chcú zapojiť svojich žiakov (tímy) do súťaže, každý
+          učiteľ prihlási svojich žiakov (tímy) osobitne.
+        </li>
+        <li>
+          Každý tím si pred prihlásením do súťaže vypracuje projektový zámer (podrobnosti nájdete nižšie). Tie
+          následne učiteľ zozbiera (každý tím odovzdáva jeden textový dokument vo formáte <i>docx</i> alebo <i>odt</i>).
+        </li>
+        <li>
+          Samotné prihlásenie prebieha elektonickou poštou. Prihlasovací email do súťaže posiela učiteľ na adresu
+          <b>spycup@pycon.sk</b> a má nasledovnú formu:
+          <ul>
+            <li><b>Predmet:</b> SPy Cup Prihláška &lt;názov školy&gt;</li>
+            <li><b>Správa:</b> Do mailu napíšte názov školy a Vaše meno. Informácie o projektoch, tímoch a žiakoch by
+              mali byť v projektových zámeroch, do mailu ich nemusíte písať.
+            </li>
+            <li><b>Príloha:</b> Jeden súbor formátu <i>zip</i> so všetkými projektovými zámermi žiakov.</li>
+          </ul>
+        </li>
+        <li>
+          Žiaci môžu začať pracovať na projekte hneď po odoslaní projektového zámeru (nebudeme vykonávať žiadne
+          schvaľovanie).
+        </li>
+        <li>
+          Po odoslaní prihlasovacieho mailu Vám do niekoľkých dní pošleme potvrdenie o prijatí.
+        </li>
+        <li>
+          Ak sa po odoslaní projektových zámerov rozhodnú do súťaže zapojiť ďalšie tímy, stačí dodatočne poslať iba nové
+          projektové zámeru.
+        </li>
+      </ul>
+    </div>
 
     <h2 class="featurette-heading">{{ _('Priebeh súťaže') }}</h2>
 
     <ol>
       <li>
         <b>{{ _('Prihlásenie sa do súťaže s konkrétnym projektom') }}</b>
-        <p>{{ _('Do 25.1.2019 účastníci súťaže zložia tímy (môže byť aj jednotlivec) a zvolia si tému projektu. Tému projektu skonzultujú s ich učiteľom informatiky, ktorý ich registruje do súťaže. Pri registrácii odovzdávajú projektový zámer, ktorý obsahuje:') }}</p>
+        <p>{{ _('Do 25.1.2019 účastníci súťaže zložia tímy (môže byť aj jednotlivec) a zvolia si tému projektu. Tému
+          projektu skonzultujú s ich učiteľom informatiky, ktorý ich registruje do súťaže. Pri registrácii odovzdávajú
+          projektový zámer (dokument vo formáte docx alebo odt), ktorý obsahuje:') }}</p>
         <ol type="a">
           <li>Názov projektu</li>
-          <li>Mená členov tímu a ich úlohy v tíme</li>
-          <li>Popis projektu, aký problém rieši / na čo bude slúžiť. Dôležité je spraviť si prehľad už existujúcich riešení a uviesť k nim zdroje. V čom bude Váš projekt iný?</li>
+          <li>Meno tímu (nesmie obsahovať mená žiakov)</li>
+          <li>Popis projektu, aký problém rieši / na čo bude slúžiť. Dôležité je spraviť si prehľad už existujúcich
+            riešení a uviesť k nim zdroje. V čom bude Váš projekt iný? (Čerpať môžte z odkazov v sekcii <i>Inšpirácia na
+              projekty</i> na konci tejto stránky.)
+          </li>
           <li>Dôvod, prečo si tím (alebo jednotlivec) daný projekt zvolil</li>
           <li>Stručný popis, ako bude tím (alebo jednotlivec) na projekte postupovať</li>
           <li>Zoznam hardvérových súčiastok, ktoré budú v projekte použité</li>
-          <li>Zoznam výstupov projektu (napr. článok v školskom časopise/webovej stránke, video/fotka na sociálnych sieťach, a pod.)</li>
+          <li>Zoznam výstupov projektu (napr. článok v školskom časopise/webovej stránke, video/fotka na sociálnych
+            sieťach, a pod.)
+          </li>
         </ol>
-        <p>Pri vypracovaní dokumentu odporúčame postupovať podľa tejto šablóny.</p>
+        <p>Pri vypracovaní dokumentu odporúčame postupovať podľa <a
+                href="{{ url_for('static', filename='downloads/spycup/zamer-sablona.pdf') }}">tejto šablóny.<a/></p>
       </li>
       <li>
         <b>{{ _('Vypracovanie zadania') }}</b>
         <p>Tímy vypracujú zadania (vrátane dokumentácie) do 15.2.2019.</p>
-        <p>Vypracovanie zadania prebieha vo voľnom čase súťažiacich, prípadne na hodinách informatiky bez podpory učiteľa. Učiteľ informatiky môže žiakom radiť pri výbere témy projektu a pri otázkach vyhotovenia riešenia, nemôže však poskytnúť žiakom riešenie danej problematiky ani byť spoluriešiteľ.</p>
-        Najväčšia časť práce na zadaní by mala pozostávať z programovania, zapájania hardvéru, testovania a ladenia projektu. Po vyhotovení projektu tím odovzdáva:
+        <p>Vypracovanie zadania prebieha vo voľnom čase súťažiacich, prípadne na hodinách informatiky bez podpory
+          učiteľa. Učiteľ informatiky môže žiakom radiť pri výbere témy projektu a pri otázkach vyhotovenia riešenia,
+          nemôže však poskytnúť žiakom riešenie danej problematiky ani byť spoluriešiteľ.</p>
+        Najväčšia časť práce na zadaní by mala pozostávať z programovania, zapájania hardvéru, testovania a ladenia
+        projektu. Po vyhotovení projektu tím odovzdáva:
         <ol type="a">
           <li>
             <b>Video</b>, ktoré dokazuje funkčnosť projektu
-            <p>Hodnotí sa aj kvalita spracovania, strih a zvuk (video má projekt “predať”). Dĺžka videa je na uvážení tímu, musí však byť dlhšie ako 1 minútu a kratšie ako 4 minúty. Video tím taktiež zverejní na YouTube pod otvorenou licenciou.</p>
+            <p>Hodnotí sa aj kvalita spracovania, strih a zvuk (video má projekt “predať”). Dĺžka videa je na uvážení
+              tímu, musí však byť dlhšie ako 1 minútu a kratšie ako 4 minúty. Video tím taktiež zverejní na YouTube pod
+              otvorenou licenciou.</p>
           </li>
           <li>
             <b>Textová dokumentácia</b> - dokument (vo formáte docx alebo odt), ktorý obsahuje:
             <ol type="i">
-              <li>Návod, ako ste postupovali pri projekte (krok po kroku, tak, aby podľa neho vedel ktokoľvek Váš projekt zopakovať). Táto časť je hlavným hodnotiacim kritériom, čiže si na nej dajte záležať.</li>
+              <li>Návod, ako ste postupovali pri projekte (krok po kroku, tak, aby podľa neho vedel ktokoľvek Váš
+                projekt zopakovať). Táto časť je hlavným hodnotiacim kritériom, čiže si na nej dajte záležať.
+              </li>
               <li>Zhrnutie, ako jednotliví členovia tímu prispeli do projektu</li>
               <li>Aké problémy ste mali pri vytváraní projektu</li>
               <li>Aké nové skúsenosti alebo vedomosti ste počas práce na projekte získali</li>
               <li>
                 Popis hardvérového riešenia problému
-                <br>Konštrukcia hardvéru, štruktúra, presnosť a chybovosť, atď. Hodnotí sa aj správna implementácia projektu (jednoduchosť výroby, prevedenie, dizajn, atď.)
+                <br>Konštrukcia hardvéru, štruktúra, presnosť a chybovosť, atď. Hodnotí sa aj správna implementácia
+                projektu (jednoduchosť výroby, prevedenie, dizajn, atď.)
               </li>
               <li>Čím je Váš projekt výnimočný? Prečo by ste sa mali stať finalistami?</li>
-              <li>Popis ďalších výstupov projektu, ako napr. článok v školskom časopise/webovej stránke, video/fotka na sociálnych sieťach, a pod.</li>
+              <li>Popis ďalších výstupov projektu, ako napr. článok v školskom časopise/webovej stránke, video/fotka na
+                sociálnych sieťach, a pod.
+              </li>
               <li>Správne zvolená licencia pre všetky materiály (viac informácii v sekcii Otvorená licencia)</li>
             </ol>
           </li>
@@ -106,7 +188,9 @@
           </li>
           <li>
             <b>Zdrojový kód</b>
-            <p>Odovzdáva sa zdrojový kód projektu. V prípade programu v prog. jazyku Python je nutné, aby bol zverejnený pod otvorenou licenciou určenou pre zdrojové kódy. Hodnotí sa kvalita kódu, vhodnosť algoritmov pre daný účel, zrozumiteľnosť (prípadne poznámky), správne názvy premenných, atď.</p>
+            <p>Odovzdáva sa zdrojový kód projektu. V prípade programu v prog. jazyku Python je nutné, aby bol zverejnený
+              pod otvorenou licenciou určenou pre zdrojové kódy. Hodnotí sa kvalita kódu, vhodnosť algoritmov pre daný
+              účel, zrozumiteľnosť (prípadne poznámky), správne názvy premenných, atď.</p>
             <p>Zdrojový kód musí byť výsledkom práce členov tímu.</p>
           </li>
         </ol>
@@ -118,24 +202,30 @@
       </li>
       <li>
         <b>{{ _('Hodnotenie odbornou komisiou') }}</b>
-        <p>V období 16.2.2019 až 25.2.2019 ohodnotí odborná komisia všetky projekty a 25.2.2019 zverejníme mená finalistov, ktorí budú mať šancu zabojovať o víťazstvo na konferencii PyCon SK 2019 v Bratislave.</p>
+        <p>V období 16.2.2019 až 25.2.2019 ohodnotí odborná komisia všetky projekty a 25.2.2019 zverejníme mená
+          finalistov, ktorí budú mať šancu zabojovať o víťazstvo na konferencii PyCon SK 2019 v Bratislave.</p>
         <p>Počas hodnotenia môže komisia vyzvať tím o doplňujúce informácie či ozrejmenie nejasností.</p>
       </li>
       <li>
         <b>{{ _('Finále - prezentácie na PyCon SK 2019') }}</b>
-        <p>Finále súťaže bude prebiehať počas konferencie PyCon SK 2019, a to dňa 22.3.2019 v rámci sekcie <a href="https://2019.pycon.sk/sk/edusummit.html">EduSummit</a>. 5 najlepších tímov vystúpi a odprezentuje svoj projekt  pred publikom a odbornou komisiou, ktorá následne určí víťazov:</p>
+        <p>Finále súťaže bude prebiehať počas konferencie PyCon SK 2019, a to dňa 22.3.2019 v rámci sekcie <a
+                href="https://2019.pycon.sk/sk/edusummit.html">EduSummit</a>. 5 najlepších tímov vystúpi a odprezentuje
+          svoj projekt pred publikom a odbornou komisiou, ktorá následne určí víťazov:</p>
         <ol type="a">
           <li>Projekt môžu prezentovať iba členovia tímu.</li>
           <li>Prezentácia má rozsah max. 5 minút.</li>
           <li>Prezentácia by mala dbať na správne použitie fotografií/videí a správne uvedenie autorov a zdrojov.</li>
-          <li>Pri prezentácii sa hodnotí spracovanie slajdov, vystupovanie prezentujúcich, štruktúra, efektívnosť a načasovanie.</li>
+          <li>Pri prezentácii sa hodnotí spracovanie slajdov, vystupovanie prezentujúcich, štruktúra, efektívnosť a
+            načasovanie.
+          </li>
           <li>Prezentácia by mala byť zverejnená pod Otvorenou licenciou.</li>
           <li>Po prezentácii má komisia (prípadne publikum) priestor na niekoľko krátkych otázok ohľadom projektu.</li>
         </ol>
       </li>
       <li>
         <b>{{ _('Vecné ceny') }}</b>
-        <p>Absolútni víťazi súťaže SPy Cup získajú ako ocenenie dron s vbudovanou kamerou. Zvyšní finalisti taktiež získajú vecné ceny.</p>
+        <p>Absolútni víťazi súťaže SPy Cup získajú ako ocenenie dron s vbudovanou kamerou. Zvyšní finalisti taktiež
+          získajú vecné ceny.</p>
       </li>
     </ol>
 
@@ -144,15 +234,17 @@
     <ul>
       <li><b>25.1.2019</b> - {{ _('Prihlásenie sa do súťaže, zaslanie popisu problému, ktorý má projekt riešiť') }}</li>
       <li><b>15.2.2019</b> - {{ _('Zaslanie výstupov projektu (dokumentácia, fotky, videá, kód)') }}</li>
-      <li><b>25.2.2019</b> - {{ _('Vyhlásenie finalistov, ktorí svoje projekty odprezentujú na konferencii PyCon') }}</li>
+      <li><b>25.2.2019</b> - {{ _('Vyhlásenie finalistov, ktorí svoje projekty odprezentujú na konferencii PyCon') }}
+      </li>
       <li><b>22.3.2019</b> - {{ _('Prezentácie projektov na konferencii PyCon a vyhlásenie víťazov') }}</li>
     </ul>
 
     <hr class="featurette-divider">
-    
+
     <h2 class="featurette-heading">{{ _('Hodnotiace kritériá') }}</h2>
 
-    <p>Komisia bude posudzovať, či odovzdaná dokumentácia obsahuje všetky body spomenuté v popise priebehu súťaže a vo vzorových dokumentoch.</p>
+    <p>Komisia bude posudzovať, či odovzdaná dokumentácia obsahuje všetky body spomenuté v popise priebehu súťaže a vo
+      vzorových dokumentoch.</p>
 
     <p>Komisia bude posudzovať súťažné riešenia na základe kritérií:</p>
 
@@ -160,7 +252,7 @@
       <li>
         <b>Analýza problému</b>
         <ul>
-          <li>Určenie problému: Popis projektu, aký problém rieši  a na čo bude slúžiť vyhotovený prototyp</li>
+          <li>Určenie problému: Popis projektu, aký problém rieši a na čo bude slúžiť vyhotovený prototyp</li>
           <li>Použité zdroje informácií</li>
           <li>Prehľad existujúcich riešení a obhájenie inovatívnosti vlastného riešenia.</li>
         </ul>
@@ -193,13 +285,15 @@
           <li>Dôkaz funkčnosti projektu</li>
           <li>Dokumentácia projektu</li>
           <li>Originalita a efektívnosť prezentácie</li>
-          <li>Kvalita výstupov projektu (napr. článok v školskom časopise/webovej stránke, video/fotka na sociálnych sieťach, a pod.)</li>
+          <li>Kvalita výstupov projektu (napr. článok v školskom časopise/webovej stránke, video/fotka na sociálnych
+            sieťach, a pod.)
+          </li>
         </ul>
       </li>
     </ul>
 
     <hr class="featurette-divider">
-    
+
     <h3 class="featurette-heading">{{ _('Inšpirácia na projekty') }}</h3>
 
     <p>Niekoľko webových stránok, z ktorých môžete čerpať inšpiráciu:</p>
@@ -208,7 +302,8 @@
       <li><a href="https://makecode.microbit.org/projects">https://makecode.microbit.org/projects</a></li>
       <li><a href="https://makecode.microbit.org/courses">https://makecode.microbit.org/courses</a></li>
       <li><a href="https://www.instructables.com/howto/microbit/">https://www.instructables.com/howto/microbit/</a></li>
-      <li><a href="https://www.itpro.co.uk/desktop-hardware/26289/13-top-bbc-micro-bit-projects">https://www.itpro.co.uk/desktop-hardware/26289/13-top-bbc-micro-bit-projects</a></li>
+      <li><a href="https://www.itpro.co.uk/desktop-hardware/26289/13-top-bbc-micro-bit-projects">https://www.itpro.co.uk/desktop-hardware/26289/13-top-bbc-micro-bit-projects</a>
+      </li>
       <li><a href="https://microbit.org/ideas/">https://microbit.org/ideas/</a></li>
       <li><a href="https://microbit.hackster.io/ ">https://microbit.hackster.io/ </a></li>
     </ul>

@@ -20,6 +20,7 @@ develop-eggs
 MANIFEST
 envs
 envs3
+venv
 
 # Databases
 *.sql
