@@ -61,3 +61,21 @@ footer p {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+.volunteer-web-link a i{
+	font-size: 14px;
+   width: 36px;
+   height: 36px;
+   line-height: 36px;
+   background: #1da1f2;
+   border-radius: 100%;
+   margin: 10px 3px 0 3px;
+}
+
+.volunteer-web-link a{
+	color: #fff;
+}
+
+.volunteer-web-link a:hover i{
+	background: #8a8a8a;
+}
