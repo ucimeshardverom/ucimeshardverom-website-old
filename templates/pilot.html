@@ -22,19 +22,11 @@
   <div class="container text-justify">
 
     <h2 class="featurette-heading">{{ _('Harmonogram') }}</h2>
-      
+
     <ul>
-      <li><b>8.10.2018</b> - {{ _('Spustenie projektu a začiatok výučby') }}</li>
-      <li><b>8.10.2018</b> - {{ _('Vstupný formulár pre učiteľov a pre žiakov') }}</li>
-      <li><b>8.10.2018 - 2.11.2018</b> - {{ _('Výučba so základnou sadou HW') }}</li>
-      <li>{{ _('Formulár po skončení výučby so základnou sadou (učitelia aj žiaci)') }}</li>
-      <li><b>5.11.2018 - 7.12.2018</b> - {{ _('Výučba s rozšírenou sadou HW') }}</li>
-      <li>{{ _('Formulár po skončení výučby s rozšírenou sadou (učitelia aj žiaci)') }}</li>
-      <li><b>10.12.2018 - 21.12.2018</b> - {{ _('Výučba podľa vlastných materiálov (alebo prebraných z internetu) a začiatok práce žiakov na polročnom projekte') }}</li>
-      <li>{{ _('Formulár po skončení výučby z vlastných materiálov učiteľa (učitelia aj žiaci)') }}</li>
-      <li><b>8.1.2019 - 31.1.2019</b> - {{ _('Práca žiakov na polročných projektoch a prezentácie na hodinách informatiky') }}</li>
-      <li>{{ _('Formulár po skončení žiackych prezentácií a pilotného projektu (učitelia aj žiaci)') }}</li>
-      <li><b>15.1.2019 - 31.1.2019</b> - {{ _('Zasielanie žiackych prác do súťaže SPy Cup') }}</li>
+      <li><b>14.1.2019 - 31.1.2019</b> - Prihlasovanie žiakov súťaže <a href="http://ucimeshardverom.sk/sutaz/">SPy Cup</a></li>
+      <li><b>1.2.2019 - 15.2.2019</b> - Zasielanie vypracovaného zadania do <a href="http://ucimeshardverom.sk/sutaz/">SPy Cup</a></li>
+      <li><b>22.3.2019 - 24.3.2019</b> - PyCon SK - <a href="https://2019.pycon.sk/sk/edusummit.html">EduSummit</a> je v piatok a sobotu</li>
     </ul>
 
   </div>
@@ -42,81 +34,28 @@
   <div class="container text-justify">
 
     <h2 class="featurette-heading">{{ _('Výučba so základnou sadou HW') }}</h2>
-      
+
     <p>{{ _('V tejto časti výučby sa žiaci zoznámi so zariadením BBC micro:bit a jeho možnosťami') }}</p>
 
     <ul>
-      <li><b>Výučba</b></li>
-      <ul>  
-        <li>1. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-01.pdf') }}">Zoznámenie sa s BBC micro:bit</a></li></li>
-        <li>2. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-02.pdf') }}">BBC micro:bit v pohybe</a></li></li>
-        <li>3. hodina - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-03.pdf') }}">Bezdrôtová komunikácia</a></li></li>
+      <li><b>Metodické materiály</b></li>
+      <ul>
+        <li>Metodika 1.1 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-01.pdf') }}">Zoznámenie sa s BBC micro:bit</a></li></li>
+        <li>Metodika 1.2 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-02.pdf') }}">BBC micro:bit v pohybe</a></li></li>
+        <li>Metodika 1.3 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-03.pdf') }}">Bezdrôtová komunikácia</a></li></li>
+        <li>Metodika 1.4 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-04.pdf') }}">Poslušne hlásim</a></li></li>
+        <li>Metodika 1.5 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-01-05.pdf') }}">Kameň, papier, nožnice</a></li></li>
+        <li>Metodika 2.1 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-02-01.pdf') }}">Elektrické obvody a vodivosť materiálov</a></li></li>
+        <li>Metodika 3.1 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-03-01.pdf') }}">Programovenie LED pásiku</a></li></li>
+        <li>Metodika 3.3 - <a href="{{ url_for('static', filename='downloads/metodiky/microbit-makecode-03-02.pdf') }}">Programovanie hudby</a></li></li>
       </ul>
-      <li><b>Formulár po prvej časti pilotného projektu</b></li>
-        <ul>
-          <li><a href="https://goo.gl/forms/ggWNBUq8SxHaNR6E3">Pre učiteľov</a></li>
-          <li><a href="https://goo.gl/forms/QjjHZpUdJbuEawho1">Pre žiakov</a></li>
-        </ul>
+      <li><a href="https://goo.gl/forms/HqULQTZrjpl9UWQu2">Feedback na metodiky</a></li></li>
+
     </ul>
 
-  </div>
 
-  <strike>
-  <div class="container text-justify">
-
-    <h2 class="featurette-heading">{{ _('Výučba s krokosvorkovými káblikmi') }}</h2>
-      
-    <p>{{ _('V tejto časti výučby sa žiaci zoznámia s pripájaním hardvérových senzorov a aktorov k BBC micro:bit') }}</p>
-
-    <ul>
-      <li><b>Výučba</b></li>
-      <ul>  
-        <li>4. hodina - <a href="">Elektrické obvody a vodivosť materiálov</a></li></li>
-        <li>5. hodina - <a href="">Hra na reakcie</a></li></li>
-        <li>6. hodina - <a href="">Hra na precízne ruky</a></li></li>
-        <li>7. hodina - <a href="">Meranie vlhkosti pôdy</a></li></li>
-      </ul>
-    </ul>
 
   </div>
-
-  <div class="container text-justify">
-
-    <h2 class="featurette-heading">{{ _('Výučba s LED pásikmi a reproduktormi') }}</h2>
-      
-    <p>{{ _('V tejto časti výučby sa žiaci zoznámia s programovaním hudby a svetelných animácií') }}</p>
-
-    <ul>
-      <li><b>Výučba</b></li>
-      <ul>  
-        <li>8. hodina - <a href="">Programovenie LED pásiku</a></li></li>
-        <li>9. hodina - <a href="">Programovanie hudby</a></li></li>
-        <li>10. hodina - <a href="">Bezdrôtový alarm otvorených dverí</a></li></li>
-        <li>BONUS - <a href="">Kartónová gitara</a></li></li>
-        <li>BONUS - <a href="">Whoopie cushion</a></li></li>
-      </ul>
-    </ul>
-
-  </div>
-
-
-  <div class="container text-justify">
-
-    <h2 class="featurette-heading">{{ _('Robotika') }}</h2>
-      
-    <p>{{ _('V tejto časti výučby sa žiaci zoznámia s robotom MOVE: mini') }}</p>
-
-    <ul>
-      <li><b>Výučba</b></li>
-      <ul>  
-        <li>11. hodina - <a href="">Robot na diaľkové ovládanie</a></li></li>
-        <li>12. hodina - <a href="">Meranie rýchlosti robota</a></li></li>
-        <li>BONUS - <a href="">Meranie rýchlosti robota</a></li></li>
-      </ul>
-    </ul>
-
-  </div>
-  </strike>
 
 </div>
 
