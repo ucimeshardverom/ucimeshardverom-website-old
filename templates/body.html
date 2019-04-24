@@ -69,23 +69,20 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('partneri')}}">{{ _('Partneri') }}</a>
             </li>
+<!--             <li class="nav-item">-->
+<!--               <a class="nav-link" href="{{ url_for('blog')}}">Blog</a>-->
+<!--             </li>-->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ _('Zapoj sa!') }}
+                {{ _('O nás') }}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url_for('zapoj_sa_skola')}}">{{ _('Ako škola') }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('zapoj_sa_dobrovolnik')}}">{{ _('Ako dobrovoľník') }}</a>
-                <a class="dropdown-item" href="{{ url_for('zapoj_sa_rodic')}}">{{ _('Ako rodič') }}</a>
-                <a class="dropdown-item" href="{{ url_for('zapoj_sa_sponzor')}}">{{ _('Ako sponzor') }}</a>
+                <a class="dropdown-item" href="{{ url_for('o_nas')}}">Náš tím</a>
+                <a class="dropdown-item" href="{{ url_for('ambasadori')}}">{{ _('Staň sa ambasádorom') }}</a>
               </div>
             </li>
-            <!-- <li class="nav-item"> -->
-              <!-- <a class="nav-link" href="{{ url_for('blog')}}">{{ _('Blog') }}</a> -->
-            <!-- </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('o_nas')}}">{{ _('O nás') }}</a>
+              <a class="nav-link" style="border-width:0 0 0 1px; border-style: solid;" href="{{ url_for('zapoj_sa_skola')}}">{{ _('Prihlásiť sa') }}</a>
             </li>
           </ul>
         </div>

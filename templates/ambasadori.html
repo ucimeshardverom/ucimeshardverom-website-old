@@ -1,0 +1,50 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Ambasádori projektu Učíme s Hardvérom') }}</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Ambasádor projektu Učíme s Hardvérom') }}</h2>
+    <p>{{ _('Cieľom projektu je dostať na školy zaujímavejšie spôsoby výučby - doslova "hračky", a na to je potrebné do procesu zapojiť učiteľov a vedenie základných a stredných škôl. Pravidlo "raz vidieť je lepšie, ako sto krát počuť" platí u hardvéru dvojnásobne, a tak hľadáme ambasádorov projektu, ktorí by hardvér predstavili na školách, na ktoré nemáme sami kapacitu zavítať. Ambasádorom sa môže stať napr. študent informatiky či programátor, ktorý si nájde chvíľu čas zájsť na (nie len) svoju záklanú alebo strednú školu. Dobrovoľníci z regiónov sú obzvlášť vítaní. Viac info o zaškolení dostaneš po vyplnení formuláru.') }}</p> 
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 1: Vyplnenie formuláru') }}</h4>
+    <p>{{ _('Vyplnením krátkeho formuláru (na konci tejto stránky) sa o Tebe dozvieme a budeme lepšie vedieť, s akými úlohami by si nám vedel pomôcť.') }}</p>
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 2: Zúčastnenie sa workshopu pre žiakov') }}</h4>
+    <p>Príď si zažiť jeden-dva workshopy pre žiakov, ktoré organizujeme (harmonogram nájdeš na tejto stránke). Napíš nám pred tým na marek.mansell@pycon.sk</p>
+
+    <div class="text-center">
+      <iframe src="https://calendar.google.com/calendar/embed?src=pycon.sk_8p80hngoahelf3gdb33ggfem84%40group.calendar.google.com&ctz=Europe%2FPrague" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 3: Samoštúdium') }}</h4>
+    <p>Krátko si niečo naštuduješ o micro:bitoch (max niekoľko hodín z našich materiálov)</p>
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 4: Prvý vlastný workshop') }}</h4>
+    <p>Po predchádzajúci krokoch zistíš, či Ti to celé dáva zmysel. Ak áno, tak si môžeš vyskúšať viesť vlastný workshop (kde Ti bude niekto od nás pomáhať)</p>
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 5: Ambasádor') }}</h4>
+    <p>Ukončením prvého vlastného workshopu sa staneš ambasádorom projektu a potom bude už na Tebe, či chceš pokračovať so stredoškolákmi alebo základoškolámi, či v BA alebo niekde v inom meste :-)</p>
+
+
+
+  </div>
+
+  <div class="container text-center">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://docs.google.com/forms/d/e/1FAIpQLSda72KetI-z_8kYry_dnLC-xDIBSI4p1XFC7oV_gRs55NBWLw/viewform?embedded=true" width="800" height="520" frameborder="0" marginheight="0" marginwidth="0">{{ _('Načítava sa formulár...') }}</iframe>
+    </div>
+    <br>
+    <p>Alebo môzeš <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSda72KetI-z_8kYry_dnLC-xDIBSI4p1XFC7oV_gRs55NBWLw/viewform?embedded=true">{{ _('otvoriť formulár v novom okne') }}</a>
+  </div>
+
+</div>
+<!-- /END THE FEATURETTES -->
+{% endblock %}

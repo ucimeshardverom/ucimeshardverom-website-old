@@ -137,6 +137,9 @@ def zapoj_sa_dobrovolnik():
 def zapoj_sa_sponzor():
     return render_template('zapoj_sa_sponzor.html', **_get_template_variables(li_index='active'))
 
+@app.route('/ambasadori/')
+def ambasadori():
+    return render_template('ambasadori.html', **_get_template_variables(li_index='active'))
 
 @app.route('/blog/')
 def blog():
