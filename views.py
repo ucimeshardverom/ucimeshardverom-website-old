@@ -159,6 +159,9 @@ def zapojene_skoly():
 def sutaz():
     return render_template('sutaz.html', **_get_template_variables(li_index='active'))
 
+@app.route('/gdpr/')
+def gdpr():
+    return render_template('gdpr.html', **_get_template_variables(li_index='active'))
 
 @app.route('/partneri/')
 def partneri():

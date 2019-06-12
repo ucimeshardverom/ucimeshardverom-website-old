@@ -1,0 +1,78 @@
+{% extends "body.html" %}
+
+{% block header %}
+
+<meta content="https://www.ucimeshardverom.sk/sutaz/" property="og:url"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Súťaž SPy Cup pre žiakov ZŠ a SŠ"/>
+<meta property="og:description"
+      content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
+<meta property="og:image"
+      content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}"/>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Spracovanie osobných údajov') }}</h1>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Poučenie k spracúvaniu osobných údajov – fotografie a kamerové záznamy z akcií, podujatí a vzdelávacích projektov ') }}</h2>
+    <p class="lead">{{ _('v zmysle čl. 13 Nariadenia Európskeho parlamentu a Rady (EÚ) 2016 / 679 z 27. apríla 2016 o ochrane fyzických osôb pri spracúvaní osobných údajov a o voľnom pohybe takýchto údajov, ktorým sa zrušuje smernica 95/46/ES (ďalej „Nariadenie“)') }}</p>
+
+    <hr class="featurette-divider">
+
+	<h3>Prevádzkovateľ:</h3>
+    <p><b>SPy o.z.</b></p>
+    <p>Sibírska 1599/21, Bratislava-Nové Mesto, Slovenská Republika</p>
+    <p>IČO: 48 412 627</p>
+    <p>E-mail: info@pycon.sk </p>
+
+    <hr class="featurette-divider">
+
+    <br>
+
+    <p>Osobné údaje účastníkov našich akcií, podujatí a vzdelávacích projektov zameraných na výučbu a vzdelávanie v oblasti programovania a využitia hardvéru sú spracúvané v rozsahu meno a priezvisko, bydlisko, individuálna alebo skupinová fotografia a zvukovo-obrazový záznam (kamerový záznam) na tieto účely:</p>
+    <ul>
+      <li>informovanie o činnostiach a aktivitách prevádzkovateľa (osobné údaje sú sprístupnené verejnosti);</li>
+      <li>archivácia.</li>
+    </ul>
+
+    <p>Vaše osobné údaje sú spracované:</p>
+    <ul>
+      <li>bez Vášho súhlasu (akcie, podujatia a vzdelávacie projekty určené pre verejnosť alebo členov prevádzkovateľa);</li>
+      <li>so súhlasom zákonného zástupcu (akcie, podujatia a vzdelávacie projekty určené pre deti, resp. maloleté osoby do 16 rokov).</li>
+    </ul>
+
+    <p>Právnym základom spracúvania Vašich osobných údajov je náš oprávnený záujem v zmysle článku 6 ods. 1 písm. f) Nariadenia alebo súhlas so spracovaním osobných údajov v zmysle článku 6 ods. 1 písm. a) v spojení s článkom 8 Nariadenia. </p>
+
+    <p>Poskytnutie osobných údajov je dobrovoľné, pričom máte právo poskytnutie osobných údajov odmietnuť. Odmietnutie poskytnutia osobných údajov nemá žiadne faktické ani právne následky. 
+Máte právo kedykoľvek odvolať svoj súhlas, ktorý bol udelený na spracovanie osobných údajov (odvolanie súhlasu však nemá vplyv na zákonnosť spracovania osobných údajov, ktoré boli spracované pred odvolaním súhlasu). </p>
+
+    <p>Vaše osobné údaje uchovávame po dobu počas ktorej je ich uchovávanie potrebné na splnenie účelu ich spracovania (počas existencie prevádzkovateľa). Na účely archivácie využívame dátové úložiska prístupné verejnosti prostredníctvom webovej stránky prevádzkovateľa a sociálnych sietí. </p>
+
+    <p>V súvislosti so spracovaním Vašich osobných údajov máte nasledujúce práva:</p>
+    <ul>
+      <li>právo na prístup k osobným údajom;</li>
+      <li>právo na opravu nepresných či nesprávnych údajov a doplnenie neúplných údajov;</li>
+      <li>právo na výmaz údajov v prípade, ak zanikne účel spracúvania, alebo pokiaľ sú osobné údaje spracúvané nezákonne;</li>
+      <li>právo na obmedzenie spracúvania osobných údajov;</li>
+      <li>právo namietať proti spracúvaniu osobných údajov vrátane profilovania;</li>
+      <li>právo na prenosnosť údajov na základe ktorého môže dotknutá osoba získať osobné údaje, ktoré sa jej týkajú, v štruktúrovanom  a strojovo čitateľnom formáte, a to buď pre seba alebo pre iného prevádzkovateľa osobných údajov;</li>
+      <li>právo podať sťažnosť u dozorového orgánu, ktorým je Úrad na ochranu osobných údajov Slovenskej republiky.</li>
+    </ul>
+
+    <p>Tieto práva môžete uplatniť zaslaním e-mailu na adresu: info@pycon.sk </p>
+
+  </div>
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}
