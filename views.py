@@ -163,6 +163,11 @@ def sutaz():
 def gdpr():
     return render_template('gdpr.html', **_get_template_variables(li_index='active'))
 
+@app.route('/pridaj_sa/')
+def pridaj_sa():
+    return render_template('pridaj_sa.html', **_get_template_variables(li_index='active'))
+
+
 @app.route('/partneri/')
 def partneri():
     return render_template('partneri.html', **_get_template_variables(li_index='active'))
