@@ -1,0 +1,64 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Zapojte sa do programu ako učiteľ') }}</h1>
+  </div>
+</div>
+
+<div class="container">
+ 
+  <div class="container text-justify">
+
+    <h2 class="featurette-heading">{{ _('Krok číslo 1: Vyplnenie formuláru') }}</h2>
+    <p>{{ _('Formulár, ktorý sa nachádza na konci tejto stránky, je prejavením záujmu o zapojenie do projektu Učíme s Hardvérom.') }}</p>
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 2: Získanie hardvéru') }}</h4>
+    <p>
+      Čo sa týka hardvéru tak ideálne by bolo, ak by škola vedela nájsť financie na nákup vlastného hardvéru. Takto to rieši väčšina škôl v projekte (či už peniaze z grantu, od sponzora či vlastné financie).
+      <br>
+      Ak to nie je možné tak je istá šanca, že sponzora vieme nájsť my, avšak nevieme to garantovať.
+      <br>
+      Naše metodiky využívajú najmä <a href="http://www.edutronik.sk/#ponuka">túto sadu hardvéru pre školy</a>.
+    </p>
+
+    <h4 class="featurette-heading">{{ _('Krok číslo 3: Výuka') }}</h4>
+    <p>{{ _('Gratulujem! Pri tomto kroku sa dostávate k tej najzaujímavejšej časti - využívaniu hardvéru na hodinách informatiky. Okrem občasných nejasností či problémov sa pripravte aj na spontánne výkriky radosti z radov žiakov :-) ') }}</p>
+
+    <h4 class="featurette-heading">{{ _('Certifikát') }}</h4>
+    <p>{{ _('Učitelia, ktorí sa aktívne zapoja do ročného programu Učíme s Hardvérom, získajú na konci šk. roka certifikát o aktívnom a úspešnom zapojení sa. Školy zapojených učiteľov budú zverejnené na webovej stránke a sociálnych sieťach projektu. Podporujeme každého učiteľa, respektíve školu, aby na konci roka napísali článok o skúsenostiach a radostiach z ich školy, ako aj fotky žiackych projektov, a v prípade súhlasu autora ich zverejníme aj na našich stránkach. Aktívne zapojené školy získajú certifikáciu <b>Škola s Hardvérom</b>.') }}</p>
+
+    <p>Podmienkou získania certifikátu je aktívna účasť v programe, a to konkrétne:</p>
+    <ul>
+      <li>Priebežne posielať spätnú väzbu (spolu s fotkou/videom) z hodiny na aktivity s BBC micro:bit (približne raz za 2 mesiace)</li>
+      <li>Zapojiť aspoň 2 Vašich žiakov do súťaže SPyCup</li>
+      <li>Spolu so žiakmi zorganizovať za rok aspoň jeden workshop pre žiakov nižších ročníkov z Vašej školy</li>
+      <li>Spolu so žiakmi zorganizovať za rok aspoň jeden workshop pre žiakov z inej školy</li>
+      <li>Zaslať jednu Vami vytvorenú metodiku na jednu vyučovaciu hodinu (45min), tému si môžete zvoliť ľubovoľnú.</li>
+    </ul>
+
+    <p>V prípade účasti v programe získavate:</p>
+    <ul>
+      <li>Pozvánky počas roka na všetky naše workshopy organizované po celom Slovensku</li>
+      <li>Pravidelné zasielanie noviniek a bonusových metodík</li>
+      <li>Prístup k live webináru (približne jeden za 2 mesiace, prvý už koncom septembra)</li>
+      <li>Certifikát o úspešnom absolvovaní pre učiteľa</li>
+      <li>Certifikát "Škola s Hardvérom" pre školu, na ktorej vyučovanie realizujete</li>
+      <li>Zaradenie do losovania o hardvérové edukačné sady (na konci šk. roka)</li>
+    </ul>
+
+  </div>
+
+  <div class="container text-center">
+    <div class="embed-responsive embed-responsive-16by9">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQYPjzxAowpTaIftchg3IFC4TuMzzDWwjnxMk6rOP_amZ9KQ/viewform?embedded=true" width="800" height="2115" frameborder="0" marginheight="0" marginwidth="0">Načítava sa formulár...</iframe>
+    </div>
+    <br>
+    <p>Alebo môzeš <a target="_blank" href="https://forms.gle/ns493M9tQRhmzm296">{{ _('otvoriť formulár v novom okne') }}</a>
+  </div>
+
+</div>
+<!-- /END THE FEATURETTES -->
+{% endblock %}

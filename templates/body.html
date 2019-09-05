@@ -38,36 +38,33 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('ciele')}}">{{ _('Ciele projektu') }}</a>
-                <a class="dropdown-item" href="{{ url_for('mapa')}}">{{ _('Mapa škôl') }}</a>
-                <!-- <div class="dropdown-divider"></div> -->
-                <!-- <a class="dropdown-item" href="{{ url_for('partneri')}}">{{ _('Partneri a sponzori') }}</a> -->
+                <!-- <a class="dropdown-item" href="{{ url_for('mapa')}}">{{ _('Mapa škôl') }}</a> -->
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('hardver_ako_pomocka')}}">{{ _('Hardvér ako edukačná pomôcka') }}</a>
+                <a class="dropdown-item" href="{{ url_for('microbit')}}">{{ _('Platforma BBC micro:bit') }}</a>
+                <a class="dropdown-item" href="{{ url_for('nodemcu')}}">{{ _('Platforma NodeMCU') }}</a>
+                <a class="dropdown-item" href="{{ url_for('projekty')}}">{{ _('Hardvérové projekty') }}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ _('Hardvér') }}
+                {{ _('Pre školy/učiteľov') }}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url_for('hardver_ako_pomocka')}}">{{ _('Hardvér ako edukačná pomôcka') }}</a>
-                <a class="dropdown-item" href="{{ url_for('microbit')}}">{{ _('Platforma BBC micro:bit') }}</a>
-                <a class="dropdown-item" href="{{ url_for('nodemcu')}}">{{ _('Platforma NodeMCU') }}</a>
-                <!-- <a class="dropdown-item" href="">{{ _('Platforma Raspberry Pi') }}</a> -->
-                <a class="dropdown-item" href="{{ url_for('projekty')}}">{{ _('Hardvérové projekty') }}</a>
+                
+                <a class="dropdown-item" href="{{ url_for('skolenia')}}">{{ _('Školenia a webináre pre učiteľov') }}</a>
+                <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">{{ _('Učiteľské online fórum 🔗') }}</a>
+                <a class="dropdown-item" href="{{ url_for('zapojsa')}}">{{ _('Zapojiť sa do programu ako učiteľ') }}</a>
+                <a class="dropdown-item" href="{{ url_for('feedback')}}">{{ _('Feedback') }}</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="http://edutronik.sk/">{{ _('Kde kúpiť hardvér') }}</a>
+                <a class="dropdown-item" href="http://edutronik.sk/">{{ _('Kde kúpiť hardvér 🔗') }}</a>
               </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('skolenia')}}">{{ _('Školenia') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('materialy')}}">{{ _('Materiály') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('sutaz')}}">{{ _('Súťaž') }}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('partneri')}}">{{ _('Partneri') }}</a>
+              <a class="nav-link" href="{{ url_for('sutaz')}}">{{ _('Súťaž SPyCup') }}</a>
             </li>
 <!--             <li class="nav-item">-->
 <!--               <a class="nav-link" href="{{ url_for('blog')}}">Blog</a>-->
@@ -78,14 +75,16 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('o_nas')}}">Náš tím</a>
-                <a class="dropdown-item" href="{{ url_for('pridaj_sa')}}">Pridaj sa k nám</a>
-                <a class="dropdown-item" href="{{ url_for('ambasadori')}}">{{ _('Staň sa ambasádorom') }}</a>
+                <a class="dropdown-item" href="{{ url_for('partneri')}}">Partneri</a>
+                <!-- <a class="dropdown-item" href="{{ url_for('ambasadori')}}">{{ _('Staň sa ambasádorom') }}</a> -->
                 <a class="dropdown-item" href="{{ url_for('gdpr')}}">{{ _('GDPR') }}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('pridaj_sa')}}">Pridaj sa k nám</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" style="border-width:0 0 0 1px; border-style: solid;" href="{{ url_for('zapoj_sa_skola')}}">{{ _('Prihlásiť sa') }}</a>
-            </li>
+            <!-- <li class="nav-item"> -->
+              <!-- <a class="nav-link" style="border-width:0 0 0 1px; border-style: solid;" href="{{ url_for('zapoj_sa_skola')}}">{{ _('Prihlásiť sa') }}</a> -->
+            <!-- </li> -->
           </ul>
         </div>
       </div>

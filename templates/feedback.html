@@ -1,0 +1,52 @@
+{% extends "body.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>{{ _('Feedback') }}</h1>
+  </div>
+</div>
+
+<div class="container">
+ 
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Som učiteľ
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd0T8tEbs3T-VaJpmqo0cb3KO1c9o4ZlAU_CRKppki_sXjk9w/viewform">Feedback na vlastnú výučbu s BBC micro:bit alebo na metodiky</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf0mYEMPs31vDyv-97qyJ5AI17MiM_CVvKbLpN1sq9bmFtLcQ/viewform?usp=sf_link">Feedback na workshop pre učiteľov (ako účastník)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Som žiak
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li><a href="">Feedback na výučbu s BBC micro:bit (na škole)</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc8027zh4_uZfIvrY4IN7PS7t_x_5EbF5PDA518WgsGMUqW9g/viewform?usp=sf_link">Feedback na špeciálny workshop (mimo školy)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- /END THE FEATURETTES -->
+{% endblock %}

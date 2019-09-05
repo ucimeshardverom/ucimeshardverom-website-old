@@ -118,6 +118,11 @@ def materialy():
     return render_template('materialy.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/zapojsa/')
+def zapojsa():
+    return render_template('zapojsa.html', **_get_template_variables(li_index='active'))
+
+
 @app.route('/zapojsa/skola/')
 def zapoj_sa_skola():
     return render_template('zapoj_sa_skola.html', **_get_template_variables(li_index='active'))
@@ -137,13 +142,20 @@ def zapoj_sa_dobrovolnik():
 def zapoj_sa_sponzor():
     return render_template('zapoj_sa_sponzor.html', **_get_template_variables(li_index='active'))
 
+
 @app.route('/ambasadori/')
 def ambasadori():
     return render_template('ambasadori.html', **_get_template_variables(li_index='active'))
 
+
 @app.route('/blog/')
 def blog():
     return render_template('blog.html', **_get_template_variables(li_index='active'))
+
+
+@app.route('/feedback/')
+def feedback():
+    return render_template('feedback.html', **_get_template_variables(li_index='active'))
 
 
 @app.route('/mapa/')
