@@ -1,0 +1,230 @@
+{% extends "body.html" %}
+
+{% block header %}
+
+<meta content="https://www.ucimeshardverom.sk/sutaz/" property="og:url"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Súťaž SPy Cup pre žiakov ZŠ a SŠ"/>
+<meta property="og:description"
+      content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
+<meta property="og:image"
+      content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}"/>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+
+
+<div class="card bg-dark text-white mt-3 mb-3">
+  <img class="card-img" style="filter: brightness(40%);" src="{{ url_for('static', filename='img/random/bg_card.jpg') }}" alt="Card image">
+  <div class="card-img-overlay align-middle">
+
+<div class="mt-5">
+  <h1 class="display-4 mt-5">{{ settings.title }}</h1>
+  <p class="lead">{{ settings.description}}</p>
+</div>
+
+  </div>
+</div>
+
+</div>
+
+
+<div class="container text-center">
+</div>
+
+<div class="container">
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          {{ settings.title }}
+        </div>
+        <ul class="list-group">
+          {% for item in settings.content %}
+            {% if item.visible %}
+              <li class="list-group-item {% if item.slug == chapter_slug %} active {% endif %}"><a href="/materialy/{{ material_slug }}/{{ item.slug }}">{{ loop.index }}. {{ item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+<!--       <div class="card mt-4">
+        <div class="card-header">
+          Zásobuj sa informáciami
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Workshopy, metodiky, súťaže...</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Prihlásiť sa do newsletteru</a>
+        </div>
+      </div> -->
+
+      <div class="card mt-4">
+        <div class="card-header">
+          Kto je autorom tohto materiálu?
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ settings.author_bio|safe }}</p>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header">
+          Ako môžem tento materiál používať?
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Licencia {{ settings.license }}</h5>
+          <p class="card-text">{{ settings.license_desc }}</p>
+          <a href="{{ settings.license_link }}" class="btn btn-primary">Celé znenie licencie</a>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-md-8">
+      <h1>{{chapter_id}}. {{ chapter_title }}</h1>
+      {{ content_html|safe }}
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+/* message signatures
+export interface RenderBlocksRequestMessage extends SimulatorMessage {
+    type: "renderblocks",
+    id: string;
+    code: string;
+    options?: {
+        package?: string;
+        packageId?: string;
+        snippetMode?: boolean;
+    }
+}
+
+export interface RenderBlocksResponseMessage extends SimulatorMessage {
+    source: "makecode",
+    type: "renderblocks",
+    id: string;
+    svg?: string;
+    width?: number;
+    height?: number;
+}*/
+
+var makeCodeRenderPre = makeCodeRenderPre || (function () {
+    // pre waiting to be rendered
+    // when undefined, iframe is loaded and ready
+    var pendingPres = [];
+    function injectRenderer() {
+        var f = document.getElementById("makecoderenderer");
+        // check iframe already added to the DOM
+        if (f) {
+            return;
+        }
+        var f = document.createElement("iframe");
+        f.id = "makecoderenderer";
+        f.style.position = "absolute";
+        f.style.left = 0;
+        f.style.bottom = 0;
+        f.style.width = "1px";
+        f.style.height = "1px";
+        f.src = "https://makecode.microbit.org/--docs?render=1"
+        document.body.appendChild(f);
+    }
+
+    function renderPre(pre) {
+        console.log('render ' + pre.id)
+        var f = document.getElementById("makecoderenderer");
+        // check if iframe is added and ready (pendingPres is undefined)
+        if (!f || !!pendingPres) {
+            // queue up
+            pendingPres.push(pre);
+            injectRenderer();
+        } else {
+            f.contentWindow.postMessage({
+                type: "renderblocks",
+                id: pre.id,
+                code: pre.innerText,
+                options: {
+                  packageId: pre.getAttribute("data-packageid")
+                }
+            }, "https://makecode.microbit.org/");
+        }
+    }
+
+    // listen for messages
+    window.addEventListener("message", function (ev) {
+        var msg = ev.data;
+        if (msg.source != "makecode") return;
+
+        console.log(msg.type)
+        switch (msg.type) {
+            case "renderready":
+                // flush pending requests                   
+                var pres = pendingPres;
+                // set as undefined to notify that iframe is ready
+                pendingPres = undefined;
+                pres.forEach(function (pre) { renderPre(pre); })
+                break;
+            case "renderblocks":
+                var svg = msg.svg; // this is an string containing SVG
+                var id = msg.id; // this is the id you sent
+                // replace text with svg
+                var img = document.createElement("img");
+                img.src = msg.uri;
+                img.width = msg.width;
+                img.height = msg.height;
+                var code = document.getElementById(id);
+                code.parentElement.insertBefore(img, code)
+                code.parentElement.removeChild(code);
+                break;
+        }
+    }, false);
+
+    return renderPre;
+})();
+
+function renderSnippets() {
+    // TODO ADD RENDER LOGIC HERE
+    let pres = document.getElementsByTagName("pre");
+    Array.prototype.forEach.call(pres, function (pre) {
+        makeCodeRenderPre(pre);
+    })
+}
+
+// load the renderer
+renderSnippets();
+
+</script>
+
+
+
+
+
+
+
+<!-- /END THE FEATURETTES -->
+{% endblock %}

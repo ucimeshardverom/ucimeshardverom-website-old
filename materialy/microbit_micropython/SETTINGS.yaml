@@ -1,0 +1,24 @@
+title: "BBC micro:bit a MicroPython metodiky"
+description: "MicroPython a BBC micro:bit? Ideálna voľba pre pokročilejších používateľov :-)"
+author: "Marek Mansell"
+author_bio: "Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>,
+             ktorý spolu s kolegami zo združenia <a href='//python.sk'>SPy</a> pripravuje
+             pre Vás otvorene licencované materiály. Veľká vďaka partí najmä Eve Klimekovej
+             a Nike Klimovej za metodické pripomienkovanie.<br><br>
+             Prosím, napíšte nám pripomienky, otázky a akúkoľvek spätnú väzbu (aj negatívnu)<br><br>
+             Kontakt na mňa:<br>
+             marek.mansell@pycon.sk"
+license: "CC BY SA 4.0"
+license_desc: "Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora."
+license_link: "https://creativecommons.org/licenses/by/4.0/"
+last_change: "21.1.2020"
+
+content:
+
+  - slug:  uvod
+    title: Úvod k MicroPythonu
+    visible: True
+
+  - slug:  digitalna_menovka
+    title: Digitálna menovka
+    visible: True

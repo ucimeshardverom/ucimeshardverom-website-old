@@ -1,0 +1,27 @@
+title: "MarkDown Help"
+description: "This is a help documentation for creating materials on this website"
+author: "Marek Mansell"
+author_bio: "Autorom je Marek Mansell, pripomienky prosím posielaj na:<br>
+             marek.mansell@pycon.sk"
+license: "CC BY SA 4.0"
+license_desc: "Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora."
+license_link: "https://creativecommons.org/licenses/by/4.0/"
+last_change: "20.1.2020"
+
+content:
+
+  - slug:  uvod
+    title: Úvod k markdownu na tejto stránke
+    visible: True
+
+  - slug:  all_examples
+    title: Celkový md prehľad
+    visible: True
+
+  - slug: makecode_blocks
+    title: Vkladanie MakeCode blokov
+    visible: True
+
+  - slug: secret
+    title: Tajný link (na rozrobené materiály)
+    visible: False

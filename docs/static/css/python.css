@@ -79,3 +79,12 @@ footer p {
 .volunteer-web-link a:hover i{
 	background: #8a8a8a;
 }
+
+pre{
+  background-color: #e4e4ec;
+}
+
+.list-group-item.active {
+  background-color: #e4e4ec;
+  border-color: #e4e4ec;
+}

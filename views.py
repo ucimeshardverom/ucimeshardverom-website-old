@@ -2,8 +2,13 @@
 # -*- coding: utf8 -*-
 import os
 from datetime import datetime
-from flask import Flask, g, request, render_template, abort, make_response, redirect, url_for
+from flask import Flask, g, request, render_template, abort, make_response, redirect, url_for, send_from_directory
 from flask_babel import Babel, gettext
+import yaml
+import markdown
+from markdown.extensions import Extension
+import codecs
+import pdfkit
 
 app = Flask(__name__, static_url_path='/static')
 app.config['BABEL_DEFAULT_LOCALE'] = 'sk'
@@ -282,6 +287,87 @@ def sitemap():
     response.headers["Content-Type"] = "text/xml"
 
     return response
+
+
+
+@app.route('/materialy/<string:metodika>/print')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/print')
+def materialy_print(metodika, kapitola=False):
+
+    return materialy_detail(metodika, kapitola=kapitola, _print=True)
+
+
+@app.route('/materialy/<string:metodika>/')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/')
+def materialy_detail(metodika, kapitola=False, _print=False):
+    with open(os.path.join('materialy', metodika, 'SETTINGS.yaml')) as file:
+        material_settings = yaml.full_load(file)
+
+    if kapitola == False:
+        chapter = 'uvod'
+    elif kapitola in [x['slug'] for x in material_settings['content']]:
+        chapter = kapitola
+    else:
+        return "not_found"
+
+
+    content_path = os.path.join('materialy', metodika, chapter+'.md')
+    
+    with codecs.open(content_path, mode="r", encoding="utf-8") as file:
+        content_raw = file.read()
+
+    content_html = markdown.markdown(content_raw, extensions=['admonition', 'fenced_code', 'tables', 'footnotes'])
+
+    # Alerts
+    content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
+    content_html = content_html.replace("<div class=\"admonition primary\">", "<div class=\"alert alert-primary\">")
+    content_html = content_html.replace("<div class=\"admonition secondary\">", "<div class=\"alert alert-secondary\">")
+    content_html = content_html.replace("<div class=\"admonition success\">", "<div class=\"alert alert-success\">")
+    content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
+    content_html = content_html.replace("<div class=\"admonition warning\">", "<div class=\"alert alert-warning\">")
+    content_html = content_html.replace("<div class=\"admonition info\">", "<div class=\"alert alert-info\">")
+    content_html = content_html.replace("<div class=\"admonition light\">", "<div class=\"alert alert-light\">")
+    content_html = content_html.replace("<div class=\"admonition dark\">", "<div class=\"alert alert-dark\">")
+    
+    # Alert titles
+    content_html = content_html.replace("<p class=\"admonition-title\">", "<p class=\"h4\">")
+    
+    # Tables
+    content_html = content_html.replace("<table>", "<table class=\"table table-striped\">")
+    
+    # Blockquotes
+    content_html = content_html.replace("<blockquote>", "<blockquote class=\"blockquote\">")
+    
+    # Images
+    content_html = content_html.replace("<img ", "<img class=\"img-fluid\" ")
+
+
+    # Retrieve chapter title
+    for i, ch_data in enumerate(material_settings['content']):
+        if chapter == ch_data['slug']:
+            chapter_title = ch_data['title']
+            chapter_id = i+1
+    
+    # if _print:
+    #     options = {
+    #         'page-size': 'A4',
+    #         'margin-top': '10mm',
+    #         'margin-right': '10mm',
+    #         'margin-bottom': '10mm',
+    #         'margin-left': '10mm',
+    #         'encoding': "UTF-8",
+    #         'no-outline': None
+    #     }
+
+        # pdfkit.from_url('http://0.0.0.0:8000/materialy/help/','pdfs/shaurya.pdf', options=options)
+            
+    return render_template('materialy_detail.html', chapter_id=chapter_id, chapter_title=chapter_title, material_slug=metodika, chapter_slug=chapter, settings=material_settings, content_html=content_html, **_get_template_variables(li_index='active'))
+
+
+@app.route('/materialy/<string:metodika>/images/<string:image>')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/images/<string:image>')
+def materialy_images(metodika, image, kapitola=False):
+    return send_from_directory(os.path.join('materialy', metodika, 'images'), image, mimetype='image/gif')
 
 
 if __name__ == "__main__":
