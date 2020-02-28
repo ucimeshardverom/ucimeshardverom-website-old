@@ -23,9 +23,9 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/" hreflang="en">
+    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/displej_menovka/" hreflang="en">
     
-    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/"/>
+    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/displej_menovka/"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
@@ -140,7 +140,7 @@
         <ul class="list-group">
           
             
-              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
             
           
             
@@ -152,7 +152,7 @@
             
           
             
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_menovka">4. Displej - menovka</a></li>
+              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/displej_menovka">4. Displej - menovka</a></li>
             
           
             
@@ -204,26 +204,131 @@
 
     </div>
     <div class="col-md-8">
-      <h1>1. Úvod k MicroPythonu</h1>
-      <p>Ahoj,</p>
-<p>ak si sa dostal/a na túto stránku, chceš sa pravdepodobne ponoriť do krás jazyka Python na zariadení BBC micro:bit :-)</p>
-<p>Tieto materiály sú určené komukoľvek, kto sa chce naučiť ovládať BBC micro:bit Python (respektíve MicroPythonom, rozdiel je popísaný nižšie).
-Určite </p>
-<h2>Čo je to micro:bit?</h2>
-<p>Malá edukačná doska vhodná pre využitie vrámci hodín informatiky na základných a stredných školách. Vďaka konektorom (tzv. pinom) je možné ňou programovať hardvér.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h1>4. Displej - menovka</h1>
+      <div class="alert alert-warning">
+<p class="h4">Pracujeme...</p>
+<p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
+</div>
+<h2>Menovka</h2>
+<p>Ako si si mohol/mohla všimnúť, micro:bit má na svojej prednej strane 5x5 červených LED diód. MicroPython Ti dáva viacero možností, akými na displeji niečo vykreslovať či vypisovať.</p>
+<p>Najbežnejším prvým programom pri učení sa nového programovacieho jazyka býva vypísanie textu "Ahoj, Svet!". </p>
+<p>V MicroPythone vieme napísať tento program v dvoch riadkoch kódu:</p>
+<pre><code>from microbit import display
+display.scroll(&quot;Ahoj, Svet!&quot;)
+</code></pre>
 
-<h2>Python</h2>
-<p>Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania. Práve preto postupne nahrádza iné programovacie jazyky na hodinách informatiky. Vo veľkom Python využívajú aj v Google, Dropbox, Európskej organizácii jadrového výskumu CERN, sociálnych sieťach Facebook, Pinterest a Instagram, či pri vyučovaní na prestížnej vysokej škole MIT.</p>
-<p>Autorom jazyka Python je Guido van Rossum (prvá verzia je z 1989). V súčasnosti jazyk Python vyvíja a spravuje komunita, zastrešovaná medzinárodnou organizáciou Python Software Foundation (skratka PSF). Samotný jazyk je open-source.</p>
-<p>Python je interpretovaný jazyk, a preto sa po dopísaní kódu ho neskompilujeme (ako napríklad C či Pascal) ale spustíme ho v interpreteri. Ten náš kód za chodu číta a prekladá na strojové inštukcie pre procesor. Preto je potrebné, aby sme na spustenie Python kódu mali na počítači nainštalovaný Python interpreter. (ako si vysvetlíme o schvíľu)</p>
-<p>Odporúčame používať najnovšiu verziu Python3 (v súčasnosti je to Python3.6). Python2 je staršia verzia Pythonu a už nie je vhodné v nej programovať.</p>
-<p>V čom sa Python líši snáď najviac od iných programovacích jazykov je práve komunika. Tá je tvorená profesionálmi, začiatočníkmi, učiteľmi i víkendovými programátormi a tak je veľmi rôznorodá. Po celom svete sa pravidelne organizujú konferencie PyCon (čiže PYthon CONference). Na Slovensku je táto konferencia organizovaná raz ročne občianskym združením SPy (Slovak Python User Group).</p>
-<h2>MicroPython</h2>
-<p>MicroPython je upravená verzia Pythonu, ktorá beží aj na menej výkonných zariadeniach. Vďaka tomu vieme v MicroPythone programovať mikroelektroniku a interagovať s okolitým svetom pomocou LED diód, senzorov, bzučiakov, motorčekov, atď. Takéto zariadenia sú zároveň rádovo lacnejšie ako počítače pre klasický Python. Obrovskou výhodou je fakt, že syntax je pre obe verzie jazyka rovnaká, a tak sa učiteľom aj žiakom stačí naučiť iba jeden jazyk.</p>
-<p>Tak ako na spustenie Python kódu na počítači potrebuje nainštalovaný interpreter, tak aj pre MicroPython kód musíme na mikroprocesom najprv nainsťalovať MicroPython interpreter. To stačí spraviť raz a následne mu budeme už len posielať naše zdrojové kódy na preklad. Raz za čas sa ale oplatí MicroPython na zariadení preinštalovať na novšiu verziu, aby sme mali vždy čo najviac funkčný interpreter.</p>
-<p>MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku pyboard (s mikroprocesorom STM32). V súčasnosti existuje viacero verzií MicoPythonu pre rôzne mikroprocesory. My budeme používať verziu pre micro:bit.</p>
-<p>Veľmi dôležitá je <a href="http://microbit-micropython.readthedocs.io">MicroPython dokumentácia</a>, ktorú budeme Časti využívať.</p>
+<p>Každý riadok vykaná niečo iné. Prvý riadok:</p>
+<pre><code>from microbit import dispay
+</code></pre>
+
+<p>povie micro:bitu, aby pre nás pripravil funkcionalitu <code>display</code> z modulu <code>microbit</code>. Tento modul obsahuje predprogramované funkcie, ktoré ovládajú napríklad zobrazovanie textu na obrazovke. Takéto 'zavolanie' voláme <code>import</code>. Moduly sa taktiež niekedy nazývajú aj knižnicami (no namiesto kníh majú v sebe kód).</p>
+<p>Druhý riadok:</p>
+<pre><code>display.scroll(&quot;Ahoj, Svet!&quot;)
+</code></pre>
+
+<p>povie micro:bitu, aby na displej postupne vypísal reťazec znakov "Ahoj, Svet!". Slovo <code>display</code> je objekt z modulu <code>microbit</code>, ktorý predstavuje fyzický displej zariadenia (hovoríme „objekt“ namiesto „hento“, „oné“ alebo „tá vec“). Za objekt sme napísali bodku, za ktorou nasleduje príkaz (po správnosti nazývaný <code>metóda</code>). V tomto prípade používame metódu <code>scroll</code>, čo po slovensky znamená posúvať. Aby ale micro:bit vedel, aký text má na obrazovke posúvať, musíme ho označiť pomocou dvojitých úvodzoviek <code>"</code> (na začiatku a aj na konci) a poslať do príkazu scroll. To spravíme vložením textu do  zátvoriek za metódou <code>scroll()</code>. Obsah zátvoriek nazývame argument. Takže display.scroll("Ahoj, svet!") znamená po slovensky „Chcem, aby si použil displej a posúval na ňom text ‚Ahoj, svet!‘“. Ak metóda nepotrebuje argumenty, musíme to dať jasne najavo použitím prádznych zátvoriek - takto: <code>scroll()</code>.</p>
+<p>Teraz svoj kód ešte skontroluj - či už opticky, alebo v <code>Mu editore</code> pomocou tlačidla <code>check</code> (veľký palec). Ak si v programe nenašiel žiadne chyby, nahraj ho na micro:bit (v Mu editore pomocou tlačidla <code>Flash</code>).</p>
+<p>Ak by si chcel zistiť, aké iné argumenty môžeš pre príkaz <code>scroll()</code> použiť, pozri si <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html?highlight=scroll#microbit.display.scroll&gt;">dokumentáciu</a></p>
+<div class="alert alert-warning">
+<p class="h4">Warning</p>
+<p>Je možné, že Ti program nebude fungovať hneď na prvý krát. Nezľakni sa, ani skúseným programátorom väčšinou nevýjde všetko hneď na prvý krát.</p>
+</div>
+<div class="alert alert-primary">
+<p class="h4">Úloha č. 1</p>
+<p>Pozmeň program tak, aby si z neho spravil digitálnu menovku a vypisoval Tvoje (krstné) meno.</p>
+</div>
+<div class="alert alert-primary">
+<p class="h4">Úloha č. 2</p>
+<p>Doplň program tak, aby okrem Tvojho mena zobrazoval aj to, v ktorom meste bývaš. Výsledný program by mal mať 3 riadky kódu (vrátane riadka, kde importujeme).</p>
+</div>
+<div class="alert alert-primary">
+<p class="h4">Kontrolné otázky</p>
+<ul>
+<li>Čo je to argument metódy?</li>
+<li>Ak do metódy neposielam žiadne argumenty, musím písať zátvorky?</li>
+</ul>
+</div>
+<h2>Trvalé zobrazovanie textu</h2>
+<p>Podarilo sa nám text vypísať na obrazovku, avšak zatiaľ sa vždy vypíše iba jeden krát. No čo ak si chceme spraviť menovku, ktorá by stále ukazovala Tvoje krstné meno? Potrebujeme nejakým spôsobom docieliť, aby sa náš riadok kódu s príkazom <code>display.scroll()</code> donekonečna spúšťal. Môžme skúsiť daný riadok skopírovať čo najviac krát::</p>
+<pre><code>from microbit import display
+display.scroll(&quot;Volam sa Marek&quot;)
+display.scroll(&quot;Volam sa Marek&quot;)
+display.scroll(&quot;Volam sa Marek&quot;)
+display.scroll(&quot;Volam sa Marek&quot;)
+display.scroll(&quot;Volam sa Marek&quot;)
+# atď.
+</code></pre>
+
+<p>ale aj tak sa raz vykonávanie programu skončí. Potrebujeme preto nekonečný cyklus::</p>
+<pre><code>from microbit import display
+while True:
+    display.scroll(&quot;Volam sa Marek&quot;)
+</code></pre>
+
+<p>Príkaz <code>while</code> sa vždy pozerá na to, čo sme napísali za neho. Pokým je za ním pravdivá hodnota tak bude vykonávať všetky príkazy prislúchajúce do daného cyklu. A keďže <code>True</code> (anglicky <code>pravda</code>) je vždy pravdivé, tak micro:bit bude kód opakovať donekonečna. To, či nejaký kód patrí do cyklu zistíš tak, že ďaľšie riadky sú posunuté do prava o 4 medzerníky (jeden tabulátor - kláves nad CapsLock-om). Toto posunutie sa po slovensky volá <code>odsadenie</code> a po anglicky <code>indentation</code> čiže <code>indentácia</code>.</p>
+<p>Všimni si, že na konci riadku s príkazom <code>while</code> sa nachádza dvojbodka. Tá sa vždy používa v kombinácií s príkazmi, po ktorých aspoň jeden ďaľší príkaz odsadíš a bude sa vykonávať na základe toho, aká je podmienka v riadku s dvojbodkou.</p>
+<p>Pozrime sa teraz na tento kód:</p>
+<pre><code>from microbit import display
+while True:
+    display.scroll(&quot;Marek&quot;)
+    display.scroll(&quot;Z Bratislavy&quot;)
+display.scroll(&quot;toto sa nikdy nevypise&quot;)
+</code></pre>
+
+<p>Z kódu vieme vyčítať, že donekonečna budeme vypisovať "Marek" a "z Bratislavy". Príkaz s textom "toto sa nikdy nevypise" nie je odsadený, a tak nie je súčasťou while cyklu. Preto by sa vykonal až keď while cyklus skončí. Ten ale nikdy neskončí, keďže <code>True</code> má vždy pravdivú hodnotu, a tak sa tento riadok kódu nikdy nespustí.</p>
+<p>Kým v predchádzajúcej ukážke sa posledný riadok kódu nikdy nespustí, aspoň sa nám zobrazovali príkazy "Marek" a "z Bratislavy". Čo ak by sme ale doplnili takýto riadok:</p>
+<pre><code>from microbit import display
+while True:
+    display.scroll(&quot;Marek&quot;)
+    display.scroll(&quot;Z Bratislavy&quot;)
+display.scroll(&quot;toto sa nikdy nevypise&quot;)
+    display.scroll(&quot;dalsi riadok&quot;)
+</code></pre>
+
+<p>V tomto prípade by nám program vôbec nespustil a vypísal by chybu, pretože posledný riadok je odsadený aj keď by nemal byť.</p>
+<div class="alert alert-primary">
+<p class="h4">Chyby sú bežné...</p>
+<p>Skús spustiť posledný kód (s nesprávnym odsadzovaním) a zistiť, aký chybu vypíše micro:bit na displej.</p>
+</div>
+<div class="alert alert-primary">
+<p class="h4">Kontrolné otázky</p>
+</div>
+<ul>
+<li>O koľko medzerníkov sa odsadzuje príkaz patriaci do cyklu?</li>
+<li>Na čo v nekonečnom cykle využívame príkaz <code>True</code>?</li>
+<li>Koľko najviac príkazov za sebou môže byť v jednom nekonečnom cykle?</li>
+</ul>
+<h2>Pauza medzi vypisovaním textu</h2>
+<p>Čo ak by sme chceli medzi dva výpisy textu na obrazovku pridať nejakú pauzu, napríklad 5 sekúnd? Využijeme príkaz, ktorý micro:bitu povie, aby chvíľu počkal::</p>
+<pre><code>from microbit import display, sleep
+
+display.scroll(&quot;Ahoj&quot;)
+sleep(5000)
+display.scroll(&quot;Ako sa mas?&quot;)
+</code></pre>
+
+<p>Príkaz <code>sleep()</code> sme vložili medzi dva výpisy textu, a tak sa najprv zobrazí text "Ahoj", chvíľu počká a potom vypíše text "Ako sa mas?". To, ako dlho má čakať povieme micro:bitu pomocou argumentu, ktorý napíšeme do zátvoriek za metódou <code>sleep</code>. Tento krát vkladáme číslo a nie reťazec, preto nepoužívame úvodzovky <code>"</code>. Napíšeme tam, koľko milisekúnd má micro:bit čakať. Jedna milisekunda je tisícina sekundy, 1000 milisekúnd je 1 sekunda a 5000 milisekúnd je 5 sekúnd, čiže náš kód počká 5 sekúnd.</p>
+<div class="alert alert-primary">
+<p class="h4">Úlohy</p>
+<ul>
+<li>Využi príkaz <code>sleep()</code> v nekonečnom cykle.</li>
+<li>Uprav nasledujúci kód tak, aby micro:bit vypísal "Ahoj Martin", počkal 3 sekundy, vypísal "Ahoj Vanessa" a zas počkal 3 sekundy::</li>
+</ul>
+</div>
+<pre><code>from microbit import display
+
+while True:
+    display.scroll(&quot;Ahoj Martin&quot;)
+    display.scroll(&quot;Ahoj Vanessa&quot;)
+</code></pre>
+
+<div class="alert alert-primary">
+<p class="h4">Kontrolné otázky</p>
+<ul>
+<li>Čo sa stane, ako použijeme viac príkazov <code>sleep()</code> za sebou?</li>
+<li>Akú chybu vypíše micro:bit ak by sme namiesto čísla poslali to metódy <code>sleep</code> reťazec označený úvodzovkami (napríklad <code>sleep("5000")</code>)?</li>
+</ul>
+</div>
     </div>
   </div>
 </div>

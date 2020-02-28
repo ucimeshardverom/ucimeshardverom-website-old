@@ -23,9 +23,9 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/digitalna_menovka/print" hreflang="en">
+    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/tlacidla_tamagoci/print" hreflang="en">
     
-    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/digitalna_menovka/print"/>
+    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/tlacidla_tamagoci/print"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
@@ -144,7 +144,27 @@
             
           
             
-              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/digitalna_menovka">2. Digitálna menovka</a></li>
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/mu_editor">2. Mu editor</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/online_editor">3. Online editor</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_menovka">4. Displej - menovka</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_animacie">5. Displej - animácie</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/hudba_kohutik">6. Hudba - Kohútik Jarabý</a></li>
+            
+          
+            
+              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/tlacidla_tamagoci">7. Tlačidlá - Tamagoči</a></li>
             
           
         </ul>
@@ -175,7 +195,7 @@
           Ako môžem tento materiál používať?
         </div>
         <div class="card-body">
-          <h5 class="card-title">Licencia CC BY SA 4.0</h5>
+          <h5 class="card-title">Licencia CC BY 4.0</h5>
           <p class="card-text">Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora.</p>
           <a href="https://creativecommons.org/licenses/by/4.0/" class="btn btn-primary">Celé znenie licencie</a>
         </div>
@@ -184,12 +204,64 @@
 
     </div>
     <div class="col-md-8">
-      <h1>2. Digitálna menovka</h1>
+      <h1>7. Tlačidlá - Tamagoči</h1>
       <div class="alert alert-warning">
-<p class="h4">Pripravujeme</p>
-<p>Táto kapitola je ešte rozpracovaná...</p>
+<p class="h4">Pracujeme...</p>
+<p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
 </div>
-<h2>Kód</h2>
+<p>Micro:bit má na sebe dve tlačidlá, ktoré sú označené ako tlačidlo A a tlačidlo B a ktoré môžeme využiť v našich programoch. V tomto videu naprogramujeme z micro:bitu digitálne zvieratko, ktoré bude meniť náladu podľa toho, ktoré tlačidlo stlačíme.</p>
+<h2>Tlačidlá</h2>
+<p>Pre prácu s tlačidlami použijeme triedy <code>button_a</code> a <code>button_b</code> z modulu <code>microbit</code>.</p>
+<h2>Vypísanie počtu stlačení</h2>
+<pre><code class="python">from microbit import button_a
+
+sleep(10000)
+display.scroll(str(button_a.get_presses()))
+</code></pre>
+
+<p>Po nahratí na micro:bit niekoľko krát skúste stlačiť tlačidlo A. Počet stlačení by sa mal po 10 sekundách zobraziť na obrazovke.</p>
+<h2>Zmena obrázku tlačidlami</h2>
+<pre><code class="python">from microbit import display, Image, button_a
+
+while True:
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+</code></pre>
+
+<pre><code class="python">from microbit import display, Image, button_a, button_b
+
+while True:
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+    elif button_b.is_pressed():
+        display.show(Image.SAD)
+</code></pre>
+
+<pre><code class="python">from microbit import display, Image, button_a, button_b
+
+while True:
+    if button_a.is_pressed() and button_b.is_pressed():
+        display.show(Image.CONFUSED)
+    elif button_a.is_pressed():
+        display.show(Image.HAPPY)
+    elif button_b.is_pressed():
+        display.show(Image.SAD)
+
+</code></pre>
+
+<pre><code class="python">from microbit import display, Image, button_a, button_b
+
+while True:
+    if button_a.is_pressed() and button_b.is_pressed():
+        display.show(Image.CONFUSED)
+    elif button_a.is_pressed():
+        display.show(Image.HAPPY)
+    elif button_b.is_pressed():
+        display.show(Image.SAD)
+    else:
+        display.clear()
+
+</code></pre>
     </div>
   </div>
 </div>

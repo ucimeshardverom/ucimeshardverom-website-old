@@ -23,9 +23,9 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/" hreflang="en">
+    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/online_editor/" hreflang="en">
     
-    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/"/>
+    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/online_editor/"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
@@ -140,7 +140,7 @@
         <ul class="list-group">
           
             
-              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
             
           
             
@@ -148,7 +148,7 @@
             
           
             
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/online_editor">3. Online editor</a></li>
+              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/online_editor">3. Online editor</a></li>
             
           
             
@@ -204,26 +204,33 @@
 
     </div>
     <div class="col-md-8">
-      <h1>1. Úvod k MicroPythonu</h1>
-      <p>Ahoj,</p>
-<p>ak si sa dostal/a na túto stránku, chceš sa pravdepodobne ponoriť do krás jazyka Python na zariadení BBC micro:bit :-)</p>
-<p>Tieto materiály sú určené komukoľvek, kto sa chce naučiť ovládať BBC micro:bit Python (respektíve MicroPythonom, rozdiel je popísaný nižšie).
-Určite </p>
-<h2>Čo je to micro:bit?</h2>
-<p>Malá edukačná doska vhodná pre využitie vrámci hodín informatiky na základných a stredných školách. Vďaka konektorom (tzv. pinom) je možné ňou programovať hardvér.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h1>3. Online editor</h1>
+      <div class="alert alert-warning">
+<p class="h4">Online editor je fajn, ale...</p>
+<p>odporúčame radšej používať Mu editor, nakoľko má viac funkcionalít. Online editor pomôže tam, kde potrebujeme rýchlo nahrať nejaký program do Micro:bitu bez inŠtalácie Mu editoru (napríklad aj na workshopoch).</p>
+</div>
+<p><a href="http://python.microbit.org/">Online MicroPython Editor</a> je ďaľší online editor, no tento krát je určený pre tvorby MicroPython kódu. Ani pri tomto spôsobe programovania nie je potrebná inštalácia softvéru na počítač či administrátorské práva, stačí prístup na internet a internetový prehliadač.</p>
+<p>Na obrazovke sa Vám ukáže jednoduchý program:</p>
+<pre><code class="python"># Add your Python code here. E.g.
+from microbit import *
 
-<h2>Python</h2>
-<p>Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania. Práve preto postupne nahrádza iné programovacie jazyky na hodinách informatiky. Vo veľkom Python využívajú aj v Google, Dropbox, Európskej organizácii jadrového výskumu CERN, sociálnych sieťach Facebook, Pinterest a Instagram, či pri vyučovaní na prestížnej vysokej škole MIT.</p>
-<p>Autorom jazyka Python je Guido van Rossum (prvá verzia je z 1989). V súčasnosti jazyk Python vyvíja a spravuje komunita, zastrešovaná medzinárodnou organizáciou Python Software Foundation (skratka PSF). Samotný jazyk je open-source.</p>
-<p>Python je interpretovaný jazyk, a preto sa po dopísaní kódu ho neskompilujeme (ako napríklad C či Pascal) ale spustíme ho v interpreteri. Ten náš kód za chodu číta a prekladá na strojové inštukcie pre procesor. Preto je potrebné, aby sme na spustenie Python kódu mali na počítači nainštalovaný Python interpreter. (ako si vysvetlíme o schvíľu)</p>
-<p>Odporúčame používať najnovšiu verziu Python3 (v súčasnosti je to Python3.6). Python2 je staršia verzia Pythonu a už nie je vhodné v nej programovať.</p>
-<p>V čom sa Python líši snáď najviac od iných programovacích jazykov je práve komunika. Tá je tvorená profesionálmi, začiatočníkmi, učiteľmi i víkendovými programátormi a tak je veľmi rôznorodá. Po celom svete sa pravidelne organizujú konferencie PyCon (čiže PYthon CONference). Na Slovensku je táto konferencia organizovaná raz ročne občianskym združením SPy (Slovak Python User Group).</p>
-<h2>MicroPython</h2>
-<p>MicroPython je upravená verzia Pythonu, ktorá beží aj na menej výkonných zariadeniach. Vďaka tomu vieme v MicroPythone programovať mikroelektroniku a interagovať s okolitým svetom pomocou LED diód, senzorov, bzučiakov, motorčekov, atď. Takéto zariadenia sú zároveň rádovo lacnejšie ako počítače pre klasický Python. Obrovskou výhodou je fakt, že syntax je pre obe verzie jazyka rovnaká, a tak sa učiteľom aj žiakom stačí naučiť iba jeden jazyk.</p>
-<p>Tak ako na spustenie Python kódu na počítači potrebuje nainštalovaný interpreter, tak aj pre MicroPython kód musíme na mikroprocesom najprv nainsťalovať MicroPython interpreter. To stačí spraviť raz a následne mu budeme už len posielať naše zdrojové kódy na preklad. Raz za čas sa ale oplatí MicroPython na zariadení preinštalovať na novšiu verziu, aby sme mali vždy čo najviac funkčný interpreter.</p>
-<p>MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku pyboard (s mikroprocesorom STM32). V súčasnosti existuje viacero verzií MicoPythonu pre rôzne mikroprocesory. My budeme používať verziu pre micro:bit.</p>
-<p>Veľmi dôležitá je <a href="http://microbit-micropython.readthedocs.io">MicroPython dokumentácia</a>, ktorú budeme Časti využívať.</p>
+
+while True:
+    display.scroll('Hello, World!')
+    display.show(Image.HEART)
+    sleep(2000)
+</code></pre>
+
+<ul>
+<li><strong>from micobit import *</strong> - tento príkaz nám v kóde sprístupní všetku funkcionalitu knižnice microbit, vďaka ktorej vieme pristupovať k hardérovej funkcionalite micro:bitu.</li>
+<li><strong>while True:</strong> - tento príkaz nám bude donekonečna vykonávať kód, ktorý prislúcha do daného while cyklu</li>
+<li><strong>Indentácia</strong> . v Pythone (na rozdiel od iných jazykov) sa kód prislúchajúci do bloku neoznačuje zátvorkami, ale pomocou odsadzovania, čiže indentácie. Aby nejaký kód prislúchal pod príkaz <em>while</em>, musí byť odsadený aspoň o jeden tabulátor (štyri medzerníky)</li>
+<li><strong>display.scroll()</strong> vypíše daný reťazec na obrazovku</li>
+<li><strong>display.show(Image.HEART)</strong> vykreslí daný obrázok na obrazovku</li>
+<li><strong>sleep()</strong> - funkcia sleep pozastaví micro:bit na zadaný počet milisekúnd</li>
+<li><strong>poznámky</strong> - poznámky sa v Pythone tvoria mriežkou (#)</li>
+</ul>
+<p>Ako ale zistíme, aké možné obrázky môžeme vykresliť? Na to nám slúži <a href="http://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html">online micro:bit MicroPython dokumentácia</a>, v ktorej je zoznam všetkých príkazov, ktoré je možné použiť.</p>
     </div>
   </div>
 </div>

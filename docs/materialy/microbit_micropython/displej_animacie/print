@@ -23,9 +23,9 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/" hreflang="en">
+    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/displej_animacie/print" hreflang="en">
     
-    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/"/>
+    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/displej_animacie/print"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
@@ -140,7 +140,7 @@
         <ul class="list-group">
           
             
-              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
             
           
             
@@ -156,7 +156,7 @@
             
           
             
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_animacie">5. Displej - animácie</a></li>
+              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/displej_animacie">5. Displej - animácie</a></li>
             
           
             
@@ -204,26 +204,65 @@
 
     </div>
     <div class="col-md-8">
-      <h1>1. Úvod k MicroPythonu</h1>
-      <p>Ahoj,</p>
-<p>ak si sa dostal/a na túto stránku, chceš sa pravdepodobne ponoriť do krás jazyka Python na zariadení BBC micro:bit :-)</p>
-<p>Tieto materiály sú určené komukoľvek, kto sa chce naučiť ovládať BBC micro:bit Python (respektíve MicroPythonom, rozdiel je popísaný nižšie).
-Určite </p>
-<h2>Čo je to micro:bit?</h2>
-<p>Malá edukačná doska vhodná pre využitie vrámci hodín informatiky na základných a stredných školách. Vďaka konektorom (tzv. pinom) je možné ňou programovať hardvér.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h1>5. Displej - animácie</h1>
+      <div class="alert alert-warning">
+<p class="h4">Pracujeme...</p>
+<p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
+</div>
+<p>Čo sa týka grafického umenia, MicroPython ja asi rovnako dobrý ako človek, ktorý má k dispozícii iba 5x5 červených LED diód. Napriek tomu má MicroPython pomerne veľa možností, ako ovládať displej, a vytvoriť si tým rôyne efekty a animácie.</p>
+<h2>Predprogramované obrázky</h2>
+<p>Ako prvé si vyskúšame zobraziť na displeji už predprogramované obrázky. Opäť budeme používať displej, a preto z knižnice microbit importujeme modul displej, no tento raz z tej istej knižnice importujeme aj triedu s predprogramovanými obrázkami Image.</p>
+<pre><code>from microbit import display, Image
 
-<h2>Python</h2>
-<p>Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania. Práve preto postupne nahrádza iné programovacie jazyky na hodinách informatiky. Vo veľkom Python využívajú aj v Google, Dropbox, Európskej organizácii jadrového výskumu CERN, sociálnych sieťach Facebook, Pinterest a Instagram, či pri vyučovaní na prestížnej vysokej škole MIT.</p>
-<p>Autorom jazyka Python je Guido van Rossum (prvá verzia je z 1989). V súčasnosti jazyk Python vyvíja a spravuje komunita, zastrešovaná medzinárodnou organizáciou Python Software Foundation (skratka PSF). Samotný jazyk je open-source.</p>
-<p>Python je interpretovaný jazyk, a preto sa po dopísaní kódu ho neskompilujeme (ako napríklad C či Pascal) ale spustíme ho v interpreteri. Ten náš kód za chodu číta a prekladá na strojové inštukcie pre procesor. Preto je potrebné, aby sme na spustenie Python kódu mali na počítači nainštalovaný Python interpreter. (ako si vysvetlíme o schvíľu)</p>
-<p>Odporúčame používať najnovšiu verziu Python3 (v súčasnosti je to Python3.6). Python2 je staršia verzia Pythonu a už nie je vhodné v nej programovať.</p>
-<p>V čom sa Python líši snáď najviac od iných programovacích jazykov je práve komunika. Tá je tvorená profesionálmi, začiatočníkmi, učiteľmi i víkendovými programátormi a tak je veľmi rôznorodá. Po celom svete sa pravidelne organizujú konferencie PyCon (čiže PYthon CONference). Na Slovensku je táto konferencia organizovaná raz ročne občianskym združením SPy (Slovak Python User Group).</p>
-<h2>MicroPython</h2>
-<p>MicroPython je upravená verzia Pythonu, ktorá beží aj na menej výkonných zariadeniach. Vďaka tomu vieme v MicroPythone programovať mikroelektroniku a interagovať s okolitým svetom pomocou LED diód, senzorov, bzučiakov, motorčekov, atď. Takéto zariadenia sú zároveň rádovo lacnejšie ako počítače pre klasický Python. Obrovskou výhodou je fakt, že syntax je pre obe verzie jazyka rovnaká, a tak sa učiteľom aj žiakom stačí naučiť iba jeden jazyk.</p>
-<p>Tak ako na spustenie Python kódu na počítači potrebuje nainštalovaný interpreter, tak aj pre MicroPython kód musíme na mikroprocesom najprv nainsťalovať MicroPython interpreter. To stačí spraviť raz a následne mu budeme už len posielať naše zdrojové kódy na preklad. Raz za čas sa ale oplatí MicroPython na zariadení preinštalovať na novšiu verziu, aby sme mali vždy čo najviac funkčný interpreter.</p>
-<p>MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku pyboard (s mikroprocesorom STM32). V súčasnosti existuje viacero verzií MicoPythonu pre rôzne mikroprocesory. My budeme používať verziu pre micro:bit.</p>
-<p>Veľmi dôležitá je <a href="http://microbit-micropython.readthedocs.io">MicroPython dokumentácia</a>, ktorú budeme Časti využívať.</p>
+display.show(Image.HAPPY)
+</code></pre>
+
+<p>Keď chceme obrázok zobraziť na displeji, namiesto metódy scroll zavoláme metódu <code>show</code> (píšeme <code>display.show()</code>). Aby micro:bit vedel, čo má zobraziť, posielame v zátvorkách ako parameter obrázok z triedy <code>Image</code> - napríklad <code>happy</code> (<code>Image.HAPPY</code>). Predprogramovaných obrázkov je veľké množstvo, nájdete ich v dokumentácii.</p>
+<p>Prvý obrázok sme zobrazili, teraz sa pokúsme zobraziť dva, ktoré sa budú donekonečna striedať. Asi už tušíte, že opäť využijeme nekonečný cyklus <code>while True:</code>, a príkaz display <code>show</code> pod ním odsadíme o štyri medzerníky, alebo jeden tabulátor.</p>
+<pre><code>from microbit import display, Image, sleep
+
+while True:
+    display.show(Image.HAPPY)
+    sleep(1000)
+    display.show(Image.HAPPY)
+    sleep(1000)
+</code></pre>
+
+<p>Tento program zobrazuje najprv jeden a potom druhý obrázok, ale keby sme tam nedali žiadne pauzy, robil by to tak rýchlo, že by sme ich tam ani nevideli a obrázky by splinuli. Preto vždy, keď vykreslíme obrázok musíme na chvíľu pozastaviť, aby naše oko stihlo obrázok vidieť. Na to použijeme príkaz <code>sleep</code> z knižnice <code>microbit</code>. Prvý krok je importovať <code>sleep</code>, a následne ho použiť za oboma obrázkami. Ako parameter udávame, koľko milisekúnd má program čakať - číslo nedávame do úvodzoviek, pretože sa jedná o číslo a nie o text. Aby sa nám menili každú sekundu, ako parameter vpíšeme číslo 1000.</p>
+<h2>Vlastný obrázok</h2>
+<pre><code>from microbit import display, Image, sleep
+
+boat = Image(&quot;05050:&quot;
+             &quot;05050:&quot;
+             &quot;05050:&quot;
+             &quot;99999:&quot;
+             &quot;09990&quot;)
+while True:
+    display.show(Image.HAPPY)
+    sleep(1000)
+    display.show(Image.HAPPY)
+    sleep(1000)
+    display.show(boat)
+    sleep(1000)
+</code></pre>
+
+<p>Obrázkov môžeme pridať aj viac, no môžeme skúsiť pridať aj vlastné. Vytvorme si napríklad vlastnú loďku. Ešte pred nekonečným cyklom si zadefinujeme, ako má vyzerať. Opäť pomocou triedy <code>Image</code>, ale tentokrát ako parameter vkladáme 5 riadkov, v každom 5 čísel, jedno pre každú LED diódu. 0 znamená, že LEDka nesvieti, 9 naopak, svieti naplno. Teraz sme vytvorili loďku s dvoma sťažňami. Dvojbodky na konci riadkov označujú koniec riadku na LED displeji. Náš nový obrázok sme si pomenovali <code>boat</code>, a ak ho chceme zobraziť, stačí ho vložiť do <code>display.show(boat)</code></p>
+<p>Tento kód je možné skrátiť aj na:</p>
+<pre><code>from microbit import display, Image, sleep
+
+boat = Image(&quot;05050:05050:05050:99999:09990&quot;)
+
+while True:
+    display.show(Image.HAPPY)
+    sleep(1000)
+    display.show(Image.HAPPY)
+    sleep(1000)
+    display.show(boat)
+    sleep(1000)
+</code></pre>
+
+<p>Takéto skrátenie je ale veľmi neprehľadné, a preto odporúčame radšej prvý spôsob.</p>
+<p><a href="https://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html#diy-images">Návod na tvorbu vlastných obrázkov</a> je v dokumentácii</p>
     </div>
   </div>
 </div>

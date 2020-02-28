@@ -8,10 +8,10 @@ author_bio: "Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Manse
              Prosím, napíšte nám pripomienky, otázky a akúkoľvek spätnú väzbu (aj negatívnu)<br><br>
              Kontakt na mňa:<br>
              marek.mansell@pycon.sk"
-license: "CC BY SA 4.0"
+license: "CC BY 4.0"
 license_desc: "Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora."
 license_link: "https://creativecommons.org/licenses/by/4.0/"
-last_change: "21.1.2020"
+last_change: "28.2.2020"
 
 content:
 
@@ -19,6 +19,26 @@ content:
     title: Úvod k MicroPythonu
     visible: True
 
-  - slug:  digitalna_menovka
-    title: Digitálna menovka
+  - slug:  mu_editor
+    title: Mu editor
+    visible: True
+
+  - slug:  online_editor
+    title: Online editor
+    visible: True
+
+  - slug:  displej_menovka
+    title: Displej - menovka
+    visible: True
+
+  - slug:  displej_animacie
+    title: Displej - animácie
+    visible: True
+
+  - slug:  hudba_kohutik
+    title: Hudba - Kohútik Jarabý
+    visible: True
+
+  - slug:  tlacidla_tamagoci
+    title: Tlačidlá - Tamagoči
     visible: True

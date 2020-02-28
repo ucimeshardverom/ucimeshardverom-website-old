@@ -144,7 +144,27 @@
             
           
             
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/digitalna_menovka">2. Digitálna menovka</a></li>
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/mu_editor">2. Mu editor</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/online_editor">3. Online editor</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_menovka">4. Displej - menovka</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_animacie">5. Displej - animácie</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/hudba_kohutik">6. Hudba - Kohútik Jarabý</a></li>
+            
+          
+            
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/tlacidla_tamagoci">7. Tlačidlá - Tamagoči</a></li>
             
           
         </ul>
@@ -175,7 +195,7 @@
           Ako môžem tento materiál používať?
         </div>
         <div class="card-body">
-          <h5 class="card-title">Licencia CC BY SA 4.0</h5>
+          <h5 class="card-title">Licencia CC BY 4.0</h5>
           <p class="card-text">Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora.</p>
           <a href="https://creativecommons.org/licenses/by/4.0/" class="btn btn-primary">Celé znenie licencie</a>
         </div>
@@ -185,14 +205,25 @@
     </div>
     <div class="col-md-8">
       <h1>1. Úvod k MicroPythonu</h1>
-      <div class="alert alert-warning">
-<p class="h4">Pripravujeme</p>
-<p>Táto kapitola je ešte rozpracovaná...</p>
-</div>
-<h2>Tajný link</h2>
-<p>o MicroPytone</p>
-<p><img class="img-fluid" alt="alt text" src="images/mu.gif" />
-<em><a href="https://codewith.mu/">Obrázok od Nicholas H.Tollervey, 2019. Zverejnené pod licenciou Creative Commons BY-NC-SA 4.0</a></em></p>
+      <p>Ahoj,</p>
+<p>ak si sa dostal/a na túto stránku, chceš sa pravdepodobne ponoriť do krás jazyka Python na zariadení BBC micro:bit :-)</p>
+<p>Tieto materiály sú určené komukoľvek, kto sa chce naučiť ovládať BBC micro:bit Python (respektíve MicroPythonom, rozdiel je popísaný nižšie).
+Určite </p>
+<h2>Čo je to micro:bit?</h2>
+<p>Malá edukačná doska vhodná pre využitie vrámci hodín informatiky na základných a stredných školách. Vďaka konektorom (tzv. pinom) je možné ňou programovať hardvér.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2>Python</h2>
+<p>Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania. Práve preto postupne nahrádza iné programovacie jazyky na hodinách informatiky. Vo veľkom Python využívajú aj v Google, Dropbox, Európskej organizácii jadrového výskumu CERN, sociálnych sieťach Facebook, Pinterest a Instagram, či pri vyučovaní na prestížnej vysokej škole MIT.</p>
+<p>Autorom jazyka Python je Guido van Rossum (prvá verzia je z 1989). V súčasnosti jazyk Python vyvíja a spravuje komunita, zastrešovaná medzinárodnou organizáciou Python Software Foundation (skratka PSF). Samotný jazyk je open-source.</p>
+<p>Python je interpretovaný jazyk, a preto sa po dopísaní kódu ho neskompilujeme (ako napríklad C či Pascal) ale spustíme ho v interpreteri. Ten náš kód za chodu číta a prekladá na strojové inštukcie pre procesor. Preto je potrebné, aby sme na spustenie Python kódu mali na počítači nainštalovaný Python interpreter. (ako si vysvetlíme o schvíľu)</p>
+<p>Odporúčame používať najnovšiu verziu Python3 (v súčasnosti je to Python3.6). Python2 je staršia verzia Pythonu a už nie je vhodné v nej programovať.</p>
+<p>V čom sa Python líši snáď najviac od iných programovacích jazykov je práve komunika. Tá je tvorená profesionálmi, začiatočníkmi, učiteľmi i víkendovými programátormi a tak je veľmi rôznorodá. Po celom svete sa pravidelne organizujú konferencie PyCon (čiže PYthon CONference). Na Slovensku je táto konferencia organizovaná raz ročne občianskym združením SPy (Slovak Python User Group).</p>
+<h2>MicroPython</h2>
+<p>MicroPython je upravená verzia Pythonu, ktorá beží aj na menej výkonných zariadeniach. Vďaka tomu vieme v MicroPythone programovať mikroelektroniku a interagovať s okolitým svetom pomocou LED diód, senzorov, bzučiakov, motorčekov, atď. Takéto zariadenia sú zároveň rádovo lacnejšie ako počítače pre klasický Python. Obrovskou výhodou je fakt, že syntax je pre obe verzie jazyka rovnaká, a tak sa učiteľom aj žiakom stačí naučiť iba jeden jazyk.</p>
+<p>Tak ako na spustenie Python kódu na počítači potrebuje nainštalovaný interpreter, tak aj pre MicroPython kód musíme na mikroprocesom najprv nainsťalovať MicroPython interpreter. To stačí spraviť raz a následne mu budeme už len posielať naše zdrojové kódy na preklad. Raz za čas sa ale oplatí MicroPython na zariadení preinštalovať na novšiu verziu, aby sme mali vždy čo najviac funkčný interpreter.</p>
+<p>MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku pyboard (s mikroprocesorom STM32). V súčasnosti existuje viacero verzií MicoPythonu pre rôzne mikroprocesory. My budeme používať verziu pre micro:bit.</p>
+<p>Veľmi dôležitá je <a href="http://microbit-micropython.readthedocs.io">MicroPython dokumentácia</a>, ktorú budeme Časti využívať.</p>
     </div>
   </div>
 </div>

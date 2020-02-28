@@ -23,9 +23,9 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/" hreflang="en">
+    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/mu_editor/print" hreflang="en">
     
-    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/uvod/"/>
+    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/mu_editor/print"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
@@ -140,11 +140,11 @@
         <ul class="list-group">
           
             
-              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
+              <li class="list-group-item "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
             
           
             
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/mu_editor">2. Mu editor</a></li>
+              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/mu_editor">2. Mu editor</a></li>
             
           
             
@@ -204,26 +204,25 @@
 
     </div>
     <div class="col-md-8">
-      <h1>1. Úvod k MicroPythonu</h1>
-      <p>Ahoj,</p>
-<p>ak si sa dostal/a na túto stránku, chceš sa pravdepodobne ponoriť do krás jazyka Python na zariadení BBC micro:bit :-)</p>
-<p>Tieto materiály sú určené komukoľvek, kto sa chce naučiť ovládať BBC micro:bit Python (respektíve MicroPythonom, rozdiel je popísaný nižšie).
-Určite </p>
-<h2>Čo je to micro:bit?</h2>
-<p>Malá edukačná doska vhodná pre využitie vrámci hodín informatiky na základných a stredných školách. Vďaka konektorom (tzv. pinom) je možné ňou programovať hardvér.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<h2>Python</h2>
-<p>Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania. Práve preto postupne nahrádza iné programovacie jazyky na hodinách informatiky. Vo veľkom Python využívajú aj v Google, Dropbox, Európskej organizácii jadrového výskumu CERN, sociálnych sieťach Facebook, Pinterest a Instagram, či pri vyučovaní na prestížnej vysokej škole MIT.</p>
-<p>Autorom jazyka Python je Guido van Rossum (prvá verzia je z 1989). V súčasnosti jazyk Python vyvíja a spravuje komunita, zastrešovaná medzinárodnou organizáciou Python Software Foundation (skratka PSF). Samotný jazyk je open-source.</p>
-<p>Python je interpretovaný jazyk, a preto sa po dopísaní kódu ho neskompilujeme (ako napríklad C či Pascal) ale spustíme ho v interpreteri. Ten náš kód za chodu číta a prekladá na strojové inštukcie pre procesor. Preto je potrebné, aby sme na spustenie Python kódu mali na počítači nainštalovaný Python interpreter. (ako si vysvetlíme o schvíľu)</p>
-<p>Odporúčame používať najnovšiu verziu Python3 (v súčasnosti je to Python3.6). Python2 je staršia verzia Pythonu a už nie je vhodné v nej programovať.</p>
-<p>V čom sa Python líši snáď najviac od iných programovacích jazykov je práve komunika. Tá je tvorená profesionálmi, začiatočníkmi, učiteľmi i víkendovými programátormi a tak je veľmi rôznorodá. Po celom svete sa pravidelne organizujú konferencie PyCon (čiže PYthon CONference). Na Slovensku je táto konferencia organizovaná raz ročne občianskym združením SPy (Slovak Python User Group).</p>
-<h2>MicroPython</h2>
-<p>MicroPython je upravená verzia Pythonu, ktorá beží aj na menej výkonných zariadeniach. Vďaka tomu vieme v MicroPythone programovať mikroelektroniku a interagovať s okolitým svetom pomocou LED diód, senzorov, bzučiakov, motorčekov, atď. Takéto zariadenia sú zároveň rádovo lacnejšie ako počítače pre klasický Python. Obrovskou výhodou je fakt, že syntax je pre obe verzie jazyka rovnaká, a tak sa učiteľom aj žiakom stačí naučiť iba jeden jazyk.</p>
-<p>Tak ako na spustenie Python kódu na počítači potrebuje nainštalovaný interpreter, tak aj pre MicroPython kód musíme na mikroprocesom najprv nainsťalovať MicroPython interpreter. To stačí spraviť raz a následne mu budeme už len posielať naše zdrojové kódy na preklad. Raz za čas sa ale oplatí MicroPython na zariadení preinštalovať na novšiu verziu, aby sme mali vždy čo najviac funkčný interpreter.</p>
-<p>MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku pyboard (s mikroprocesorom STM32). V súčasnosti existuje viacero verzií MicoPythonu pre rôzne mikroprocesory. My budeme používať verziu pre micro:bit.</p>
-<p>Veľmi dôležitá je <a href="http://microbit-micropython.readthedocs.io">MicroPython dokumentácia</a>, ktorú budeme Časti využívať.</p>
+      <h1>2. Mu editor</h1>
+      <p><a href="https://codewith.mu/">Mu editor</a> je najvhodnejší IDE prostredím pre písanie MicroPython kódu pre micro:bit, ako aj pre Python3 (skvelá alternatíva k IDLE). Je možné ho stiahnuť a spustiť bez inštalácie, alebo inštalovať pomocou nástroja <code>pip</code>. Pre plnú funkcionalitu je potrebné pri platforme Windows stiahnúť si driver pre micro:bit.</p>
+<h2>Módy v Mu Editore</h2>
+<p>V novších verziách v ňom môžeš programovať viac zariadení ako iba micro:bit, preto sa musíme na začiatku prepnúť do BBC micro:bit módu kliknutím na tlačidlo Mode hore vľavo. Vyberieme BBC micro:bit a klikneme ok. To, že sme v BBC micro:bit móde si vieme skontrolovať dolu vpravo. Ďalšie módy zahŕňajú programovanie v klaciskom Pythone pre počítačové aplikácie, mód pre ESP mikropočítače, mód pre PyGame Zero hry či mód pre tvorbu webových stránok vo frameworku Flask.</p>
+<h2>Tlačidlá v Mu Editore</h2>
+<ul>
+<li>Mode - na prepnutie programovacieho módu</li>
+<li>New - vytvorí nový <em>tab</em> s programom</li>
+<li>Load - otvorí uložený program na počítači </li>
+<li>Save - uloží program na počítač, aby sme s ním vedeli nabudúce ďalej pracovať - micro:bit zdrojové kódy ukladáme s klasickou Pythonovou príponou “.py”</li>
+<li>Flash - nahrá náš program na micro:bit</li>
+<li>Files - ukáže nám, aké súbory sú na micro:bite uložené</li>
+<li>REPL - otvorí/zatvorí sériovú konzolu</li>
+<li>Plotter - vykresluje dáta z micro:bitu do dynamického grafu</li>
+<li>Check - pomáha nám hľadať chyby pri programovaní</li>
+</ul>
+<p><a href="https://madewith.mu/">Mu - blog o projektoch vytvorených v Mu v angličtine</a></p>
+<p><img class="img-fluid" alt="alt text" src="images/mu.gif" />
+<em><a href="https://codewith.mu/">Obrázok od Nicholas H.Tollervey, 2019. Zverejnené pod licenciou Creative Commons BY-NC-SA 4.0</a></em></p>
     </div>
   </div>
 </div>
