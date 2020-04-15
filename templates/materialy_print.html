@@ -30,6 +30,7 @@
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/holder.min.js') }}"></script>
 
+
     <script>
 
       /* message signatures
@@ -111,6 +112,12 @@
                   case "renderblocks":
                       var svg = msg.svg; // this is an string containing SVG
                       var id = msg.id; // this is the id you sent
+
+                      var xhttp = new XMLHttpRequest();
+                      xhttp.open("POST", "http://127.0.0.1:5000/materialy/save_makecode_image/"+msg.id, true);
+                      xhttp.send(msg.uri);
+
+
                       // replace text with svg
                       var img = document.createElement("img");
                       img.src = msg.uri;

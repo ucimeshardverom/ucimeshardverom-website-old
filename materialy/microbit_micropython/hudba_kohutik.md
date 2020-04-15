@@ -67,3 +67,5 @@ music.play(tune)
 
 !!! primary "Úloha"
 	Pokračuj v prepisovaní nôt a prehraj na micro:bite celú pieseň.
+
+Posledná zmena: **28.2.2020**

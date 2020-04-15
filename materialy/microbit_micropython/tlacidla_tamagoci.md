@@ -65,3 +65,5 @@ while True:
     	display.clear()
 
 ```
+
+Posledná zmena: **28.2.2020**

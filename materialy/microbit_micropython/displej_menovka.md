@@ -137,3 +137,5 @@ while True:
 
 	* Čo sa stane, ako použijeme viac príkazov ``sleep()`` za sebou?
 	* Akú chybu vypíše micro:bit ak by sme namiesto čísla poslali to metódy ``sleep`` reťazec označený úvodzovkami (napríklad ``sleep("5000")``)?
+
+Posledná zmena: **28.2.2020**

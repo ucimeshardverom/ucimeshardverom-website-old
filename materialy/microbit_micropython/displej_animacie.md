@@ -71,3 +71,5 @@ while True:
 Takéto skrátenie je ale veľmi neprehľadné, a preto odporúčame radšej prvý spôsob.
 
 [Návod na tvorbu vlastných obrázkov](https://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html#diy-images) je v dokumentácii
+
+Posledná zmena: **28.2.2020**

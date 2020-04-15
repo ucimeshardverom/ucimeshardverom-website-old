@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="sk">
-  <head>
+<head>
     <meta charset="utf-8">
     
-
-<meta property="og:url"                content="https://www.ucimeshardverom.sk/materialy/" />
-<meta property="og:type"               content="website" />
-<meta property="og:title"              content="Metodické materiály a návody" />
-<meta property="og:description"        content="Materiály pre ZŠ a SŠ sú v súlade so štátnym vzdelávacím programom a boli navrhnuté tak, aby mohli byť využívané priamo na hodinách informatiky." />
-<meta property="og:image"              content="http://ucimeshardverom.sk/static/img/materialy/microbit-makecode-01-04.jpg" />
-
+<meta property="og:url" content="https://www.ucimeshardverom.sk/materialy/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Metodické materiály a návody"/>
+<meta property="og:description"
+      content="Materiály pre ZŠ a SŠ sú v súlade so štátnym vzdelávacím programom a boli navrhnuté tak, aby mohli byť využívané priamo na hodinách informatiky."/>
+<meta property="og:image"
+      content="http://ucimeshardverom.sk/static/img/materialy/microbit-makecode-01-04.jpg"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -19,587 +19,360 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/" hreflang="en">
-    
     <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/"/>
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
+    <div class="container d-flex justify-content-between">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+            <img src="/static/img/logo/logo-colour.png" class="header-logo"
+                 alt="Python logo"/>
+            <strong style="color:white">Učíme s Hardvérom</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <ul class="navbar-right navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pre školy/učiteľov
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
-      <div class="container d-flex justify-content-between">
-      <a href="/" class="navbar-brand d-flex align-items-center">
-        <img src="/static/img/logo/logo-colour.png" class="header-logo" alt="Python logo" />
-        <strong style="color:white">Učíme s Hardvérom</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <ul class="navbar-right navbar-nav justify-content-end">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                O projekte
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/ciele/">Ciele projektu</a>
-                <!-- <a class="dropdown-item" href="/mapa/">Mapa škôl</a> -->
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/hardver/">Hardvér ako edukačná pomôcka</a>
-                <a class="dropdown-item" href="/microbit/">Platforma BBC micro:bit</a>
-                <a class="dropdown-item" href="/nodemcu/">Platforma NodeMCU</a>
-                <a class="dropdown-item" href="/projekty/">Hardvérové projekty</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pre školy/učiteľov
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                
-                <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre učiteľov</a>
-                <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">Učiteľské online fórum 🔗</a>
-                <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako učiteľ</a>
-                <a class="dropdown-item" href="/feedback/">Feedback</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="http://edutronik.sk/">Kde kúpiť hardvér 🔗</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/materialy/">Materiály</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
-            </li>
-<!--             <li class="nav-item">-->
-<!--               <a class="nav-link" href="/blog/">Blog</a>-->
-<!--             </li>-->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                O nás
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/o_nas/">Náš tím</a>
-                <a class="dropdown-item" href="/partneri/">Partneri</a>
-                <!-- <a class="dropdown-item" href="/ambasadori/">Staň sa ambasádorom</a> -->
-                <a class="dropdown-item" href="/gdpr/">GDPR</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/pridaj_sa/">Pridaj sa k nám</a>
-              </div>
-            </li>
-            <!-- <li class="nav-item"> -->
-              <!-- <a class="nav-link" style="border-width:0 0 0 1px; border-style: solid;" href="/zapojsa/skola/">Prihlásiť sa</a> -->
-            <!-- </li> -->
-          </ul>
+                            <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
+                                učiteľov</a>
+                            <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">Učiteľské online fórum
+                                🔗</a>
+                            <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
+                                učiteľ</a>
+                            <a class="dropdown-item" href="/feedback/">Feedback</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="http://edutronik.sk/">Kde kúpiť hardvér 🔗</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/materialy/">Materiály</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            O nás
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="/ciele/">Ciele projektu</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/partneri/">Partneri</a>
+                          <a class="dropdown-item" href="/o_nas/">Náš tím</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/gdpr/">GDPR</a>
+                            <a class="dropdown-item" href="/press_kit/">Press kit</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-      </div>
-    </nav>
-
-    <main role="main">
+    </div>
+</nav>
+<main role="main">
     
-
 <div class="container text-center">
-  <div class="jumbotron">
-    <h1>Metodické materiály a návody</h1>
-  </div>
+    <div class="jumbotron">
+        <h1>Metodické materiály a návody</h1>
+    </div>
 </div>
-
 <div class="container">
 
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-microbit-makecode-tab" data-toggle="tab" href="#nav-microbit-makecode" role="tab" aria-controls="nav-microbit-makecode" aria-selected="true">BBC micro:bit & MakeCode</a>
-      <a class="nav-item nav-link" id="nav-microbit-micropython-tab" data-toggle="tab" href="#nav-microbit-micropython" role="tab" aria-controls="nav-microbit-micropython" aria-selected="false">BBC micro:bit & MicroPython</a>
-    </div>
-  </nav>
-  <div class="tab-content mt-3" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-microbit-makecode" role="tabpanel" aria-labelledby="nav-microbit-makecode-tab">
+    <h1 class="mb-4">Začíname s BBC micro:bit</h1>
+    <hr/>
 
-      <div class="card">
-        <h5 class="card-header">Návod na použite BBC micro:bit & MakeCode</h5>
-        <div class="card-body">
-          <p class="card-text">Tieto metodické materiály sú určené pre učiteľov informatiky na základných (prípadne aj stredných) školách a sú <b>v súlade so štátnym vzdelávacím programom</b>. Cieľom je, aby všetci žiaci zažili zaujímavú výučbu s micro:bitmi a preto boli metodiky navrhnuté tak, aby mohli byť využívané <b>priamo na hodinách informatiky</b>.</p>
-          <p class="card-text">Nasledujúce metodiky využívajú najmä <a href="http://www.edutronik.sk/#ponuka">túto sadu hardvéru pre školy🔗</a></p>
-          <p class="card-text">Pre viac podrobností o tom, ako zakomponovať micro:bity a prostredie MakeCode do výučby sme pripravili <a href=""><b>Návod na použite metodík BBC micro:bit & MakeCode</b></a>.</p>
-          
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card border-dark mb-3">
+                <div class="card-header"><b>Základné školy</b></div>
+                <div class="card-body text-dark">
+                    <p class="card-text">Farebné blokové prostredie <b>MakeCode</b> od Microsoftu je ideálne nie len pre
+                        začiatočníkov v programovaní. </p>
+                    <img class="img-fluid" style="max-height: 4.5em;"
+                         src="/static/img/materialy/makecode_heart_block.png"/>
+                    <hr/>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a class="btn btn-primary"
+                               href="/materialy/microbit_makecode/"
+                               role="button">>> Prostredie MakeCode</a>
+                        </div>
+                        <div>
+                            <p><b>SPy o.z.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-    <div class="alert alert-danger mt-3">
-      <h4 class="alert-heading">Materiály priebežne vylepšujeme</h4>
-      <p>Materiály nie len pridávame, ale aj <b>priebežne upravujeme.</b> Práve preto neodporúčame si metodiky stiahnúť jeden krát na začiatku roka, ale priebežne počas roka si vždy stiahnuť najnovšiu verziu danej metodiky, ktorú práve plánujete použiť.</p>
-    </div>
-      
-      <div class="card mt-3">
-        <h5 class="card-header">September</h5>
-        <div class="card-body">
+        <div class="col-md-6">
+            <div class="card border-dark mb-3">
+                <div class="card-header"><b>Stredné školy</b></div>
+                <div class="card-body text-dark">
+                    <p class="card-text"><b>MicroPython</b> je skvelým spôsobom ako si vybudovať programátorské
+                        zručnosti v textovom programovacom jazyku.</p>
+                    <img class="img-fluid" style="max-height: 4.5em;"
+                         src="/static/img/materialy/micropython_line_screenshot.png"/>
 
-          <div class="row">
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 1</h5>
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-01-01.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Zoznámenie sa s BBC micro:bit</h5>
-                  <p class="card-text">Zoznámte sa sozariadením BBC micro:bit, s postupom tvorby a nahrávania kódu na zariadenie a so základnými príkazmi pre ovládanie displeju.</p>
-                  <div class="text-center align-bottom">
-                    <a href="/static/downloads/metodiky/microbit-makecode-zoznamenie-sa-s-bbc-microbit.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
+                    <hr/>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a class="btn btn-primary"
+                               href="/materialy/microbit_micropython/"
+                               role="button">
+                                >> Prostredie MicroPython</a>
+                        </div>
+                        <div>
+                            <p><b>SPy o.z.</b></p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 2</h5>
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-01-02.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">BBC micro:bit v pohybe</h5>
-                  <p class="card-text">Využijeme vbudovaný senzor pohybu a naklonenia v micro:bite.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-bbc-microbit-v-pohybe.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 3</h5>
-                <img class="card-img-top" src="/static/img/materialy/pocitadlo_ludi.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Počítadlo ľudí</h5>
-                  <p class="card-text">Zostrojíme si užitočnú pomôcka na festivaloch, podujatiach a diskotékach. Pri tom sa naučíme, čo je to premenná ako s ňou pracovať.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-pocitadlo-ludi.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow  h-100">
-                <h5 class="card-header">Bonusová metodika</h5>
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-01-04.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Poslušne hlásim</h5>
-                  <p class="card-text">Matematická hra pre 3 až 4 žiakov s micro:bitmi</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-poslusne-hlasim.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Bonusová metodika</h5>
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-01-05.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Kameň, papier, nožnice</h5>
-                  <p class="card-text">Triedny turnaj v hre Kameň, papier, nožnice</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-kamen-paier-noznice.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
-      </div>
-
-      <br><br>
-
-      <div class="card">
-        <h5 class="card-header">Október</h5>
-        <div class="card-body">
-
-          <div class="row">
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 4</h5>
-                <img class="card-img-top" src="/static/img/materialy/krokomer.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Krokomer</h5>
-                  <p class="card-text">Krokomer sa dá na micro:bite spraviť pomocou vbudovaného senzoru pohybu. Ak pripevníme micro:bit na nohu, stačí merať, koľko krát zatrasemie a tým získame počet krokov.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-krokomer.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 5</h5>
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-02-01.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Elektrické obvody a vodivosť materiálov</h5>
-                  <p class="card-text">Úvod do pripájania hardvérových komponentov k micro:bitom</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-elektricke-obvody-a-vodivost-materialov.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 6</h5>
-                <img class="card-img-top" src="/static/img/materialy/ako-funguju-led.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Ako fungujú LED diódy</h5>
-                  <p class="card-text">Naučíme sa, ako zapojiť LED diódu, na ǚo slúži Rezistor a ako elektronicky spínať LED diódu.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-ako-funguju-led-diody.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 7</h5>
-                <img class="card-img-top" src="/static/img/materialy/semafor-z-led-diod.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Semafor z LED diód</h5>
-                  <p class="card-text">Zostrojíme si funkčnú maketu svetelnej križovatky - semafor.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-semafor-z-led-diod.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Bonusová metodika</h5>
-                <img class="card-img-top" src="/static/img/materialy/hra-horuci-drot.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Hra Horúci drôt </h5>
-                  <p class="card-text">Pri tejto hre sa žiaci snažia prejsť drôtenou paličkou kľukatú dráhu bez toho, aby sa kovovej dráhy dotkli. Dôležitá je pevná ruka a trpezlivosť.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-hra-horuci-drot.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-
-      <br><br>
-
-      <div class="card">
-        <h5 class="card-header">November</h5>
-        <div class="card-body">
-
-          <div class="row">
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 8</h5>
-                <img class="card-img-top" src="/static/img/materialy/vysielame-s-bbc-microbit.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Bezdrôtová komunikácia</span></h5>
-                  <p class="card-text">Naučíme sa základy bezdrôtovej komunikácie medzi micro:bitmi.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-bezdrotova-komunikacia.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 9</h5>
-                <img class="card-img-top" src="/static/img/materialy/programovanie-led-pasiku.JPG" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Programovenie LED pásiku</h5>
-                  <p class="card-text">Pomocou individuálne programovateľného LED pásiku tvoríme svetelné animácie</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-programovanie-led-pasiku.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 10</h5>
-                <img class="card-img-top" src="/static/img/materialy/led-pasik-ako-modny-doplnok.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">LED pásik ako módny doplnok</h5>
-                  <p class="card-text">Vytvor si digitálnu šiltovku, klobúk alebo topánky. Aké je využitie elektroniky v oblečení?</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-led-pasik-ako-modny-doplnok.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 11</h5>
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-03-02.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Programovanie hudby</h5>
-                  <p class="card-text">Propojíme k micro:bitu reproduktor a napíšeme vlasnú pieseň</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-programovanie-hudby.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Bonusová metodika</h5>
-                <img class="card-img-top" src="/static/img/materialy/kartonova-gitara.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Kartónová gitara</h5>
-                  <p class="card-text">Zostrojíme vlastnú elektronickú gitaru! Obal tela zostrojíme z kartónu, dozdobíme farebnými papiermi a naprogramujeme pomocou micro:bitu.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-hra-horuci-drot.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Bonusová metodika</h5>
-                <img class="card-img-top" src="/static/img/materialy/ucebnica-microbit-blockly.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Sedačková mína</h5>
-                  <p class="card-text">Zostrojíme si vlastnú “mínu” - keď si na nu sadneme, reproduktor spustí hudbu. Tvorba “míny” približuje žiakov princíp funfovania bežného elektronického tlačidla.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-hra-horuci-drot.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Bonusová metodika</h5>
-                <img class="card-img-top" src="/static/img/materialy/ucebnica-microbit-blockly.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Tikajúca bomba</h5>
-                  <p class="card-text">Vytvoríme pomôcku k hre, kde sa učiteľ sa pýta otázky a žiaci odpovedajú. Počas toho si posúvajú “tikajúcu” bombu. Prehráva ten, ktorému “vybuchne” microbit v rukách.</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-hra-horuci-drot.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      <br><br>
-
-<!--       <div class="card">
-        <h5 class="card-header">December</h5>
-        <div class="card-body">
-
-          <div class="row">
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 12</h5>
-                <img class="card-img-top" src="/static/img/materialy/papierovy-robot.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Papierový robot</span></h5>
-                  <p class="card-text">Táto hodina bude kreatívna - vytvoríme si papierového robota, ktorého naprogramujeme.</p>
-                  <div class="text-center">
-                    <a href="#" class="btn btn-warning">Zverejníme 18.9.2019</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 13</h5>
-                <img class="card-img-top" src="/static/img/materialy/inspiracia-na-internete.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Inšpirácia na internete</h5>
-                  <p class="card-text">Zistíme, kde hľadať návody a inšpirácie, pod akými licenciami sú materiály uverejnené a rozoberieme si viac Creative Commons licencie.</p>
-                  <div class="text-center">
-                    <a href="#" class="btn btn-warning">Zverejníme 18.9.2019</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 mt-3">
-              <div class="card mb-4 box-shadow h-100">
-                <h5 class="card-header">Metodika 14</h5>
-                <img class="card-img-top" src="/static/img/materialy/vianocne-programovanie.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Vianočné programovanie</h5>
-                  <p class="card-text">Programovanie vianočných svetielok a hudby</p>
-                  <div class="text-center">
-                    <a href="#" class="btn btn-warning">Zverejníme 18.9.2019</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div> -->
-
-
-      <br><br>
-
-<!--       <div class="card">
-        <h5 class="card-header">Pokračovanie</h5>
-        <div class="card-body">
-          Podrobný rozpis metodík pre obdobie Január až Jún nájdete v <a href="/static/downloads/metodiky/navod-na-pouzitie-microbit-makecode.pdf"><b>Návode na použite metodík BBC micro:bit & MakeCode</b></a>
-        </div>
-      </div> -->
-
-
-    </div>
-    
-    <div class="tab-pane fade" id="nav-microbit-micropython" role="tabpanel" aria-labelledby="nav-microbit-micropython-tab">
-
-    <div class="alert alert-success mt-3">
-      <h4 class="alert-heading">Na metodikách pre Python sa pracuje</h4>
-      <p>Žiaľ, napriek našej snahe sa nám nepodarilo zatiaľ pripraviť riadne spracované metodiky na Python na micro:bitoch. Preto sme sa rozhodli dočasne postupovať tak, že k MakeCode metodikám budeme zverejňovať aj zdrojový kód v Pythone (s komentári). Prvé zdrojové kódy zverejníme už 12.9.2019</p>
     </div>
 
-      <div class="row">
-        
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" src="/static/img/materialy/ucebnica-microbit-micropython.png" alt="Programujeme micro:bit v MicroPythone">
-            <div class="card-body">
-              <p class="card-text"><b>Programujeme micro:bit v MicroPythone [SK]</b></p>
-              <p class="card-text">Manuál vysvetľuje základy práce s doskou micro:bit ako aj programovania v MicroPythone</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a type="button" class="btn btn-sm btn-outline-secondary" href="http://microbit-micropython.ucimeshardverom.sk/">Otvoriť pracovnú verziu</a>
+
+    <h1 class="mt-5">Ďalšie materiály</h1>
+    <hr/>
+    <p class="lead light">Po zvládnutí základov pomocou základných metodík sa môžete pustiť do rôznych náročnejších
+        medzipredmetových projektov, pri ktorých budeme využívať rôzne ďalšie senzory a aktory.</p>
+
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>BBC micro:bit & Scratch</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <span class="badge badge-secondary">Scratch</span>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" src="/static/img/materialy/dokumentacia-microbit-micropython.png" alt="MicroPython dokumentácia pre dosku micro:bit">
-            <div class="card-body">
-              <p class="card-text"><b>MicroPython dokumentácia pre dosku micro:bit [EN]</b></p>
-              <p class="card-text">Dokumentácia pre MicroPython na doske micro:bit</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a type="button" class="btn btn-sm btn-outline-secondary" href="https://microbit-micropython.readthedocs.io">Otvoriť</a>
+                <div>
+                    <p>Autor: <b>Iveta Csicolová</b></p>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-
-      </div>
-
     </div>
-  
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>Ring:bit a BBC micro:bit</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Praktické možnosti využitia robota Ring:bit car V2.0 s mikropočítačom micro:bit</p>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a class="btn btn-primary"
+                       href="/materialy/ringbit/"
+                       role="button">
+                        Otvoriť materiál</a>
+                </div>
+                <div>
+                    <p>Autor: <b>Jozef Kovarsky</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>Gator:bit (SparkFun) - CO2, vhlkosť, senzor srdca, mikrofón, ...</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <span class="badge badge-success">Makecode</span>
+            <span class="badge badge-info">MicroPython</span>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
+                </div>
+                <div>
+                    <p>Autor: <b>Marek Mansell</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>Smart Science Internet of Things (IoT) Kit - WiFi, vzdialenosť, displej, ...</b>
+        </div>
+        <div class="card-body text-dark">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <span class="badge badge-success">Makecode</span>
+            <span class="badge badge-info">MicroPython</span>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
+                </div>
+                <div>
+                    <p>Autor: <b>Marek Mansell</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>Smart Home Kit - čerpadlo, polievanie, teplota, ...</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <span class="badge badge-success">Makecode</span>
+            <span class="badge badge-info">MicroPython</span>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
+                </div>
+                <div>
+                    <p>Autor: <b>Marek Mansell</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>E-textil: Šitie s BBC micro:bit</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <span class="badge badge-success">Makecode</span>
+            <span class="badge badge-info">MicroPython</span>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
+                </div>
+                <div>
+                    <p>Autor: <b>Nika Klimová</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>MOVE: mini robot</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <span class="badge badge-success">Makecode</span>
+            <span class="badge badge-info">MicroPython</span>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
+                </div>
+                <div>
+                    <p>Autor: <b>Marek Mansell</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    --->
+
 </div>
 
-</div>
-<!-- /END THE FEATURETTES -->
-
-    </main>
-
-    <hr class="featurette-divider">
-
-    <div class="container">
-      <h3 class="text-center pt-4">Nechajte si posielať novinky na e-mail</h3>
-
-
-      <!-- Begin Mailchimp Signup Form -->
-      <div id="mc_embed_signup">
-      <form class="text-center" action="https://pycon.us12.list-manage.com/subscribe/post?u=89d883ce643e7200aabe34fa1&amp;id=e1520cb152" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-      <div class="mc-field-group">
-        <input type="email" value="" placeholder="Napíš sem svoj email" name="EMAIL" size="30" class="required email" id="mce-EMAIL">
-        <input type="submit" value="Chcem odoberať SPy o.z. newsletter" name="subscribe" id="mc-embedded-subscribe" class="button">
-      </div>
-      <div class="mc-field-group input-group" hidden>
-          <ul>
-      <li><input type="checkbox" value="2" name="group[17053][2]" id="mce-group[17053]-17053-1" checked><label for="mce-group[17053]-17053-1">SPy o.z. Newsletter (monthly updates on Python meetups, PyConSK and Učíme s Hardvérom - in SK lang.)</label></li>
-      </ul>
-      </div>
-
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_89d883ce643e7200aabe34fa1_e1520cb152" tabindex="-1" value=""></div>
-          </div>
-      </form>
-      </div>
-
-      <!--End mc_embed_signup-->
-
+</main>
+<hr class="featurette-divider">
+<div class="container">
+    <h3 class="text-center pt-4">Nechajte si posielať novinky na e-mail</h3>
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup">
+        <form class="text-center"
+              action="https://pycon.us12.list-manage.com/subscribe/post?u=89d883ce643e7200aabe34fa1&amp;id=e1520cb152"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+              target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                    <input type="email" value="" placeholder="Napíš sem svoj email" name="EMAIL" size="30"
+                           class="required email" id="mce-EMAIL">
+                    <input type="submit" value="Chcem odoberať SPy o.z. newsletter" name="subscribe"
+                           id="mc-embedded-subscribe" class="button">
+                </div>
+                <div class="mc-field-group input-group" hidden>
+                    <ul>
+                        <li><input type="checkbox" value="2" name="group[17053][2]" id="mce-group[17053]-17053-1"
+                                   checked><label for="mce-group[17053]-17053-1">SPy o.z. Newsletter (monthly updates on
+                            Python meetups, PyConSK and Učíme s Hardvérom - in SK lang.)</label></li>
+                    </ul>
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                          name="b_89d883ce643e7200aabe34fa1_e1520cb152"
+                                                                                          tabindex="-1" value=""></div>
+            </div>
+        </form>
     </div>
-
-    <footer class="text-muted text-center">
-      <div class="container pt-4">
-        <p><b>SPy o.z.</b> | <b>marek.mansell@pycon.sk</b> | <b>+421 904 010 424</b><p>
-        <p><small>Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a zapojiť sa môžeš aj Ty - <a href="/zapojsa/dobrovolnik/">návod ako nájdeš tu.</a></small></p>
+    <!--End mc_embed_signup-->
+</div>
+<footer class="text-muted text-center">
+    <div class="container pt-4">
+        <p><b>SPy o.z.</b> | <b>marek.mansell@pycon.sk</b> | <b>+421 904 010 424</b>
+        <p>
+        <p><small>Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a budeme radi, ak sa <b>zapojíš aj Ty</b>
+            - napíš nám mail :-)</small></p>
         <p class="float-right">
-          <a href="#top" class="btn btn-outline-primary btn-sm">Späť na začiatok</a>
+            <a href="#top" class="btn btn-outline-primary btn-sm">Späť na začiatok</a>
         </p>
         <!-- <p>
           <a href="https://github.com/micropythonsk/microbit.sk-website/edit/master/templates/index.html" class="btn btn-outline-secondary btn-sm">
-             Upraviť túto stránku
+            Upraviť túto stránku') }}
           </a>
-          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Bug_report.md" class="btn btn-outline-secondary btn-sm">
-             Nahlásiť problém
-          </a>
-          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Feature_request.md" class="btn btn-outline-secondary btn-sm">
-             Navrhnúť zlepšenie
-          </a>
-          <a href="https://crowdin.com/project/bbc-microbit-micropython" class="btn btn-outline-secondary btn-sm">
-             Pomôcť s prekladom
-          </a>
-        </p> -->
-      </div>
-    </footer>
+          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Bug_report_en.md" class="btn btn-outline-secondary btn-sm">
+          Nahlásiť problém') }}
+        </a>
+      <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Feature_request_en.md" class="btn btn-outline-secondary btn-sm">
+      Navrhnúť zlepšenie') }}
+    </a>
+    <a href="https://crowdin.com/project/bbc-microbit-micropython" class="btn btn-outline-secondary btn-sm">
+      Pomôcť s prekladom') }}
+    </a>
+  </p> -->
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/static/js/vendor/popper.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/js/vendor/holder.min.js"></script>
+</script>
+<script src="/static/js/vendor/popper.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/vendor/holder.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69278502-7"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-69278502-7');
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69278502-7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-69278502-7');
-    </script>
-
-  </body>
+</script>
+</body>
 </html>

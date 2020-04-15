@@ -36,3 +36,5 @@ MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku 
 
 Veľmi dôležitá je [MicroPython dokumentácia](http://microbit-micropython.readthedocs.io), ktorú budeme Časti využívať.
 
+
+Posledná zmena: **28.2.2020**
