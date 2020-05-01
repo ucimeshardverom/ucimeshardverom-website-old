@@ -26,8 +26,10 @@
                 <div class="card-body text-dark">
                     <p class="card-text">Farebné blokové prostredie <b>MakeCode</b> od Microsoftu je ideálne nie len pre
                         začiatočníkov v programovaní. </p>
-                    <img class="img-fluid" style="max-height: 4.5em;"
-                         src="{{ url_for('static', filename='img/materialy/makecode_heart_block.png') }}"/>
+                    <a href="{{ url_for('materialy_detail', tutorial_name='microbit_makecode') }}">
+                        <img class="img-fluid" style="max-height: 4.5em;"
+                             src="{{ url_for('static', filename='img/materialy/makecode_heart_block.png') }}"/>
+                    </a>
                     <hr/>
                     <div class="d-flex justify-content-between">
                         <div>
@@ -49,8 +51,10 @@
                 <div class="card-body text-dark">
                     <p class="card-text"><b>MicroPython</b> je skvelým spôsobom ako si vybudovať programátorské
                         zručnosti v textovom programovacom jazyku.</p>
-                    <img class="img-fluid" style="max-height: 4.5em;"
-                         src="{{ url_for('static', filename='img/materialy/micropython_line_screenshot.png') }}"/>
+                    <a href="{{ url_for('materialy_detail', tutorial_name='microbit_micropython') }}">
+                        <img class="img-fluid" style="max-height: 4.5em;"
+                             src="{{ url_for('static', filename='img/materialy/micropython_line_screenshot.png') }}"/>
+                    </a>
 
                     <hr/>
                     <div class="d-flex justify-content-between">
