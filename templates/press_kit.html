@@ -1,0 +1,56 @@
+{% extends "body.html" %}
+{% block content %}
+
+
+<div class="container text-center">
+    <div class="jumbotron">
+        <h1>Press kit</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="container text-justify">
+
+        <ul>
+            <li>
+                <p>Naše logo v krivkách (6MB) <a
+                        href="{{ url_for('static', filename='downloads/presskit/ucime_s_hardverom-press_kit-logo.zip') }}">stiahnuť</a>.
+                </p>
+            </li>
+            <li>
+                <p>Obrázky BBC micro:bit a workshopov (10MB) <a
+                        href="{{ url_for('static', filename='downloads/presskit/ucime_s_hardverom-press_kit-images.zip') }}">stiahnuť</a>
+                </p>
+            </li>
+            <li>
+                <p>Odkazy na videá</p>
+                <ul>
+                    <li>
+                        Čo je to BBC micro:bit? <a href="https://www.youtube.com/watch?v=gHa1Knk4V4Y">Pozrieť na
+                        YouTube</a>
+                    </li>
+                    <li>
+                        Prezentácia projektu na Generácii 3.0 (2018): <a
+                            href="https://www.youtube.com/watch?v=sQNQT-0ySMw">Pozrieť na YouTube</a>
+                    </li>
+                    <li>
+                        Prezentácia projektu na Open Education Policy Forum (2018) <a
+                            href="https://www.youtube.com/watch?v=cM5DdhZD9aY">Pozrieť na YouTube</a>
+                    </li>
+                    <li>
+                        EduSummit 2019 After Video: <a href="https://www.youtube.com/watch?v=ioJjB5RUqTE">Pozrieť na
+                        YouTube</a>
+                    </li>
+                    <li>
+                        PyCon SK 2019 After Video: <a href="https://www.youtube.com/watch?v=rOlGoEaz-DA">Pozrieť na
+                        YouTube</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+    {% endblock %}

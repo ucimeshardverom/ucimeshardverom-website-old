@@ -1,96 +1,46 @@
 #!/usr/bin/python
 # -*- coding: utf8 -*-
-import os
-from datetime import datetime
-from flask import Flask, g, request, render_template, abort, make_response, redirect, url_for, send_from_directory
-from flask_babel import Babel, gettext
-import yaml
-import markdown
-from markdown.extensions import Extension
+
 import codecs
+import os
+
 import pdfkit
+import yaml
+from flask import Flask, request, render_template, redirect, url_for, send_from_directory
+from markdown_to_html import markdown_to_html
 
 app = Flask(__name__, static_url_path='/static')
-app.config['BABEL_DEFAULT_LOCALE'] = 'sk'
 app.config['FREEZER_DESTINATION'] = 'docs'
 app.jinja_options = {'extensions': ['jinja2.ext.with_', 'jinja2.ext.i18n']}
-babel = Babel(app)
 
 CNAME = 'www.ucimeshardverom.sk'
 SRC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 LOGO_PYCON = 'logo/pycon.svg'
 
-# LANGS = ('sk', 'en', 'de', 'hu', 'cs', 'ru')
-LANGS = ('sk', 'en')
-
-TIME_FORMAT = '%Y-%m-%dT%H:%M:%S+00:00'
-NOW = datetime.utcnow().strftime(TIME_FORMAT)
-
-
-def get_mtime(filename):
-    mtime = datetime.fromtimestamp(os.path.getmtime(filename))
-    return mtime.strftime(TIME_FORMAT)
-
-
-SITEMAP_DEFAULT = {'prio': '0.1', 'freq': 'weekly'}
-SITEMAP = {
-    'sitemap.xml': {'prio': '0.9', 'freq': 'daily', 'lastmod': get_mtime(__file__)},
-    'index.html': {'prio': '1', 'freq': 'daily'},
-}
-LDJSON = {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": "SPy o.z.",
-    "url": "https://"+ CNAME,
-    "logo": "https://"+ CNAME +"/static/img/logo/python.svg",
-    "sameAs": [
-        "https://facebook.com/pyconsk",
-        "https://twitter.com/pyconsk",
-        "https://www.linkedin.com/company/spy-o--z-",
-        "https://github.com/pyconsk",
-    ]
-}
-
-
-@app.before_request
-def before():
-    if request.view_args and 'lang_code' in request.view_args:
-        g.current_lang = request.view_args['lang_code']
-        request.view_args.pop('lang_code')
-
-
-@babel.localeselector
-def get_locale():
-    # try to guess the language from the user accept
-    # header the browser transmits. The best match wins.
-    # return request.accept_languages.best_match(['de', 'sk', 'en'])
-    return g.get('current_lang', app.config['BABEL_DEFAULT_LOCALE'])
-
 
 def _get_template_variables(**kwargs):
     variables = {
-        'title': gettext('Učíme s Hardvérom'),
+        'title': 'Učíme s Hardvérom',
         'logo': LOGO_PYCON,
-        'ld_json': LDJSON,
-        'langs': LANGS,
         'CNAME': CNAME,
     }
     variables.update(kwargs)
 
-    if 'current_lang' in g:
-        variables['lang_code'] = g.current_lang
-
-        if g.current_lang not in LANGS:
-            return abort(404)
-    else:
-        variables['lang_code'] = app.config['BABEL_DEFAULT_LOCALE']
-
     return variables
 
 
+# Github Pages required file
 @app.route('/CNAME')
 def gh_cname():
     return CNAME
+
+
+# 404 website
+@app.errorhandler(404)
+def page_not_found(e):
+    # set the 404 status explicitly
+    template_variables = _get_template_variables()
+    return render_template('404.html', **template_variables), 404
 
 
 @app.route('/')
@@ -167,6 +117,7 @@ def feedback():
 def mapa():
     return render_template('zapojene_skoly.html', **_get_template_variables(li_index='active'))
 
+
 @app.route('/zapojene_skoly/')
 def zapojene_skoly():
     return redirect(url_for('mapa'))
@@ -176,9 +127,11 @@ def zapojene_skoly():
 def sutaz():
     return render_template('sutaz.html', **_get_template_variables(li_index='active'))
 
+
 @app.route('/gdpr/')
 def gdpr():
     return render_template('gdpr.html', **_get_template_variables(li_index='active'))
+
 
 @app.route('/pridaj_sa/')
 def pridaj_sa():
@@ -219,156 +172,173 @@ def hw_projekty():
 def kde_kupit():
     return render_template('kde_kupit.html', **_get_template_variables(li_index='active'))
 
-@app.route('/pilot')
+
 @app.route('/pilot/')
 def pilot():
     return render_template('pilot.html', **_get_template_variables(li_index='active'))
 
 
-def get_lastmod(route, sitemap_entry):
-    """Used by sitemap() below"""
-    if 'lastmod' in sitemap_entry:
-        return sitemap_entry['lastmod']
-
-    template = route.rule.split('/')[-1]
-    template_file = os.path.join(SRC_DIR, 'templates', template)
-
-    if os.path.exists(template_file):
-        return get_mtime(template_file)
-
-    return NOW
+@app.route('/press_kit/')
+def press_kit():
+    template_variables = _get_template_variables()
+    return render_template('press_kit.html', **template_variables)
 
 
-@app.route('/sitemap.xml', methods=['GET'])
-def sitemap():
-    """Generate sitemap.xml. Makes a list of urls and date modified."""
-    domain = 'https://'+ CNAME
-    pages = []
-
-    # static pages
-    for rule in app.url_map.iter_rules():
-
-        if "GET" not in rule.methods:
-            raise Exception
-
-        if 'lang_code' in rule.arguments:
-            indx = rule.rule.replace('/<lang_code>/', '')
-
-            for lang in LANGS:
-                alternate = []
-
-                for alt_lang in LANGS:
-                    if alt_lang != lang:
-                        alternate.append({
-                            'lang': alt_lang,
-                            'url': domain + rule.rule.replace('<lang_code>', alt_lang).replace('index.html', '')
-                        })
-
-                sitemap_data = SITEMAP.get(indx, SITEMAP_DEFAULT)
-                pages.append({
-                    'loc': domain + rule.rule.replace('<lang_code>', lang).replace('index.html', ''),
-                    'alternate': alternate,
-                    'lastmod': get_lastmod(rule, sitemap_data),
-                    'freq': sitemap_data['freq'],
-                    'prio': sitemap_data['prio'],
-                })
-        elif rule.rule == '/sitemap.xml':
-            indx = rule.rule.replace('/', '')
-            sitemap_data = SITEMAP.get(indx, SITEMAP_DEFAULT)
-            pages.append({
-                'loc': domain + rule.rule,
-                'lastmod': get_lastmod(rule, sitemap_data),
-                'freq': sitemap_data['freq'],
-                'prio': sitemap_data['prio'],
-            })
-
-    sitemap_xml = render_template('sitemap_template.xml', pages=pages)
-    response = make_response(sitemap_xml)
-    response.headers["Content-Type"] = "text/xml"
-
-    return response
+# @app.route('/materialy/microbit_makecode/')
+# def microbit_makecode():
+#     template_variables = _get_template_variables()
+#     return render_template('microbit_makecode.html', **template_variables)
 
 
-
-@app.route('/materialy/<string:metodika>/print')
-@app.route('/materialy/<string:metodika>/<string:kapitola>/print')
-def materialy_print(metodika, kapitola=False):
-
-    return materialy_detail(metodika, kapitola=kapitola, _print=True)
+@app.route('/materialy/<string:metodika>/print/')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/print/')
+def materialy_detail_print(metodika, kapitola=None, html_template='materialy_print.html'):
+    return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template)
 
 
-@app.route('/materialy/<string:metodika>/')
-@app.route('/materialy/<string:metodika>/<string:kapitola>/')
-def materialy_detail(metodika, kapitola=False, _print=False):
-    with open(os.path.join('materialy', metodika, 'SETTINGS.yaml')) as file:
+@app.route('/zacni/')
+@app.route('/zacni/<string:kapitola>/')
+def zacni(kapitola=None):
+    return materialy_detail("zacni", chapter_name=kapitola, material_base_url="")
+
+
+@app.route('/materialy/<string:tutorial_name>/')
+@app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/')
+def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/"):
+    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml')) as file:
         material_settings = yaml.full_load(file)
 
-    if kapitola == False:
-        chapter = 'uvod'
-    elif kapitola in [x['slug'] for x in material_settings['content']]:
-        chapter = kapitola
-    else:
-        return "not_found"
+    if not chapter_name:
+        first_chapter_name = list(material_settings.get('content'))[0]
+        chapter_name = first_chapter_name
 
+    # if chapter_name not in [x['slug'] for x in material_settings['content']]:
+    #     return "not_found"
 
-    content_path = os.path.join('materialy', metodika, chapter+'.md')
-    
+    content_path = os.path.join('materialy', tutorial_name, chapter_name + '.md')
+
     with codecs.open(content_path, mode="r", encoding="utf-8") as file:
         content_raw = file.read()
 
-    content_html = markdown.markdown(content_raw, extensions=['admonition', 'fenced_code', 'tables', 'footnotes'])
-
-    # Alerts
-    content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
-    content_html = content_html.replace("<div class=\"admonition primary\">", "<div class=\"alert alert-primary\">")
-    content_html = content_html.replace("<div class=\"admonition secondary\">", "<div class=\"alert alert-secondary\">")
-    content_html = content_html.replace("<div class=\"admonition success\">", "<div class=\"alert alert-success\">")
-    content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
-    content_html = content_html.replace("<div class=\"admonition warning\">", "<div class=\"alert alert-warning\">")
-    content_html = content_html.replace("<div class=\"admonition info\">", "<div class=\"alert alert-info\">")
-    content_html = content_html.replace("<div class=\"admonition light\">", "<div class=\"alert alert-light\">")
-    content_html = content_html.replace("<div class=\"admonition dark\">", "<div class=\"alert alert-dark\">")
-    
-    # Alert titles
-    content_html = content_html.replace("<p class=\"admonition-title\">", "<p class=\"h4\">")
-    
-    # Tables
-    content_html = content_html.replace("<table>", "<table class=\"table table-striped\">")
-    
-    # Blockquotes
-    content_html = content_html.replace("<blockquote>", "<blockquote class=\"blockquote\">")
-    
-    # Images
-    content_html = content_html.replace("<img ", "<img class=\"img-fluid\" ")
-
+    content_html = markdown_to_html(content_raw, img_url=f"/materialy/{tutorial_name}/")
 
     # Retrieve chapter title
-    for i, ch_data in enumerate(material_settings['content']):
-        if chapter == ch_data['slug']:
-            chapter_title = ch_data['title']
-            chapter_id = i+1
-    
-    # if _print:
-    #     options = {
-    #         'page-size': 'A4',
-    #         'margin-top': '10mm',
-    #         'margin-right': '10mm',
-    #         'margin-bottom': '10mm',
-    #         'margin-left': '10mm',
-    #         'encoding': "UTF-8",
-    #         'no-outline': None
-    #     }
+    chapter_title = material_settings.get('content').get(chapter_name).get('title')
 
-        # pdfkit.from_url('http://0.0.0.0:8000/materialy/help/','pdfs/shaurya.pdf', options=options)
-            
-    return render_template('materialy_detail.html', chapter_id=chapter_id, chapter_title=chapter_title, material_slug=metodika, chapter_slug=chapter, settings=material_settings, content_html=content_html, **_get_template_variables(li_index='active'))
+    # Retrieve Teacher Guite
+    teacher_content_html = None
+    teacher_guide = material_settings.get('content').get(chapter_name).get('teacher')
+    if teacher_guide:
+        content_path = os.path.join('materialy', tutorial_name, teacher_guide + '.md')
+        with codecs.open(content_path, mode="r", encoding="utf-8") as file:
+            teacher_content_raw = file.read()
+            teacher_content_html = markdown_to_html(teacher_content_raw, img_url=f"/materialy/{tutorial_name}/")
+
+    template_variables = _get_template_variables(chapter_title=chapter_title,
+                                                 material_slug=tutorial_name, chapter_slug=chapter_name,
+                                                 settings=material_settings, content_html=content_html,
+                                                 material_settings=material_settings,
+                                                 material_base_url=material_base_url,
+                                                 teacher_content_html=teacher_content_html)
+
+    return render_template(html_template, **template_variables)
+
+
+# @app.route('/materialy/generate_header/<string:title>/<string:subtitle>/')
+# def generate_header(title, subtitle):
+#     return f"<!DOCTYPE html><html><body align='center'><h1>{title}</h1><img height='20px' src='https://upload.wikimedia.org/wikipedia/commons/0/09/Kate-icon.png'/> {subtitle}<hr></body></html>"
+
+
+# @app.route('/materialy/<string:metodika>/generate_pdf')
+# @app.route('/materialy/<string:metodika>/generate_pdf/<int:js_loading_time>')
+# @app.route('/materialy/<string:metodika>/<string:kapitola>/generate_pdf')
+# @app.route('/materialy/<string:metodika>/<string:kapitola>/generate_pdf/<int:js_loading_time>')
+# def tutorial_generate_pdf(metodika, kapitola="uvod", js_loading_time=0):
+#     with open(os.path.join('materialy', metodika, 'SETTINGS.yaml')) as file:
+#         material_settings = yaml.full_load(file)
+#
+#     # Retrieve chapter title
+#     for i, ch_data in enumerate(material_settings['content']):
+#         if kapitola == ch_data['slug']:
+#             chapter_title = ch_data['title']
+#
+#     # Full list of options is at https://wkhtmltopdf.org/usage/wkhtmltopdf.txt
+#     options = {
+#         'page-size': 'A4',
+#         'margin-top': '35mm',
+#         'margin-right': '15mm',
+#         'margin-bottom': '25mm',
+#         'margin-left': '15mm',
+#         'encoding': "UTF-8",
+#         'no-outline': "",
+#         'title': f"Metodika: {chapter_title}",
+#
+#         'header-spacing': "10",
+#         'header-html': f"http://127.0.0.1:5000/materialy/generate_header/BBC micro:bit & MicroPython/{chapter_title}/",
+#
+#         'footer-line': "",
+#         'footer-font-size': "10",
+#         'footer-spacing': "10",
+#         'footer-center': "Licencia: CC BY SA 4.0",
+#         'footer-right': "Strana [page] z [toPage]\nPosledná úprava: XX.X.XXXX",
+#         'footer-left': "www.ucimeshardverom.sk\nAutor: Marek Mansell",
+#
+#         'disable-javascript': "",
+#
+#         'image-dpi': "2000",
+#         'no-pdf-compression': "",
+#         # 'grayscale':"",
+#     }
+#
+#     pdfkit.from_url(f'http://127.0.0.1:5000/materialy/{metodika}/{kapitola}/print/',
+#                     os.path.join('static', 'pdfs', f"{metodika}-{kapitola}.pdf"), options=options)
+#
+#     return send_from_directory(os.path.join('static', 'pdfs'), f"{metodika}-{kapitola}.pdf", mimetype='application/pdf',
+#                                as_attachment=False, attachment_filename=f"{metodika}-{kapitola}.pdf")
+
+
+# @app.route('/materialy/generate')
+# def generate_all_pdfs():
+#     return "s"
+#     material_dirs = os.listdir('materialy')
+#     for material in material_dirs:
+#
+#         with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
+#             material_settings = yaml.full_load(file)
+#
+#         for chapter_name in material_settings['content']:
+#             tutorial_generate_pdf(material, kapitola=chapter_name['slug'])
+#             # print(f"{material}-{chapter_name['slug']}.pdf")
+#     return "OK"
+
+
+# @app.route('/materialy/<string:metodika>/images/print/<string:image>')
+# # @app.route('/materialy/<string:metodika>/<string:kapitola>/print/images/<string:image>')
+# def materialy_images_print(metodika, image, kapitola=None):
+#     return materialy_images(metodika, image)
 
 
 @app.route('/materialy/<string:metodika>/images/<string:image>')
-@app.route('/materialy/<string:metodika>/<string:kapitola>/images/<string:image>')
-def materialy_images(metodika, image, kapitola=False):
+# @app.route('/materialy/<string:metodika>/<string:kapitola>/images/<string:image>')
+def materialy_images(metodika, image, kapitola=None):
     return send_from_directory(os.path.join('materialy', metodika, 'images'), image, mimetype='image/gif')
 
 
+@app.route('/zacni/images/<string:image>')
+# @app.route('/zacni/<string:kapitola>/images/<string:image>')
+def materialy_zacni_images(image, metodika="zacni", kapitola=None):
+    return materialy_images(metodika, image, kapitola)
+
+
+@app.route('/materialy/save_makecode_image/<string:id>', methods=['GET', 'POST'])
+def save_makecode_image(id):
+    if request.method == 'POST':
+        with open(os.path.join('static', 'makecode_cached_images', id), "w") as file:
+            file.write(f"<img src='{request.data.decode()}'/>")
+
+    return "OK"
+
+
 if __name__ == "__main__":
-    app.run(debug=True, host=os.environ.get('FLASK_HOST', '127.0.0.1'), port=int(os.environ.get('FLASK_PORT', 5000)))
+    app.run(debug=True, host=os.environ.get('FLASK_HOST', '127.0.0.1'),
+            port=int(os.environ.get('FLASK_PORT', 5000)))

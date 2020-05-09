@@ -198,12 +198,6 @@ Inline footnote^[Text of inline footnote] definition.
 
 Duplicated footnote reference[^second].
 
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
 
 ### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
 

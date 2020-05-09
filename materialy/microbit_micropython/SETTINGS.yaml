@@ -1,4 +1,4 @@
-title: "BBC micro:bit a MicroPython metodiky"
+title: "BBC micro:bit a MicroPython"
 description: "MicroPython a BBC micro:bit? Ideálna voľba pre pokročilejších používateľov :-)"
 author: "Marek Mansell"
 author_bio: "Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>,
@@ -11,34 +11,37 @@ author_bio: "Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Manse
 license: "CC BY 4.0"
 license_desc: "Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora."
 license_link: "https://creativecommons.org/licenses/by/4.0/"
-last_change: "28.2.2020"
+download_visible: True
+license_visible: True
+author_visible: True
+numbering: True
+
 
 content:
-
-  - slug:  uvod
-    title: Úvod k MicroPythonu
+  uvod:
+    title: "Úvod k MicroPythonu"
     visible: True
 
-  - slug:  mu_editor
-    title: Mu editor
+  mu_editor:
+    title: "Mu editor"
     visible: True
 
-  - slug:  online_editor
-    title: Online editor
+  online_editor:
+    title: "Online editor"
     visible: True
 
-  - slug:  displej_menovka
-    title: Displej - menovka
+  displej_menovka:
+    title: "Displej - menovka"
     visible: True
 
-  - slug:  displej_animacie
-    title: Displej - animácie
+  displej_animacie:
+    title: "Displej - animácie"
     visible: True
 
-  - slug:  hudba_kohutik
-    title: Hudba - Kohútik Jarabý
+  hudba_kohutik:
+    title: "Hudba - Kohútik Jarabý"
     visible: True
 
-  - slug:  tlacidla_tamagoci
-    title: Tlačidlá - Tamagoči
+  tlacidla_tamagoci:
+    title: "Tlačidlá - Tamagoči"
     visible: True

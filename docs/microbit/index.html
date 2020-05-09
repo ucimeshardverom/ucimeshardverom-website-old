@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="sk">
-  <head>
+<head>
     <meta charset="utf-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,92 +11,78 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/microbit/" hreflang="en">
-    
     <link rel="canonical" href="https://www.ucimeshardverom.sk/microbit/"/>
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
+    <div class="container d-flex justify-content-between">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+            <img src="/static/img/logo/logo-colour.png" class="header-logo"
+                 alt="Python logo"/>
+            <strong style="color:white">Učíme s Hardvérom</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <ul class="navbar-right navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pre školy/učiteľov
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
-      <div class="container d-flex justify-content-between">
-      <a href="/" class="navbar-brand d-flex align-items-center">
-        <img src="/static/img/logo/logo-colour.png" class="header-logo" alt="Python logo" />
-        <strong style="color:white">Učíme s Hardvérom</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <ul class="navbar-right navbar-nav justify-content-end">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                O projekte
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/ciele/">Ciele projektu</a>
-                <!-- <a class="dropdown-item" href="/mapa/">Mapa škôl</a> -->
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/hardver/">Hardvér ako edukačná pomôcka</a>
-                <a class="dropdown-item" href="/microbit/">Platforma BBC micro:bit</a>
-                <a class="dropdown-item" href="/nodemcu/">Platforma NodeMCU</a>
-                <a class="dropdown-item" href="/projekty/">Hardvérové projekty</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pre školy/učiteľov
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                
-                <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre učiteľov</a>
-                <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">Učiteľské online fórum 🔗</a>
-                <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako učiteľ</a>
-                <a class="dropdown-item" href="/feedback/">Feedback</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="http://edutronik.sk/">Kde kúpiť hardvér 🔗</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/materialy/">Materiály</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
-            </li>
-<!--             <li class="nav-item">-->
-<!--               <a class="nav-link" href="/blog/">Blog</a>-->
-<!--             </li>-->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                O nás
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/o_nas/">Náš tím</a>
-                <a class="dropdown-item" href="/partneri/">Partneri</a>
-                <!-- <a class="dropdown-item" href="/ambasadori/">Staň sa ambasádorom</a> -->
-                <a class="dropdown-item" href="/gdpr/">GDPR</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/pridaj_sa/">Pridaj sa k nám</a>
-              </div>
-            </li>
-            <!-- <li class="nav-item"> -->
-              <!-- <a class="nav-link" style="border-width:0 0 0 1px; border-style: solid;" href="/zapojsa/skola/">Prihlásiť sa</a> -->
-            <!-- </li> -->
-          </ul>
+                            <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
+                                učiteľov</a>
+                            <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">Učiteľské online fórum
+                                🔗</a>
+                            <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
+                                učiteľ</a>
+                            <a class="dropdown-item" href="/feedback/">Feedback</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="http://edutronik.sk/">Kde kúpiť hardvér 🔗</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/materialy/">Materiály</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            O nás
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/o_nas/">Náš tím & Kontakt</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/partneri/">Partneri</a>
+                            <a class="dropdown-item" href="/ciele/">Ciele projektu</a>
+                            <a class="dropdown-item" href="/press_kit/">Press kit</a>
+                            <a class="dropdown-item" href="/gdpr/">GDPR</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-      </div>
-    </nav>
-
-    <main role="main">
+    </div>
+</nav>
+<main role="main">
     
 
 <div class="container text-center">
   <div class="jumbotron">
-    <h1>Platforma BBC micro:bit</h1>
+    <h1>Platforma BBC micro:bit') }}</h1>
   </div>
 </div>
 
@@ -115,9 +101,9 @@
 
   <div class="container text-justify" style="padding-top:30px">
 
-    <h2 class="featurette-heading">micro:bit pochádza z Veľkej Británie</h2>
+    <h2 class="featurette-heading">micro:bit pochádza z Veľkej Británie') }}</h2>
 
-    <p>Zariadenie BBC micro:bit je výsledkom spoločnej iniciatívy širokého spektra súkromných i verejných organizácií, ktorej cieľom bolo vytvorenie lacnej edukačnej platformy, ktorú zastrešila britská verejnoprávna televízna spoločnosť BBC. Tá v roku 2016 rozdistribuovala jeden micro:bit každému žiakovi siedmeho ročníka v Spojenom Kráľovstve (11 až 12 roční). V rámci projektu bolo vytvorených niekoľko učebných materiálov a vývojových prostredí pre toto zariadenie. Škálu materiálov rozširujú aj učitelia, ktorí zariadenia používali na hodinách informatiky.</p>
+    <p>Zariadenie BBC micro:bit je výsledkom spoločnej iniciatívy širokého spektra súkromných i verejných organizácií, ktorej cieľom bolo vytvorenie lacnej edukačnej platformy, ktorú zastrešila britská verejnoprávna televízna spoločnosť BBC. Tá v roku 2016 rozdistribuovala jeden micro:bit každému žiakovi siedmeho ročníka v Spojenom Kráľovstve (11 až 12 roční). V rámci projektu bolo vytvorených niekoľko učebných materiálov a vývojových prostredí pre toto zariadenie. Škálu materiálov rozširujú aj učitelia, ktorí zariadenia používali na hodinách informatiky.') }}</p>
 
     <hr class="featurette-divider">
 
@@ -129,29 +115,29 @@
 
   <div class="container text-justify">
 
-    <h2 class="featurette-heading">Samotná doska</h2>
+    <h2 class="featurette-heading">Samotná doska') }}</h2>
       
-    <p>Zariadenie BBC micro:bit je programovateľný mikropočítač. Obsahuje vstavanú obrazovku, tlačidlá, senzor pohybu, naklonenia, teploty a svetelnosti. Podporuje dva druhy bezdrôtovej komunikácie - Bluetooth Low Energy (BLE) pre komunikáciu s mobilnými zariadeniami a rádiový prenos pre komunikáciu s inými zariadeniami BBC micro:bit. Taktiež je možná sériovú komunikácia s počítačom cez USB kábel.</p>
+    <p>Zariadenie BBC micro:bit je programovateľný mikropočítač. Obsahuje vstavanú obrazovku, tlačidlá, senzor pohybu, naklonenia, teploty a svetelnosti. Podporuje dva druhy bezdrôtovej komunikácie - Bluetooth Low Energy (BLE) pre komunikáciu s mobilnými zariadeniami a rádiový prenos pre komunikáciu s inými zariadeniami BBC micro:bit. Taktiež je možná sériovú komunikácia s počítačom cez USB kábel.') }}</p>
 
-    <p>Podobne ako iné modulárne hardvérové platformy má všeobecne použiteľné vstupno-výstupné piny (vývody), vďaka ktorým zariadenie interaguje s fyzickým svetom. Tie majú pri tejto platforme podobu kovových plôch na okraji dosky. Príkladom aplikácie pre vstupný pin je snímanie stlačenia tlačidla, príkladom výstupného je zapínanie a vypínanie LED svetla. Niektoré z týchto pinov podporujú aj sériovú komunikáciu s externými modulmi s vlastným mikroprocesorom. Najjednoduchším spôsobom pripojenia externých modulov je pomocou prepojovacích káblov ukončených krokosvorkami. BBC micro:bit má päť pinov prispôsobených na pripájanie krokosvoriek, z toho dve slúžia na napájanie a tri sú programovateľné ako vstupy alebo výstupy.</p>
+    <p>Podobne ako iné modulárne hardvérové platformy má všeobecne použiteľné vstupno-výstupné piny (vývody), vďaka ktorým zariadenie interaguje s fyzickým svetom. Tie majú pri tejto platforme podobu kovových plôch na okraji dosky. Príkladom aplikácie pre vstupný pin je snímanie stlačenia tlačidla, príkladom výstupného je zapínanie a vypínanie LED svetla. Niektoré z týchto pinov podporujú aj sériovú komunikáciu s externými modulmi s vlastným mikroprocesorom. Najjednoduchším spôsobom pripojenia externých modulov je pomocou prepojovacích káblov ukončených krokosvorkami. BBC micro:bit má päť pinov prispôsobených na pripájanie krokosvoriek, z toho dve slúžia na napájanie a tri sú programovateľné ako vstupy alebo výstupy.') }}</p>
 
-    <p>Napájanie je realizovateľné tromi spôsobmi: cez USB kábel; dvoma batériami v špeciálnom držiaku bežne dodávanom s BBC micro:bit alebo pripojením batérie priamo na napájacie piny.</p>
+    <p>Napájanie je realizovateľné tromi spôsobmi: cez USB kábel; dvoma batériami v špeciálnom držiaku bežne dodávanom s BBC micro:bit alebo pripojením batérie priamo na napájacie piny.') }}</p>
 
   </div>
 
   <div class="container text-justify">
 
-    <h2 class="featurette-heading">Programovanie micro:bitu</h2>
+    <h2 class="featurette-heading">Programovanie micro:bitu') }}</h2>
       
-    <p><strong>MakeCode</strong> je online grafickým prostredím, v ktorom žiaci vytvárajú pomocou spájania blokov funkčné programy. Vhodný je najmä pre žiakov základných škôl. Výhodou tohoto prostredia je nízka technická náročnosť prípravy pre učiteľa, nakoľko prostredie je online a nie je potrebná žiadna inštalácia. Po vytvorení programu v prostredí si žiak program stiahne ako obyčajný súbor. BBC micro:bit, ktorý si žiak medzičasom pripojil k počítaču pomocou USB kábla, sa na počítači zobrazí ako klasické USB úložisko, na ktoré stiahnutý súbor s programom stačí skopírovať. Program sa následne automaticky spustí na zariadení.</p>
+    <p><strong>MakeCode</strong> je online grafickým prostredím, v ktorom žiaci vytvárajú pomocou spájania blokov funkčné programy. Vhodný je najmä pre žiakov základných škôl. Výhodou tohoto prostredia je nízka technická náročnosť prípravy pre učiteľa, nakoľko prostredie je online a nie je potrebná žiadna inštalácia. Po vytvorení programu v prostredí si žiak program stiahne ako obyčajný súbor. BBC micro:bit, ktorý si žiak medzičasom pripojil k počítaču pomocou USB kábla, sa na počítači zobrazí ako klasické USB úložisko, na ktoré stiahnutý súbor s programom stačí skopírovať. Program sa následne automaticky spustí na zariadení.') }}</p>
 
-    <p><strong>MicroPython</strong> je špeciálna verzia jazyku Python pre programovanie hardvéru, v ktorej syntax a veľká časť štandardných knižníc zostáva rovnaká. Žiaci sa tak nemusia učiť viacero nových jazykov, ten istý vedia využiť aj pri hardvéri a aj pri klasických programovacích úlohách. Podobne. ako pri blokovom programovaní, je možné využiť online MicroPython editor a stiahnuť vygenerovaný program na zariadenie, no pre využitie rozšírenej funkcionality je vhodné používať prostredie <strong>Mu</strong>. Mu sprístupňuje interaktívnu konzolu REPL, ktorá slúži najmä na ladenie programu a hľadanie chýb, ako aj interné dátové úložisko, na ktoré je možné zapisovať nazbierané údaje zo senzorov.</p>
+    <p><strong>MicroPython</strong> je špeciálna verzia jazyku Python pre programovanie hardvéru, v ktorej syntax a veľká časť štandardných knižníc zostáva rovnaká. Žiaci sa tak nemusia učiť viacero nových jazykov, ten istý vedia využiť aj pri hardvéri a aj pri klasických programovacích úlohách. Podobne. ako pri blokovom programovaní, je možné využiť online MicroPython editor a stiahnuť vygenerovaný program na zariadenie, no pre využitie rozšírenej funkcionality je vhodné používať prostredie <strong>Mu</strong>. Mu sprístupňuje interaktívnu konzolu REPL, ktorá slúži najmä na ladenie programu a hľadanie chýb, ako aj interné dátové úložisko, na ktoré je možné zapisovať nazbierané údaje zo senzorov') }}.</p>
 
   </div>
 
   <div class="container text-justify">
 
-    <h2 class="featurette-heading">Kde kúpiť hardvérové sady pre školy?</h2>
+    <h2 class="featurette-heading">Kde kúpiť hardvérové sady pre školy?') }}</h2>
       
     <p>Kompletné edukačné sady pre školy je možné kúpiť na stránke <a href="http://www.edutronik.sk/">Edutronik.sk</a></p>
 
@@ -161,80 +147,74 @@
 </div>
 <!-- /END THE FEATURETTES -->
 
-    </main>
-
-    <hr class="featurette-divider">
-
-    <div class="container">
-      <h3 class="text-center pt-4">Nechajte si posielať novinky na e-mail</h3>
-
-
-      <!-- Begin Mailchimp Signup Form -->
-      <div id="mc_embed_signup">
-      <form class="text-center" action="https://pycon.us12.list-manage.com/subscribe/post?u=89d883ce643e7200aabe34fa1&amp;id=e1520cb152" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-      <div class="mc-field-group">
-        <input type="email" value="" placeholder="Napíš sem svoj email" name="EMAIL" size="30" class="required email" id="mce-EMAIL">
-        <input type="submit" value="Chcem odoberať SPy o.z. newsletter" name="subscribe" id="mc-embedded-subscribe" class="button">
-      </div>
-      <div class="mc-field-group input-group" hidden>
-          <ul>
-      <li><input type="checkbox" value="2" name="group[17053][2]" id="mce-group[17053]-17053-1" checked><label for="mce-group[17053]-17053-1">SPy o.z. Newsletter (monthly updates on Python meetups, PyConSK and Učíme s Hardvérom - in SK lang.)</label></li>
-      </ul>
-      </div>
-
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_89d883ce643e7200aabe34fa1_e1520cb152" tabindex="-1" value=""></div>
-          </div>
-      </form>
-      </div>
-
-      <!--End mc_embed_signup-->
-
+</main>
+<hr class="featurette-divider">
+<div class="container">
+    <h3 class="text-center pt-4">Nechajte si posielať novinky na e-mail</h3>
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup">
+        <form class="text-center"
+              action="https://pycon.us12.list-manage.com/subscribe/post?u=89d883ce643e7200aabe34fa1&amp;id=e1520cb152"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+              target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                    <input type="email" value="" placeholder="Napíš sem svoj email" name="EMAIL" size="30"
+                           class="required email" id="mce-EMAIL">
+                    <input type="submit" value="Chcem odoberať SPy o.z. newsletter" name="subscribe"
+                           id="mc-embedded-subscribe" class="button">
+                </div>
+                <div class="mc-field-group input-group" hidden>
+                    <ul>
+                        <li><input type="checkbox" value="2" name="group[17053][2]" id="mce-group[17053]-17053-1"
+                                   checked><label for="mce-group[17053]-17053-1">SPy o.z. Newsletter (monthly updates on
+                            Python meetups, PyConSK and Učíme s Hardvérom - in SK lang.)</label></li>
+                    </ul>
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                          name="b_89d883ce643e7200aabe34fa1_e1520cb152"
+                                                                                          tabindex="-1" value=""></div>
+            </div>
+        </form>
     </div>
-
-    <footer class="text-muted text-center">
-      <div class="container pt-4">
-        <p><b>SPy o.z.</b> | <b>marek.mansell@pycon.sk</b> | <b>+421 904 010 424</b><p>
-        <p><small>Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a zapojiť sa môžeš aj Ty - <a href="/zapojsa/dobrovolnik/">návod ako nájdeš tu.</a></small></p>
+    <!--End mc_embed_signup-->
+</div>
+<footer class="text-muted text-center">
+    <div class="container pt-4">
+        <p><b>SPy o.z.</b> | <b>marek.mansell@pycon.sk</b> | <b>+421 904 010 424</b>
+        <p>
+        <p><small>Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a budeme radi, ak sa <b>zapojíš aj Ty</b>
+            - napíš nám mail :-)</small></p>
         <p class="float-right">
-          <a href="#top" class="btn btn-outline-primary btn-sm">Späť na začiatok</a>
+            <a href="#top" class="btn btn-outline-primary btn-sm">Späť na začiatok</a>
         </p>
-        <!-- <p>
-          <a href="https://github.com/micropythonsk/microbit.sk-website/edit/master/templates/index.html" class="btn btn-outline-secondary btn-sm">
-             Upraviť túto stránku
-          </a>
-          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Bug_report.md" class="btn btn-outline-secondary btn-sm">
-             Nahlásiť problém
-          </a>
-          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Feature_request.md" class="btn btn-outline-secondary btn-sm">
-             Navrhnúť zlepšenie
-          </a>
-          <a href="https://crowdin.com/project/bbc-microbit-micropython" class="btn btn-outline-secondary btn-sm">
-             Pomôcť s prekladom
-          </a>
-        </p> -->
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/static/js/vendor/popper.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/js/vendor/holder.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69278502-7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-69278502-7');
-    </script>
+</script>
+<script src="/static/js/vendor/popper.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/vendor/holder.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69278502-7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-69278502-7');
 
-  </body>
+</script>
+</body>
 </html>

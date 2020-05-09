@@ -1,0 +1,112 @@
+title: "Tutoriál BBC micro:bit a MakeCode"
+description: ""
+author: "Marek Mansell"
+author_bio: "Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>,
+             ktorý spolu s kolegami zo združenia <a href='//python.sk'>SPy</a> pripravuje
+             pre Vás otvorene licencované materiály.
+             <br><br>
+             Prosím, posielajte nám spätnú väzbu na
+             marek.mansell@pycon.sk"
+license: "CC BY 4.0"
+license_desc: "Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora."
+license_link: "https://creativecommons.org/licenses/by/4.0/"
+download_visible: False
+license_visible: True
+author_visible: True
+numbering: True
+
+content:
+  uvod:
+    title: "Úvod"
+    visible: True
+    teacher: uvod_teacher
+  
+  digitalna_menovka:
+    title: "Displej: Digitálna menovka a obrázky"
+    visible: True
+    teacher: digitalna_menovka_teacher
+  
+  tlacidla:
+    title: "Tlačidlá: Animované digitálne zvieratko"
+    visible: True
+    teacher: tlacidla_teacher
+
+  senzor_pohybu:
+    title: "Akcelerometer: micro:bit v pohybe"
+    visible: True
+    teacher: senzor_pohybu_teacher
+
+  pocitadlo_ludi:
+    title: "Počítadlo ľudí"
+    visible: True
+    teacher: pocitadlo_ludi_teacher
+
+  poslusne_hlasim:
+    title: "Hra: Poslušne hlásim"
+    visible: True
+    teacher: poslusne_hlasim_teacher
+
+  kamen_papier_noznice:
+    title: "Hra: Kameň, papier, nožnice"
+    visible: True
+    teacher: kamen_papier_noznice_teacher
+
+  krokomer:
+    title: "Krokomer"
+    visible: True
+    teacher: krokomer_teacher
+
+  obvody:
+    title: "Elektrické obvody a vodivosť materiálov"
+    visible: True
+    teacher: obvody_teacher
+    
+  led_diody:
+    title: "Ako fungujú LED diódy"
+    visible: True
+    teacher: led_diody_teacher
+
+  semafor:
+    title: "Semafor z LED diód"
+    visible: True
+    teacher: semafor_teacher
+
+  horuci_drot:
+    title: "Hra: Horúci drôt"
+    visible: True
+    teacher: horuci_drot_teacher
+
+  radio:
+    title: "Bezdrôtová komunikácia"
+    visible: True
+    teacher: radio_teacher
+
+  led_pasik:
+    title: "Programovenie LED pásiku"
+    visible: True
+    teacher: led_pasik_teacher
+
+  led_pasik_doplnok:
+    title: "LED pásik ako módny doplnok"
+    visible: True
+    teacher: led_pasik_doplnok_teacher
+
+  hudba:
+    title: "Programovanie hudby"
+    visible: True
+    teacher: hudba_teacher
+
+  gitara:
+    title: "Kartónová gitara"
+    visible: False
+    teacher: gitara_teacher
+
+  sedackova_mina:
+    title: "Sedačková mína"
+    visible: False
+    teacher: sedackova_mina_teacher
+
+  tikajuca_bomba:
+    title: "Tikajúca bomba"
+    visible: False
+    teacher: tikajuca_bomba_teacher

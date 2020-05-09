@@ -11,7 +11,6 @@
       content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}"/>
 
 
-
 {% endblock %}
 
 {% block content %}
@@ -19,17 +18,17 @@
 <div class="container text-center">
 
 
-<div class="card bg-dark text-white mt-3 mb-3">
-  <img class="card-img" style="filter: brightness(40%);" src="{{ url_for('static', filename='img/random/bg_card.jpg') }}" alt="Card image">
-  <div class="card-img-overlay align-middle">
+    <div class="card bg-dark text-white mt-3 mb-3">
+        <img class="card-img" style="filter: brightness(40%);"
+             src="{{ url_for('static', filename='img/random/bg_card.jpg') }}" alt="Card image">
+        <div class="card-img-overlay align-middle">
 
-<div class="mt-5">
-  <h1 class="display-4 mt-5">{{ settings.title }}</h1>
-  <p class="lead">{{ settings.description}}</p>
-</div>
+            <div class="mt-5">
+                <h1 class="display-4 mt-5">{{ settings.title }}</h1>
+            </div>
 
-  </div>
-</div>
+        </div>
+    </div>
 
 </div>
 
@@ -39,76 +38,101 @@
 
 <div class="container">
 
-<div class="container">
-  <div class="row">
+    <div class="container">
+        <div class="row">
 
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-header">
-          {{ settings.title }}
-        </div>
-        <ul class="list-group">
-          {% for item in settings.content %}
-            {% if item.visible %}
-              <li class="list-group-item {% if item.slug == chapter_slug %} active {% endif %}"><a href="/materialy/{{ material_slug }}/{{ item.slug }}">{{ loop.index }}. {{ item.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        {{ settings.title }}
+                    </div>
+                    <ul class="list-group">
+                        {% for item in settings.content %}
+                        {% if settings.content[item].visible %}
+                        <li class="list-group-item {% if item == chapter_slug %} active {% endif %}">
+                            <a href="/{{ material_base_url }}{{ material_slug }}/{% if loop.index != 1 %}{{ item }}{% endif %}">
+                                {% if material_settings.numbering %}{{ loop.index }}. {% endif%}{{ settings.content[item].title }}</a>
+                        </li>
 
-<!--       <div class="card mt-4">
-        <div class="card-header">
-          Zásobuj sa informáciami
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Workshopy, metodiky, súťaže...</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Prihlásiť sa do newsletteru</a>
-        </div>
-      </div> -->
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
 
-      <div class="card mt-4">
-        <div class="card-header">
-          Kto je autorom tohto materiálu?
-        </div>
-        <div class="card-body">
-          <p class="card-text">{{ settings.author_bio|safe }}</p>
-        </div>
-      </div>
+                {% if material_settings.author_visible %}
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Kto je autorom tohto materiálu?
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ settings.author_bio|safe }}</p>
+                    </div>
+                </div>
+                {% endif %}
 
-      <div class="card mt-4">
-        <div class="card-header">
-          Ako môžem tento materiál používať?
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Licencia {{ settings.license }}</h5>
-          <p class="card-text">{{ settings.license_desc }}</p>
-          <a href="{{ settings.license_link }}" class="btn btn-primary">Celé znenie licencie</a>
-        </div>
-      </div>
+                {% if material_settings.license_visible %}
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Ako môžem tento materiál používať?
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Licencia {{ settings.license }}</h5>
+                        <p class="card-text">{{ settings.license_desc }}</p>
+                        <a href="{{ settings.license_link }}" class="btn btn-primary">Celé znenie licencie</a>
+                    </div>
+                </div>
+                {% endif %}
 
+                {% if material_settings.download_visible %}
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Stiahnuť/Vytlačiť
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                        <a href="{{ url_for('materialy_detail_print', metodika=material_slug, kapitola=chapter_slug) }}"
+                           class="btn btn-secondary">Stiahnuť návod</a>
 
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+            <div class="col-md-8 text-justify">
+
+                <h1 class="mb-4 text-left">{{ chapter_title }}</h1>
+
+                {% if teacher_content_html %}
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                           role="tab" aria-controls="nav-home" aria-selected="true">Návod</a>
+                        {% if teacher_content_html %}
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                           role="tab" aria-controls="nav-profile" aria-selected="false">Metodika pre učiteľa</a>
+                        {% endif %}
+                    </div>
+                </nav>
+                {% endif %}
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="mt-4">
+                            {{ content_html|safe }}
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="mt-4">
+                            {{ teacher_content_html|safe }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-8">
-      <h1>{{chapter_id}}. {{ chapter_title }}</h1>
-      {{ content_html|safe }}
-    </div>
-  </div>
-</div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -192,6 +216,12 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
             case "renderblocks":
                 var svg = msg.svg; // this is an string containing SVG
                 var id = msg.id; // this is the id you sent
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "http://127.0.0.1:5000/materialy/save_makecode_image/"+msg.id, true);
+                xhttp.send(msg.uri);
+
+                
                 // replace text with svg
                 var img = document.createElement("img");
                 img.src = msg.uri;
@@ -218,12 +248,14 @@ function renderSnippets() {
 // load the renderer
 renderSnippets();
 
+
+
+
+
+
+
+
 </script>
-
-
-
-
-
 
 
 <!-- /END THE FEATURETTES -->

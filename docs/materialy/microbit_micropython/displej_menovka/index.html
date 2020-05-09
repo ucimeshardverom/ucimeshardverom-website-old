@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="sk">
-  <head>
+<head>
     <meta charset="utf-8">
     
 
@@ -14,7 +14,6 @@
 
 
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="SPy o.z.">
@@ -23,103 +22,89 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="alternate" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/displej_menovka/" hreflang="en">
-    
     <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/microbit_micropython/displej_menovka/"/>
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
+    <div class="container d-flex justify-content-between">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+            <img src="/static/img/logo/logo-colour.png" class="header-logo"
+                 alt="Python logo"/>
+            <strong style="color:white">Učíme s Hardvérom</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <ul class="navbar-right navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pre školy/učiteľov
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
-      <div class="container d-flex justify-content-between">
-      <a href="/" class="navbar-brand d-flex align-items-center">
-        <img src="/static/img/logo/logo-colour.png" class="header-logo" alt="Python logo" />
-        <strong style="color:white">Učíme s Hardvérom</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <ul class="navbar-right navbar-nav justify-content-end">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                O projekte
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/ciele/">Ciele projektu</a>
-                <!-- <a class="dropdown-item" href="/mapa/">Mapa škôl</a> -->
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/hardver/">Hardvér ako edukačná pomôcka</a>
-                <a class="dropdown-item" href="/microbit/">Platforma BBC micro:bit</a>
-                <a class="dropdown-item" href="/nodemcu/">Platforma NodeMCU</a>
-                <a class="dropdown-item" href="/projekty/">Hardvérové projekty</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pre školy/učiteľov
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                
-                <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre učiteľov</a>
-                <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">Učiteľské online fórum 🔗</a>
-                <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako učiteľ</a>
-                <a class="dropdown-item" href="/feedback/">Feedback</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="http://edutronik.sk/">Kde kúpiť hardvér 🔗</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/materialy/">Materiály</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
-            </li>
-<!--             <li class="nav-item">-->
-<!--               <a class="nav-link" href="/blog/">Blog</a>-->
-<!--             </li>-->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                O nás
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/o_nas/">Náš tím</a>
-                <a class="dropdown-item" href="/partneri/">Partneri</a>
-                <!-- <a class="dropdown-item" href="/ambasadori/">Staň sa ambasádorom</a> -->
-                <a class="dropdown-item" href="/gdpr/">GDPR</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/pridaj_sa/">Pridaj sa k nám</a>
-              </div>
-            </li>
-            <!-- <li class="nav-item"> -->
-              <!-- <a class="nav-link" style="border-width:0 0 0 1px; border-style: solid;" href="/zapojsa/skola/">Prihlásiť sa</a> -->
-            <!-- </li> -->
-          </ul>
+                            <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
+                                učiteľov</a>
+                            <a class="dropdown-item" href="http://forum.ucimeshardverom.sk/">Učiteľské online fórum
+                                🔗</a>
+                            <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
+                                učiteľ</a>
+                            <a class="dropdown-item" href="/feedback/">Feedback</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="http://edutronik.sk/">Kde kúpiť hardvér 🔗</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/materialy/">Materiály</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            O nás
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/o_nas/">Náš tím & Kontakt</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/partneri/">Partneri</a>
+                            <a class="dropdown-item" href="/ciele/">Ciele projektu</a>
+                            <a class="dropdown-item" href="/press_kit/">Press kit</a>
+                            <a class="dropdown-item" href="/gdpr/">GDPR</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-      </div>
-    </nav>
-
-    <main role="main">
+    </div>
+</nav>
+<main role="main">
     
 
 <div class="container text-center">
 
 
-<div class="card bg-dark text-white mt-3 mb-3">
-  <img class="card-img" style="filter: brightness(40%);" src="/static/img/random/bg_card.jpg" alt="Card image">
-  <div class="card-img-overlay align-middle">
+    <div class="card bg-dark text-white mt-3 mb-3">
+        <img class="card-img" style="filter: brightness(40%);"
+             src="/static/img/random/bg_card.jpg" alt="Card image">
+        <div class="card-img-overlay align-middle">
 
-<div class="mt-5">
-  <h1 class="display-4 mt-5">BBC micro:bit a MicroPython metodiky</h1>
-  <p class="lead">MicroPython a BBC micro:bit? Ideálna voľba pre pokročilejších používateľov :-)</p>
-</div>
+            <div class="mt-5">
+                <h1 class="display-4 mt-5">BBC micro:bit a MicroPython</h1>
+            </div>
 
-  </div>
-</div>
+        </div>
+    </div>
 
 </div>
 
@@ -129,103 +114,141 @@
 
 <div class="container">
 
-<div class="container">
-  <div class="row">
+    <div class="container">
+        <div class="row">
 
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-header">
-          BBC micro:bit a MicroPython metodiky
-        </div>
-        <ul class="list-group">
-          
-            
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/uvod">1. Úvod k MicroPythonu</a></li>
-            
-          
-            
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/mu_editor">2. Mu editor</a></li>
-            
-          
-            
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/online_editor">3. Online editor</a></li>
-            
-          
-            
-              <li class="list-group-item  active "><a href="/materialy/microbit_micropython/displej_menovka">4. Displej - menovka</a></li>
-            
-          
-            
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/displej_animacie">5. Displej - animácie</a></li>
-            
-          
-            
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/hudba_kohutik">6. Hudba - Kohútik Jarabý</a></li>
-            
-          
-            
-              <li class="list-group-item "><a href="/materialy/microbit_micropython/tlacidla_tamagoci">7. Tlačidlá - Tamagoči</a></li>
-            
-          
-        </ul>
-      </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        BBC micro:bit a MicroPython
+                    </div>
+                    <ul class="list-group">
+                        
+                        
+                        <li class="list-group-item ">
+                            <a href="/materialy/microbit_micropython/">
+                                1. Úvod k MicroPythonu</a>
+                        </li>
 
-<!--       <div class="card mt-4">
-        <div class="card-header">
-          Zásobuj sa informáciami
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Workshopy, metodiky, súťaže...</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Prihlásiť sa do newsletteru</a>
-        </div>
-      </div> -->
+                        
+                        
+                        
+                        <li class="list-group-item ">
+                            <a href="/materialy/microbit_micropython/mu_editor">
+                                2. Mu editor</a>
+                        </li>
 
-      <div class="card mt-4">
-        <div class="card-header">
-          Kto je autorom tohto materiálu?
-        </div>
-        <div class="card-body">
-          <p class="card-text">Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>, ktorý spolu s kolegami zo združenia <a href='//python.sk'>SPy</a> pripravuje pre Vás otvorene licencované materiály. Veľká vďaka partí najmä Eve Klimekovej a Nike Klimovej za metodické pripomienkovanie.<br><br> Prosím, napíšte nám pripomienky, otázky a akúkoľvek spätnú väzbu (aj negatívnu)<br><br> Kontakt na mňa:<br> marek.mansell@pycon.sk</p>
-        </div>
-      </div>
+                        
+                        
+                        
+                        <li class="list-group-item ">
+                            <a href="/materialy/microbit_micropython/online_editor">
+                                3. Online editor</a>
+                        </li>
 
-      <div class="card mt-4">
-        <div class="card-header">
-          Ako môžem tento materiál používať?
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Licencia CC BY 4.0</h5>
-          <p class="card-text">Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora.</p>
-          <a href="https://creativecommons.org/licenses/by/4.0/" class="btn btn-primary">Celé znenie licencie</a>
-        </div>
-      </div>
+                        
+                        
+                        
+                        <li class="list-group-item  active ">
+                            <a href="/materialy/microbit_micropython/displej_menovka">
+                                4. Displej - menovka</a>
+                        </li>
 
+                        
+                        
+                        
+                        <li class="list-group-item ">
+                            <a href="/materialy/microbit_micropython/displej_animacie">
+                                5. Displej - animácie</a>
+                        </li>
 
-    </div>
-    <div class="col-md-8">
-      <h1>4. Displej - menovka</h1>
-      <div class="alert alert-warning">
+                        
+                        
+                        
+                        <li class="list-group-item ">
+                            <a href="/materialy/microbit_micropython/hudba_kohutik">
+                                6. Hudba - Kohútik Jarabý</a>
+                        </li>
+
+                        
+                        
+                        
+                        <li class="list-group-item ">
+                            <a href="/materialy/microbit_micropython/tlacidla_tamagoci">
+                                7. Tlačidlá - Tamagoči</a>
+                        </li>
+
+                        
+                        
+                    </ul>
+                </div>
+
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Kto je autorom tohto materiálu?
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>, ktorý spolu s kolegami zo združenia <a href='//python.sk'>SPy</a> pripravuje pre Vás otvorene licencované materiály. Veľká vďaka partí najmä Eve Klimekovej a Nike Klimovej za metodické pripomienkovanie.<br><br> Prosím, napíšte nám pripomienky, otázky a akúkoľvek spätnú väzbu (aj negatívnu)<br><br> Kontakt na mňa:<br> marek.mansell@pycon.sk</p>
+                    </div>
+                </div>
+                
+
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Ako môžem tento materiál používať?
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Licencia CC BY 4.0</h5>
+                        <p class="card-text">Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora.</p>
+                        <a href="https://creativecommons.org/licenses/by/4.0/" class="btn btn-primary">Celé znenie licencie</a>
+                    </div>
+                </div>
+                
+
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Stiahnuť/Vytlačiť
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                        <a href="/materialy/microbit_micropython/displej_menovka/print/"
+                           class="btn btn-secondary">Stiahnuť návod</a>
+
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="col-md-8 text-justify">
+
+                <h1 class="mb-4 text-left">Displej - menovka</h1>
+
+                
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="mt-4">
+                            <div class="alert alert-warning">
 <p class="h4">Pracujeme...</p>
 <p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
 </div>
-<h2>Menovka</h2>
+<h2 id="menovka">Menovka</h2>
 <p>Ako si si mohol/mohla všimnúť, micro:bit má na svojej prednej strane 5x5 červených LED diód. MicroPython Ti dáva viacero možností, akými na displeji niečo vykreslovať či vypisovať.</p>
 <p>Najbežnejším prvým programom pri učení sa nového programovacieho jazyka býva vypísanie textu "Ahoj, Svet!". </p>
 <p>V MicroPythone vieme napísať tento program v dvoch riadkoch kódu:</p>
 <pre><code>from microbit import display
-display.scroll(&quot;Ahoj, Svet!&quot;)
+display.scroll("Ahoj, Svet!")
 </code></pre>
-
 <p>Každý riadok vykaná niečo iné. Prvý riadok:</p>
 <pre><code>from microbit import dispay
 </code></pre>
-
 <p>povie micro:bitu, aby pre nás pripravil funkcionalitu <code>display</code> z modulu <code>microbit</code>. Tento modul obsahuje predprogramované funkcie, ktoré ovládajú napríklad zobrazovanie textu na obrazovke. Takéto 'zavolanie' voláme <code>import</code>. Moduly sa taktiež niekedy nazývajú aj knižnicami (no namiesto kníh majú v sebe kód).</p>
 <p>Druhý riadok:</p>
-<pre><code>display.scroll(&quot;Ahoj, Svet!&quot;)
+<pre><code>display.scroll("Ahoj, Svet!")
 </code></pre>
-
 <p>povie micro:bitu, aby na displej postupne vypísal reťazec znakov "Ahoj, Svet!". Slovo <code>display</code> je objekt z modulu <code>microbit</code>, ktorý predstavuje fyzický displej zariadenia (hovoríme „objekt“ namiesto „hento“, „oné“ alebo „tá vec“). Za objekt sme napísali bodku, za ktorou nasleduje príkaz (po správnosti nazývaný <code>metóda</code>). V tomto prípade používame metódu <code>scroll</code>, čo po slovensky znamená posúvať. Aby ale micro:bit vedel, aký text má na obrazovke posúvať, musíme ho označiť pomocou dvojitých úvodzoviek <code>"</code> (na začiatku a aj na konci) a poslať do príkazu scroll. To spravíme vložením textu do  zátvoriek za metódou <code>scroll()</code>. Obsah zátvoriek nazývame argument. Takže display.scroll("Ahoj, svet!") znamená po slovensky „Chcem, aby si použil displej a posúval na ňom text ‚Ahoj, svet!‘“. Ak metóda nepotrebuje argumenty, musíme to dať jasne najavo použitím prádznych zátvoriek - takto: <code>scroll()</code>.</p>
 <p>Teraz svoj kód ešte skontroluj - či už opticky, alebo v <code>Mu editore</code> pomocou tlačidla <code>check</code> (veľký palec). Ak si v programe nenašiel žiadne chyby, nahraj ho na micro:bit (v Mu editore pomocou tlačidla <code>Flash</code>).</p>
 <p>Ak by si chcel zistiť, aké iné argumenty môžeš pre príkaz <code>scroll()</code> použiť, pozri si <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html?highlight=scroll#microbit.display.scroll&gt;">dokumentáciu</a></p>
@@ -248,43 +271,39 @@ display.scroll(&quot;Ahoj, Svet!&quot;)
 <li>Ak do metódy neposielam žiadne argumenty, musím písať zátvorky?</li>
 </ul>
 </div>
-<h2>Trvalé zobrazovanie textu</h2>
+<h2 id="trvale-zobrazovanie-textu">Trvalé zobrazovanie textu</h2>
 <p>Podarilo sa nám text vypísať na obrazovku, avšak zatiaľ sa vždy vypíše iba jeden krát. No čo ak si chceme spraviť menovku, ktorá by stále ukazovala Tvoje krstné meno? Potrebujeme nejakým spôsobom docieliť, aby sa náš riadok kódu s príkazom <code>display.scroll()</code> donekonečna spúšťal. Môžme skúsiť daný riadok skopírovať čo najviac krát::</p>
 <pre><code>from microbit import display
-display.scroll(&quot;Volam sa Marek&quot;)
-display.scroll(&quot;Volam sa Marek&quot;)
-display.scroll(&quot;Volam sa Marek&quot;)
-display.scroll(&quot;Volam sa Marek&quot;)
-display.scroll(&quot;Volam sa Marek&quot;)
+display.scroll("Volam sa Marek")
+display.scroll("Volam sa Marek")
+display.scroll("Volam sa Marek")
+display.scroll("Volam sa Marek")
+display.scroll("Volam sa Marek")
 # atď.
 </code></pre>
-
 <p>ale aj tak sa raz vykonávanie programu skončí. Potrebujeme preto nekonečný cyklus::</p>
 <pre><code>from microbit import display
 while True:
-    display.scroll(&quot;Volam sa Marek&quot;)
+    display.scroll("Volam sa Marek")
 </code></pre>
-
 <p>Príkaz <code>while</code> sa vždy pozerá na to, čo sme napísali za neho. Pokým je za ním pravdivá hodnota tak bude vykonávať všetky príkazy prislúchajúce do daného cyklu. A keďže <code>True</code> (anglicky <code>pravda</code>) je vždy pravdivé, tak micro:bit bude kód opakovať donekonečna. To, či nejaký kód patrí do cyklu zistíš tak, že ďaľšie riadky sú posunuté do prava o 4 medzerníky (jeden tabulátor - kláves nad CapsLock-om). Toto posunutie sa po slovensky volá <code>odsadenie</code> a po anglicky <code>indentation</code> čiže <code>indentácia</code>.</p>
 <p>Všimni si, že na konci riadku s príkazom <code>while</code> sa nachádza dvojbodka. Tá sa vždy používa v kombinácií s príkazmi, po ktorých aspoň jeden ďaľší príkaz odsadíš a bude sa vykonávať na základe toho, aká je podmienka v riadku s dvojbodkou.</p>
 <p>Pozrime sa teraz na tento kód:</p>
 <pre><code>from microbit import display
 while True:
-    display.scroll(&quot;Marek&quot;)
-    display.scroll(&quot;Z Bratislavy&quot;)
-display.scroll(&quot;toto sa nikdy nevypise&quot;)
+    display.scroll("Marek")
+    display.scroll("Z Bratislavy")
+display.scroll("toto sa nikdy nevypise")
 </code></pre>
-
 <p>Z kódu vieme vyčítať, že donekonečna budeme vypisovať "Marek" a "z Bratislavy". Príkaz s textom "toto sa nikdy nevypise" nie je odsadený, a tak nie je súčasťou while cyklu. Preto by sa vykonal až keď while cyklus skončí. Ten ale nikdy neskončí, keďže <code>True</code> má vždy pravdivú hodnotu, a tak sa tento riadok kódu nikdy nespustí.</p>
 <p>Kým v predchádzajúcej ukážke sa posledný riadok kódu nikdy nespustí, aspoň sa nám zobrazovali príkazy "Marek" a "z Bratislavy". Čo ak by sme ale doplnili takýto riadok:</p>
 <pre><code>from microbit import display
 while True:
-    display.scroll(&quot;Marek&quot;)
-    display.scroll(&quot;Z Bratislavy&quot;)
-display.scroll(&quot;toto sa nikdy nevypise&quot;)
-    display.scroll(&quot;dalsi riadok&quot;)
+    display.scroll("Marek")
+    display.scroll("Z Bratislavy")
+display.scroll("toto sa nikdy nevypise")
+    display.scroll("dalsi riadok")
 </code></pre>
-
 <p>V tomto prípade by nám program vôbec nespustil a vypísal by chybu, pretože posledný riadok je odsadený aj keď by nemal byť.</p>
 <div class="alert alert-primary">
 <p class="h4">Chyby sú bežné...</p>
@@ -298,15 +317,14 @@ display.scroll(&quot;toto sa nikdy nevypise&quot;)
 <li>Na čo v nekonečnom cykle využívame príkaz <code>True</code>?</li>
 <li>Koľko najviac príkazov za sebou môže byť v jednom nekonečnom cykle?</li>
 </ul>
-<h2>Pauza medzi vypisovaním textu</h2>
+<h2 id="pauza-medzi-vypisovanim-textu">Pauza medzi vypisovaním textu</h2>
 <p>Čo ak by sme chceli medzi dva výpisy textu na obrazovku pridať nejakú pauzu, napríklad 5 sekúnd? Využijeme príkaz, ktorý micro:bitu povie, aby chvíľu počkal::</p>
 <pre><code>from microbit import display, sleep
 
-display.scroll(&quot;Ahoj&quot;)
+display.scroll("Ahoj")
 sleep(5000)
-display.scroll(&quot;Ako sa mas?&quot;)
+display.scroll("Ako sa mas?")
 </code></pre>
-
 <p>Príkaz <code>sleep()</code> sme vložili medzi dva výpisy textu, a tak sa najprv zobrazí text "Ahoj", chvíľu počká a potom vypíše text "Ako sa mas?". To, ako dlho má čakať povieme micro:bitu pomocou argumentu, ktorý napíšeme do zátvoriek za metódou <code>sleep</code>. Tento krát vkladáme číslo a nie reťazec, preto nepoužívame úvodzovky <code>"</code>. Napíšeme tam, koľko milisekúnd má micro:bit čakať. Jedna milisekunda je tisícina sekundy, 1000 milisekúnd je 1 sekunda a 5000 milisekúnd je 5 sekúnd, čiže náš kód počká 5 sekúnd.</p>
 <div class="alert alert-primary">
 <p class="h4">Úlohy</p>
@@ -318,10 +336,9 @@ display.scroll(&quot;Ako sa mas?&quot;)
 <pre><code>from microbit import display
 
 while True:
-    display.scroll(&quot;Ahoj Martin&quot;)
-    display.scroll(&quot;Ahoj Vanessa&quot;)
+    display.scroll("Ahoj Martin")
+    display.scroll("Ahoj Vanessa")
 </code></pre>
-
 <div class="alert alert-primary">
 <p class="h4">Kontrolné otázky</p>
 <ul>
@@ -329,23 +346,21 @@ while True:
 <li>Akú chybu vypíše micro:bit ak by sme namiesto čísla poslali to metódy <code>sleep</code> reťazec označený úvodzovkami (napríklad <code>sleep("5000")</code>)?</li>
 </ul>
 </div>
+<p>Posledná zmena: <strong>28.2.2020</strong></p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="mt-4">
+                            None
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -429,6 +444,12 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
             case "renderblocks":
                 var svg = msg.svg; // this is an string containing SVG
                 var id = msg.id; // this is the id you sent
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "http://127.0.0.1:5000/materialy/save_makecode_image/"+msg.id, true);
+                xhttp.send(msg.uri);
+
+                
                 // replace text with svg
                 var img = document.createElement("img");
                 img.src = msg.uri;
@@ -455,90 +476,86 @@ function renderSnippets() {
 // load the renderer
 renderSnippets();
 
+
+
+
+
+
+
+
 </script>
-
-
-
-
-
 
 
 <!-- /END THE FEATURETTES -->
 
-    </main>
-
-    <hr class="featurette-divider">
-
-    <div class="container">
-      <h3 class="text-center pt-4">Nechajte si posielať novinky na e-mail</h3>
-
-
-      <!-- Begin Mailchimp Signup Form -->
-      <div id="mc_embed_signup">
-      <form class="text-center" action="https://pycon.us12.list-manage.com/subscribe/post?u=89d883ce643e7200aabe34fa1&amp;id=e1520cb152" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-      <div class="mc-field-group">
-        <input type="email" value="" placeholder="Napíš sem svoj email" name="EMAIL" size="30" class="required email" id="mce-EMAIL">
-        <input type="submit" value="Chcem odoberať SPy o.z. newsletter" name="subscribe" id="mc-embedded-subscribe" class="button">
-      </div>
-      <div class="mc-field-group input-group" hidden>
-          <ul>
-      <li><input type="checkbox" value="2" name="group[17053][2]" id="mce-group[17053]-17053-1" checked><label for="mce-group[17053]-17053-1">SPy o.z. Newsletter (monthly updates on Python meetups, PyConSK and Učíme s Hardvérom - in SK lang.)</label></li>
-      </ul>
-      </div>
-
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_89d883ce643e7200aabe34fa1_e1520cb152" tabindex="-1" value=""></div>
-          </div>
-      </form>
-      </div>
-
-      <!--End mc_embed_signup-->
-
+</main>
+<hr class="featurette-divider">
+<div class="container">
+    <h3 class="text-center pt-4">Nechajte si posielať novinky na e-mail</h3>
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup">
+        <form class="text-center"
+              action="https://pycon.us12.list-manage.com/subscribe/post?u=89d883ce643e7200aabe34fa1&amp;id=e1520cb152"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+              target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                    <input type="email" value="" placeholder="Napíš sem svoj email" name="EMAIL" size="30"
+                           class="required email" id="mce-EMAIL">
+                    <input type="submit" value="Chcem odoberať SPy o.z. newsletter" name="subscribe"
+                           id="mc-embedded-subscribe" class="button">
+                </div>
+                <div class="mc-field-group input-group" hidden>
+                    <ul>
+                        <li><input type="checkbox" value="2" name="group[17053][2]" id="mce-group[17053]-17053-1"
+                                   checked><label for="mce-group[17053]-17053-1">SPy o.z. Newsletter (monthly updates on
+                            Python meetups, PyConSK and Učíme s Hardvérom - in SK lang.)</label></li>
+                    </ul>
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                          name="b_89d883ce643e7200aabe34fa1_e1520cb152"
+                                                                                          tabindex="-1" value=""></div>
+            </div>
+        </form>
     </div>
-
-    <footer class="text-muted text-center">
-      <div class="container pt-4">
-        <p><b>SPy o.z.</b> | <b>marek.mansell@pycon.sk</b> | <b>+421 904 010 424</b><p>
-        <p><small>Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a zapojiť sa môžeš aj Ty - <a href="/zapojsa/dobrovolnik/">návod ako nájdeš tu.</a></small></p>
+    <!--End mc_embed_signup-->
+</div>
+<footer class="text-muted text-center">
+    <div class="container pt-4">
+        <p><b>SPy o.z.</b> | <b>marek.mansell@pycon.sk</b> | <b>+421 904 010 424</b>
+        <p>
+        <p><small>Projekt <b>Učíme s Hardvérom</b> je riadený Python komunitou a budeme radi, ak sa <b>zapojíš aj Ty</b>
+            - napíš nám mail :-)</small></p>
         <p class="float-right">
-          <a href="#top" class="btn btn-outline-primary btn-sm">Späť na začiatok</a>
+            <a href="#top" class="btn btn-outline-primary btn-sm">Späť na začiatok</a>
         </p>
-        <!-- <p>
-          <a href="https://github.com/micropythonsk/microbit.sk-website/edit/master/templates/index.html" class="btn btn-outline-secondary btn-sm">
-             Upraviť túto stránku
-          </a>
-          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Bug_report.md" class="btn btn-outline-secondary btn-sm">
-             Nahlásiť problém
-          </a>
-          <a href="https://github.com/microbitsk/microbit.sk-website/issues/new?template=Feature_request.md" class="btn btn-outline-secondary btn-sm">
-             Navrhnúť zlepšenie
-          </a>
-          <a href="https://crowdin.com/project/bbc-microbit-micropython" class="btn btn-outline-secondary btn-sm">
-             Pomôcť s prekladom
-          </a>
-        </p> -->
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/static/js/vendor/popper.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/js/vendor/holder.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69278502-7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-69278502-7');
-    </script>
+</script>
+<script src="/static/js/vendor/popper.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/vendor/holder.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69278502-7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-69278502-7');
 
-  </body>
+</script>
+</body>
 </html>

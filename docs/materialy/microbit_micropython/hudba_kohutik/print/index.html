@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="SPy o.z.">
+    <link rel="icon" href="/static/img/logo/favicon.ico" sizes="16x16">
+    <title>Print: Učíme s Hardvérom</title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/python.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <main role="main">
+
+      <div class="container">
+            <h1>Hudba - Kohútik Jarabý</h1>
+            <div class="alert alert-warning">
+<p class="h4">Pracujeme...</p>
+<p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
+</div>
+<p>BBC micro:bit dokáže prehrávať hudbu na klasických reproduktoroch vďaka posielaniu signálov cez pin 0. Ukážeme si, ako reproduktor zapojiť a ako na ňom prehrávať vlastnú hudbu.</p>
+<h2 id="pripojenie-reproduktoru">Pripojenie reproduktoru</h2>
+<p>Využiť môžeme akýkoľvek reproduktor, ktorý má klasickú koncovku - tá sa nazýva 3,5mm Jack. Ten má obvykle 3 sekcie predelené plastovými krúžkami - prvá časť posiela signál ľavému reprodiktoru, druhá pravému reproduktoru a posledná slúži ako spoločná zem pre oba reproduktory. My budeme s micro:bitom ale prehrávať hudbu iba na jednom reproduktore, a preto pripojíme k micro:bitu prvú sekciu - pre ľavý reproduktor - s Pinom 0 na micro:bite. Piny sú vodivé plôšky na spodnej strane micro:bitu, vďaka ktorým k micro:bitu pripájame rôzne senzory a aktory. Na prepojenie používame krokosvorkový káblik. Nesmieme ešte zabudnúť prepojiť zem (anglicky GROUND). (na konci záber na hotový setup)</p>
+<p><img alt="Pripojenie reproduktora" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/speaker-setup.png"/></p>
+<h2 id="predprogramovana-hudba">Predprogramovaná hudba</h2>
+<pre><code class="python">import music
+
+music.play(music.BIRTHDAY)
+</code></pre>
+<p>Na programovanie hudby v MicroPythone nám poslúži modul <code>music</code>, (<code>import music</code>) v ktorom sa nachádza metóda <code>play</code>, ktorej ako parameter musíme zadať, akú melódiu má prehrať. (<code>music.play()</code>) Modul už v sebe obsahuje aj nejaké predprogramované melódie, Mu editor nám napovedá, ako sa volajú. Vyskúšame prehrať napríklad melódiu <code>BIRTHDAY</code> (<code>music.play(music.BIRTHDAY)</code>).</p>
+<ul>
+<li><strong>music</strong> - kinižnica na generovanie hudby na <em>pine 0</em></li>
+<li><strong>music.BIRTHDAY</strong> - prehrá melódiu BIRTHDAY</li>
+</ul>
+<p>micro:bit už má niekoľko predprogramovaných melódií, tie nájdete v  - <a href="http://microbit-micropython.readthedocs.io/en/latest/tutorials/music.html">dokumentácii (pozri Music)</a></p>
+<div class="alert alert-warning">
+<p class="h4">Nefunguje mi to...</p>
+<p>Po nahratí na micro:bit by sa nám mala prehrať melódia. V opačnom prípade skúste skontrolovať zapojenie, nakoľko krokosvorky na micro:bite aj na JACK konektore sa môžu ľahko posunúť.</p>
+</div>
+<h2 id="pisanie-vlastnej-hudby-kohutik-jaraby">Písanie vlastnej hudby - Kohútik Jarabý</h2>
+<p>Teraz sa posunieme ďalej a naprogramujeme si pieseň Kohútik jarabý, tón po tóne. Keď sa pozrieme na noty pre túto pieseň, tak dôležté sú pre nás dve informácie - umiestnenie nôt na čiarach a to, ako vyzerajú. Kým pozícia na čiare určuje tón noty (napríklad C, D, atď), to, ako nota vyzerá určuje trvanie noty (udáva sa v úderoch). Tóny nôt nájdete v tomto prípade vypísané nad každou notou (toto sa štandardne nerobí), trvanie určite podľa tabuľky nižšie. Prvá nota je osminová nota C, a teda bude trvať pol úderu, druhá je osminová nota D, tretia je štvrťová nota E, a tak ďalej.</p>
+<p><img alt="Noty pre Kuhútika Jarabého" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty-kohutik.png"/>
+<img alt="Ťahák pre noty" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty_trvanie.png"/></p>
+<p>Teraz už len stačí noty prepísať do MicroPythonu a pomocou funkcie music.play prehrať. Noty si uložíme do zoznamu, čiže premennej, ktorá si pamätá viac informácií, v našom prípade viac nôt. Tento zoznam si pomenujeme <code>kohutik</code> a do hranatých zátvoriek začneme písať noty. Pre každý notu dáme do úvodzoviek dve informácie - tón noty a dĺžku trvania - oddelené dvojbodkou. Pre prvú not teda zadáme C-čko, a za dvojbodkou jej trvanie. Vieme, že nota by mala byť na pol úderu, no modul music nám, žiaľ, neumožnuje zadať polovičnú hodnotu. Preto všetky hodnoty prenásobíme dvojkou - pre polúderovú osminovú notu zadáme jednotku a pre pre jednoúderovú štvrťovú notu zadáme dvojku. Takto pokračujeme, až vypíšeme celú pieseň, tón po tóne. Napísanú pieseň potom už iba prehráme pomocou <code>music.play(kohutik)</code>.</p>
+<pre><code class="python">import music
+
+kohutik = ["C:2", "D:2", "E:4", "F:4", "F:2", "F:2"]
+music.play(kohutik)
+</code></pre>
+<div class="alert alert-primary">
+<p class="h4">Úloha</p>
+<p>Pokračuj v prepisovaní nôt a prehraj na micro:bite celú pieseň.</p>
+</div>
+<p>Týmto spôsobom vieme prehrávať na mico:bite prakticky akúkoľvek pieseň. Skúste si napríklad nájsť na internete noty k zvučke od Harry Pottera a prehrať na micro:bite.</p>
+<h2 id="rolnicky">Rolničky</h2>
+<p><img alt="Noty pre Roľničky" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty-rolnicky.gif"/></p>
+<pre><code class="python"># Piesen Rolnicky
+import music
+
+tune = ["E:2", "E:2", "E:4", "E:2", "E:2", "E:4", "E:2", "G:2", "C:3", "D:1",
+        "E:8", ]
+music.play(tune)
+</code></pre>
+<div class="alert alert-primary">
+<p class="h4">Úloha</p>
+<p>Pokračuj v prepisovaní nôt a prehraj na micro:bite celú pieseň.</p>
+</div>
+<p>Posledná zmena: <strong>28.2.2020</strong></p>
+      </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/static/js/vendor/popper.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/vendor/holder.min.js"></script>
+
+
+    <script>
+
+      /* message signatures
+      export interface RenderBlocksRequestMessage extends SimulatorMessage {
+          type: "renderblocks",
+          id: string;
+          code: string;
+          options?: {
+              package?: string;
+              packageId?: string;
+              snippetMode?: boolean;
+          }
+      }
+
+      export interface RenderBlocksResponseMessage extends SimulatorMessage {
+          source: "makecode",
+          type: "renderblocks",
+          id: string;
+          svg?: string;
+          width?: number;
+          height?: number;
+      }*/
+
+      var makeCodeRenderPre = makeCodeRenderPre || (function () {
+          // pre waiting to be rendered
+          // when undefined, iframe is loaded and ready
+          var pendingPres = [];
+          function injectRenderer() {
+              var f = document.getElementById("makecoderenderer");
+              // check iframe already added to the DOM
+              if (f) {
+                  return;
+              }
+              var f = document.createElement("iframe");
+              f.id = "makecoderenderer";
+              f.style.position = "absolute";
+              f.style.left = 0;
+              f.style.bottom = 0;
+              f.style.width = "1px";
+              f.style.height = "1px";
+              f.src = "https://makecode.microbit.org/--docs?render=1"
+              document.body.appendChild(f);
+          }
+
+          function renderPre(pre) {
+              console.log('render ' + pre.id)
+              var f = document.getElementById("makecoderenderer");
+              // check if iframe is added and ready (pendingPres is undefined)
+              if (!f || !!pendingPres) {
+                  // queue up
+                  pendingPres.push(pre);
+                  injectRenderer();
+              } else {
+                  f.contentWindow.postMessage({
+                      type: "renderblocks",
+                      id: pre.id,
+                      code: pre.innerText,
+                      options: {
+                        packageId: pre.getAttribute("data-packageid")
+                      }
+                  }, "https://makecode.microbit.org/");
+              }
+          }
+
+          // listen for messages
+          window.addEventListener("message", function (ev) {
+              var msg = ev.data;
+              if (msg.source != "makecode") return;
+
+              console.log(msg.type)
+              switch (msg.type) {
+                  case "renderready":
+                      // flush pending requests                   
+                      var pres = pendingPres;
+                      // set as undefined to notify that iframe is ready
+                      pendingPres = undefined;
+                      pres.forEach(function (pre) { renderPre(pre); })
+                      break;
+                  case "renderblocks":
+                      var svg = msg.svg; // this is an string containing SVG
+                      var id = msg.id; // this is the id you sent
+
+                      var xhttp = new XMLHttpRequest();
+                      xhttp.open("POST", "http://127.0.0.1:5000/materialy/save_makecode_image/"+msg.id, true);
+                      xhttp.send(msg.uri);
+
+
+                      // replace text with svg
+                      var img = document.createElement("img");
+                      img.src = msg.uri;
+                      img.width = msg.width;
+                      img.height = msg.height;
+                      var code = document.getElementById(id);
+                      code.parentElement.insertBefore(img, code)
+                      code.parentElement.removeChild(code);
+                      break;
+              }
+          }, false);
+
+          return renderPre;
+      })();
+
+      function renderSnippets() {
+          // TODO ADD RENDER LOGIC HERE
+          let pres = document.getElementsByTagName("pre");
+          Array.prototype.forEach.call(pres, function (pre) {
+              makeCodeRenderPre(pre);
+          })
+      }
+
+      // load the renderer
+      renderSnippets();
+
+      </script>
+
+  </body>
+</html>

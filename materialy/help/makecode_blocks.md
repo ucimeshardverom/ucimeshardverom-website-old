@@ -1,34 +1,36 @@
-## Priamo pomocou zdrojového kódu
+!!! warning "Pracujeme..."
+    Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.
 
-
+# MakeCode block
 ```
-<pre id="pre2">
-basic.forever(() => {
-  led.plot(2, 2)
-});
-</pre>
+ ```makecode
+ _WotWzfe3edtk
+ ```
 ```
 
-<pre id="pre2">
-basic.forever(() => {
-  led.plot(2, 2)
-});
-</pre>
-
-
----
-
-
-## Pomocou shareovateľného odkazu
-
-
-```
-<pre id="pre3" data-packageid="_HjWJo9eHjXwP"></pre>
-
-Edituj a stiahni v MakeCode: [http://makecode.microbit.org/_HjWJo9eHjXwP](http://makecode.microbit.org/_HjWJo9eHjXwP)
+```makecode
+_WotWzfe3edtk
 ```
 
 
-<pre id="pre3" data-packageid="_HjWJo9eHjXwP"></pre>
+# MakeCode No Link Block
+```
+ ```makecode-no-link
+ _WotWzfe3edtk
+ ```
+```
 
-Edituj a stiahni v MakeCode: [http://makecode.microbit.org/_HjWJo9eHjXwP](http://makecode.microbit.org/_HjWJo9eHjXwP)
+```makecode-no-link
+_WotWzfe3edtk
+```
+
+# MakeCode Link Only Block
+```
+ ```makecode-link-only
+ _WotWzfe3edtk
+ ```
+```
+
+```makecode-link-only
+_WotWzfe3edtk
+```

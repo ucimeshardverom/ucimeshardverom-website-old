@@ -26,3 +26,5 @@ while True:
 * __poznámky__ - poznámky sa v Pythone tvoria mriežkou (#)
 
 Ako ale zistíme, aké možné obrázky môžeme vykresliť? Na to nám slúži [online micro:bit MicroPython dokumentácia](http://microbit-micropython.readthedocs.io/en/latest/tutorials/images.html), v ktorej je zoznam všetkých príkazov, ktoré je možné použiť.
+
+Posledná zmena: **28.2.2020**

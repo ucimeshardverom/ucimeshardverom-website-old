@@ -23,3 +23,4 @@ V novších verziách v ňom môžeš programovať viac zariadení ako iba micro
 
 
 
+Posledná zmena: **28.2.2020**
