@@ -1,3 +1,7 @@
+**Pomocné materiály:**
+
+* [Prezentácia](https://docs.google.com/presentation/d/1RJREqV8nrPIvI5JdzAkZ6jSfhjKxb0RPzhc8Wz2todg/edit?usp=sharing)
+
 **Odhadovaný čas aktivity:** 45 minút (nezabudnite na čas potrebný na rozdanie pomôcok, zozbieranie a záverečnú
 diskusiu/reflexiu)
 
@@ -13,10 +17,6 @@ Pre každého žiaka (alebo skupinu žiakov) BBC micro:bit, USB kábel, batériu
 **Potrebné predchádzajúce znalosti:**  
 Vedieť nahrávať programy na micro:bit, poznať prostredie MakeCode a príkazy `zobraziť reťazec`, `zobraziť LED`
 a `pozastaviť (ms)`
-
-**Pomocné materiály:**
-
-* [Prezentácia](https://docs.google.com/presentation/d/1RJREqV8nrPIvI5JdzAkZ6jSfhjKxb0RPzhc8Wz2todg/edit?usp=sharing)
 
 **Harmonogram aktivity:**
 
@@ -72,7 +72,7 @@ smajlíka použiť ľubovoľný iný obrazec).
 
 ### Diskusia a zhrnutie aktivity [5 min]
 
-Na záver veďte so žiakmi diskusiu o tlačidlách a o využití ich v každodennom živote, ako aj o animáciach:
+Na záver veďte so žiakmi diskusiu o tlačidlách a o ich využití v každodennom živote, ako aj o animáciach:
 
 Otázky:
 

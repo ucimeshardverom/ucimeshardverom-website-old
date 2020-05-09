@@ -6,6 +6,8 @@ zistiť, či boli stlačené. Prepojíme ich potom s animáciami na displeji.*
 **Potrebné pomôcky:**  
 BBC micro:bit, USB kábel, batériu k micro:bitu, počítač pripojený k internetu
 
+Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.microbit.org/)
+
 ---
 
 **Obsah aktivity:**

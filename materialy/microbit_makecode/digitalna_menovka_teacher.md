@@ -1,3 +1,7 @@
+**Pomocné materiály:**
+
+* [Prezentácia](https://docs.google.com/presentation/d/1vOICpiGi3lTlwDjeM0e6PvuOnQ216CdlAWIpGqKuKeU/edit?usp=sharing)
+
 **Odhadovaný čas aktivity:** 45 minút (nezabudnite na čas potrebný na rozdanie pomôcok, zozbieranie a záverečnú
 diskusiu/reflexiu)
 
@@ -13,10 +17,6 @@ Pre každého žiaka (alebo skupinu žiakov) BBC micro:bit, USB kábel, batériu
 
 **Potrebné predchádzajúce znalosti:**  
 Žiadne, táto aktivita je určená začiatočníkom.
-
-**Pomocné materiály:**
-
-* [Prezentácia](https://docs.google.com/presentation/d/1vOICpiGi3lTlwDjeM0e6PvuOnQ216CdlAWIpGqKuKeU/edit?usp=sharing)
 
 **Harmonogram aktivity:**
 

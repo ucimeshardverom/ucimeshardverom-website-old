@@ -81,6 +81,7 @@ def markdown_to_html(raw_markdown, img_url=""):
     for image_tag in soup.find_all('img'):
         if image_tag.get('src').startswith('images/'):
             image_tag['src'] = img_url + image_tag['src']
+        image_tag['class'] = " ".join(image_tag.get('class', " ")) + " img-fluid pt-2"
     content_html = soup
 
     return content_html
