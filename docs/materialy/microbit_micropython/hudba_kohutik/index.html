@@ -229,7 +229,7 @@
                 
 
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
                             <div class="alert alert-warning">
 <p class="h4">Pracujeme...</p>
@@ -238,7 +238,7 @@
 <p>BBC micro:bit dokáže prehrávať hudbu na klasických reproduktoroch vďaka posielaniu signálov cez pin 0. Ukážeme si, ako reproduktor zapojiť a ako na ňom prehrávať vlastnú hudbu.</p>
 <h2 id="pripojenie-reproduktoru">Pripojenie reproduktoru</h2>
 <p>Využiť môžeme akýkoľvek reproduktor, ktorý má klasickú koncovku - tá sa nazýva 3,5mm Jack. Ten má obvykle 3 sekcie predelené plastovými krúžkami - prvá časť posiela signál ľavému reprodiktoru, druhá pravému reproduktoru a posledná slúži ako spoločná zem pre oba reproduktory. My budeme s micro:bitom ale prehrávať hudbu iba na jednom reproduktore, a preto pripojíme k micro:bitu prvú sekciu - pre ľavý reproduktor - s Pinom 0 na micro:bite. Piny sú vodivé plôšky na spodnej strane micro:bitu, vďaka ktorým k micro:bitu pripájame rôzne senzory a aktory. Na prepojenie používame krokosvorkový káblik. Nesmieme ešte zabudnúť prepojiť zem (anglicky GROUND). (na konci záber na hotový setup)</p>
-<p><img alt="Pripojenie reproduktora" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/speaker-setup.png"/></p>
+<p><div class="text-center"><img alt="Pripojenie reproduktora" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/speaker-setup.png"/></div></p>
 <h2 id="predprogramovana-hudba">Predprogramovaná hudba</h2>
 <pre><code class="python">import music
 
@@ -256,8 +256,8 @@ music.play(music.BIRTHDAY)
 </div>
 <h2 id="pisanie-vlastnej-hudby-kohutik-jaraby">Písanie vlastnej hudby - Kohútik Jarabý</h2>
 <p>Teraz sa posunieme ďalej a naprogramujeme si pieseň Kohútik jarabý, tón po tóne. Keď sa pozrieme na noty pre túto pieseň, tak dôležté sú pre nás dve informácie - umiestnenie nôt na čiarach a to, ako vyzerajú. Kým pozícia na čiare určuje tón noty (napríklad C, D, atď), to, ako nota vyzerá určuje trvanie noty (udáva sa v úderoch). Tóny nôt nájdete v tomto prípade vypísané nad každou notou (toto sa štandardne nerobí), trvanie určite podľa tabuľky nižšie. Prvá nota je osminová nota C, a teda bude trvať pol úderu, druhá je osminová nota D, tretia je štvrťová nota E, a tak ďalej.</p>
-<p><img alt="Noty pre Kuhútika Jarabého" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty-kohutik.png"/>
-<img alt="Ťahák pre noty" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty_trvanie.png"/></p>
+<p><div class="text-center"><img alt="Noty pre Kuhútika Jarabého" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty-kohutik.png"/></div>
+<div class="text-center"><img alt="Ťahák pre noty" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty_trvanie.png"/></div></p>
 <p>Teraz už len stačí noty prepísať do MicroPythonu a pomocou funkcie music.play prehrať. Noty si uložíme do zoznamu, čiže premennej, ktorá si pamätá viac informácií, v našom prípade viac nôt. Tento zoznam si pomenujeme <code>kohutik</code> a do hranatých zátvoriek začneme písať noty. Pre každý notu dáme do úvodzoviek dve informácie - tón noty a dĺžku trvania - oddelené dvojbodkou. Pre prvú not teda zadáme C-čko, a za dvojbodkou jej trvanie. Vieme, že nota by mala byť na pol úderu, no modul music nám, žiaľ, neumožnuje zadať polovičnú hodnotu. Preto všetky hodnoty prenásobíme dvojkou - pre polúderovú osminovú notu zadáme jednotku a pre pre jednoúderovú štvrťovú notu zadáme dvojku. Takto pokračujeme, až vypíšeme celú pieseň, tón po tóne. Napísanú pieseň potom už iba prehráme pomocou <code>music.play(kohutik)</code>.</p>
 <pre><code class="python">import music
 
@@ -270,7 +270,7 @@ music.play(kohutik)
 </div>
 <p>Týmto spôsobom vieme prehrávať na mico:bite prakticky akúkoľvek pieseň. Skúste si napríklad nájsť na internete noty k zvučke od Harry Pottera a prehrať na micro:bite.</p>
 <h2 id="rolnicky">Rolničky</h2>
-<p><img alt="Noty pre Roľničky" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty-rolnicky.gif"/></p>
+<p><div class="text-center"><img alt="Noty pre Roľničky" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/images/noty-rolnicky.gif"/></div></p>
 <pre><code class="python"># Piesen Rolnicky
 import music
 
@@ -285,7 +285,7 @@ music.play(tune)
 <p>Posledná zmena: <strong>28.2.2020</strong></p>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="tab-pane fade" id="metodika" role="tabpanel" aria-labelledby="metodika-tab">
                         <div class="mt-4">
                             None
                         </div>

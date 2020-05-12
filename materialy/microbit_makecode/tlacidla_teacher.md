@@ -70,7 +70,7 @@ sa obrazovka vymaže **(slajd č. 8)**.
 Túto časť je možné nahradiť (alebo doplniť) o tvorbu vlastnej animácie podľa predchádzajúcich krokov (ale namiesto
 smajlíka použiť ľubovoľný iný obrazec).
 
-### Diskusia a zhrnutie aktivity [5 min]
+## Diskusia a zhrnutie aktivity [5 min]
 
 Na záver veďte so žiakmi diskusiu o tlačidlách a o ich využití v každodennom živote, ako aj o animáciach:
 
