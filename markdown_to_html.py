@@ -82,6 +82,7 @@ def markdown_to_html(raw_markdown, img_url=""):
         if image_tag.get('src').startswith('images/'):
             image_tag['src'] = img_url + image_tag['src']
         image_tag['class'] = " ".join(image_tag.get('class', " ")) + " img-fluid pt-2"
+        image_tag.wrap(soup.new_tag("div", attrs={"class": "text-center"}))
     content_html = soup
 
     return content_html

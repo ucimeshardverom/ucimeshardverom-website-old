@@ -41,6 +41,11 @@ content:
     visible: True
     teacher: pocitadlo_ludi_teacher
 
+  krokomer:
+    title: "Krokomer"
+    visible: True
+    teacher: krokomer_teacher
+
   poslusne_hlasim:
     title: "Hra: Poslušne hlásim"
     visible: True
@@ -50,11 +55,6 @@ content:
     title: "Hra: Kameň, papier, nožnice"
     visible: True
     teacher: kamen_papier_noznice_teacher
-
-  krokomer:
-    title: "Krokomer"
-    visible: True
-    teacher: krokomer_teacher
 
   obvody:
     title: "Elektrické obvody a vodivosť materiálov"
