@@ -115,7 +115,7 @@ noty veľmi ľahko rozlíšiš - kým štvrťová sa skladá iba z jednej gulič
 
 ![alt_text](images/microbit-speaker-notes.png)
 
-Nasledujúci program prehrá prvých šiestich nôt piesne Kohútik jarabý:
+Nasledujúci program prehrá prvých šesť nôt piesne Kohútik jarabý:
 
 ```makecode
 _WA99o6bu4AyJ
