@@ -334,7 +334,7 @@ def materialy_zacni_images(image, metodika="zacni", kapitola=None):
 def save_makecode_image(id):
     if request.method == 'POST':
         with open(os.path.join('static', 'makecode_cached_images', id), "w") as file:
-            file.write(f"<img src='{request.data.decode()}'/>")
+            file.write(f"<img class='img-fluid' src='{request.data.decode()}'/>")
 
     return "OK"
 

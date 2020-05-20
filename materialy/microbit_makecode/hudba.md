@@ -1,14 +1,143 @@
-!!! danger "Prerábame"
-    V súčasnosti prerábame všetky materiály na tejto stránke a na tejto sa ešte pracuje.
-    Preto je tu link na pôvodnú verziu materiálu. Čoskoro ale updatneme aj tento materiál.
+*K micro:bitu je možné pripojiť akýkoľvek reproduktor s klasickým "Jack" vstupom a prehrávať na ňom hudbu.*
 
-<div class="card mb-4 box-shadow h-100">
-                <img class="card-img-top" src="/static/img/materialy/microbit-makecode-03-02.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Programovanie hudby</h5>
-                  <p class="card-text">Propojíme k micro:bitu reproduktor a napíšeme vlasnú pieseň</p>
-                  <div class="text-center">
-                    <a href="/static/downloads/metodiky/microbit-makecode-programovanie-hudby.pdf" class="btn btn-info">Otvoriť</a>
-                  </div>
-                </div>
-              </div>
+![Obrázok BBC micro:bitu](images/microbit-speaker.png)
+
+**Potrebné pomôcky:**  
+BBC micro:bit, USB kábel, batérie k micro:bitu, počítač pripojený k internetu, krokosvorkové káble, reproduktor
+
+Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.microbit.org/)
+
+---
+
+**Obsah aktivity:**
+
+[TOC]
+
+---
+
+
+## Propojenie reproduktoru
+
+Reproduktor v ruke držal snáď už asi každý, ale ako je možné, že vie, akú hudbu má prehrávať? Väčšina reproduktorov
+(vrátane slúchadiel) ako vstup používa špeciálny konektor, ktorý sa nazýva tri-a-pol milimetrový JACK (3,5 mm JACK).
+Jeho fotku nájdeš nižšie.
+Tri a pol milimetra kvôli tomu, že presne taký priemer konektor má (kľudne si to môžeš skontrolovať pravítkom).
+
+Na to, aby sme z micro:bitu dokázali prehrávať hudbu nám stačí vziať akýkoľvek reproduktor, ktorý má ako vstup
+3,5 mm JACK a prepojiť ho pomocou elektrických káblov s micro:bitom.
+
+Pozrime sa ale najpr na to, ako 3,5 mm JACK vyzerá a z čoho sa skladá:
+
+![alt_text](images/microbit-speaker-jack-desc.png)
+
+    
+Konektor má zväčša 2 plastové prúžky, ktoré oddeľujú tri kovové časti (kontakty) konektoru.
+Väčšinou sa takýto konektor používa na ovládanie 2 reproduktorov (pravého a ľavého), a každý má svoj vlastný vstupný
+signál (a teda aj vlastný kontakt na 3,5 mm JACK). Tretí kovový kontakt (najbližšie k plastovej časti) je spoločné
+uzemnenie oboch reproduktorov (anglicky *"ground"*, skratka *GND*).
+
+Niektoré slúchadlá majú namiesto 3 kovových kontaktov až 4 - to vtedy, ak majú slúchadlá v sebe vbudovaný aj mikrofón,
+ktorý používaš pri telefonovaní.
+
+![alt_text](images/microbit-speaker-jack.png)
+
+Keď už vieme, na čo jednotlivé časti konektoru slúžia, pripojíme ich k micro:bitu pomocou krokosvorkových káblov.
+Krokosvorkové káble sú obyčajné elektrické kábliky, ktoré majú na konci "krokodílku" - kovový konektor. Síce majú
+rôzne farby, ale tie slúžia iba na to, aby sme ľahšie vedeli rozlíšiť, ktorý káblik ide kam. Inak fungujú všetky rovnako.
+
+Na micro:bite budeme kábliky pripájať ku Kolíkom. Kolíky sú malé kovové plôšky nas spodnej strane micro:bitu
+(anglický názov je “Pin”). Na micro:bite sa nachádza 5 väčších kolíkov s označením *0*, *1*, *2*, *3V* a *GND*.
+
+Nakoľko budeme používať iba jeden reproduktor, postačí nám iba jeden vstup na 3,5 mm JACKu (pre ľavý reproduktor)
+a uzemnenie (GND). Reproduktor k micro:bitu pripojíme takto:
+
+*   Kontakt pre ľavý reproduktor na 3,5 mm JACKu  -> Kolík 0 na micro:bite
+*   Kontakt GND na 3,5 mm JACKu -> Kolík GND na micro:bite
+
+ 
+![Obrázok BBC micro:bitu](images/microbit-speaker.png)
+
+
+## Prehranie predprogramovanej melódie
+
+Na programovanie reproduktoru budeme využívať príkazy z kategórie `Hudba`. Ako prvé si vyskúšame prehrať už
+predprogramovanú melódiu pri stlačení tlačidla A. Použijeme na to príkaz `spustiť melódiu dadadum opakovanie raz`.
+
+Či program funguje si vieš odskúšať aj v simulátore (bude ale prehrávať hudbu na reproduktoroch počítača a nie toho, ktorý
+máš pripojený k micro:bitu).
+
+Ak Ti program zafungoval v simulátore, nahraj ho na micro:bit a odskúšaj.
+
+```makecode
+_0bmWqeFXFUTC
+```
+
+!!! danger "Reproduktor mi nefunguje..."
+    **Možné chyby:**
+    
+    *   Nesprávne zapojenie reproduktora, ako napríklad zámena koncov krokosvoriek (skontroluj si zapojenie)
+    *   Krokosvorka je pripojená na viac ako jednu kovovú časť JACK konektora (skontroluj, či sa náhodou jedna
+        korkosvorka nedotýka až dvoch kovových konektorov na JACKu)
+
+
+## Kohútik jarabý
+Micro:bitu má niekoľko predprogramovaných melódií, ale čo ak chceme prehrať nejakú pieseň? Aj to sa dá na micro:bite
+naprogramovať, a to tvorbou melódie skladaním jednotlivých tónov piesne.
+
+Vyskúšaj si najprv pri stlačení tlačidla A prehrať tón “stredné C” - ten na klavíri nájdeš približne v strede.
+
+```makecode
+_hWVPaAXzih6X
+```
+
+Z tónov je možné tvoriť aj náročnejšie melódie, napríklad pieseň Kohút jarabý.
+Na to použijeme hudobné noty, no najprv budeme potrebovať vedieť, ako čítať notový zápis.
+
+Pozri sa na nasledujúce noty:
+
+![alt_text](images/microbit-speaker-kohutik.png)
+
+Veľa čiar a nôt, ale čo znamenajú?
+
+Keď sa pozrieš na príkaz, akým sme prehrávali jeden tón, nastavujeme v ňom dve informácie - aký tón chceme prehrať
+a ako dlho má trvať (koľko úderov). Oboje sa dá z hudobných nôt ľahko zistiť.
+
+**Ako zistiť tón noty**  
+Umiestnenie noty na “čiare” určuje tón noty (napríklad C, D, atď.) - aby sme to ale nemuseli pracne počítač, nad každou
+notou je napísaný jej tón. Skús sa napríklad pozrieť kde sa nachádza tretia nota (má nad sebou napísané *E*). Každá
+ďalšia nota *E* v piesni je vždy na tej istej čiare.
+
+**Ako zistiť trvanie noty**  
+To, ako nota vyzerá určuje trvanie noty (udáva sa v úderoch) - pomôž si "ťahákom" nižšie. V piesni Kohútik jarabý
+sa nachádzajú iba 2 druhy nôt - štvrťové (s trvaním jedného úderu) a osminové (s trvaním pol úderu). Štvrťové a osminové
+noty veľmi ľahko rozlíšiš - kým štvrťová sa skladá iba z jednej guličky a jednej paličky, osminové sú spojené ďalšou
+čiarkou.
+
+![alt_text](images/microbit-speaker-notes.png)
+
+Nasledujúci program prehrá prvých šiestich nôt piesne Kohútik jarabý:
+
+```makecode
+_WA99o6bu4AyJ
+```
+
+Skús teraz tón po tóne naprogramovať celú pieseň Kohútik jarabý. Keď si budeš chcieť svoj program skontrolovať alebo
+nebudeš vedieť ako pokračovať, tu nájdeš celú pesničku:
+[https://makecode.microbit.org/_YA7KHghHed0z](https://makecode.microbit.org/_YA7KHghHed0z) 
+
+
+
+
+
+# Nastavenie tempa
+Rôzne piesne majú rôzne rýchle tempo. To vieš nastaviť aj namicro:bite príkazom `nastaviť tempo na (bpm) ...`
+(príkaz z kategórie “Hudba”). *BPM* je skratka pre *beats per minute* (anglicky počet „úderov“).
+
+Ak nenastavíme tempo my, micro:bit túto hodnotu nastaví za nás na 120. Skúsme ho ale zmeniť napríklad na 240. Bude sa
+pieseň Kohútik jarabý prehrávať inak?
+
+Príkaz na zmenu tempa vlož ešte pred prehrávanie hudby, tak ako je na obrázku nižšie: 
+
+```makecode
+_T7TCfECsLWi4
+``` 
