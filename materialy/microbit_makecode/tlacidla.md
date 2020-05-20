@@ -62,7 +62,8 @@ _6g4iuUideezy
 
 ## Animácia naprieč micro:bitmi
 
-Pre túto časť aktivity budete potrebovať 2 micro:bity.
+Pre túto časť aktivity budeš potrebovať 2 micro:bity. Ak máš iba jeden, spoj sa s kamarátom, ktorý tiež má micro:bit
+a skúste si naprogramovať animáciu spoločne.
 
 Smajlíka máme pekne animovaného, na displej nám prichádza aj odchádza, ďalším krokom je animovať ho naprieč viacerými
 micro:bitmi. Postupne sa bude zobrazovať na jednom micro:bite, a potom postupne predje na druhý. Vytvoríme teda dve
@@ -71,6 +72,8 @@ sekundách. Ako ale určiť, po koľkých sekundách? Najjednoduchšie je odmera
 animácie pre druhý micro:bit použiť príkaz `pozastaviť (ms)`.
 
 ![Animácia BBC micro:bitu](images/makecode_smile_animation_moving.gif) 
+
+Do jedného micro:bitu nahraj animáciu bez pauzy a do druhého s pauzou pred animáciou.
 
 ```makecode-no-link
 _H8ViD53xecrd

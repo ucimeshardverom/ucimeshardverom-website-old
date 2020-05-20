@@ -28,7 +28,7 @@ krokov. Na takomto princípe funguje aj väčšina moderných krokomerov. Upozor
 úplne presné - malé kroky sa merajú len veľmi ťažko, naopak veľmi aktívny pohyb nohou môže spôsobiť, že krokomer ukáže
 viac krokov, ako v skutočnosti človek spravil. 
 
-Koľko krokov je vhodných pre človeka denne? Exaktná odpoveď
+Koľko krokov je vhodných pre človeka denne? Presná odpoveď
 neexistuje, no štúdiu dokazujú, že približne 7000 krokov je dostatočne veľa
 [(článok)](https://www.noviny.sk/zaujimavosti/367839-malo-sa-hybeme-tvrdia-odbornici-kolko-krokov-by-sme-teda-mali-spravit).
 Vedci taktiež tvrdia, že ak človek pravidelne prejde _"menej ako 5000 krokov denne, zvyšuje sa u neho riziko priberania,

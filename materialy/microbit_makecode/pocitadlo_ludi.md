@@ -90,6 +90,9 @@ a keď chceme aktuálny počet ľudí zobraziť, jednoducho potrasemie micro:bit
 Najprv si funkcionalitu odskúšaj v simulátore a až následne nahraj kód do svojho BBC micro:bitu.
 
 
+!!! danger ""
+    Ak ti micro:bit nezobrazuje aktuálny počet ľudí správne, skús ním **potriasť**.
+
 
 **Vynulovanie počítadla**  
 Ako vynulujeme počítadlo? Stačí stlačiť tlačidlo _RESET_. Keďže micro:bit pri stlačení _RESET_ spustí kód odznovu,
