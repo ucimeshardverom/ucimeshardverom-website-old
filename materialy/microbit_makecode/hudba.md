@@ -78,6 +78,7 @@ _0bmWqeFXFUTC
     *   Nesprávne zapojenie reproduktora, ako napríklad zámena koncov krokosvoriek (skontroluj si zapojenie)
     *   Krokosvorka je pripojená na viac ako jednu kovovú časť JACK konektora (skontroluj, či sa náhodou jedna
         korkosvorka nedotýka až dvoch kovových konektorov na JACKu)
+    *   Hudbu nikdy neprehrávame v bloku `vždy` ale iba na stlačenie tlačidiel
 
 
 ## Kohútik jarabý

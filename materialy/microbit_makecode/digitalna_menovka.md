@@ -18,7 +18,7 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 ---
 
 ## Úvod k mikroprocesorom
-Klasický procesor poznáš z počítačov - je "mozgom" každého počítaču, keďže všetky výpočty sa dejú práve v ňom. K nemu
+Klasický procesor poznáš z počítačov - je "mozgom" každého počítača, keďže všetky výpočty sa dejú práve v ňom. K nemu
 je potom pripojená pamäť, displej, klávesnica, atď.
 
 Mikroprocesor je veľmi podobný klasickému procesoru, až na jeden rozdiel - je oveľa menší. Tým pádom nie je ani tak
@@ -119,11 +119,13 @@ Náš prvý program vyskúšame spraviť v online prostredí [makecode.microbit.
 V ňom si vytvoríme digitálnu "menovku", ktorá bude zobrazovať naše meno a aj nejaké obrázky. Bude nám k tomu stačiť iba
 BBC micro:bit a micro USB kábel.
 
+Micro:bit pripoj obyčajným micro USB káblom k počítaču (rovnaký kábel sa používa aj na napájanie telefónov).
+
 Postup programovania v MakeCode:
 
 * Vytvorenie nového projektu
 * Naprogramovanie programu
-* Overenie správnosti v simulátori (v ľavej časti prostredia MakeCode)
+* Overenie správnosti v simulátore (v ľavej časti prostredia MakeCode)
 * Stiahnutie na BBC micro:bit
 
 V prostredí [MakeCode](https://makecode.microbit.org/) klikni na *Nový projekt*. V prípade, že sa prostredie otvorí
@@ -156,7 +158,8 @@ počítač.
 Posledný krok, ktorý nám zostáva je nahrať novo vytvorený program na samotný micro:bit. Ten si pripoj
 k počítaču pomocou klasického micro USB kábla, aký sa bežne používa na mobilné telefóny. V počítači potom uvidíš,
 že micro:bit sa pripojil ako USB zariadenie, skoro ako keby to bolo klasické USB úložisko. Naň stačí už len stiahnutý
-program s príponou *.hex* skopírovať. Indikačná LEDka na micro:bite by sa mala na chvíľu rozblikať a po chvíľke
+program s príponou *.hex* skopírovať. **Stiahnutý súbor neotváraj ani nespúšťaj na počítači** - stačí ho skopírovať na micro:bit.
+Indikačná LEDka na micro:bite by sa mala na chvíľu rozblikať a po chvíľke
 začne micro:bit vypisovať tvoje meno.
 
 ```makecode

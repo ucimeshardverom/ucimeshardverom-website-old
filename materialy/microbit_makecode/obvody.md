@@ -1,5 +1,4 @@
-*Elektrická vodivosť materiálov určuje, či a ako dobre nimi prechádza elektrický prúd. Niektoré materiály sú vodivé
- veľmi dobre - napríklad hliník, iné naopak nie sú vodivé vôbec - napríklad plasty.*
+*Elektrická vodivosť materiálov určuje, či a ako dobre nimi prechádza elektrický prúd.*
 
 ![Obrázok BBC micro:bitu](images/microbit-obvod.jpg)
 
@@ -19,8 +18,7 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 
 
 ## Vodivosť materiálov
-Elektrická vodivosť materiálov určuje, či a ako dobre nimi prechádza elektrický prúd. Niektoré materiály sú vodivé
-veľmi dobre - napríklad hliník, iné naopak nie sú vodivé vôbec - napríklad plasty. To, či je niečo vodivé vieme zistiť
+Elektrická vodivosť materiálov určuje, či a ako dobre nimi prechádza elektrický prúd. To, či je niečo vodivé vieme zistiť
 relatívne jednoducho - skúsime cez to pustiť prúd a potom meriame, či prešiel. Na to, aby sme vedeli micro:bitom
 zisťovať vodivosť napríklad alobalu, musíme najprv nejako z micro:bitu pustiť prúd do kúsku alobalu. To vieme spraviť
 pomocou kolíkov. Kolíky sú malé kovové plôšky nas spodnej strane micro:bitu
@@ -99,8 +97,10 @@ smrteľné nebezpečenstvo.
 ### Vodivosť materiálov
 Skús alobal nahradiť inými predmetmi a zisti, ktoré z nich sú vodivé.
 
-Skús napríklad:
-*mince, nožnice, platový príbor, kovový príbor, papier, ...*
+Sprav si tabuľku, do ktorej budeš zapisovať, ktoré predmety sú vodivé a ktoré nie. Vyskúšaj čo najviac predmetov, ktoré
+nájdeš v domácnosti.
+
+Napríklad *mince, nožnice, platový príbor, kovový príbor, papier, ...*
 
 ![alt_text](images/microbit-obvod-scissors.png)
 
