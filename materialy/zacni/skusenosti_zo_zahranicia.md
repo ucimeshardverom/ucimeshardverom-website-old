@@ -2,7 +2,7 @@ BBC micro:bit pochádza z Anglicka, kde ho v roku 2016 hromadne rozdali žiakom.
 sveta. Dolu nájdeš stručný prehľad z vybraných krajín.
 
 ## Spojené Kráľovstvo
-Britská verejnoprávna televízia BBC v spolupráci s približne 30 partnermi (ktorý pomáli po hardvérovej, softvérovej,
+Britská verejnoprávna televízia BBC v spolupráci s približne 30 partnermi (ktorí pomáhali po hardvérovej, softvérovej,
 edukačnej aj distribučnej stránke) v roku 2016 vyrobili a rozdali takmer 1 milión kusov BBC micro:bit každému
 11 ročnému žiakovi a žiačke v Spojenom Kráľovstve.
 
