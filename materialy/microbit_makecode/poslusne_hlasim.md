@@ -1,6 +1,8 @@
 *Poslušne hlásim je matematická hra pre __3 až 4 hráčov__, pričom __sú potrebné 2 micro:bity.__*
 
+<!--
 ![Obrázok BBC micro:bitu](images/krokomer.png)
+-->
 
 **Potrebné pomôcky:**  
 2x BBC micro:bit, USB kábele, batérie k micro:bitu, počítač pripojený k internetu,
