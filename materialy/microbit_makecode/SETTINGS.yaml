@@ -65,7 +65,7 @@ content:
   obvody:
     title: "Elektrické obvody a vodivosť materiálov"
     visible: True
-    teacher: obvody_teacher
+#    teacher: obvody_teacher
     
   led_diody:
     title: "Ako fungujú LED diódy"
