@@ -7,9 +7,10 @@ author_bio: "Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Manse
              <br><br>
              Prosím, posielajte nám spätnú väzbu na
              marek.mansell@pycon.sk"
-license: "CC BY 4.0"
-license_desc: "Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora."
-license_link: "https://creativecommons.org/licenses/by/4.0/"
+license: "CC BY-SA 4.0"
+license_desc: "Táto licencie Ti umožňuje používať, upravovať a zdieľať tento materiál akokoľvek uznáš za vhodné,
+               pod podmienkou uvedenia autora a zachovania rovnakej licencie."
+license_link: "https://creativecommons.org/licenses/by-sa/4.0/"
 download_visible: False
 license_visible: True
 author_visible: True
@@ -49,17 +50,22 @@ content:
   poslusne_hlasim:
     title: "Hra: Poslušne hlásim"
     visible: True
-    teacher: poslusne_hlasim_teacher
+#    teacher: poslusne_hlasim_teacher
 
   kamen_papier_noznice:
     title: "Hra: Kameň, papier, nožnice"
     visible: True
     teacher: kamen_papier_noznice_teacher
 
+  hudba:
+    title: "Programovanie hudby"
+    visible: True
+#    teacher: hudba_teacher
+
   obvody:
     title: "Elektrické obvody a vodivosť materiálov"
     visible: True
-    teacher: obvody_teacher
+#    teacher: obvody_teacher
     
   led_diody:
     title: "Ako fungujú LED diódy"
@@ -90,11 +96,6 @@ content:
     title: "LED pásik ako módny doplnok"
     visible: True
     teacher: led_pasik_doplnok_teacher
-
-  hudba:
-    title: "Programovanie hudby"
-    visible: True
-    teacher: hudba_teacher
 
   gitara:
     title: "Kartónová gitara"
