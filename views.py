@@ -78,51 +78,6 @@ def zapojsa():
     return render_template('zapojsa.html', **_get_template_variables(li_index='active'))
 
 
-@app.route('/zapojsa/skola/')
-def zapoj_sa_skola():
-    return render_template('zapoj_sa_skola.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/zapojsa/rodic/')
-def zapoj_sa_rodic():
-    return render_template('zapoj_sa_rodic.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/zapojsa/dobrovolnik/')
-def zapoj_sa_dobrovolnik():
-    return render_template('zapoj_sa_dobrovolnik.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/zapojsa/sponzor/')
-def zapoj_sa_sponzor():
-    return render_template('zapoj_sa_sponzor.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/ambasadori/')
-def ambasadori():
-    return render_template('ambasadori.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/blog/')
-def blog():
-    return render_template('blog.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/feedback/')
-def feedback():
-    return render_template('feedback.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/mapa/')
-def mapa():
-    return render_template('zapojene_skoly.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/zapojene_skoly/')
-def zapojene_skoly():
-    return redirect(url_for('mapa'))
-
-
 @app.route('/sutaz/')
 def sutaz():
     return render_template('sutaz.html', **_get_template_variables(li_index='active'))
@@ -133,49 +88,14 @@ def gdpr():
     return render_template('gdpr.html', **_get_template_variables(li_index='active'))
 
 
-@app.route('/pridaj_sa/')
-def pridaj_sa():
-    return render_template('pridaj_sa.html', **_get_template_variables(li_index='active'))
-
-
 @app.route('/partneri/')
 def partneri():
     return render_template('partneri.html', **_get_template_variables(li_index='active'))
 
 
 @app.route('/hardver/')
-def hardver_ako_pomocka():
-    return render_template('hardver_ako_pomocka.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/microbit/')
-def microbit():
-    return render_template('microbit.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/nodemcu/')
-def nodemcu():
-    return render_template('nodemcu.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/projekty/')
-def projekty():
-    return render_template('hw_projekty.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/hw_projekty/')
-def hw_projekty():
-    return redirect(url_for('ciele'))
-
-
-@app.route('/kde_kupit/')
-def kde_kupit():
-    return render_template('kde_kupit.html', **_get_template_variables(li_index='active'))
-
-
-@app.route('/pilot/')
-def pilot():
-    return render_template('pilot.html', **_get_template_variables(li_index='active'))
+def hardver():
+    return render_template('hardver.html', **_get_template_variables(li_index='active'))
 
 
 @app.route('/press_kit/')
