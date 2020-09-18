@@ -1,0 +1,64 @@
+/* Styles go here */
+
+.page-header, .page-header-space {
+  height: 40px;
+}
+
+.page-footer, .page-footer-space {
+  height: 40px;
+
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 960px;
+  margin-left: 20px;
+  /*background: #E20074; /* for demo */*/
+  border-top: 5px solid red;
+  color: white;
+}
+
+.page-header {
+  position: fixed;
+  top: 0mm;
+  width: 100%;
+  background: yellow; /* for demo */
+}
+
+.page {
+  page-break-after: always;
+}
+
+@page {
+  margin-left: 10mm;
+  margin-right: 10mm;
+  margin-top: 10mm;
+  margin-bottom: 10mm;
+}
+
+@media print {
+   thead {display: table-header-group;} 
+   tfoot {display: table-footer-group;}
+   
+   button {display: none;}
+   
+   body {margin: 0;}
+}
+
+span.footer-txt:after {
+  content: " (page " target-counter(attr(href, url), page) ")";
+}
+
+
+.telekom-text ul{
+  list-style-type: square;
+}
+
+.telekom-text {
+  font-size: 13pt;
+}
+
+.telekom-text .h4{
+  font-size: 22pt;
+}

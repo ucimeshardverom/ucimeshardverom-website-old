@@ -1,150 +1,58 @@
 <!doctype html>
 <html lang="{% if lang_code %}{{ lang_code }}{% else %}sk{% endif %}">
-  <head>
-    <meta charset="utf-8">
-    {% block header %}{% endblock %}
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="SPy o.z.">
-    <link rel="icon" href="{{ url_for('static', filename='img/logo/favicon.ico') }}" sizes="16x16">
-    <title>Print: {{ title }}</title>
-    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/python.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  </head>
-
-  <body>
-
+<head>
+  <meta charset="utf-8">
+  {% block header %}{% endblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="SPy o.z.">
+  <link rel="icon" href="{{ url_for('static', filename='img/logo/favicon.ico') }}" sizes="16x16">
+  <title>Print: {{ title }}</title>
+  <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/python.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/print.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
     <main role="main">
-
-      <div class="container">
-            <h1>{{ chapter_title }}</h1>
-            {{ content_html|safe }}
+      <table>
+        <thead><tr><td>
+          <div class="header-space">&nbsp;</div>
+        </td></tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="content">
+                {{ content_html|safe }}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td>
+            <div class="footer-space">&nbsp;</div>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+      <div class="header">
+        <div class="text-muted">
+          <i>Učíme s Hardvérom - {{ settings.title }}</i>
+          <hr class="mt-0 mb-0 pt-0 pb-0">
+        </div>
       </div>
-
+      <div class="footer text-muted">
+        <hr class="mt-0 mb-0 pt-0 pb-0">
+        <i>{{ settings.footer|safe }}</i>
+      </div>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-slim.min.js') }}"><\/script>')</script>
-    <script src="{{ url_for('static', filename='js/vendor/popper.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/vendor/holder.min.js') }}"></script>
-
-
-    <script>
-
-      /* message signatures
-      export interface RenderBlocksRequestMessage extends SimulatorMessage {
-          type: "renderblocks",
-          id: string;
-          code: string;
-          options?: {
-              package?: string;
-              packageId?: string;
-              snippetMode?: boolean;
-          }
-      }
-
-      export interface RenderBlocksResponseMessage extends SimulatorMessage {
-          source: "makecode",
-          type: "renderblocks",
-          id: string;
-          svg?: string;
-          width?: number;
-          height?: number;
-      }*/
-
-      var makeCodeRenderPre = makeCodeRenderPre || (function () {
-          // pre waiting to be rendered
-          // when undefined, iframe is loaded and ready
-          var pendingPres = [];
-          function injectRenderer() {
-              var f = document.getElementById("makecoderenderer");
-              // check iframe already added to the DOM
-              if (f) {
-                  return;
-              }
-              var f = document.createElement("iframe");
-              f.id = "makecoderenderer";
-              f.style.position = "absolute";
-              f.style.left = 0;
-              f.style.bottom = 0;
-              f.style.width = "1px";
-              f.style.height = "1px";
-              f.src = "https://makecode.microbit.org/--docs?render=1"
-              document.body.appendChild(f);
-          }
-
-          function renderPre(pre) {
-              console.log('render ' + pre.id)
-              var f = document.getElementById("makecoderenderer");
-              // check if iframe is added and ready (pendingPres is undefined)
-              if (!f || !!pendingPres) {
-                  // queue up
-                  pendingPres.push(pre);
-                  injectRenderer();
-              } else {
-                  f.contentWindow.postMessage({
-                      type: "renderblocks",
-                      id: pre.id,
-                      code: pre.innerText,
-                      options: {
-                        packageId: pre.getAttribute("data-packageid")
-                      }
-                  }, "https://makecode.microbit.org/");
-              }
-          }
-
-          // listen for messages
-          window.addEventListener("message", function (ev) {
-              var msg = ev.data;
-              if (msg.source != "makecode") return;
-
-              console.log(msg.type)
-              switch (msg.type) {
-                  case "renderready":
-                      // flush pending requests                   
-                      var pres = pendingPres;
-                      // set as undefined to notify that iframe is ready
-                      pendingPres = undefined;
-                      pres.forEach(function (pre) { renderPre(pre); })
-                      break;
-                  case "renderblocks":
-                      var svg = msg.svg; // this is an string containing SVG
-                      var id = msg.id; // this is the id you sent
-
-                      var xhttp = new XMLHttpRequest();
-                      xhttp.open("POST", "http://127.0.0.1:5000/materialy/save_makecode_image/"+msg.id, true);
-                      xhttp.send(msg.uri);
-
-
-                      // replace text with svg
-                      var img = document.createElement("img");
-                      img.src = msg.uri;
-                      img.width = msg.width;
-                      img.height = msg.height;
-                      var code = document.getElementById(id);
-                      code.parentElement.insertBefore(img, code)
-                      code.parentElement.removeChild(code);
-                      break;
-              }
-          }, false);
-
-          return renderPre;
-      })();
-
-      function renderSnippets() {
-          // TODO ADD RENDER LOGIC HERE
-          let pres = document.getElementsByTagName("pre");
-          Array.prototype.forEach.call(pres, function (pre) {
-              makeCodeRenderPre(pre);
-          })
-      }
-
-      // load the renderer
-      renderSnippets();
-
-      </script>
-
-  </body>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-slim.min.js') }}"><\/script>')</script>
+  <script src="{{ url_for('static', filename='js/vendor/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vendor/holder.min.js') }}"></script>
+</body>
 </html>

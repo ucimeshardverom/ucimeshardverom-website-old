@@ -1,22 +1,61 @@
 import markdown
 from bs4 import BeautifulSoup
 import os
+from markdown.extensions.toc import TocExtension
 
 
-def markdown_to_html(raw_markdown, img_url=""):
+def markdown_meta(raw_markdown):
+    md = markdown.Markdown(extensions = ['meta'])
+    html = md.convert(raw_markdown)
+    return md.Meta
+
+
+def markdown_to_html(raw_markdown, img_url="", html_template=None):
     content_html = markdown.markdown(raw_markdown, extensions=[
-        'admonition', 'fenced_code', 'tables', 'footnotes', 'toc'])
+        'meta', 'admonition', 'fenced_code', 'tables', 'footnotes', TocExtension(toc_depth="3-6")])
 
     # Alerts
     content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
     content_html = content_html.replace("<div class=\"admonition primary\">", "<div class=\"alert alert-primary\">")
     content_html = content_html.replace("<div class=\"admonition secondary\">", "<div class=\"alert alert-secondary\">")
     content_html = content_html.replace("<div class=\"admonition success\">", "<div class=\"alert alert-success\">")
-    content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
     content_html = content_html.replace("<div class=\"admonition warning\">", "<div class=\"alert alert-warning\">")
     content_html = content_html.replace("<div class=\"admonition info\">", "<div class=\"alert alert-info\">")
     content_html = content_html.replace("<div class=\"admonition light\">", "<div class=\"alert alert-light\">")
     content_html = content_html.replace("<div class=\"admonition dark\">", "<div class=\"alert alert-dark\">")
+
+
+    if html_template in ["materialy_print_telekom.html", "materialy_print.html"]:
+        content_html = content_html.replace("<p>// LEFT</p>", "<div class=\"row text-justify mt-4 mb-4\"><div class=\"col-6\">")
+        content_html = content_html.replace("<p>// RIGHT</p>", "</div><div class=\"col-6\">")
+    else:
+        content_html = content_html.replace("<p>// LEFT</p>", "<div class=\"row text-justify mt-4 mb-4\"><div class=\"col-lg-6\">")
+        content_html = content_html.replace("<p>// RIGHT</p>", "</div><div class=\"col-lg-6\">")
+
+    content_html = content_html.replace("<p>// END</p>", "</div></div>")
+    content_html = content_html.replace("<p>// NEWPAGE</p>", "<div style=\"page-break-after: always;\"></div>")
+    
+    content_html = content_html.replace("<div class=\"admonition magenta\">", "<div class=\"alert alert-telekom\">")
+
+    content_html = content_html.replace("<p><img", "<p class=\"mb-0\"><img")
+
+    # Put H1 and H2 titles in <span> tag
+    soup = BeautifulSoup(content_html, "html.parser")
+    for h1 in soup.find_all('h1'):
+        text = h1.getText()
+        h1.clear()
+        new_tag = soup.new_tag("span")
+        new_tag.string = str(text)
+        h1.insert(1, new_tag)
+    for h2 in soup.find_all('h2'):
+        text = h2.getText()
+        h2.clear()
+        new_tag = soup.new_tag("span")
+        new_tag.string = str(text)
+        h2.insert(1, new_tag)
+    content_html = str(soup)
+
+
 
     # Alert titles
     content_html = content_html.replace(
@@ -41,7 +80,7 @@ def markdown_to_html(raw_markdown, img_url=""):
             code_id = tag.code.string.strip()
             makecode_html = BeautifulSoup(f"""<div class="text-center">"""
                                           f"""<pre id="{code_id}" data-packageid="{code_id}"></pre>"""
-                                          f"""<p class="text-muted font-italic">Edituj a stiahni v MakeCode: """
+                                          f"""<p class="text-muted font-italic">Edituj a stiahni: """
                                           f"""<a target="_blank" href="http://makecode.microbit.org/{code_id}">"""
                                           f"""http://makecode.microbit.org/{code_id}</a></p></div>""", "html.parser")
             tag.replace_with(makecode_html)
@@ -56,7 +95,7 @@ def markdown_to_html(raw_markdown, img_url=""):
                 tag.code.get('class')[0] == "makecode-link-only":
             code_id = tag.code.string.strip()
             makecode_html = BeautifulSoup(f"""<div class="text-center">"""
-                                          f"""<p class="text-muted font-italic">Edituj a stiahni v MakeCode: """
+                                          f"""<p class="text-muted font-italic">Edituj a stiahni: """
                                           f"""<a target="_blank" href="http://makecode.microbit.org/{code_id}">"""
                                           f"""http://makecode.microbit.org/{code_id}</a></p></div>""", "html.parser")
             tag.replace_with(makecode_html)

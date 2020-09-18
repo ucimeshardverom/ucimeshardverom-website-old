@@ -3,11 +3,13 @@
 
 import codecs
 import os
+from time import sleep
 
 import pdfkit
 import yaml
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory
-from markdown_to_html import markdown_to_html
+from markdown_to_html import markdown_to_html, markdown_meta
+from collections import OrderedDict
 
 app = Flask(__name__, static_url_path='/static')
 app.config['FREEZER_DESTINATION'] = 'docs'
@@ -111,57 +113,234 @@ def press_kit():
 
 
 @app.route('/materialy/<string:metodika>/print/')
+@app.route('/materialy/<string:metodika>/print/<string:html_template>')
 @app.route('/materialy/<string:metodika>/<string:kapitola>/print/')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/print/<string:html_template>')
 def materialy_detail_print(metodika, kapitola=None, html_template='materialy_print.html'):
     return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template)
+
+
+@app.route('/materialy/<string:metodika>/print/teacher/')
+@app.route('/materialy/<string:metodika>/print/<string:html_template>/teacher/')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/print/teacher/')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/print/<string:html_template>/teacher/')
+def materialy_detail_print_teacher(metodika, kapitola=None, html_template='materialy_print.html'):
+    return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template, print_teacher_pdf=True)
+
+
+# @app.route('/materialy/<string:metodika>/telekom/')
+# @app.route('/materialy/<string:metodika>/<string:kapitola>/telekom/')
+# def materialy_detail_print_telekom(metodika, kapitola=None, html_template='materialy_print_telekom.html'):
+    
+#     return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template)
 
 
 @app.route('/zacni/')
 @app.route('/zacni/<string:kapitola>/')
 def zacni(kapitola=None):
-    return materialy_detail("zacni", chapter_name=kapitola, material_base_url="")
+    return materialy_detail("zacni", chapter_name=kapitola, material_base_url="", html_template="materialy_detail_zacni.html")
+
+
+def get_tutorial_settings(tutorial_slug, chapter_slug):
+    tutorial_name = tutorial_slug
+    chapter_name = chapter_slug
+
+    MATERIALS_IGNORED_FILES = ["SETTINGS.yaml", "images"]
+
+    material_path = os.path.join(os.getcwd(), 'materialy', tutorial_name)
+
+    files_in_dir = os.listdir(material_path)
+    folders_in_dir = []
+
+    files_in_dir.sort()
+    
+    for _ignored_filename in MATERIALS_IGNORED_FILES:
+        if _ignored_filename in files_in_dir:
+            files_in_dir.remove(_ignored_filename)
+    
+    for _file in files_in_dir:
+        if os.path.isdir(os.path.join(material_path, _file)):
+            folders_in_dir.append(_file)
+
+
+
+    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml')) as file:
+        material_settings = yaml.full_load(file)
+
+    material_settings['content'] = OrderedDict()
+
+    material_settings['chapter_id'] = "0."
+
+    for _folder in folders_in_dir:
+        _chapter_slug = _folder.split("_")[2:]
+        _chapter_slug = "_".join(_chapter_slug)
+        material_settings['content'][_chapter_slug] = {}
+        material_settings['content'][_chapter_slug]['path'] = f"{_folder}/{_chapter_slug}.md"
+        
+        if _folder.split("_")[1] == "00":
+            material_settings['content'][_chapter_slug]['chapter'] = True
+            material_settings['content'][_chapter_slug]['index'] = f"{int(_folder.split('_')[0])}."
+        else:
+            material_settings['content'][_chapter_slug]['index'] = f"{int(_folder.split('_')[0])}.{int(_folder.split('_')[1])}."
+
+        if _chapter_slug == chapter_name:
+            material_settings['chapter_id'] = material_settings['content'][_chapter_slug]['index']
+            material_settings['chapter_folder'] = _folder
+
+    return material_settings
 
 
 @app.route('/materialy/<string:tutorial_name>/')
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/')
-def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/"):
-    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml')) as file:
-        material_settings = yaml.full_load(file)
+def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/", print_teacher_pdf=False):
+    
+    material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
     if not chapter_name:
         first_chapter_name = list(material_settings.get('content'))[0]
         chapter_name = first_chapter_name
 
-    # if chapter_name not in [x['slug'] for x in material_settings['content']]:
-    #     return "not_found"
+    material_content = material_settings.get('content')
 
-    content_path = os.path.join('materialy', tutorial_name, chapter_name + '.md')
+    md_file_path = str(material_content.get(chapter_name).get("path")).split("/")
+
+    content_path = os.path.join('materialy', tutorial_name, *md_file_path)
 
     with codecs.open(content_path, mode="r", encoding="utf-8") as file:
         content_raw = file.read()
 
-    content_html = markdown_to_html(content_raw, img_url=f"/materialy/{tutorial_name}/")
+    for _chapter in material_settings.get('content'):
+        _md_file_path = str(material_content.get(_chapter).get("path")).split("/")
+        _content_path = os.path.join('materialy', tutorial_name, *_md_file_path)
+        with codecs.open(_content_path, mode="r", encoding="utf-8") as file:
+            _content_raw = file.read()
+
+        meta_title = markdown_meta(_content_raw).get('title')
+        if meta_title:
+            material_settings.get('content').get(_chapter)['title'] = meta_title[0]
+
+    content_html = markdown_to_html(content_raw, img_url=f"/materialy/{tutorial_name}/{chapter_name}/", html_template=html_template)
 
     # Retrieve chapter title
     chapter_title = material_settings.get('content').get(chapter_name).get('title')
 
     # Retrieve Teacher Guite
     teacher_content_html = None
-    teacher_guide = material_settings.get('content').get(chapter_name).get('teacher')
+    teacher_guide = markdown_meta(content_raw).get('teacher')
     if teacher_guide:
-        content_path = os.path.join('materialy', tutorial_name, teacher_guide + '.md')
+        content_path = os.path.join('materialy', tutorial_name, md_file_path[0], md_file_path[1].split('.')[0] + "_teacher.md")
         with codecs.open(content_path, mode="r", encoding="utf-8") as file:
             teacher_content_raw = file.read()
-            teacher_content_html = markdown_to_html(teacher_content_raw, img_url=f"/materialy/{tutorial_name}/")
+            teacher_content_html = markdown_to_html(teacher_content_raw, img_url=f"/materialy/{tutorial_name}/", html_template=html_template)
+
+    if print_teacher_pdf:
+        if not teacher_guide:
+            return ""
+        content_html = teacher_content_html
+
+
+    material_settings['downloads'] = {}
+    
+    ## Donwloads Tab
+    pdf_to_download = os.path.join(os.getcwd(), 'static', 'pdfs', f"{tutorial_name}-{chapter_name}.pdf")
+    if os.path.exists(pdf_to_download):
+        material_settings['downloads']["Stiahnuť Návod ako PDF"] = url_for('static', filename=os.path.join('pdfs', f"{tutorial_name}-{chapter_name}.pdf"))
+
+    pdf_teacher_to_download = os.path.join(os.getcwd(), 'static', 'pdfs', f"{tutorial_name}-{chapter_name}-teacher.pdf")
+    if os.path.exists(pdf_to_download):
+        material_settings['downloads']["Stiahnuť Meodiku pre učiteľa ako PDF"] = url_for('static', filename=os.path.join('pdfs', f"{tutorial_name}-{chapter_name}-teacher.pdf"))
+
 
     template_variables = _get_template_variables(chapter_title=chapter_title,
                                                  material_slug=tutorial_name, chapter_slug=chapter_name,
                                                  settings=material_settings, content_html=content_html,
                                                  material_settings=material_settings,
                                                  material_base_url=material_base_url,
-                                                 teacher_content_html=teacher_content_html)
+                                                 teacher_content_html=teacher_content_html,
+                                                 chapter_id=material_settings['chapter_id'])
 
     return render_template(html_template, **template_variables)
+
+
+@app.route('/materialy/<string:metodika>/<string:kapitola>/pdf')
+@app.route('/materialy/<string:metodika>/<string:kapitola>/<string:html_template>/pdf')
+def materialy_detail_docx(metodika, kapitola=None, html_template='materialy_print.html'):
+    
+    from selenium import webdriver
+    # fp = webdriver.FirefoxProfile()
+
+    # fp.set_preference('print_printer', "PostScript/default")
+    # fp.set_preference('print.always_print_silent', True)
+
+    # fp.set_preference('print.print_to_file', True)
+    # fp.set_preference('print.print_to_filename', "/home/marek/Desktop/git/ucimeshardverom-website/o.pdf")
+
+    # fp.set_preference('print.print_bgcolor', True)
+    # fp.set_preference('print.print_footerleft', "")
+    # fp.set_preference('print.print_footerright', "")
+    # fp.set_preference('print.print_headerleft', "")
+    # fp.set_preference('print.print_headerright', "")
+
+    # driver = webdriver.Firefox(firefox_profile=fp, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/geckodriver")
+    # driver.get("http://127.0.0.1:5000/materialy/telekom/uvod/telekom/")
+    # driver.execute_script('window.print();')
+    # sleep(10)
+    # driver.quit()
+
+    import json
+
+    appState = {
+        "recentDestinations": [
+            {
+                "id": "Save as PDF",
+                "origin": "local",
+                "account": "",
+            }
+        ],
+        "selectedDestinationId": "Save as PDF",
+        "version": 2,
+        "isHeaderFooterEnabled": False,
+        "isCssBackgroundEnabled": True,
+    }
+
+    save_directory = os.path.join(os.getcwd(), 'static', 'pdfs')
+    filename = f"{metodika}-{kapitola}.pdf"
+    filename_teacher = f"{metodika}-{kapitola}-teacher.pdf"
+
+    if os.path.exists(os.path.join(save_directory, filename)):
+        os.remove(os.path.join(save_directory, filename))
+
+    if os.path.exists(os.path.join(save_directory, filename_teacher)):
+        os.remove(os.path.join(save_directory, filename_teacher))
+
+    profile = {
+        'printing.print_preview_sticky_settings.appState': json.dumps(appState),
+        'savefile.default_directory': save_directory
+        }
+
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option('prefs', profile)
+    chrome_options.add_argument('--kiosk-printing')
+    # chrome_options.add_argument("--headless")
+
+    driver = webdriver.Chrome(options=chrome_options, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/chromedriver")
+    driver.get(url_for('materialy_detail_print', metodika=metodika, kapitola=kapitola, html_template=html_template, _external=True))
+    driver.execute_script(f"var tempTitle = document.title;document.title = '{filename}';window.print();document.title = tempTitle;")
+    while not os.path.exists(os.path.join(save_directory, filename)):
+        sleep(1)
+    driver.quit()
+
+    # driver = webdriver.Chrome(options=chrome_options, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/chromedriver")
+    # driver.get(url_for('materialy_detail_print_teacher', metodika=metodika, kapitola=kapitola, html_template=html_template, _external=True))
+    # driver.execute_script(f"var tempTitle = document.title;document.title = '{filename_teacher}';window.print();document.title = tempTitle;")
+    # while not os.path.exists(os.path.join(save_directory, filename_teacher)):
+    #     sleep(1)
+    # driver.quit()
+
+
+
+    return send_from_directory(save_directory, filename, mimetype='application/pdf',
+                               as_attachment=False, attachment_filename=filename)
 
 
 # @app.route('/materialy/generate_header/<string:title>/<string:subtitle>/')
@@ -176,12 +355,12 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 # def tutorial_generate_pdf(metodika, kapitola="uvod", js_loading_time=0):
 #     with open(os.path.join('materialy', metodika, 'SETTINGS.yaml')) as file:
 #         material_settings = yaml.full_load(file)
-#
+
 #     # Retrieve chapter title
 #     for i, ch_data in enumerate(material_settings['content']):
 #         if kapitola == ch_data['slug']:
 #             chapter_title = ch_data['title']
-#
+
 #     # Full list of options is at https://wkhtmltopdf.org/usage/wkhtmltopdf.txt
 #     options = {
 #         'page-size': 'A4',
@@ -192,27 +371,27 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 #         'encoding': "UTF-8",
 #         'no-outline': "",
 #         'title': f"Metodika: {chapter_title}",
-#
+
 #         'header-spacing': "10",
 #         'header-html': f"http://127.0.0.1:5000/materialy/generate_header/BBC micro:bit & MicroPython/{chapter_title}/",
-#
+
 #         'footer-line': "",
 #         'footer-font-size': "10",
 #         'footer-spacing': "10",
 #         'footer-center': "Licencia: CC BY SA 4.0",
 #         'footer-right': "Strana [page] z [toPage]\nPosledná úprava: XX.X.XXXX",
 #         'footer-left': "www.ucimeshardverom.sk\nAutor: Marek Mansell",
-#
+
 #         'disable-javascript': "",
-#
+
 #         'image-dpi': "2000",
 #         'no-pdf-compression': "",
 #         # 'grayscale':"",
 #     }
-#
+
 #     pdfkit.from_url(f'http://127.0.0.1:5000/materialy/{metodika}/{kapitola}/print/',
 #                     os.path.join('static', 'pdfs', f"{metodika}-{kapitola}.pdf"), options=options)
-#
+
 #     return send_from_directory(os.path.join('static', 'pdfs'), f"{metodika}-{kapitola}.pdf", mimetype='application/pdf',
 #                                as_attachment=False, attachment_filename=f"{metodika}-{kapitola}.pdf")
 
@@ -238,10 +417,13 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 #     return materialy_images(metodika, image)
 
 
-@app.route('/materialy/<string:metodika>/images/<string:image>')
+@app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/images/<string:image>')
 # @app.route('/materialy/<string:metodika>/<string:kapitola>/images/<string:image>')
-def materialy_images(metodika, image, kapitola=None):
-    return send_from_directory(os.path.join('materialy', metodika, 'images'), image, mimetype='image/gif')
+def materialy_images(tutorial_name, image, chapter_name=None):
+    
+    material_settings = get_tutorial_settings(tutorial_name, chapter_name)
+
+    return send_from_directory(os.path.join('materialy', tutorial_name, material_settings['chapter_folder'], 'images'), image, mimetype='image/gif')
 
 
 @app.route('/zacni/images/<string:image>')

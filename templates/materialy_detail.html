@@ -9,29 +9,11 @@
       content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
 <meta property="og:image"
       content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}"/>
-
+          <link href="{{ url_for('static', filename='css/print.css') }}" rel="stylesheet">
 
 {% endblock %}
 
 {% block content %}
-
-<div class="container text-center">
-
-
-    <div class="card bg-dark text-white mt-3 mb-3">
-        <img class="card-img" style="filter: brightness(40%);"
-             src="{{ url_for('static', filename='img/random/bg_card.jpg') }}" alt="Card image">
-        <div class="card-img-overlay align-middle">
-
-            <div class="mt-5">
-                <h1 class="display-4 mt-5">{{ settings.title }}</h1>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
 
 <div class="container text-center">
 </div>
@@ -39,68 +21,56 @@
 <div class="container">
 
     <div class="container">
+            <!-- <button class="openbtn" onclick="openNav()">☰ Zoznam kapitôl</button> -->
+
+        <nav aria-label="breadcrumb" class="mt-2">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('materialy') }}">Materiály</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('materialy_detail', tutorial_name=material_slug) }}">{{ settings.title }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ chapter_id }} {{ chapter_title }}</li>
+          </ol>
+        </nav>
+
+        <div id="accordion" class="mb-2">
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      ☰ Zobraziť zoznam kapitôl
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                            {% for item in settings.content %}
+                            {% if not settings.content[item].hidden %}
+                        <li>
+                            {% if item == chapter_slug %} <b> {% endif %}
+                                {% if not settings.content[item].chapter %} &nbsp;&nbsp;&nbsp;&nbsp; {% endif %}
+                                <a class="" href="/{{ material_base_url }}{{ material_slug }}/{% if loop.index != 1 %}{{ item }}{% endif %}">
+                                    {% if material_settings.numbering %}
+                                        {{ settings.content[item].index }}
+                                    {% endif%}
+                                    {{ settings.content[item].title }}
+                                </a>
+                                    
+                                {% if item == chapter_slug %} </b> {% endif %}
+                        </li>
+                            {% endif %}
+                            {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        </div>
+
         <div class="row">
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        {{ settings.title }}
-                    </div>
-                    <ul class="list-group">
-                        {% for item in settings.content %}
-                        {% if settings.content[item].visible %}
-                        <li class="list-group-item {% if item == chapter_slug %} active {% endif %}">
-                            <a href="/{{ material_base_url }}{{ material_slug }}/{% if loop.index != 1 %}{{ item }}{% endif %}">
-                                {% if material_settings.numbering %}{{ loop.index }}. {% endif%}{{ settings.content[item].title }}</a>
-                        </li>
 
-                        {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
 
-                {% if material_settings.author_visible %}
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Kto je autorom tohto materiálu?
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{ settings.author_bio|safe }}</p>
-                    </div>
-                </div>
-                {% endif %}
 
-                {% if material_settings.license_visible %}
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Ako môžem tento materiál používať?
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Licencia {{ settings.license }}</h5>
-                        <p class="card-text">{{ settings.license_desc }}</p>
-                        <a href="{{ settings.license_link }}" class="btn btn-primary">Celé znenie licencie</a>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if material_settings.download_visible %}
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Stiahnuť/Vytlačiť
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text"></p>
-                        <a href="{{ url_for('materialy_detail_print', metodika=material_slug, kapitola=chapter_slug) }}"
-                           class="btn btn-secondary">Stiahnuť návod</a>
-
-                    </div>
-                </div>
-                {% endif %}
-
-            </div>
-            <div class="col-md-8 text-justify">
-
-                <h1 class="mb-4 text-left">{{ chapter_title }}</h1>
+            <div class="col-xl-12 text-justify">
 
                 {% if teacher_content_html %}
                 <nav>
@@ -111,6 +81,8 @@
                         <a class="nav-item nav-link" id="metodika-tab" data-toggle="tab" href="#metodika"
                            role="tab" aria-controls="metodika" aria-selected="false">Metodika pre učiteľa</a>
                         {% endif %}
+                        <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#zdroje"
+                           role="tab" aria-controls="zdroje" aria-selected="false">Na stiahnutie</a>
                     </div>
                 </nav>
                 {% endif %}
@@ -126,6 +98,19 @@
                             {{ teacher_content_html|safe }}
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
+                        <div class="mt-4">
+                            DOWNLOADS
+                            <ul>
+                            {% for item in settings.downloads %}
+                            <li><a href="{{ settings.downloads[item] }}">{{ item }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+
+
                 </div>
 
             </div>
@@ -255,6 +240,20 @@ renderSnippets();
 
 
 
+</script>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 </script>
 
 
