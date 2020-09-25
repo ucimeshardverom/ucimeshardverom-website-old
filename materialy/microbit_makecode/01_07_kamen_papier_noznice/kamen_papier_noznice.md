@@ -61,16 +61,15 @@ _bWMKT2TKR1Tz
 
 // LEFT
 
-V tejto časti hodiny žiaci doplnia svoj kód o počítanie výhier. Po každej výhre žiak stlačí tlačidlo A, ktoré zvýši premennú “vyhry” o 1. Pre vypísanie stačí žiak tlačidlo B. Pre vynulovanie stlačí žiak tlačidlo RESET na zadnej strane micro:bitu. \
- \
-Následne si žiaci môžu zahrať triedny turnaj dvoma rôznymi spôsobmi:
+Micro:bit síce už máme naprogramovaný, ale existuje možnosť, ako program ešte vylepšiť - pridaním počítadla výhier. Využiť by sme ho mohli v turnaji so spolužiakmi alebo kamarátmi. Ako také počítadlo funguje? Počas spustenia micro:bitu nastaví premennú `vyhry` na nula. Vždy, keď vyhráme v Kameň, papier, nožnice, stlačíme tlačidlo A, čím sa nám pripočíta bod. Ak by sme chceli zobraziť aktuálny počet bodov, stlačíme tlačidlo B. Vedľa nájdete doplnený program.
 
+Ako počítadlo vynulovať? Stlačí stlačiť tlačidlo RESET na zadnej strane zariadenia.
 
-*   Žiaci si nájdu dvojicu a zahrajú hru. Žiak, ktorý prehrá vypadne a prestane hrať. Žiak, ktorý vyhrá si pripočíta výhru na micro:bite stlačením tlačidla A a nájde si ďalšieho spolužiaka, ktorý ešte nevypadol na ďalšiu hru. Hra sa končí, keď zostane už iba jeden hráč, avšak vyhráva žiak, ktorý má najvyšší počet výhier.
-*   Žiaci v danom časovom intervale (hru odštartuje aj ukončí učiteľ) majú za úlohu vyhrať čo najviac hier s čo najviac spolužiakmi. V tejto hre sa nevypadáva, avšak nie je možné hrať s tým istým spolužiakom 2 krát za sebou. Vyhráva žiak, ktorý má po skončení turnaja najviac víťazstiev.
+!!! primary "Turnaj si môžete zahrať <br/>viacerými spôsobmi"
+    * Hráči si nájdu dvojicu a zahrajú si hru. Hráč, ktorý prehrá vypadne a prestane hrať. Hráč, ktorý vyhrá, si pripočíta výhru na micro:bite stlačením tlačidla A a nájde si ďalšieho spoluhráča, ktorý ešte nevypadol na ďalšiu hru. Hra sa končí, keď zostane už iba posledný hráč, avšak vyhráva ten, kto má najvyšší počet výhier.
+    * Hráči v danom časovom intervale (napr. za 1 minútu) majú za úlohu vyhrať čo najviac hier s čo najviac spoluhráčmi. V tejto hre sa nevypadáva, avšak nie je možné hrať s tým istým spoluhráčom 2 krát za sebou. Vyhráva hráč, ktorý má po skončení turnaja najviac víťazstiev.
 
-Na začiatku turnaja zdôraznite, že ide o férovú hru a že si navzájom veríte a nebudete podvádzať.** \
- **
+Keďže v turnaji sme všetci féroví, body si pripočítavame iba ak naozaj vyhráme.
  
 // RIGHT
 
