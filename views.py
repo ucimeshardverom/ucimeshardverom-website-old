@@ -11,6 +11,9 @@ from flask import Flask, request, render_template, redirect, url_for, send_from_
 from markdown_to_html import markdown_to_html, markdown_meta
 from collections import OrderedDict
 
+from selenium import webdriver
+import json
+
 app = Flask(__name__, static_url_path='/static')
 app.config['FREEZER_DESTINATION'] = 'docs'
 app.jinja_options = {'extensions': ['jinja2.ext.with_', 'jinja2.ext.i18n']}
@@ -109,13 +112,6 @@ def test():
 def press_kit():
     template_variables = _get_template_variables()
     return render_template('press_kit.html', **template_variables)
-
-
-# @app.route('/materialy/microbit_makecode/')
-# def microbit_makecode():
-#     template_variables = _get_template_variables()
-#     return render_template('microbit_makecode.html', **template_variables)
-
 
 @app.route('/materialy/<string:metodika>/print/')
 @app.route('/materialy/<string:metodika>/print/<string:html_template>')
@@ -269,30 +265,7 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 
 @app.route('/materialy/<string:metodika>/<string:kapitola>/pdf')
 @app.route('/materialy/<string:metodika>/<string:kapitola>/<string:html_template>/pdf')
-def materialy_detail_docx(metodika, kapitola=None, html_template='materialy_print.html'):
-    
-    from selenium import webdriver
-    # fp = webdriver.FirefoxProfile()
-
-    # fp.set_preference('print_printer', "PostScript/default")
-    # fp.set_preference('print.always_print_silent', True)
-
-    # fp.set_preference('print.print_to_file', True)
-    # fp.set_preference('print.print_to_filename', "/home/marek/Desktop/git/ucimeshardverom-website/o.pdf")
-
-    # fp.set_preference('print.print_bgcolor', True)
-    # fp.set_preference('print.print_footerleft', "")
-    # fp.set_preference('print.print_footerright', "")
-    # fp.set_preference('print.print_headerleft', "")
-    # fp.set_preference('print.print_headerright', "")
-
-    # driver = webdriver.Firefox(firefox_profile=fp, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/geckodriver")
-    # driver.get("http://127.0.0.1:5000/materialy/telekom/uvod/telekom/")
-    # driver.execute_script('window.print();')
-    # sleep(10)
-    # driver.quit()
-
-    import json
+def materialy_detail_pdf(metodika, kapitola=None, html_template='materialy_print.html'):
 
     appState = {
         "recentDestinations": [
@@ -335,91 +308,10 @@ def materialy_detail_docx(metodika, kapitola=None, html_template='materialy_prin
         sleep(1)
     driver.quit()
 
-    # driver = webdriver.Chrome(options=chrome_options, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/chromedriver")
-    # driver.get(url_for('materialy_detail_print_teacher', metodika=metodika, kapitola=kapitola, html_template=html_template, _external=True))
-    # driver.execute_script(f"var tempTitle = document.title;document.title = '{filename_teacher}';window.print();document.title = tempTitle;")
-    # while not os.path.exists(os.path.join(save_directory, filename_teacher)):
-    #     sleep(1)
-    # driver.quit()
-
 
 
     return send_from_directory(save_directory, filename, mimetype='application/pdf',
                                as_attachment=False, attachment_filename=filename)
-
-
-# @app.route('/materialy/generate_header/<string:title>/<string:subtitle>/')
-# def generate_header(title, subtitle):
-#     return f"<!DOCTYPE html><html><body align='center'><h1>{title}</h1><img height='20px' src='https://upload.wikimedia.org/wikipedia/commons/0/09/Kate-icon.png'/> {subtitle}<hr></body></html>"
-
-
-# @app.route('/materialy/<string:metodika>/generate_pdf')
-# @app.route('/materialy/<string:metodika>/generate_pdf/<int:js_loading_time>')
-# @app.route('/materialy/<string:metodika>/<string:kapitola>/generate_pdf')
-# @app.route('/materialy/<string:metodika>/<string:kapitola>/generate_pdf/<int:js_loading_time>')
-# def tutorial_generate_pdf(metodika, kapitola="uvod", js_loading_time=0):
-#     with open(os.path.join('materialy', metodika, 'SETTINGS.yaml')) as file:
-#         material_settings = yaml.full_load(file)
-
-#     # Retrieve chapter title
-#     for i, ch_data in enumerate(material_settings['content']):
-#         if kapitola == ch_data['slug']:
-#             chapter_title = ch_data['title']
-
-#     # Full list of options is at https://wkhtmltopdf.org/usage/wkhtmltopdf.txt
-#     options = {
-#         'page-size': 'A4',
-#         'margin-top': '35mm',
-#         'margin-right': '15mm',
-#         'margin-bottom': '25mm',
-#         'margin-left': '15mm',
-#         'encoding': "UTF-8",
-#         'no-outline': "",
-#         'title': f"Metodika: {chapter_title}",
-
-#         'header-spacing': "10",
-#         'header-html': f"http://127.0.0.1:5000/materialy/generate_header/BBC micro:bit & MicroPython/{chapter_title}/",
-
-#         'footer-line': "",
-#         'footer-font-size': "10",
-#         'footer-spacing': "10",
-#         'footer-center': "Licencia: CC BY SA 4.0",
-#         'footer-right': "Strana [page] z [toPage]\nPosledná úprava: XX.X.XXXX",
-#         'footer-left': "www.ucimeshardverom.sk\nAutor: Marek Mansell",
-
-#         'disable-javascript': "",
-
-#         'image-dpi': "2000",
-#         'no-pdf-compression': "",
-#         # 'grayscale':"",
-#     }
-
-#     pdfkit.from_url(f'http://127.0.0.1:5000/materialy/{metodika}/{kapitola}/print/',
-#                     os.path.join('static', 'pdfs', f"{metodika}-{kapitola}.pdf"), options=options)
-
-#     return send_from_directory(os.path.join('static', 'pdfs'), f"{metodika}-{kapitola}.pdf", mimetype='application/pdf',
-#                                as_attachment=False, attachment_filename=f"{metodika}-{kapitola}.pdf")
-
-
-# @app.route('/materialy/generate')
-# def generate_all_pdfs():
-#     return "s"
-#     material_dirs = os.listdir('materialy')
-#     for material in material_dirs:
-#
-#         with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
-#             material_settings = yaml.full_load(file)
-#
-#         for chapter_name in material_settings['content']:
-#             tutorial_generate_pdf(material, kapitola=chapter_name['slug'])
-#             # print(f"{material}-{chapter_name['slug']}.pdf")
-#     return "OK"
-
-
-# @app.route('/materialy/<string:metodika>/images/print/<string:image>')
-# # @app.route('/materialy/<string:metodika>/<string:kapitola>/print/images/<string:image>')
-# def materialy_images_print(metodika, image, kapitola=None):
-#     return materialy_images(metodika, image)
 
 
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/images/<string:image>')

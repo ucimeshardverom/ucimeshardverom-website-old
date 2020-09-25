@@ -31,6 +31,12 @@
           </ol>
         </nav>
 
+        <a href="{{ url_for('materialy_detail_pdf', metodika=material_slug, kapitola=chapter_slug, html_template='materialy_print_telekom.html') }}"
+           class="btn btn-success mb-3">TELEKOM PDF</a>
+
+        <a href="{{ url_for('materialy_detail_pdf', metodika=material_slug, kapitola=chapter_slug, html_template='materialy_print.html') }}"
+           class="btn btn-primary mb-3">UsH PDF</a>
+
         <div id="accordion" class="mb-2">
             <div class="card">
                 <div class="card-header" id="headingThree">

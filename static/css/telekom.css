@@ -16,6 +16,10 @@
   color: white;
 }
 
+.alert code {
+  color: white;
+}
+
 h1 > span {
   font-size: 1.8em;
   font-weight: bold;
