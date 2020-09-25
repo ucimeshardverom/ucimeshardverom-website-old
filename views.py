@@ -100,6 +100,11 @@ def hardver():
     return render_template('hardver.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/test/')
+def test():
+    return render_template('test.html', **_get_template_variables(li_index='active'))
+
+
 @app.route('/press_kit/')
 def press_kit():
     template_variables = _get_template_variables()
