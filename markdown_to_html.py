@@ -12,7 +12,7 @@ def markdown_meta(raw_markdown):
 
 def markdown_to_html(raw_markdown, img_url="", html_template=None):
     content_html = markdown.markdown(raw_markdown, extensions=[
-        'meta', 'admonition', 'fenced_code', 'tables', 'footnotes', TocExtension(toc_depth="3-6")])
+        'meta', 'admonition', 'fenced_code', 'tables', 'footnotes', 'extra', TocExtension(toc_depth="3-6")])
 
     # Alerts
     content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")

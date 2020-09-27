@@ -43,5 +43,8 @@ body {
 .footer {
   position: fixed;
   bottom: 0;
+}
 
+.lection-desc {
+  font-style: italic;
 }

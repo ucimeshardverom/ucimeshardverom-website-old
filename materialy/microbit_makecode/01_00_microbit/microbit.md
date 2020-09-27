@@ -1,13 +1,13 @@
-Title:   Samotný micro:bit
+Title:   BBC micro:bit
 
-# Samotný micro:bit
+# BBC micro:bit
 ## Prvá kapitola
 
 ![micro:bit](images/project-arrow.JPG)
 
 // LEFT
 
-V prvej kapitole budeme pracovať iba so samotnými micro:bitom, USB káblom a baterkou. Prejdeme si, aké súčiastky micro:bit obsahuje a ako ho programovať v prostredí [Microsoft Makecode](https://makecode.microbit.org/).
+V prvej kapitole budeme pracovať iba s micro:bitom, USB káblom a baterkou. Prejdeme si, aké súčiastky micro:bit obsahuje a ako ho programovať v prostredí [Microsoft Makecode](https://makecode.microbit.org/).
 
 
 // RIGHT

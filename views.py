@@ -220,10 +220,15 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
         if meta_title:
             material_settings.get('content').get(_chapter)['title'] = meta_title[0]
 
+        meta_sub_title = markdown_meta(_content_raw).get('subtitle')
+        if meta_sub_title:
+            material_settings.get('content').get(_chapter)['subtitle'] = meta_sub_title[0]
+
     content_html = markdown_to_html(content_raw, img_url=f"/materialy/{tutorial_name}/{chapter_name}/", html_template=html_template)
 
     # Retrieve chapter title
     chapter_title = material_settings.get('content').get(chapter_name).get('title')
+    chapter_subtitle = material_settings.get('content').get(chapter_name).get('subtitle')
 
     # Retrieve Teacher Guite
     teacher_content_html = None
@@ -253,6 +258,7 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 
 
     template_variables = _get_template_variables(chapter_title=chapter_title,
+                                                 chapter_subtitle=chapter_subtitle,
                                                  material_slug=tutorial_name, chapter_slug=chapter_name,
                                                  settings=material_settings, content_html=content_html,
                                                  material_settings=material_settings,
@@ -263,9 +269,21 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
     return render_template(html_template, **template_variables)
 
 
-@app.route('/materialy/<string:metodika>/<string:kapitola>/pdf')
-@app.route('/materialy/<string:metodika>/<string:kapitola>/<string:html_template>/pdf')
-def materialy_detail_pdf(metodika, kapitola=None, html_template='materialy_print.html'):
+@app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/pdf')
+@app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/<string:html_template>/pdf')
+def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='materialy_print.html'):
+
+    material_settings = get_tutorial_settings(tutorial_name, chapter_name)
+
+    if not chapter_name:
+        first_chapter_name = list(material_settings.get('content'))[0]
+        chapter_name = first_chapter_name
+
+    material_content = material_settings.get('content')
+
+    md_file_path = str(material_content.get(chapter_name).get("path")).split("/")
+    md_folder_name = str(md_file_path[0])
+    md_folder_number = "_".join(md_folder_name.split("_")[0:2])
 
     appState = {
         "recentDestinations": [
@@ -282,8 +300,8 @@ def materialy_detail_pdf(metodika, kapitola=None, html_template='materialy_print
     }
 
     save_directory = os.path.join(os.getcwd(), 'static', 'pdfs')
-    filename = f"{metodika}-{kapitola}.pdf"
-    filename_teacher = f"{metodika}-{kapitola}-teacher.pdf"
+    filename = f"{md_folder_number}-{tutorial_name}-{chapter_name}.pdf"
+    filename_teacher = f"{md_folder_number}-{tutorial_name}-{chapter_name}-teacher.pdf"
 
     if os.path.exists(os.path.join(save_directory, filename)):
         os.remove(os.path.join(save_directory, filename))
@@ -302,7 +320,7 @@ def materialy_detail_pdf(metodika, kapitola=None, html_template='materialy_print
     # chrome_options.add_argument("--headless")
 
     driver = webdriver.Chrome(options=chrome_options, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/chromedriver")
-    driver.get(url_for('materialy_detail_print', metodika=metodika, kapitola=kapitola, html_template=html_template, _external=True))
+    driver.get(url_for('materialy_detail_print', metodika=tutorial_name, kapitola=chapter_name, html_template=html_template, _external=True))
     driver.execute_script(f"var tempTitle = document.title;document.title = '{filename}';window.print();document.title = tempTitle;")
     while not os.path.exists(os.path.join(save_directory, filename)):
         sleep(1)
@@ -313,6 +331,16 @@ def materialy_detail_pdf(metodika, kapitola=None, html_template='materialy_print
     return send_from_directory(save_directory, filename, mimetype='application/pdf',
                                as_attachment=False, attachment_filename=filename)
 
+@app.route('/materialy/<string:tutorial_name>/all_pdfs')
+@app.route('/materialy/<string:tutorial_name>/<string:html_template>/all_pdfs')
+def materialy_detail_all_pdfs(tutorial_name, html_template='materialy_print.html'):
+
+    material_settings = get_tutorial_settings(tutorial_name, None)
+
+    for _chapter in material_settings.get('content'):
+        materialy_detail_pdf(tutorial_name, chapter_name=_chapter, html_template=html_template)
+
+    # return str(material_settings.get('content'))
 
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/images/<string:image>')
 # @app.route('/materialy/<string:metodika>/<string:kapitola>/images/<string:image>')

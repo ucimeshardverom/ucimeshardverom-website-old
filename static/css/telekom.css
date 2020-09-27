@@ -23,7 +23,7 @@
 h1 > span {
   font-size: 1.8em;
   font-weight: bold;
-  color: yellow;
+  color: #99ff24;
   background-color: black !important;
   padding: 0px 10px 0px 10px !important;
 
@@ -45,4 +45,10 @@ ul {
 
 h3 {
   font-weight: 600;
+}
+
+.lection-desc {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal !important;
 }

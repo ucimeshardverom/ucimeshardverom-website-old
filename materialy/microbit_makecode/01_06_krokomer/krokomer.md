@@ -1,4 +1,5 @@
 Title:   Krokomer
+Subtitle:    Koľko krokov denne spravíš?
 Teacher:	True
 
 # Krokomer
@@ -10,15 +11,15 @@ Teacher:	True
 
 // RIGHT
 
-<!-- Krokomer (anglicky pedometer) je zariadenie na meranie počtu krokov. Dnes sa často nachádza vbudovaný aj v mobilných
+<div markdown="1" class="lection-desc">
+Krokomer (anglicky pedometer) je zariadenie na meranie počtu krokov. Dnes sa často nachádza vbudovaný aj v mobilných
 telefónoch, ktoré ukazujú, koľko krokov človek za deň spravil. Krokomer sa dá na micro:bite spraviť pomocou vbudovaného
-senzoru pohybu. -->
-**KROKOMER (ANGLICKY PEDOMETER) JE ZARIADENIE NA MERANIE POČTU KROKOV. DNES SA ČASTO NACHÁDZA VBUDOVANÝ AJ V MOBILNÝCH TELEFÓNOCH, KTORÉ UKAZUJÚ, KOĽKO KROKOV ČLOVEK ZA DEŇ SPRAVIL. KROKOMER SA DÁ NA MICRO:BITE SPRAVIŤ POMOCOU VBUDOVANÉHO SENZORU POHYBU.**
+senzoru pohybu.
+</div>
 
 
-<!-- **Potrebné pomôcky:**   -->
-**POTREBNÉ POMÔCKY:**  
-BBC micro:bit, USB kábel, batériu k micro:bitu, počítač pripojený k internetu,
+**Potrebné pomôcky:**
+BBC micro:bit, USB kábel, batéria k micro:bitu, počítač pripojený k internetu,
 papierová lepiaca páska (ľahšie sa dá dať dolu z oblečenia ako klasická páska), nožnice, topánky
 
 Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.microbit.org/)
@@ -29,9 +30,9 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 
 	Krokomer (anglicky pedometer) je zariadenie na meranie počtu krokov. Dnes sa často nachádza vbudovaný aj v mobilných
 	telefónoch, ktoré ukazujú, koľko krokov človek za deň spravil. Krokomer sa dá na micro:bite spraviť pomocou vbudovaného
-	senzoru pohybu. Ak pripevníme micro:bit na nohu, stačí merať, koľkokrát zariadením zatrasieme a tým získame počet
+	senzoru pohybu. Ak pripevníme micro:bit na nohu, stačí merať, koľkokrát zariadením zatrasieme, a tým získame počet
 	krokov. Na takomto princípe funguje aj väčšina moderných krokomerov. Upozorňujeme však, že takéto meranie nemusí byť
-	úplne presné - malé kroky sa merajú len veľmi ťažko, naopak veľmi aktívny pohyb nohou môže spôsobiť, že krokomer ukáže
+	úplne presné – malé kroky sa merajú len veľmi ťažko, naopak veľmi aktívny pohyb nohou môže spôsobiť, že krokomer ukáže
 	viac krokov, ako v skutočnosti človek spravil. 
 
 
@@ -47,9 +48,9 @@ a následne micro:bit pripevníme na topánku a otestujeme.
 
 Požiadavky na micro:bit krokomer:  
 
-* Pri potrasení micro:bit zväčší premennú `kroky` o 1
-* Zobraziť počet krokov na displeji keď sa tlačidlo A stlačí
-* Vynulovať kroky pri stlačení tlačidiel A a B naraz
+* Pri potrasení micro:bit zväčší premennú `kroky` o 1.
+* Zobraziť počet krokov na displeji, keď sa tlačidlo A stlačí.
+* Vynulovať kroky pri stlačení tlačidiel A a B naraz.
 
 // RIGHT
 
@@ -64,11 +65,11 @@ Na počítanie krokov použijeme premennú s názvom `kroky`, ktorú pri každom
 potrasením micro:bitu, keďže bude fyzicky pripevnený na topánke.
 
 Počet krokov nebude krokomer zobrazovať vždy, ale iba pri stlačení tlačidla `A`. Najprv sa zobrazí počet krokov
-(príkazom `zobraziť číslo` do ktorého vložíme premennú `kroky`). Číslo po jednej sekunde vymažeme z obrazovky,
+(príkazom `zobraziť číslo`, do ktorého vložíme premennú `kroky`). Číslo po jednej sekunde vymažeme z obrazovky,
 aby sa nestalo, že nám bude celý čas svietiť neaktuálne číslo krokov.
 
-Niekedy možno budeme chcieť premazať počet krokov a začať počítať odznovu od 0. To spravíme vždy pri stlačení oboch
-tlačidiel - aj `A` aj `B`.
+Niekedy možno budeme chcieť premazať počet krokov a začať počítať znovu od 0. To spravíme vždy pri stlačení oboch
+tlačidiel – aj `A`, aj `B`.
 
 !!! primary "Overenie v simulátore"
 	Pri vývoji hardvéru sa bežne na overenie funkčnosti využívajú simulátory. Takéto testovanie je oveľa rýchlejšie
@@ -76,18 +77,18 @@ tlačidiel - aj `A` aj `B`.
 
 !!! primary "Koľko krokov mám denne spraviť?"
 	Koľko krokov je vhodných pre človeka denne? Presná odpoveď
-	neexistuje, no štúdiu dokazujú, že približne 7000 krokov je dostatočne veľa
+	neexistuje, no štúdie dokazujú, že približne 7000 krokov je dostatočne veľa
 	[(článok)](https://www.noviny.sk/zaujimavosti/367839-malo-sa-hybeme-tvrdia-odbornici-kolko-krokov-by-sme-teda-mali-spravit).
 	Vedci taktiež tvrdia, že ak človek pravidelne prejde _"menej ako 5000 krokov denne, zvyšuje sa u neho riziko priberania,
-	rednutia kostí a ďalších problémov... Vedci sa zaujímajú aj hornú hranicu. Avšak podľa doteraz zistených štúdií je
+	rednutia kostí a ďalších problémov... Vedci sa zaujímajú aj o hornú hranicu. Avšak podľa doteraz zistených štúdií je
 	čím viac, tým lepšie a najmä podľa toho, koľko človek vládze."_
 
 ### Hardvér pre krokomer
-Ak máme program odskúšaný v simulátori aj fyzicky na micro:bite, môžme ho odpojiť od počítaču a pripojiť k batérii.
-Takýto krokomer je potrebné umiestniť na topánku - odporúčame pripevniť micro:bit na prednú stranu topánky z vrchu
-(viď nižšie na foto). Na takomto umiestnení má najlepšiu presnosť. Samozrejme dá sa pripevniť aj z boku topánky,
-ale z našich skúseností tu bývajú merania nepresnejšie. Krokomer sme prilepili papierovou lepiacou páskou,
-ktorá ide dolu z topánky ľahšie, ako klasická páska a nemala by zanechávať žiadne stopy.
+Ak máme program odskúšaný v simulátore aj fyzicky na micro:bite, môžeme ho odpojiť od počítača a pripojiť k batérii.
+Takýto krokomer je potrebné umiestniť na topánku – odporúčame pripevniť micro:bit na prednú stranu topánky navrch
+(viď nižšie na foto). Pri takomto umiestnení má najlepšiu presnosť. Dá sa samozrejme pripevniť aj zboku topánky,
+ale z našich skúseností bývajú merania na tomto mieste nepresnejšie. Krokomer sme prilepili papierovou lepiacou páskou,
+ktorá ide dolu z topánky ľahšie ako klasická páska a nemala by zanechávať žiadne stopy.
 
 // LEFT
 
@@ -97,11 +98,11 @@ Pomôcky pre tvorbu krokomeru
 // RIGHT
 
 ![Obrázok BBC micro:bitu](images/krokomer.png)
-Výsledok - krokomer pripevnený papierovou lepiacou páskou
+Výsledok – krokomer pripevnený papierovou lepiacou páskou
 
 // END
 
-!!! primary "Kontrolné otázky"
+!!! primary "Záverečné otázky"
     *   Na čo slúži krokomer?
     *   Aký senzor používa na snímanie krokov?
     *   Koľko krokov by mal človek denne spraviť?
