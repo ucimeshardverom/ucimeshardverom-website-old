@@ -2,7 +2,7 @@ Title:   Semafor
 Teacher:  True
 
 # Semafor
-## Ovládanie trioch LEDiek
+## Ovládanie troch LEDiek
 
 // LEFT
 
