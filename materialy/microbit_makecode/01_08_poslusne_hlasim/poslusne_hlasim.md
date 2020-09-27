@@ -42,9 +42,9 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 
 // LEFT
 
-Prvou úlohou žiakov je kartičky s číslami nahradiť dvoma micro:bitmi. Tie budú naprogramované veľmi jednoduchým kódom.
-Ako vstup si môžu zvoliť ľubovoľný príkaz – či už stlačenie tlačidla, zatrasenie, naklonenie… Zvyšné pravidlá hry
-zostávajú nezmenené, stále platí, že žiak nesmie vidieť číslo na svojom micro:bite, ale musí ho uhádnuť.
+Prvou úlohou hráčov je kartičky s číslami nahradiť dvoma micro:bitmi. Tie budú naprogramované veľmi jednoduchým kódom.
+Ako vstup si môžeš zvoliť ľubovoľný príkaz – či už stlačenie tlačidla, zatrasenie, naklonenie… Zvyšné pravidlá hry
+zostávajú nezmenené, stále platí, že hráč nesmie vidieť číslo na svojom micro:bite, ale musí ho uhádnuť.
 Hráči vždy čakajú na povel rozhodcu.
 
 
@@ -101,6 +101,6 @@ _5VE92gaUUd6q
         skúsiť aj  mocniny či modulo).
     *   Hru je možné hrať aj s 3 hráčmi (plus jeden rozhodca). Postup je presne taký istý ako pri 2 hráčoch, každý
         z troch hráčov má micro:bit, ktorý mu vygeneruje náhodné číslo, rozhodca spraví súčin týchto troch čísel
-        a povie ho hráčom. Každý hráč vidí zvyšné dve čísla (okrem svojho). Napr.: Žiaci si vytiahnu čísla 2, 3 a 5.
+        a povie ho hráčom. Každý hráč vidí zvyšné dve čísla (okrem svojho). Napr.: Hráči si vytiahnu čísla 2, 3 a 5.
         Rozhodca oznámi číslo 30. Keďže hráč číslo 1 vidí čísla svojich spoluhráčov (3 a 5), správne odpovie číslo 2,
         keďže 2x3x5=30.
