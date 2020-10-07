@@ -1,84 +1,70 @@
 {% extends "body.html" %}
-
 {% block content %}
+	<div class="container text-center">
+		<div class="jumbotron">
+			<h1>Odporúčaný hardvér</h1>
+		</div>
+	</div>
+	<div class="container text-justify">
+		<p class="lead">Toto odporúčanie sme spísali po 3 rokoch spolupráce so školami vo výučbe BBC micro:bit, počas ktorých sme rozšírili micro:bity na vyše 100 škôl.</p>
+	</div>
+	<div class="container">
+		<hr class="featurette-divider">
+		<div class="container text-justify">
+			<h2 class="featurette-heading">Základy s BBC micro:bit - základná sada</h2>
+			
+			<div class="row">
+				<div class="col-sm-4">
+					<a target="_blank" href="https://edutronik.sk/v2/produkt/bbc-microbit-zakladna-sada/">
+						<img class="img-fluid" src="{{ url_for('static', filename='img/zakladna-sada.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-8">
+					<p>
+						Ak výučbu s micro:bitmi iba začínate alebo plánujete začať, určite je vhodné okrem micro:bitov samotných zaobstarať aj ďalšie vybavenie, vďaka ktorému je možné robiť rôzne zaujímavé začiatočnícke projekty. Na druhú stranu je na začiatok dobré "neprehnať" to so súčiastkami, keďže mnohé síce vyzerajú lákavo, ale v rámci klasickej výučby na ne často proste nie je čas. Nižšie prikladáme zoznam, ktorý sa nám osvedčil a s ktorým už roky pracujeme. Podľa našich skúseností je vhodný pre prvý rok výučby s micro:bitmi, či už na základných alebo na stredných školách. Ak plánujete pracovať s micro:bitmi primárne na hodinách informatiky, tak žiadne ďalšie komponenty zo začiatku nebudete potrebovať. Sada je zároveň napasovaná na naše <a href="{{ url_for('materialy') }}">základné metodiky</a>.
+					</p>
+					<b>Základná sada:</b>
+					<ul>
+						<li>BBC micro:bit s adaptérom na batérie</li>
+						<li>Krokosvokové káble</li>
+						<li>LED pásik</li>
+						<li>Mini reproduktor</li>
+						<li>10mm LED diódy s rezistormi</li>
+						<li>vodivý drôt</li>
+					</ul>
+					<br>
+					Začiatočnícku sadu je možné zakúpiť na stránke <a target="_blank" href="https://edutronik.sk/v2/produkt/bbc-microbit-zakladna-sada/">edutronik.sk</a>
+				</div>
+			</div>
+			
+			<div class="alert alert-primary mt-3" role="alert"
+				style="  color: white !important;padding: 1rem;background-color: #E20074 !important;border-radius: 0 !important;border: 0px !important;text-align: justify;">
+				<p class="h4" style="  text-transform: uppercase; font-weight: 600;">Hardvér používaný v rámci školení projektu ENTER</p>
+				<p>
+					Počas školení pre učiteľov v rámci projektu ENTER budeme používať hore vypísanú "Základnú sadu". Nakoľko je pravdepodobné, že kvôli
+					COVID-19 prebehnú niektoré školenia online, odporúčame si zakúpiť hore vymenované komponenty k micro:bitom, nakoľko práve tie
+					sa budú využívať počas školenia. Zároveň je táto sada vhodná aj pre dištančnú výučbu so žiakmi – každý žiak môže sadu dostať domov a pracovať na jednoduchých hardvérových projektoch.
+				</p>
+			</div>
 
-<div class="container text-center">
-  <div class="jumbotron">
-    <h1>Odporúčaný hardvér</h1>
-  </div>
-</div>
-
-<div class="container text-justify">
-
-  <p class="lead">Toto odporúčanie sme spísali po 3 rokoch spolupráce so školami vo výučbe BBC micro:bit, počas ktorých sme rozšírili micro:bity na vyše 100 škôl.</p>
-
-</div>
-
-<div class="container">
-
-  <hr class="featurette-divider">
-
-  <div class="container text-justify">
-
-    <h2 class="featurette-heading">Základy s BBC micro:bit</h2>
-      
-    <p>
-      Ak výučbu s micro:bitmi iba začínate alebo plánujete začať, určite je vhodné okrem micro:bitov samotných zaobstarať aj ďalšie vybavenie, vďaka ktorému je možné robiť rôzne zaujímavé začiatočnícke projekty. Na druhú stranu je na začiatok dobré "neprehnať" to so súčiastkami, keďže mnohé síce vyzerajú lákavo, ale v rámci klasickej výučby na ne často proste nie je čas. Nižšie prikladáme zoznam, ktorý sa nám osvedčil a s ktorým už roky pracujeme. Podľa našich skúseností je vhodný pre prvý rok výučby s micro:bitmi, či už na základných alebo na stredných školách. Ak plánujete pracovať s micro:bitmi primárne na hodinách informatiky, tak žiadne ďalšie komponenty zo začiatku nebudete potrebovať. Sada je zároveň napasovaná na naše <a href="{{ url_for('materialy') }}">základné metodiky</a>.
-    </p>
-
-    <ul>
-      <li>BBC micro:bit s adaptérom na batérie</li>
-      <li>Krokosvokové káble</li>
-      <li>LED pásik</li>
-      <li>Mini reproduktor</li>
-      <li>10mm LED diódy s rezistormi</li>
-      <li>vodivý drôt</li>
-    </ul>
-
-    Začiatočnícku sadu je možné zakúpiť na stránke <a target="_blank" href="https://edutronik.sk/v2/produkt/bbc-microbit-zakladna-sada/">edutronik.sk</a>
-
-    <br><br><br>
-    <h2 class="featurette-heading">Pokročilé projekty</h2>
-    <p>Ak už základy micro:bitov máte so žiakmi zvládnuté, nastal čas tvoriť prokročilejšie a náročnejšie projekty. Nižšie nájdete zoznam odporúčaných sád a komponentov, ktoré môžete pri tom využiť. Odporúčame ich ale kupovať až po zvládnutí základov.</p>
-
-    <b>Sady</b>
-    <ul>
-      <li><a href="https://edutronik.sk/v2/produkt/sada-elecrow-basic-kit-pre-bbc-microbit/" target="_blank">Elecrow Basic Kit pre BBC Micro:bit</a> - vhodná pre krúžky alebo stredné školy, obsahuje napr. Breadboard, ventilátor, senzor ohňa, RGB LED, ...</li>
-      <li><a href="" target="_blank">Smart Home Kit</a> - obsahuje napr. čerpadlo, senzor vhlkosti pôdy, relé, displej, ...</li>
-      <li><a href="" target="_blank">Smart Science IoT Kit</a> - obsahuje napr. senzor prachu, senzor vzdialenosti, displej, senzor pohybu, ...</li>
-    </ul>
-
-    <b>Komponenty</b>
-    <br>
-    Vypísali sme niekoľko často používaných komponentov, ale v skutočnosti možných súčiastok pripojiteľných k micro:bitu existujú tisíce. Ak hľadáte nejaké na konkrétny projekt, kľudne sa nás spýtajte na <a href="https://forum.python.sk/" target="_blank">fóre</a>.
-    <ul>
-      <li><a href="https://rlx.sk/en/microbit/6831-game-zip-64-for-the-bbc-microbit-kitronik.html" target="_blank">:GAME ZIP 64 </a></li>
-      <li><a href="https://rlx.sk/en/microbit/6830-zip-halo-for-the-bbc-microbit-kitronik.html" target="_blank">ZIP Halo</a></li>
-      <li><a href="https://rlx.sk/en/microbit/6853-low-voltage-relay-for-microbit-solid-state-kitronik.html" target="_blank">RELÉ</a></li>
-      <li><a href="https://rlx.sk/en/microbit/6992-prong-soil-moisture-sensor-for-bbc-microbit-kit-5647-kitronik.html" target="_blank">Senor vlhkosti</a></li>
-      <li><a href="https://rlx.sk/en/microbit/6993-klip-halo-v20-with-2x-aa-battery-holder-kit-5648-bat-kitronik.html" target="_blank">Klip HALO</a></li>
-    </ul>
-
-    <br>
-    <h2 class="featurette-heading">Robotika</h2>
-    <p>Osobitnou katerógiou je robotika - tieto sady neobsahujú samotný micro:bit, avšak pri stavbe robota je potrebné ho zabudovať. Ovládať ich je možné bezdrôtovo druhým micro:bitom.</p>
-
-    <ul>
-      <li><a href="https://rlx.sk/en/microbit/7132-move-mini-mk2-buggy-kit-excl-microbit-kit-5652.html" target="_blank">:MOVE mini buggy</a> - odporúčame</li>
-      <li><a href="https://rlx.sk/sk/microbit/7166-elecfreaks-ringbit-car-v2-for-microbit-without-microbit-ef08201.html" target="_blank">Ring:bit car v2.0</a> - odporúčame</li>
-      <li><a href="https://rlx.sk/en/microbit/6839-line-following-buggy-for-the-bbc-microbit-v20-kitronik.html" target="_blank">Line Following Buggy</a></li>
-      <li><a href="https://rlx.sk/sk/microbit/6885-game-controller-kit-5644-retro-gaming-accessory-for-the-bbc-microbit.html" target="_blank">:GAME Controller</a> - ovládač</li>
-
-    </ul>
-
-    <br>
-
-    <b>
-      Máte nejaké otázky? Kľudne sa nás spýtajte na <a href="https://forum.python.sk/" target="_blank">forum.python.sk</a>
-    </b>
-
-  </div>
-
-</div>
-<!-- /END THE FEATURETTES -->
+			<h2 class="featurette-heading">Pokročilé sady</h2>
+			<p>Ak už základy micro:bitov máte so žiakmi zvládnuté, nastal čas tvoriť prokročilejšie a náročnejšie projekty. Nižšie nájdete zoznam odporúčaných sád a komponentov, ktoré môžete pri tom využiť. Odporúčame ich ale kupovať až po zvládnutí základov.</p>
+			<b>Sady</b>
+			<ul>
+				<li><a href="https://edutronik.sk/v2/produkt/sada-elecrow-basic-kit-pre-bbc-microbit/" target="_blank">Elecrow Basic Kit pre BBC Micro:bit</a> - vhodná pre krúžky alebo stredné školy, obsahuje napr. Breadboard, ventilátor, senzor ohňa, RGB LED, ...</li>
+				<li><a href="https://edutronik.sk/v2/produkt/smart-home-kit-pre-bbc-microbit/" target="_blank">Smart Home Kit</a> - obsahuje napr. čerpadlo, senzor vhlkosti pôdy, relé, displej, ...</li>
+				<li><a href="https://edutronik.sk/v2/produkt/smart-science-iot-kit-pre-bbc-microbit/" target="_blank">Smart Science IoT Kit</a> - obsahuje napr. senzor prachu, senzor vzdialenosti, displej, senzor pohybu, ...</li>
+			</ul>
+			<h2 class="featurette-heading">Robotika</h2>
+			<p>Osobitnou katerógiou je robotika - tieto sady neobsahujú samotný micro:bit, avšak pri stavbe robota je potrebné ho zabudovať. Ovládať ich je možné bezdrôtovo druhým micro:bitom.</p>
+			<ul>
+				<li><a href="https://edutronik.sk/v2/produkt/ringbit-car-kit-v2-pre-bbc-microbit/" target="_blank">Ring:bit car v2.0</a></li>
+			</ul>
+			<br>
+			<b>
+			Máte nejaké otázky? Kľudne sa nás spýtajte na <a href="https://forum.python.sk/" target="_blank">forum.python.sk</a>
+			</b>
+		</div>
+	</div>
+	<!-- /END THE FEATURETTES -->
 {% endblock %}
