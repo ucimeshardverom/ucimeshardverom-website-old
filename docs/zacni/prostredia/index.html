@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -123,14 +127,11 @@
                     </div>
                     <ul class="list-group">
                         
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/">
                                 Čo je to micro:bit?</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/prvy_program">
@@ -138,15 +139,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item  active ">
                             <a href="/zacni/prostredia">
                                 Programovacie prostredia</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/externe_senzory">
@@ -154,15 +151,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/kreativne_projekty">
                                 Kreatívne projekty</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/webusb">
@@ -170,15 +163,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/firmver">
                                 Firmvér</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/ucenie_na_dialku">
@@ -186,22 +175,17 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/skusenosti_zo_zahranicia">
                                 Skúsenosti zo zahraničia</a>
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/odkazy">
                                 Odkazy</a>
                         </li>
 
-                        
                         
                     </ul>
                 </div>
@@ -224,15 +208,15 @@
                         <div class="mt-4">
                             <p>Prostredí pre micro:bit je mnoho, ale najpoužívanejšie sú online blokové prostredie MakeCode (ideálne pre žiakov
 základných škôl) a MicroPython, ktorý je v online aj offline verzii (ideálny pre stredné školy).</p>
-<h2 id="makecode">MakeCode</h2>
+<h2><span>MakeCode</span></h2>
 <p>Prostredie <a href="https://makecode.microbit.org/">MakeCode</a> od Microsoftu je ideálne pre začiatočníkov v programovaní.
 Farebné blokové prostredie je veľmi intuitívne a podobné prostrediu Scratch, ktoré mnoho detí už pozná. Bloky kódu
 je možné prepnúť a zobraziť kód v JavaScripte.</p>
 <p>Stučný úvod do tohto prostredia nájdeš v predchádzajúcej kapitole <a href="/zacni/prvy_program/">Prvý program</a>.</p>
 <p>Pre použitie na hodinách informatiky sme pripravili <strong>súbor metodík</strong> <a href="/materialy/microbit_makecode/">BBC micro:bit &amp; MakeCode</a></p>
-<p><div class="text-center"><img alt="Ukážka MakeCode editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/makecode_example.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="Ukážka MakeCode editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prostredia/images/makecode_example.png"/></div>
 <em>Ukážka MakeCode editoru</em></p>
-<h2 id="micropython">MicroPython</h2>
+<h2><span>MicroPython</span></h2>
 <p>Pre stredoškolákov je väčšinou blokové programovacie prostredie už príliš jednoduché, a preto odporúčame jazyk 
 MicroPython.</p>
 <p>Klasický Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania.
@@ -250,11 +234,11 @@ vhodný pre prípady, kedy nie je možné nainštalovať Mu editor (napr. na kr�
 <p>Ak máte možnosť používať Mu editor, tak zvoľte ten. Ponúka viac možností a lepšie sa v ňom hľdajú prípadné chyby.</p>
 </div>
 <p>Pre použitie na hodinách informatiky sme pripravili <strong>súbor metodík</strong> <a href="/materialy/microbit_micropython/">BBC micro:bit &amp; MicroPython</a></p>
-<p><div class="text-center"><img alt="Ukážka Mu editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/mu_editor_example.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="Ukážka Mu editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prostredia/images/mu_editor_example.png"/></div>
 <em>Ukážka Mu editoru</em></p>
-<p><div class="text-center"><img alt="Ukážka Online MicroPython editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/online_python_example.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="Ukážka Online MicroPython editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prostredia/images/online_python_example.png"/></div>
 <em>Ukážka Online MicroPython editoru</em></p>
-<h2 id="classroom">Classroom</h2>
+<h2><span>Classroom</span></h2>
 <p>V marci 2020 vyšla prvá verzia stránky <a href="https://classroom.microbit.org/">microbit.classroom.org</a>, ktorá umožňuje
 učiteľom zvládať výučbu skupín žiakov. Classroom je strikne zameraný na používanie priamo počas hodiny - to znamená,
 že učiteľ vie na začiatku hodiny vytvoriť svoj vlastný "classroom", na ktorý sa žiaci pripoja. K dispozícii je buď

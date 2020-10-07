@@ -11,7 +11,7 @@
       content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
 <meta property="og:image"
       content="http://ucimeshardverom.sk/static/img/random/hra-reakcie.jpg"/>
-
+          <link href="/static/css/print.css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -91,148 +95,214 @@
     
 
 <div class="container text-center">
-
-
-    <div class="card bg-dark text-white mt-3 mb-3">
-        <img class="card-img" style="filter: brightness(40%);"
-             src="/static/img/random/bg_card.jpg" alt="Card image">
-        <div class="card-img-overlay align-middle">
-
-            <div class="mt-5">
-                <h1 class="display-4 mt-5">Začni s BBC micro:bit</h1>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container text-center">
 </div>
 
 <div class="container">
 
     <div class="container">
-        <div class="row">
+            <!-- <button class="openbtn" onclick="openNav()">☰ Zoznam kapitôl</button> -->
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Začni s BBC micro:bit
-                    </div>
-                    <ul class="list-group">
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/">
-                                Čo je to micro:bit?</a>
+        <nav aria-label="breadcrumb" class="mt-2">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/materialy/">Materiály</a></li>
+            <li class="breadcrumb-item"><a href="/materialy/zacni/">Začni s BBC micro:bit</a></li>
+            <li class="breadcrumb-item active" aria-current="page">2. Programovacie prostredia</li>
+          </ol>
+        </nav>
+
+<!--         <a href="/materialy/zacni/prostredia/materialy_print_telekom.html/pdf"
+           class="btn btn-success mb-3">TELEKOM PDF</a>
+
+        <a href="/materialy/zacni/prostredia/materialy_print.html/pdf"
+           class="btn btn-primary mb-3">UsH PDF</a>
+
+        <a href="/materialy/zacni/prostredia/telekom_obalka.html/pdf"
+           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+        <div id="accordion" class="mb-2">
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      ☰ Zobraziť zoznam lekcií
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/">
+                                    
+                                    Čo je to micro:bit?
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/prvy_program">
-                                Môj prvý program</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/prvy_program">
+                                    
+                                    Môj prvý program
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item  active ">
-                            <a href="/materialy/zacni/prostredia">
-                                Programovacie prostredia</a>
+                            
+                            
+                            
+                        <li>
+                             <b> 
+                                
+                                <a class="" href="/materialy/zacni/prostredia">
+                                    
+                                    Programovacie prostredia
+                                </a>
+                                    
+                                 </b> 
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/externe_senzory">
-                                Čo môžem pripojiť k micro:bitu?</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/externe_senzory">
+                                    
+                                    Čo môžem pripojiť k micro:bitu?
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/kreativne_projekty">
-                                Kreatívne projekty</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/kreativne_projekty">
+                                    
+                                    Kreatívne projekty
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/webusb">
-                                WebUSB</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/webusb">
+                                    
+                                    WebUSB
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/firmver">
-                                Firmvér</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/firmver">
+                                    
+                                    Firmvér
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/ucenie_na_dialku">
-                                Učenie na diaľku</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/ucenie_na_dialku">
+                                    
+                                    Učenie na diaľku
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/skusenosti_zo_zahranicia">
-                                Skúsenosti zo zahraničia</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/skusenosti_zo_zahranicia">
+                                    
+                                    Skúsenosti zo zahraničia
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/zacni/odkazy">
-                                Odkazy</a>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/zacni/odkazy">
+                                    
+                                    Odkazy
+                                </a>
+                                    
+                                
                         </li>
-
-                        
-                        
+                            
+                            
                     </ul>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                
+                    <a href="/materialy/zacni/prvy_program/" class="btn btn-outline-primary" role="button" aria-pressed="true">← Predchádzajúca lekcia</a>
+                
+                
+                    <a href="/materialy/zacni/externe_senzory/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                
+            </div>
                 </div>
 
-                
+        <div class="row">
 
-                
 
-                
 
-            </div>
-            <div class="col-md-8 text-justify">
 
-                <h1 class="mb-4 text-left">Programovacie prostredia</h1>
+            <div class="col-xl-12 text-justify">
 
-                
+<!--                  -->
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
                             <p>Prostredí pre micro:bit je mnoho, ale najpoužívanejšie sú online blokové prostredie MakeCode (ideálne pre žiakov
 základných škôl) a MicroPython, ktorý je v online aj offline verzii (ideálny pre stredné školy).</p>
-<h2 id="makecode">MakeCode</h2>
+<h2><span>MakeCode</span></h2>
 <p>Prostredie <a href="https://makecode.microbit.org/">MakeCode</a> od Microsoftu je ideálne pre začiatočníkov v programovaní.
 Farebné blokové prostredie je veľmi intuitívne a podobné prostrediu Scratch, ktoré mnoho detí už pozná. Bloky kódu
 je možné prepnúť a zobraziť kód v JavaScripte.</p>
 <p>Stučný úvod do tohto prostredia nájdeš v predchádzajúcej kapitole <a href="/zacni/prvy_program/">Prvý program</a>.</p>
 <p>Pre použitie na hodinách informatiky sme pripravili <strong>súbor metodík</strong> <a href="/materialy/microbit_makecode/">BBC micro:bit &amp; MakeCode</a></p>
-<p><div class="text-center"><img alt="Ukážka MakeCode editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/makecode_example.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="Ukážka MakeCode editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prostredia/images/makecode_example.png"/></div>
 <em>Ukážka MakeCode editoru</em></p>
-<h2 id="micropython">MicroPython</h2>
+<h2><span>MicroPython</span></h2>
 <p>Pre stredoškolákov je väčšinou blokové programovacie prostredie už príliš jednoduché, a preto odporúčame jazyk 
 MicroPython.</p>
 <p>Klasický Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania.
@@ -250,11 +320,11 @@ vhodný pre prípady, kedy nie je možné nainštalovať Mu editor (napr. na kr�
 <p>Ak máte možnosť používať Mu editor, tak zvoľte ten. Ponúka viac možností a lepšie sa v ňom hľdajú prípadné chyby.</p>
 </div>
 <p>Pre použitie na hodinách informatiky sme pripravili <strong>súbor metodík</strong> <a href="/materialy/microbit_micropython/">BBC micro:bit &amp; MicroPython</a></p>
-<p><div class="text-center"><img alt="Ukážka Mu editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/mu_editor_example.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="Ukážka Mu editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prostredia/images/mu_editor_example.png"/></div>
 <em>Ukážka Mu editoru</em></p>
-<p><div class="text-center"><img alt="Ukážka Online MicroPython editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/online_python_example.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="Ukážka Online MicroPython editoru" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prostredia/images/online_python_example.png"/></div>
 <em>Ukážka Online MicroPython editoru</em></p>
-<h2 id="classroom">Classroom</h2>
+<h2><span>Classroom</span></h2>
 <p>V marci 2020 vyšla prvá verzia stránky <a href="https://classroom.microbit.org/">microbit.classroom.org</a>, ktorá umožňuje
 učiteľom zvládať výučbu skupín žiakov. Classroom je strikne zameraný na používanie priamo počas hodiny - to znamená,
 že učiteľ vie na začiatku hodiny vytvoriť svoj vlastný "classroom", na ktorý sa žiaci pripoja. K dispozícii je buď
@@ -271,10 +341,32 @@ v tom istom.</p>
                             None
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
+                        <div class="mt-4">
+                            DOWNLOADS
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
+
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                
+                    <a href="/materialy/zacni/prvy_program/" class="btn btn-outline-primary" role="button" aria-pressed="true">← Predchádzajúca lekcia</a>
+                
+                
+                    <a href="/materialy/zacni/externe_senzory/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                
+            </div>
+                </div>
+                
     </div>
 
 </div>
@@ -400,6 +492,20 @@ renderSnippets();
 
 
 
+</script>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 </script>
 
 

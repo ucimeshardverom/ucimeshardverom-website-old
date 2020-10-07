@@ -11,7 +11,7 @@
       content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
 <meta property="og:image"
       content="http://ucimeshardverom.sk/static/img/random/hra-reakcie.jpg"/>
-
+          <link href="/static/css/print.css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -91,207 +95,442 @@
     
 
 <div class="container text-center">
-
-
-    <div class="card bg-dark text-white mt-3 mb-3">
-        <img class="card-img" style="filter: brightness(40%);"
-             src="/static/img/random/bg_card.jpg" alt="Card image">
-        <div class="card-img-overlay align-middle">
-
-            <div class="mt-5">
-                <h1 class="display-4 mt-5">Tutoriál BBC micro:bit a MakeCode</h1>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container text-center">
 </div>
 
 <div class="container">
 
     <div class="container">
+            <!-- <button class="openbtn" onclick="openNav()">☰ Zoznam kapitôl</button> -->
+
+        <nav aria-label="breadcrumb" class="mt-2">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/materialy/">Materiály</a></li>
+            <li class="breadcrumb-item"><a href="/materialy/microbit_makecode/">Tutoriál BBC micro:bit a MakeCode</a></li>
+            <li class="breadcrumb-item active" aria-current="page">0. Úvod</li>
+          </ol>
+        </nav>
+
+<!--         <a href="/materialy/microbit_makecode/uvod/materialy_print_telekom.html/pdf"
+           class="btn btn-success mb-3">TELEKOM PDF</a>
+
+        <a href="/materialy/microbit_makecode/uvod/materialy_print.html/pdf"
+           class="btn btn-primary mb-3">UsH PDF</a>
+
+        <a href="/materialy/microbit_makecode/uvod/telekom_obalka.html/pdf"
+           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+        <div id="accordion" class="mb-2">
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      ☰ Zobraziť zoznam lekcií
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                            
+                            
+                        <li>
+                             <b> 
+                                
+                                <a class="" href="/materialy/microbit_makecode/">
+                                    
+                                        0.
+                                    
+                                    Úvod
+                                </a>
+                                    
+                                 </b> 
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_makecode/microbit">
+                                    
+                                        1.
+                                    
+                                    BBC micro:bit
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/zoznamovaci_program">
+                                    
+                                        1.1.
+                                    
+                                    Zoznamovací program
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/digitalna_menovka">
+                                    
+                                        1.2.
+                                    
+                                    Digitálna menovka
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/tlacidla">
+                                    
+                                        1.3.
+                                    
+                                    Tlačidlá
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/senzor_pohybu">
+                                    
+                                        1.4.
+                                    
+                                    Senzor pohybu
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/pocitadlo_ludi">
+                                    
+                                        1.5.
+                                    
+                                    Počítadlo ľudí
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/krokomer">
+                                    
+                                        1.6.
+                                    
+                                    Krokomer
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/kamen_papier_noznice">
+                                    
+                                        1.7.
+                                    
+                                    Kameň, papier, nožnice
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/poslusne_hlasim">
+                                    
+                                        1.8.
+                                    
+                                    Poslušne hlásim!
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_makecode/krokosvorkove_kable">
+                                    
+                                        2.
+                                    
+                                    Krokosvorkové káble
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/hudba">
+                                    
+                                        2.1.
+                                    
+                                    Hudba
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/vodivost">
+                                    
+                                        2.2.
+                                    
+                                    Vodivosť materiálov
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/horuci_drot">
+                                    
+                                        2.3.
+                                    
+                                    Hra horúci drôt
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/sedackova_mina">
+                                    
+                                        2.4.
+                                    
+                                    Sedačková mína
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/gitara">
+                                    
+                                        2.5.
+                                    
+                                    Gitara
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/tikajuca_bomba">
+                                    
+                                        2.6.
+                                    
+                                    Tikajúca bomba
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_makecode/led">
+                                    
+                                        3.
+                                    
+                                    LED
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/led_diody">
+                                    
+                                        3.1.
+                                    
+                                    LED diódy
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/semafor">
+                                    
+                                        3.2.
+                                    
+                                    Semafor
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/led_pasik">
+                                    
+                                        3.3.
+                                    
+                                    LED pásik
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/led_pasik_doplnok">
+                                    
+                                        3.4.
+                                    
+                                    Wearables
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_makecode/bezdrotova_komunikacia">
+                                    
+                                        4.
+                                    
+                                    Bezdrôtová komunikácia
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                 &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <a class="" href="/materialy/microbit_makecode/radio">
+                                    
+                                        4.1.
+                                    
+                                    Rádio
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_makecode/experimenty">
+                                    
+                                        5.
+                                    
+                                    Experimenty
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                
+                
+                    <a href="/materialy/microbit_makecode/microbit/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                
+            </div>
+                </div>
+
         <div class="row">
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Tutoriál BBC micro:bit a MakeCode
-                    </div>
-                    <ul class="list-group">
-                        
-                        
-                        <li class="list-group-item  active ">
-                            <a href="/materialy/microbit_makecode/">
-                                1. Úvod</a>
-                        </li>
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/digitalna_menovka">
-                                2. Displej: Digitálna menovka a obrázky</a>
-                        </li>
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/tlacidla">
-                                3. Tlačidlá: Animované digitálne zvieratko</a>
-                        </li>
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/senzor_pohybu">
-                                4. Akcelerometer: micro:bit v pohybe</a>
-                        </li>
+            <div class="col-xl-12 text-justify">
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/pocitadlo_ludi">
-                                5. Počítadlo ľudí</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/krokomer">
-                                6. Krokomer</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/poslusne_hlasim">
-                                7. Hra: Poslušne hlásim</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/kamen_papier_noznice">
-                                8. Hra: Kameň, papier, nožnice</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/hudba">
-                                9. Programovanie hudby</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/obvody">
-                                10. Elektrické obvody a vodivosť materiálov</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/led_diody">
-                                11. Ako fungujú LED diódy</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/semafor">
-                                12. Semafor z LED diód</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/horuci_drot">
-                                13. Hra: Horúci drôt</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/radio">
-                                14. Bezdrôtová komunikácia</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/led_pasik">
-                                15. Programovenie LED pásiku</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_makecode/led_pasik_doplnok">
-                                16. LED pásik ako módny doplnok</a>
-                        </li>
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    </ul>
-                </div>
-
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Kto je autorom tohto materiálu?
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>, ktorý spolu s kolegami zo združenia <a href='//python.sk'>SPy</a> pripravuje pre Vás otvorene licencované materiály. <br><br> Prosím, posielajte nám spätnú väzbu na marek.mansell@pycon.sk</p>
-                    </div>
-                </div>
-                
-
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Ako môžem tento materiál používať?
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Licencia CC BY-SA 4.0</h5>
-                        <p class="card-text">Táto licencie Ti umožňuje používať, upravovať a zdieľať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora a zachovania rovnakej licencie.</p>
-                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="btn btn-primary">Celé znenie licencie</a>
-                    </div>
-                </div>
-                
-
-                
-
-            </div>
-            <div class="col-md-8 text-justify">
-
-                <h1 class="mb-4 text-left">Úvod</h1>
-
-                
+<!--                 
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="navod-tab" data-toggle="tab" href="#navod"
@@ -300,64 +539,100 @@
                         <a class="nav-item nav-link" id="metodika-tab" data-toggle="tab" href="#metodika"
                            role="tab" aria-controls="metodika" aria-selected="false">Metodika pre učiteľa</a>
                         
+                        <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#zdroje"
+                           role="tab" aria-controls="zdroje" aria-selected="false">Na stiahnutie</a>
                     </div>
                 </nav>
-                
+                 -->
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
-                            <p>Tento tutoriál sa skladá zo série aktivít, ktoré so svojim micro:bitom môžeš spraviť. Každá aktivita sa venuje inej téme
-- v niektorých sa ocitneš v roli grafika a budeš tvoriť na displeji micro:bitu animácie, v iných zas prevezmeš rolu
-bezpečnostného analytika a budeš navrhovať domáci alarm. Tento tutoriál je ideálny na odpichnutie sa vo svete
-programovania hardvéru.</p>
-<p>Tento tutoriál okrem samotného <strong>BBC micro:bitu</strong> využíva najmä v neskorších aktivitách aj ďalšie pomôcky. Sú to hlavne:</p>
+                            <h1><span>Úvod</span></h1>
+<h2><span>O tutoriáli</span></h2>
+<p>Tento tutoriál sa skladá zo série aktivít, ktoré so svojím micro:bitom môžeš spraviť. Každá lekcia sa venuje inej téme
+– v niektorých sa ocitneš v roli grafika a budeš tvoriť na displeji micro:bitu animácie, v iných zas prevezmeš rolu
+bezpečnostného analytika a budeš navrhovať domáci alarm. Je to ideálne odpichnutie sa vo svete programovania hardvéru.</p>
+<div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
+<p class="mb-0"><div class="text-center"><img alt="Základná sada" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/uvod/images/zakladna-sada.jpg"/></div></p>
+</div><div class="col-lg-6">
+<p>Okrem <strong>BBC micro:bitu</strong> využívame najmä v neskorších kapitolách aj ďalšie pomôcky. Sú to hlavne:</p>
 <ul>
-<li><strong>Batérie k micro:bitu</strong> a <strong>micro USB kábel</strong></li>
-<li><strong>Individuálne adresovateľný LED pásik</strong></li>
+<li><strong>batérie k micro:bitu</strong> a <strong>micro USB kábel</strong></li>
+<li><strong>individuálne adresovateľný LED pásik</strong></li>
 <li><strong>LED diódy s rezistormi</strong></li>
-<li><strong>Klasický reproduktor</strong></li>
-<li><strong>Krokosvorkové kábliky</strong></li>
+<li><strong>klasický reproduktor</strong></li>
+<li><strong>krokosvorkové kábliky.</strong></li>
 </ul>
-<p>Viac o používanej sade nájdeš na stránke <a href="https://edutronik.sk/">edutronik.sk</a></p>
-<p>Ďalej v aktivitách budeš potrebovať bežné vybavenie, ktoré nájdeš v domácich potrebách alebo v papierníctve, ako
+<p>Viac o používanej sade nájdeš na stránke <a href="https://edutronik.sk/">edutronik.sk</a>.</p>
+<p>Ďalej pri aktivitách budeš potrebovať bežné vybavenie, ktoré nájdeš v domácich potrebách alebo v papiernictve, ako
 napríklad:</p>
 <ul>
-<li><strong>Kartón</strong></li>
-<li><strong>Alobal</strong></li>
-<li><strong>Nožnice, lepidlo, lepiaca páska</strong></li>
-<li><strong>Papierové poháre/tanieriky/slamky</strong></li>
-<li><strong>Kovový drôt</strong></li>
-<li><strong>atď...</strong></li>
+<li><strong>kartón</strong></li>
+<li><strong>alobal</strong></li>
+<li><strong>nožnice, lepidlo, lepiaca páska</strong></li>
+<li><strong>papierové poháre/tanieriky/slamky</strong></li>
+<li><strong>vodivý drôt.</strong></li>
 </ul>
-<p>Dôležitým aspektom nasledujúcich aktivít je programovanie, no možno ešte dôležitejším je prepájanie programovateľného
-hardvéru s každodennými problémami, a ich riešením. Podobné zariadenia ako micro:bit sa používaj v takmer každom
-elektrickom zariadení - či už je to hriankovač, chladnička, práčka alebo vesmírny satelit.</p>
+<p>Dôležitým aspektom nasledujúcich aktivít je programovanie, avšak možno ešte dôležitejším je prepájanie programovateľného
+hardvéru s každodennými problémami a ich riešením. Podobné zariadenia ako micro:bit sa používajú v takmer každom
+elektrickom zariadení – či už je to hriankovač, chladnička, práčka alebo vesmírny satelit.</p>
 <p>Po prejdení tohto tutoriálu budeš mať veľmi dobrý prehľad o tom, ako využiť micro:bit v bežnom živote.</p>
+</div></div>
 <div class="alert alert-info">
 <p class="h4">BBC micro:bit na vyučovaní </p>
 <p>Pre každú aktivitu sme pripravili aj materiály pre učiteľa (metodiku, prípadne prezentáciu a pracovné listy).
-Na zobrazenie stačí na začiatku každej aktivity kliknúť na "Metodika pre učiteľa". Ak ale postupuješ poďla návodu
+Na zobrazenie stačí na začiatku každej aktivity kliknúť na "Metodika pre učiteľa". Ak ale postupuješ podľa návodu
 doma bez učiteľa, tak môžeš túto sekciu úplne odignorovať.</p>
+</div>
+<div class="alert alert-primary">
+<p class="h4">Autor</p>
+<p>Autorom tohto materiálu je <strong>Marek Mansell</strong>, ktorý spolu s kolegami zo združenia SPy pripravuje otvorene licencované materiály. Na recenzovaní sa podieľajú <strong>PaedDr. Eva Klimeková, PhD.</strong>, <strong>Nika Klimová</strong> a <strong>Bibiána Kleinová</strong>.</p>
+<p>Prosím, posielajte nám spätnú väzbu na <a href="mailto:marek.mansell@pycon.sk">marek.mansell@pycon.sk</a>.<br/>
+Otázky sa nás môžete pýtať aj na micro:bit fóre – <a href="https://forum.python.sk/">forum.python.sk</a>.</p>
+<p><strong>Tento tutoriál je zverejnený pod licenciou CC BY-SA 4.0</strong><br/>
+Táto licencia ti umožňuje používať, upravovať a zdieľať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora a zachovania rovnakej licencie. <a href="https://creativecommons.org/licenses/by-sa/4.0/">Celé znenie licencie</a>.</p>
 </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="metodika" role="tabpanel" aria-labelledby="metodika-tab">
                         <div class="mt-4">
-                            <p>V tíme projektu Učíme s Hardvérom veríme, že tvorbou zaujímavých medzipredmetových projektov dokážeme žiakom ukázať
+                            <h1><span>Úvod</span></h1>
+<h2><span>Metodika pre učiteľa</span></h2>
+<p>V tíme projektu Učíme s Hardvérom veríme, že tvorbou zaujímavých medzipredmetových projektov dokážeme žiakom ukázať
 moderné využitia informatiky, princípy, na ktorých funguje každodenný svet okolo nás, a zvýšiť ich záujem o rozvíjanie
 si svojich digitálnych zručností. Hardvéru a programovania sa nemusí nik báť, a práve to chceme našim prístupom ukázať
 aj žiakom. Mnohé aktivity sú poňaté viac projektovo, pričom sme zahrnuli do nich aj kreatívne zložky (kreslenie,
 maľovanie, skupinové hry, ...). Veríme, že takto si každý žiak nájde aktivitu a tému, ktorá ho zaujme.</p>
-<p>Pre každú aktivitu sme pre vás pripravili metodiku, podľa ktorej môžete postupovať pre využívaní micro:bitu na
+<p>Pre každú kapitolu sme pre vás pripravili metodiku, podľa ktorej môžete postupovať pre využívaní micro:bitu na
 hodinách. Našim cieľom je, aby sa microb:bity v školách využívali čo najviac a preto sa potešíme akejkoľvek spätnej
 väzbe na naše materiály.</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
+                        <div class="mt-4">
+                            DOWNLOADS
+                            <ul>
+                            
+                            </ul>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                
+                
+                    <a href="/materialy/microbit_makecode/microbit/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                
+            </div>
+                </div>
+                
     </div>
 
 </div>
@@ -483,6 +758,20 @@ renderSnippets();
 
 
 
+</script>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 </script>
 
 

@@ -43,3 +43,7 @@ pip-log.txt
 # OS files
 .DS_Store
 *.swp
+
+# Selenium
+chromedriver
+geckodriver

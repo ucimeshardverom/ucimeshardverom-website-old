@@ -11,7 +11,7 @@
       content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
 <meta property="og:image"
       content="http://ucimeshardverom.sk/static/img/random/hra-reakcie.jpg"/>
-
+          <link href="/static/css/print.css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -91,159 +95,192 @@
     
 
 <div class="container text-center">
-
-
-    <div class="card bg-dark text-white mt-3 mb-3">
-        <img class="card-img" style="filter: brightness(40%);"
-             src="/static/img/random/bg_card.jpg" alt="Card image">
-        <div class="card-img-overlay align-middle">
-
-            <div class="mt-5">
-                <h1 class="display-4 mt-5">BBC micro:bit a MicroPython</h1>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<div class="container text-center">
 </div>
 
 <div class="container">
 
     <div class="container">
+            <!-- <button class="openbtn" onclick="openNav()">☰ Zoznam kapitôl</button> -->
+
+        <nav aria-label="breadcrumb" class="mt-2">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/materialy/">Materiály</a></li>
+            <li class="breadcrumb-item"><a href="/materialy/microbit_micropython/">BBC micro:bit a MicroPython</a></li>
+            <li class="breadcrumb-item active" aria-current="page">0. Úvod</li>
+          </ol>
+        </nav>
+
+<!--         <a href="/materialy/microbit_micropython/uvod/materialy_print_telekom.html/pdf"
+           class="btn btn-success mb-3">TELEKOM PDF</a>
+
+        <a href="/materialy/microbit_micropython/uvod/materialy_print.html/pdf"
+           class="btn btn-primary mb-3">UsH PDF</a>
+
+        <a href="/materialy/microbit_micropython/uvod/telekom_obalka.html/pdf"
+           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+        <div id="accordion" class="mb-2">
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      ☰ Zobraziť zoznam lekcií
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                            
+                            
+                        <li>
+                             <b> 
+                                
+                                <a class="" href="/materialy/microbit_micropython/">
+                                    
+                                        0.
+                                    
+                                    Úvod
+                                </a>
+                                    
+                                 </b> 
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_micropython/mu_editor">
+                                    
+                                        1.
+                                    
+                                    Mu editor
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_micropython/online_editor">
+                                    
+                                        2.
+                                    
+                                    Online Python editor
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_micropython/displej_menovka">
+                                    
+                                        3.
+                                    
+                                    Digitálna menovka
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_micropython/displej_animacie">
+                                    
+                                        4.
+                                    
+                                    Animácie
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_micropython/hudba_kohutik">
+                                    
+                                        5.
+                                    
+                                    Kohútik Jarabý
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                            
+                        <li>
+                            
+                                
+                                <a class="" href="/materialy/microbit_micropython/tlacidla_tamagoci">
+                                    
+                                        6.
+                                    
+                                    Tlačidlá na micro:bite
+                                </a>
+                                    
+                                
+                        </li>
+                            
+                            
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                
+                
+                    <a href="/materialy/microbit_micropython/mu_editor/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                
+            </div>
+                </div>
+
         <div class="row">
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        BBC micro:bit a MicroPython
-                    </div>
-                    <ul class="list-group">
-                        
-                        
-                        <li class="list-group-item  active ">
-                            <a href="/materialy/microbit_micropython/">
-                                1. Úvod k MicroPythonu</a>
-                        </li>
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_micropython/mu_editor">
-                                2. Mu editor</a>
-                        </li>
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_micropython/online_editor">
-                                3. Online editor</a>
-                        </li>
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_micropython/displej_menovka">
-                                4. Displej - menovka</a>
-                        </li>
+            <div class="col-xl-12 text-justify">
 
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_micropython/displej_animacie">
-                                5. Displej - animácie</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_micropython/hudba_kohutik">
-                                6. Hudba - Kohútik Jarabý</a>
-                        </li>
-
-                        
-                        
-                        
-                        <li class="list-group-item ">
-                            <a href="/materialy/microbit_micropython/tlacidla_tamagoci">
-                                7. Tlačidlá - Tamagoči</a>
-                        </li>
-
-                        
-                        
-                    </ul>
-                </div>
-
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Kto je autorom tohto materiálu?
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Autorom tohto materiálu je <a href='//marekmansell.sk'>Marek Mansell</a>, ktorý spolu s kolegami zo združenia <a href='//python.sk'>SPy</a> pripravuje pre Vás otvorene licencované materiály. Veľká vďaka partí najmä Eve Klimekovej a Nike Klimovej za metodické pripomienkovanie.<br><br> Prosím, napíšte nám pripomienky, otázky a akúkoľvek spätnú väzbu (aj negatívnu)<br><br> Kontakt na mňa:<br> marek.mansell@pycon.sk</p>
-                    </div>
-                </div>
-                
-
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Ako môžem tento materiál používať?
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Licencia CC BY 4.0</h5>
-                        <p class="card-text">Táto licencie Ti umožňuje používať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora.</p>
-                        <a href="https://creativecommons.org/licenses/by/4.0/" class="btn btn-primary">Celé znenie licencie</a>
-                    </div>
-                </div>
-                
-
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        Stiahnuť/Vytlačiť
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text"></p>
-                        <a href="/materialy/microbit_micropython/uvod/print/"
-                           class="btn btn-secondary">Stiahnuť návod</a>
-
-                    </div>
-                </div>
-                
-
-            </div>
-            <div class="col-md-8 text-justify">
-
-                <h1 class="mb-4 text-left">Úvod k MicroPythonu</h1>
-
-                
+<!--                  -->
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
-                            <p>Ahoj,</p>
+                            <h1><span>Úvod</span></h1>
+<h2><span>O tutoriáli</span></h2>
+<p>Ahoj,</p>
 <p>ak si sa dostal/a na túto stránku, chceš sa pravdepodobne ponoriť do krás jazyka Python na zariadení BBC micro:bit :-)</p>
 <p>Tieto materiály sú určené komukoľvek, kto sa chce naučiť ovládať BBC micro:bit Python (respektíve MicroPythonom, rozdiel je popísaný nižšie).
 Určite </p>
-<h2 id="co-je-to-microbit">Čo je to micro:bit?</h2>
+<h3 id="co-je-to-microbit">Čo je to micro:bit?</h3>
 <p>Malá edukačná doska vhodná pre využitie vrámci hodín informatiky na základných a stredných školách. Vďaka konektorom (tzv. pinom) je možné ňou programovať hardvér.</p>
 <div class="embed-responsive embed-responsive-16by9"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" frameborder="0" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" width="560"></iframe></div>
-<h2 id="python">Python</h2>
+<h3 id="python">Python</h3>
 <p>Python je veľmi populárny a všestranný programovací jazyk odporúčaný pre vyučovanie základov programovania. Práve preto postupne nahrádza iné programovacie jazyky na hodinách informatiky. Vo veľkom Python využívajú aj v Google, Dropbox, Európskej organizácii jadrového výskumu CERN, sociálnych sieťach Facebook, Pinterest a Instagram, či pri vyučovaní na prestížnej vysokej škole MIT.</p>
 <p>Autorom jazyka Python je Guido van Rossum (prvá verzia je z 1989). V súčasnosti jazyk Python vyvíja a spravuje komunita, zastrešovaná medzinárodnou organizáciou Python Software Foundation (skratka PSF). Samotný jazyk je open-source.</p>
 <p>Python je interpretovaný jazyk, a preto sa po dopísaní kódu ho neskompilujeme (ako napríklad C či Pascal) ale spustíme ho v interpreteri. Ten náš kód za chodu číta a prekladá na strojové inštukcie pre procesor. Preto je potrebné, aby sme na spustenie Python kódu mali na počítači nainštalovaný Python interpreter. (ako si vysvetlíme o schvíľu)</p>
 <p>Odporúčame používať najnovšiu verziu Python3 (v súčasnosti je to Python3.6). Python2 je staršia verzia Pythonu a už nie je vhodné v nej programovať.</p>
 <p>V čom sa Python líši snáď najviac od iných programovacích jazykov je práve komunika. Tá je tvorená profesionálmi, začiatočníkmi, učiteľmi i víkendovými programátormi a tak je veľmi rôznorodá. Po celom svete sa pravidelne organizujú konferencie PyCon (čiže PYthon CONference). Na Slovensku je táto konferencia organizovaná raz ročne občianskym združením SPy (Slovak Python User Group).</p>
-<h2 id="micropython">MicroPython</h2>
+<h3 id="micropython">MicroPython</h3>
 <p>MicroPython je upravená verzia Pythonu, ktorá beží aj na menej výkonných zariadeniach. Vďaka tomu vieme v MicroPythone programovať mikroelektroniku a interagovať s okolitým svetom pomocou LED diód, senzorov, bzučiakov, motorčekov, atď. Takéto zariadenia sú zároveň rádovo lacnejšie ako počítače pre klasický Python. Obrovskou výhodou je fakt, že syntax je pre obe verzie jazyka rovnaká, a tak sa učiteľom aj žiakom stačí naučiť iba jeden jazyk.</p>
 <p>Tak ako na spustenie Python kódu na počítači potrebuje nainštalovaný interpreter, tak aj pre MicroPython kód musíme na mikroprocesom najprv nainsťalovať MicroPython interpreter. To stačí spraviť raz a následne mu budeme už len posielať naše zdrojové kódy na preklad. Raz za čas sa ale oplatí MicroPython na zariadení preinštalovať na novšiu verziu, aby sme mali vždy čo najviac funkčný interpreter.</p>
 <p>MicroPython interpreter vymyslel Damien George v roku 2013 pre vývojovú dosku pyboard (s mikroprocesorom STM32). V súčasnosti existuje viacero verzií MicoPythonu pre rôzne mikroprocesory. My budeme používať verziu pre micro:bit.</p>
@@ -256,10 +293,30 @@ Určite </p>
                             None
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
+                        <div class="mt-4">
+                            DOWNLOADS
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
+
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                
+                
+                    <a href="/materialy/microbit_micropython/mu_editor/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                
+            </div>
+                </div>
+                
     </div>
 
 </div>
@@ -385,6 +442,20 @@ renderSnippets();
 
 
 
+</script>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 </script>
 
 

@@ -4,6 +4,8 @@ from flask_frozen import Freezer
 from views import app
 import yaml
 
+from utils import get_tutorial_settings
+
 app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 freezer = Freezer(app)
 
@@ -12,8 +14,7 @@ freezer = Freezer(app)
 def zacni():
     material = "zacni"
 
-    with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
-        material_settings = yaml.full_load(file)
+    material_settings = get_tutorial_settings(material, None)
 
     for chapter_name in material_settings['content']:
         yield {'kapitola': chapter_name}
@@ -23,10 +24,10 @@ def zacni():
 def materialy_detail():
     material_dirs = os.listdir('materialy')
     for material in material_dirs:
+        print(material)
         yield {'tutorial_name': material}
 
-        with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
-            material_settings = yaml.full_load(file)
+        material_settings = get_tutorial_settings(material, None)
 
         for chapter_name in material_settings['content']:
             yield {'tutorial_name': material, 'chapter_name': chapter_name, 'html_template': 'materialy_detail.html'}
@@ -36,47 +37,20 @@ def materialy_detail():
 def materialy_images():
     material_dirs = os.listdir('materialy')
     for material in material_dirs:
-        path = os.path.join('materialy', material, 'images')
-        images = next(os.walk(path))[2]
+        material_settings = get_tutorial_settings(material, None)
 
-        with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
-            material_settings = yaml.full_load(file)
+        for _chapter_name in material_settings['content']:
+            _chapter_folder = material_settings['content'][_chapter_name]['path'].split("/")[0]
+            _img_folder_path = os.path.join('materialy', material, _chapter_folder, 'images')
 
-        for image in images:
-            yield {"image": image, "metodika": material}
-            for chapter_name in material_settings['content']:
-                yield {"image": image, 'metodika': material, 'kapitola': chapter_name}
-#
-#
-@freezer.register_generator
-def materialy_zacni_images():
-    material = 'zacni'
-    path = os.path.join('materialy', material, 'images')
-    images = next(os.walk(path))[2]
+            print(_chapter_name)
 
-    with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
-        material_settings = yaml.full_load(file)
+            if os.path.exists(_img_folder_path):
+                _images = os.listdir(_img_folder_path)
+                for _image in _images:
+                    yield {"tutorial_name": material, "image": _image, 'chapter_name': _chapter_name}
+                    print({"tutorial_name": material, "image": _image, 'chapter_name': _chapter_name})
 
-    for image in images:
-        yield {"image": image, "metodika": material}
-        for chapter_name in material_settings['content']:
-            yield {"image": image, 'metodika': material, 'kapitola': chapter_name}
-
-
-# @freezer.register_generator
-# def materialy_print():
-#     material_dirs = os.listdir('materialy')
-#     for material in material_dirs:
-#         path = os.path.join('materialy', material, 'images')
-#         images = next(os.walk(path))[2]
-#
-#         with open(os.path.join('materialy', material, 'SETTINGS.yaml')) as file:
-#             material_settings = yaml.full_load(file)
-#
-#         for image in images:
-#             yield {"image": image, "metodika":material}
-#             for chapter_name in material_settings['content']:
-#                 yield {"image": image, 'metodika': material, 'kapitola':chapter_name['slug']}
 
 if __name__ == '__main__':
     freezer.freeze()
