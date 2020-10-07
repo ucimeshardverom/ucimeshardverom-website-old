@@ -1,64 +1,54 @@
-/* Styles go here */
-
-.page-header, .page-header-space {
-  height: 40px;
+.alert {
+  color: white !important;
+  padding: 1rem;
+  background-color: #E20074 !important;
+  border-radius: 0 !important;
+  border: 0px !important;
+  text-align: justify;
 }
 
-.page-footer, .page-footer-space {
-  height: 40px;
-
+.alert .h4 {
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.page-footer {
-  position: fixed;
-  bottom: 0;
-  width: 960px;
-  margin-left: 20px;
-  /*background: #E20074; /* for demo */*/
-  border-top: 5px solid red;
+.alert a:link {
   color: white;
 }
 
-.page-header {
-  position: fixed;
-  top: 0mm;
-  width: 100%;
-  background: yellow; /* for demo */
+.alert code {
+  color: white;
 }
 
-.page {
-  page-break-after: always;
+h1 > span {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #99ff24;
+  background-color: black !important;
+  padding: 0px 10px 0px 10px !important;
+
 }
 
-@page {
-  margin-left: 10mm;
-  margin-right: 10mm;
-  margin-top: 10mm;
-  margin-bottom: 10mm;
+h2 > span {
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
-@media print {
-   thead {display: table-header-group;} 
-   tfoot {display: table-footer-group;}
-   
-   button {display: none;}
-   
-   body {margin: 0;}
+h1, h2 {
+  text-align: center;
+  text-transform: uppercase;
 }
 
-span.footer-txt:after {
-  content: " (page " target-counter(attr(href, url), page) ")";
+ul {
+  list-style-type:square;
 }
 
-
-.telekom-text ul{
-  list-style-type: square;
+h3 {
+  font-weight: 600;
 }
 
-.telekom-text {
-  font-size: 13pt;
-}
-
-.telekom-text .h4{
-  font-size: 22pt;
+.lection-desc {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal !important;
 }

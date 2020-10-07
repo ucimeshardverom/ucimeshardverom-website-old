@@ -23,6 +23,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -40,19 +41,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -64,6 +65,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -112,10 +116,10 @@
                         <div>
                             <a class="btn btn-primary"
                                href="/materialy/microbit_makecode/"
-                               role="button">>> Prostredie MakeCode</a>
+                               role="button">>> Otvoriť tutoriál</a>
                         </div>
                         <div>
-                            <p><b>SPy o.z.</b></p>
+                            <p><b>Marek Mansell</b></p>
                         </div>
                     </div>
                 </div>
@@ -139,10 +143,10 @@
                             <a class="btn btn-primary"
                                href="/materialy/microbit_micropython/"
                                role="button">
-                                >> Prostredie MicroPython</a>
+                                >> Otvoriť tutoriál</a>
                         </div>
                         <div>
-                            <p><b>SPy o.z.</b></p>
+                            <p><b>Marek Mansell</b></p>
                         </div>
                     </div>
                 </div>
@@ -150,32 +154,75 @@
         </div>
     </div>
 
+    <h1 class="mb-4">Pokročilejšie návody</h1>
+    <p class="lead light">Po zvládnutí základov pomocou základných metodík (vyššie) sa môžete pustiť do rôznych náročnejších
+        medzipredmetových projektov, pri ktorých budeme využívať ďalšie senzory a aktory.</p>
 
-    <h1 class="mt-5">Ďalšie materiály</h1>
+        <div class="">
+            <div class="card border-dark mb-3">
+                <div class="card-header"><b>Wearables - nositeľná elektronika [Microsoft MakeCode]</b></div>
+                <div class="card-body text-dark">
+                    <p class="card-text">Predstavme si, že chceme mať svietiace tričko. Čo k tomu potrebujeme? – tričko, BBC micro:bit, rezistor, LED diódu, krokosvorkové káble... bolo by také „káblové tričko“ nositeľné? Asi by nosenie bolo náročné. Preto existuje nositeľná elektronika, ktorá nahrádza bežne dostupnú elektroniku.</p>
+                    <hr/>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a class="btn btn-primary"
+                               href="/materialy/microbit_wearables/"
+                               role="button">
+                                >> Wearables</a>
+                        </div>
+                        <div>
+                            <p><b>Nika Klimová</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <h2 class="mt-5">Ďalšie materiály z komunity (od učiteľov a nadšencov)</h1>
     <hr/>
-    <p class="lead light">Po zvládnutí základov pomocou základných metodík sa môžete pustiť do rôznych náročnejších
-        medzipredmetových projektov, pri ktorých budeme využívať rôzne ďalšie senzory a aktory.</p>
 
 
-    <!--
     <div class="card border-dark mb-3">
         <div class="card-header"><b>BBC micro:bit & Scratch</b></div>
         <div class="card-body text-dark">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <span class="badge badge-secondary">Scratch</span>
+            <p class="card-text">Programovanie zariadenia BBC micro:bit pomocou prostredia Scratch 3</p>
             <hr/>
             <div class="d-flex justify-content-between">
                 <div>
-                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
+                    <a class="btn btn-primary"
+                       href="https://drive.google.com/drive/folders/1GyLhAXyp7hrBULE5jkgTYUrPZdK2OK8y"
+                       target="_blank"
+                       role="button">
+                        Otvoriť materiály <i class="fas fa-external-link-alt fa-xs"></i></a>
                 </div>
                 <div>
-                    <p>Autor: <b>Iveta Csicolová</b></p>
+                    <p>Autor: <b>Iveta Demková</b></p>
                 </div>
             </div>
         </div>
     </div>
-    -->
+
+    <div class="card border-dark mb-3">
+        <div class="card-header"><b>imyšlení.cz - Programujeme Micro:bit pomocí Pythonu</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">Učebnice Robotika pro střední školy: programujeme Micro:Bit pomocí Pythonu obsahuje sadu metodických materiálů pro učitele.</p>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a class="btn btn-primary"
+                       href="https://imysleni.cz/ucebnice/robotika-ucebnice-pro-stredni-skoly-micro-bit"
+                       target="_blank"
+                       role="button">
+                        Otvoriť materiály <i class="fas fa-external-link-alt fa-xs"></i></a>
+                </div>
+                <div>
+                    <p>Autor: <b>Mgr. Jiří Pech, Ph.D.; PhDr. Milan Novák, Ph.D.</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="card border-dark mb-3">
         <div class="card-header"><b>MICRO:BIT V PRAXI - blog Ing. Jozefa Kovárskeho</b></div>
@@ -188,7 +235,7 @@
                        href="https://microbitvpraxi.wordpress.com/"
                        target="_blank"
                        role="button">
-                        Otvoriť materiály &#128279;</a>
+                        Otvoriť materiály <i class="fas fa-external-link-alt fa-xs"></i></a>
                 </div>
                 <div>
                     <p>Autor: <b>Ing. Jozef Kovársky</b></p>
@@ -196,105 +243,6 @@
             </div>
         </div>
     </div>
-
-
-    <!--
-    <div class="card border-dark mb-3">
-        <div class="card-header"><b>Gator:bit (SparkFun) - CO2, vhlkosť, senzor srdca, mikrofón, ...</b></div>
-        <div class="card-body text-dark">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <span class="badge badge-success">Makecode</span>
-            <span class="badge badge-info">MicroPython</span>
-            <hr/>
-            <div class="d-flex justify-content-between">
-                <div>
-                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
-                </div>
-                <div>
-                    <p>Autor: <b>Marek Mansell</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card border-dark mb-3">
-        <div class="card-header"><b>Smart Science Internet of Things (IoT) Kit - WiFi, vzdialenosť, displej, ...</b>
-        </div>
-        <div class="card-body text-dark">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <span class="badge badge-success">Makecode</span>
-            <span class="badge badge-info">MicroPython</span>
-            <hr/>
-            <div class="d-flex justify-content-between">
-                <div>
-                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
-                </div>
-                <div>
-                    <p>Autor: <b>Marek Mansell</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card border-dark mb-3">
-        <div class="card-header"><b>Smart Home Kit - čerpadlo, polievanie, teplota, ...</b></div>
-        <div class="card-body text-dark">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <span class="badge badge-success">Makecode</span>
-            <span class="badge badge-info">MicroPython</span>
-            <hr/>
-            <div class="d-flex justify-content-between">
-                <div>
-                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
-                </div>
-                <div>
-                    <p>Autor: <b>Marek Mansell</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card border-dark mb-3">
-        <div class="card-header"><b>E-textil: Šitie s BBC micro:bit</b></div>
-        <div class="card-body text-dark">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <span class="badge badge-success">Makecode</span>
-            <span class="badge badge-info">MicroPython</span>
-            <hr/>
-            <div class="d-flex justify-content-between">
-                <div>
-                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
-                </div>
-                <div>
-                    <p>Autor: <b>Nika Klimová</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card border-dark mb-3">
-        <div class="card-header"><b>MOVE: mini robot</b></div>
-        <div class="card-body text-dark">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <span class="badge badge-success">Makecode</span>
-            <span class="badge badge-info">MicroPython</span>
-            <hr/>
-            <div class="d-flex justify-content-between">
-                <div>
-                    <button type="button" class="btn btn-primary">Otvoriť materiál</button>
-                </div>
-                <div>
-                    <p>Autor: <b>Marek Mansell</b></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    --->
 
 </div>
 

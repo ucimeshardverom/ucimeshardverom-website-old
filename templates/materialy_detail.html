@@ -31,21 +31,21 @@
           </ol>
         </nav>
 
-        <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print_telekom.html') }}"
+<!--         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print_telekom.html') }}"
            class="btn btn-success mb-3">TELEKOM PDF</a>
 
         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print.html') }}"
            class="btn btn-primary mb-3">UsH PDF</a>
 
         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='telekom_obalka.html') }}"
-           class="btn btn-success mb-3">TELEKOM COVER</a>
+           class="btn btn-success mb-3">TELEKOM COVER</a> -->
 
         <div id="accordion" class="mb-2">
             <div class="card">
                 <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      ☰ Zobraziť zoznam kapitôl
+                      ☰ Zobraziť zoznam lekcií
                     </button>
                   </h5>
                 </div>
@@ -74,6 +74,18 @@
               </div>
         </div>
 
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                {% if settings.prev_chapter %}
+                    <a href="{{ url_for('materialy_detail', chapter_name=settings.prev_chapter, tutorial_name=material_slug) }}" class="btn btn-outline-primary" role="button" aria-pressed="true">← Predchádzajúca lekcia</a>
+                {% endif %}
+                {% if settings.next_chapter %}
+                    <a href="{{ url_for('materialy_detail', chapter_name=settings.next_chapter, tutorial_name=material_slug) }}" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                {% endif %}
+            </div>
+                </div>
+
         <div class="row">
 
 
@@ -81,7 +93,7 @@
 
             <div class="col-xl-12 text-justify">
 
-                {% if teacher_content_html %}
+<!--                 {% if teacher_content_html %}
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="navod-tab" data-toggle="tab" href="#navod"
@@ -94,7 +106,7 @@
                            role="tab" aria-controls="zdroje" aria-selected="false">Na stiahnutie</a>
                     </div>
                 </nav>
-                {% endif %}
+                {% endif %} -->
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
@@ -117,13 +129,24 @@
                             </ul>
                         </div>
                     </div>
-
-
-
                 </div>
 
             </div>
         </div>
+
+
+                <div class="row">
+                    <div class="col-xl-12 text-justify">
+
+                {% if settings.prev_chapter %}
+                    <a href="{{ url_for('materialy_detail', chapter_name=settings.prev_chapter, tutorial_name=material_slug) }}" class="btn btn-outline-primary" role="button" aria-pressed="true">← Predchádzajúca lekcia</a>
+                {% endif %}
+                {% if settings.next_chapter %}
+                    <a href="{{ url_for('materialy_detail', chapter_name=settings.next_chapter, tutorial_name=material_slug) }}" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
+                {% endif %}
+            </div>
+                </div>
+                
     </div>
 
 </div>

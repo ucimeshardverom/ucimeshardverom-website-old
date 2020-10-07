@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -123,14 +127,11 @@
                     </div>
                     <ul class="list-group">
                         
-                        
                         <li class="list-group-item  active ">
                             <a href="/zacni/">
                                 Čo je to micro:bit?</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/prvy_program">
@@ -138,15 +139,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/prostredia">
                                 Programovacie prostredia</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/externe_senzory">
@@ -154,15 +151,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/kreativne_projekty">
                                 Kreatívne projekty</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/webusb">
@@ -170,15 +163,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/firmver">
                                 Firmvér</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/ucenie_na_dialku">
@@ -186,22 +175,17 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/skusenosti_zo_zahranicia">
                                 Skúsenosti zo zahraničia</a>
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/odkazy">
                                 Odkazy</a>
                         </li>
 
-                        
                         
                     </ul>
                 </div>
@@ -222,12 +206,12 @@
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
-                            <p><div class="text-center"><img alt="Image of micro:bit's parts" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/microbit_parts.png"/></div></p>
+                            <p class="mb-0"><div class="text-center"><img alt="Image of micro:bit's parts" class="img-fluid img-fluid pt-2" src="/materialy/zacni/uvod/images/microbit_parts.png"/></div></p>
 <p>BBC micro:bit je programovateľný minipočítač, ktorý dodáva programovaniu "hmatateľnosť". Stačí vytvoriť jednoduchý
 program a nahrať no pomocou USB kábla. Má niekoľko vbudovaných senzorov, napríklad kompas alebo akcelerometer, no vieme
 k nemu pomocou vstupno/výstupných pinov pripojiť takmer akúkoľvek elektroniku - LED pásiky, motorčeky, senzor tepu, ...</p>
 <div class="embed-responsive embed-responsive-16by9"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="embed-responsive-item" frameborder="0" height="315" src="https://www.youtube.com/embed/gHa1Knk4V4Y" width="560"></iframe></div>
-<h2 id="vbudovane-senzory">Vbudované senzory</h2>
+<h2><span>Vbudované senzory</span></h2>
 <p><strong>Predná strana</strong> </p>
 <ul>
 <li><strong>2 tlačidlá</strong> - micro:bit má 2 tlačidlá na prednej strane, ktoré môžeš naprogramovať aby spúšťal nejakú časť kódu :-)
@@ -252,7 +236,7 @@ k nemu pomocou vstupno/výstupných pinov pripojiť takmer akúkoľvek elektroni
              blízkosti magnet</li>
 <li><strong>Akcelerometer</strong> - sníma naklonenie a pohyby micro:bitu</li>
 </ul>
-<h2 id="vstupnovystupne-piny">Vstupno/výstupné piny</h2>
+<h2><span>Vstupno/výstupné piny</span></h2>
 <p>Na spodnej strane sú malé kovové plôšky, niektoré označené, iné nie. Slúžia na prepojenie micro:bitu s ďalšíme senzormi
 a aktormi - napríklad motorčekmi či senzormi vlhkosti pôdy. Pripojiť sa k nim dá takmer čokoľvek.</p>
 <p>Niektoré z pinov sú označené:</p>
@@ -262,7 +246,7 @@ a aktormi - napríklad motorčekmi či senzormi vlhkosti pôdy. Pripojiť sa k n
 <li><code>GND</code> - skratke od GROUND, čiže po Slovensky ZEM - externé senzory k nemu pripájame, aby sme ich uzemnili</li>
 <li><code>3V</code> - tento pin má privedené 3 volty a slúži na napájanie externých senzorov</li>
 </ul>
-<h2 id="verzie-bbc-microbit">Verzie BBC micro:bit</h2>
+<h2><span>Verzie BBC micro:bit</span></h2>
 <p>Čo sa týka hardvéru (nie firmvéru, ten je popísaný v osobitnej kapitole) na BBC micro:bit, tak existujú 2 verzie,
 ktoré sú odlišné iba v jednej maličkosti:</p>
 <ol>

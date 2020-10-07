@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -123,14 +127,11 @@
                     </div>
                     <ul class="list-group">
                         
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/">
                                 Čo je to micro:bit?</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/prvy_program">
@@ -138,15 +139,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/prostredia">
                                 Programovacie prostredia</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/externe_senzory">
@@ -154,15 +151,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/kreativne_projekty">
                                 Kreatívne projekty</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/webusb">
@@ -170,15 +163,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item  active ">
                             <a href="/zacni/firmver">
                                 Firmvér</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/ucenie_na_dialku">
@@ -186,22 +175,17 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/skusenosti_zo_zahranicia">
                                 Skúsenosti zo zahraničia</a>
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/odkazy">
                                 Odkazy</a>
                         </li>
 
-                        
                         
                     </ul>
                 </div>
@@ -222,7 +206,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
-                            <h2 id="co-je-to-firmver">Čo je to firmvér?</h2>
+                            <h2><span>Čo je to firmvér?</span></h2>
 <p><strong>Hardvér</strong> je fyzická časť micro:bitu (doska plošných spojov, senzory, konektory)</p>
 <p><strong>Softvér</strong> je tvoj program, ktorý vytvoríš napríklad v MakeCode alev v MicroPythone a nahráš na micro:bit.</p>
 <p><strong>Firmvér</strong> je tá časť uprostred - je uložený na micro:bite a pomáha vykonávať tebou napísaný program. Firmvér sa
@@ -232,7 +216,7 @@ nejaký firmvér existuje. Napriek tomu ale niekedy sú dôvody, prečo firmvér
 použiť WebUSB (funguje iba pri novších verziách firmvéru).</p>
 <p>Najnovší firmvér na stiahnutie ako aj detailný návod nájdeš na stránke
 <a href="https://microbit.org/guide/firmware">microbit.org/guide/firmware</a></p>
-<h2 id="zistenie-verzie-firmveru-na-microbite">Zistenie verzie firmvéru na micro:bite</h2>
+<h2><span>Zistenie verzie firmvéru na micro:bite</span></h2>
 <p>Ak chceš zistiť, aká verziu firmvéru je nahratá na micro:bite, stačí ho pripojiť cez USB kábel k počítaču
 a keď sa zobrazí USB úložisko s názvom <strong>MICROBIT</strong>, otvor súbor <strong>DETAILS.TXT</strong> a nájdi riadok, ktorý
 sa začína slovami <strong>Interface Version</strong>. V nasledujúcej ukážke je verzia firmvéru 0250:</p>
@@ -250,7 +234,7 @@ USB Interfaces: MSD, CDC, HID, WebUSB
 Interface CRC: 0x3f2b7e12
 Remount count: 0URL: https://microbit.org/device/?id=9900&amp;v=0250
 </code></pre>
-<h2 id="ako-aktualizovat-firmver">Ako aktualizovať firmvér</h2>
+<h2><span>Ako aktualizovať firmvér</span></h2>
 <ol>
 <li>Odpoj USB kábel medzi micro:bitom a počítačom.</li>
 <li>Stač a drž tlačidlo <strong>RESET</strong> na zadnej strane micro:bitu. Počas toho, ako tlačidlo RESET držíš, pripoj micro:bit

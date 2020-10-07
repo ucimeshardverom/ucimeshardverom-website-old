@@ -26,6 +26,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0px; padding-bottom:0px">
@@ -43,19 +44,19 @@
             <div class="navbar-nav">
                 <ul class="navbar-right navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="/zacni/">Začni s micro:bit</a>
+                        <a class="nav-link" href="/zacni/">Začni s micro:bit <i class="fas fa-rocket fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pre školy/učiteľov
+                            Pre učiteľov
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="/skolenia/">Školenia a webináre pre
                                 učiteľov</a>
                             <a class="dropdown-item" target="_blank" href="http://forum.python.sk/">Učiteľské online fórum
-                                🔗</a>
+                                <i class="fas fa-external-link-alt fa-xs"></i></a>
                             <a class="dropdown-item" href="/zapojsa/">Zapojiť sa do programu ako
                                 učiteľ</a>
                             <div class="dropdown-divider"></div>
@@ -67,6 +68,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sutaz/">Súťaž SPyCup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://edutronik.sk/v2/">E-shop <i class="fas fa-external-link-alt fa-xs"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -123,14 +127,11 @@
                     </div>
                     <ul class="list-group">
                         
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/">
                                 Čo je to micro:bit?</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item  active ">
                             <a href="/zacni/prvy_program">
@@ -138,15 +139,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/prostredia">
                                 Programovacie prostredia</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/externe_senzory">
@@ -154,15 +151,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/kreativne_projekty">
                                 Kreatívne projekty</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/webusb">
@@ -170,15 +163,11 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/firmver">
                                 Firmvér</a>
                         </li>
 
-                        
-                        
                         
                         <li class="list-group-item ">
                             <a href="/zacni/ucenie_na_dialku">
@@ -186,22 +175,17 @@
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/skusenosti_zo_zahranicia">
                                 Skúsenosti zo zahraničia</a>
                         </li>
 
                         
-                        
-                        
                         <li class="list-group-item ">
                             <a href="/zacni/odkazy">
                                 Odkazy</a>
                         </li>
 
-                        
                         
                     </ul>
                 </div>
@@ -225,11 +209,11 @@
                             <p>Náš prvý program vyskúšame spraviť v online prostredí <a href="https://makecode.microbit.org/">makecode.microbit.org</a>.
 V ňom si vytvoríme digitálnu "menovku", ktorá bude zobrazovať naše meno a aj nejaké obrázky. Bude nám k tomu stačiť iba
 BBC micro:bit a micro USB kábel.</p>
-<h2 id="napisanie-programu">Napísanie programu</h2>
+<h2><span>Napísanie programu</span></h2>
 <p>V prostredí <a href="https://makecode.microbit.org/">MakeCode</a> klikneme na <em>Nový projekt</em>. V prípade, že máte prostredie
 v anglickom jazyku, prenúť ho viete kliknutí na ozubené koliesko hore vpravo, a v sekcii <em>Language</em> vyberieme
 <em>Slovenčinu</em>.</p>
-<p><div class="text-center"><img alt="Animácia výberu jazyka v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/makecode_language.gif"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="Animácia výberu jazyka v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_language.gif"/></div></p>
 <p>V našom prostredí máme 3 časti:</p>
 <ul>
 <li>vpravo je miesto na tvorbu nášho programu</li>
@@ -238,9 +222,9 @@ v anglickom jazyku, prenúť ho viete kliknutí na ozubené koliesko hore vpravo
 </ul>
 <p>Keďže cheme vytvoriť menovku, musíme na displej vypísať naše meno. To spravíme príkazom <em>zobraziť reťazec</em> z kategórie
 <em>Základné</em>, ktorý vložíme do príkazu <em>vždy</em>. Následne doň vpíšeme naše meno, ktoré by sa nám malo na simulátore začať zobrazovať.</p>
-<p><div class="text-center"><img alt="Animácia tvorby kódu v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/makecode_string.gif"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="Animácia tvorby kódu v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_string.gif"/></div></p>
 <p>Do programu ešte pridáme obrázok pomocou príkazu <em>zobraziť LED</em> z kategórie <em>Základné</em>.</p>
-<p><div class="text-center"><img alt="Animácia tvorby kódu v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/images/makecode_heart.gif"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="Animácia tvorby kódu v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_heart.gif"/></div></p>
 <p>Keď sme s našim programom spokojní, môžme kliknúť na tlačilo <em>Stiahnuť</em>, ktoré stiahne náš program s príponou <em>.hex</em> na
 počítač.</p>
 <p>Posledný krok, ktorý nám zostáva je nahrať náš novo vytvorený program na samotný micro:bit. Ten si môžeme pripojiť

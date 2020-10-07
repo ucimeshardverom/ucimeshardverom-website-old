@@ -10,6 +10,7 @@ import yaml
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory
 from markdown_to_html import markdown_to_html, markdown_meta
 from collections import OrderedDict
+from utils import get_tutorial_settings
 
 from selenium import webdriver
 import json
@@ -142,55 +143,6 @@ def zacni(kapitola=None):
     return materialy_detail("zacni", chapter_name=kapitola, material_base_url="", html_template="materialy_detail_zacni.html")
 
 
-def get_tutorial_settings(tutorial_slug, chapter_slug):
-    tutorial_name = tutorial_slug
-    chapter_name = chapter_slug
-
-    MATERIALS_IGNORED_FILES = ["SETTINGS.yaml", "images"]
-
-    material_path = os.path.join(os.getcwd(), 'materialy', tutorial_name)
-
-    files_in_dir = os.listdir(material_path)
-    folders_in_dir = []
-
-    files_in_dir.sort()
-    
-    for _ignored_filename in MATERIALS_IGNORED_FILES:
-        if _ignored_filename in files_in_dir:
-            files_in_dir.remove(_ignored_filename)
-    
-    for _file in files_in_dir:
-        if os.path.isdir(os.path.join(material_path, _file)):
-            folders_in_dir.append(_file)
-
-
-
-    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml')) as file:
-        material_settings = yaml.full_load(file)
-
-    material_settings['content'] = OrderedDict()
-
-    material_settings['chapter_id'] = "0."
-
-    for _folder in folders_in_dir:
-        _chapter_slug = _folder.split("_")[2:]
-        _chapter_slug = "_".join(_chapter_slug)
-        material_settings['content'][_chapter_slug] = {}
-        material_settings['content'][_chapter_slug]['path'] = f"{_folder}/{_chapter_slug}.md"
-        
-        if _folder.split("_")[1] == "00":
-            material_settings['content'][_chapter_slug]['chapter'] = True
-            material_settings['content'][_chapter_slug]['index'] = f"{int(_folder.split('_')[0])}."
-        else:
-            material_settings['content'][_chapter_slug]['index'] = f"{int(_folder.split('_')[0])}.{int(_folder.split('_')[1])}."
-
-        if _chapter_slug == chapter_name:
-            material_settings['chapter_id'] = material_settings['content'][_chapter_slug]['index']
-            material_settings['chapter_folder'] = _folder
-
-    return material_settings
-
-
 @app.route('/materialy/<string:tutorial_name>/')
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/')
 def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/", print_teacher_pdf=False):
@@ -198,8 +150,7 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
     if not chapter_name:
-        first_chapter_name = list(material_settings.get('content'))[0]
-        chapter_name = first_chapter_name
+        chapter_name = material_settings.get('chapter_name')
 
     material_content = material_settings.get('content')
 
@@ -343,18 +294,11 @@ def materialy_detail_all_pdfs(tutorial_name, html_template='materialy_print.html
     # return str(material_settings.get('content'))
 
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/images/<string:image>')
-# @app.route('/materialy/<string:metodika>/<string:kapitola>/images/<string:image>')
 def materialy_images(tutorial_name, image, chapter_name=None):
     
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
     return send_from_directory(os.path.join('materialy', tutorial_name, material_settings['chapter_folder'], 'images'), image, mimetype='image/gif')
-
-
-@app.route('/zacni/images/<string:image>')
-# @app.route('/zacni/<string:kapitola>/images/<string:image>')
-def materialy_zacni_images(image, metodika="zacni", kapitola=None):
-    return materialy_images(metodika, image, kapitola)
 
 
 @app.route('/materialy/save_makecode_image/<string:id>', methods=['GET', 'POST'])
