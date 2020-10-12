@@ -14,7 +14,7 @@ Teacher:    True
 // RIGHT
 
 <div markdown="1" class="lection-desc">
-Táto lekcia slúži na zoznámenie sa s BBC micro:bit – čo to vlastne je, aké vbudované senzory obsahuje a čo s ním vieme spraviť.
+Táto lekcia slúži na zoznámenie sa s BBC micro:bit – čo to vlastne je, aké zabudované senzory obsahuje a čo s ním vieme spraviť.
 </div>
 
 **Potrebné pomôcky:**  
@@ -118,7 +118,7 @@ názvov senzorov, ktoré sú na doske vypísané.
 
 * **Anténa** – micro:bit vie komunikovať 2 spôsobmi – buď s ďalšími micro:bitmi pomocou rádiovej komunikácie, alebo
                s inými zariadeniami pomocou Bluetooth. Klasické rádio si na ňom ale nenaladíš :-(
-* **Procesor** – mozgom celého micro:bitu je mikroprocesor, ktorý vykonáva kód, ktorý naň nahráme. Obsahuje aj vbudovaný
+* **Procesor** – mozgom celého micro:bitu je mikroprocesor, ktorý vykonáva kód, ktorý naň nahráme. Obsahuje aj zabudovaný
                  teplomer, ktorý však nemeria teplotu prostredia, ale teplotu procesoru.
 * **RESET tlačidlo** – toto tlačidlo reštartuje micro:bit a spustí nahratý program od začiatku.
 * **Micro USB konektor** – slúži na nahrávanie programov do micro:bitu a aj na napájanie, aby sme nemuseli míňať

@@ -48,3 +48,7 @@ body {
 .lection-desc {
   font-style: italic;
 }
+
+.smaller_size_55 .img-fluid {
+  max-width: 55% !important;
+}

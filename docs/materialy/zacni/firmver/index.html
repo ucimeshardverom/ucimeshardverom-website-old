@@ -4,14 +4,7 @@
     <meta charset="utf-8">
     
 
-<meta content="https://www.ucimeshardverom.sk/sutaz/" property="og:url"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Súťaž SPy Cup pre žiakov ZŠ a SŠ"/>
-<meta property="og:description"
-      content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
-<meta property="og:image"
-      content="http://ucimeshardverom.sk/static/img/random/hra-reakcie.jpg"/>
-          <link href="/static/css/print.css" rel="stylesheet">
+  <link href="/static/css/print.css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -100,7 +93,6 @@
 <div class="container">
 
     <div class="container">
-            <!-- <button class="openbtn" onclick="openNav()">☰ Zoznam kapitôl</button> -->
 
         <nav aria-label="breadcrumb" class="mt-2">
           <ol class="breadcrumb">
@@ -110,7 +102,7 @@
           </ol>
         </nav>
 
-<!--         <a href="/materialy/zacni/firmver/materialy_print_telekom.html/pdf"
+<!--          <a href="/materialy/zacni/firmver/materialy_print_telekom.html/pdf"
            class="btn btn-success mb-3">TELEKOM PDF</a>
 
         <a href="/materialy/zacni/firmver/materialy_print.html/pdf"
@@ -293,17 +285,16 @@
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
                             <h2><span>Čo je to firmvér?</span></h2>
-<p><strong>Hardvér</strong> je fyzická časť micro:bitu (doska plošných spojov, senzory, konektory)</p>
-<p><strong>Softvér</strong> je tvoj program, ktorý vytvoríš napríklad v MakeCode alev v MicroPythone a nahráš na micro:bit.</p>
-<p><strong>Firmvér</strong> je tá časť uprostred - je uložený na micro:bite a pomáha vykonávať tebou napísaný program. Firmvér sa
-sa nedá zmeniť klasickým nahrávaním programov na micro:bit či vypnutím/zapnutím micro:bitu, ale dá sa aktualizovať.</p>
+<p><strong>Hardvér</strong> je fyzická časť micro:bitu (doska plošných spojov, senzory, konektory).</p>
+<p><strong>Softvér</strong> je tvoj program, ktorý vytvoríš napríklad v MakeCode alebo v MicroPythone a nahráš na micro:bit.</p>
+<p><strong>Firmvér</strong> je tá časť uprostred – je uložený na micro:bite a pomáha vykonávať tebou napísaný program. Firmvér sa nedá zmeniť klasickým nahrávaním programov na micro:bit či vypnutím/zapnutím micro:bitu, ale dá sa aktualizovať.</p>
 <p>BBC micro:bit obsahuje firmvér už od výroby, takže teoreticky je možné začať programovať a zabudnúť na to, že vôbec
-nejaký firmvér existuje. Napriek tomu ale niekedy sú dôvody, prečo firmvér aktualizovať - napríklad ak chcete
+nejaký firmvér existuje. Napriek tomu ale niekedy sú dôvody, prečo firmvér aktualizovať – napríklad ak chcete
 použiť WebUSB (funguje iba pri novších verziách firmvéru).</p>
 <p>Najnovší firmvér na stiahnutie ako aj detailný návod nájdeš na stránke
 <a href="https://microbit.org/guide/firmware">microbit.org/guide/firmware</a></p>
 <h2><span>Zistenie verzie firmvéru na micro:bite</span></h2>
-<p>Ak chceš zistiť, aká verziu firmvéru je nahratá na micro:bite, stačí ho pripojiť cez USB kábel k počítaču
+<p>Ak chceš zistiť, aká verzia firmvéru je nahratá na micro:bite, stačí ho pripojiť cez USB kábel k počítaču
 a keď sa zobrazí USB úložisko s názvom <strong>MICROBIT</strong>, otvor súbor <strong>DETAILS.TXT</strong> a nájdi riadok, ktorý
 sa začína slovami <strong>Interface Version</strong>. V nasledujúcej ukážke je verzia firmvéru 0250:</p>
 <pre><code># DAPLink Firmware - see https://mbed.com/daplink
@@ -323,14 +314,14 @@ Remount count: 0URL: https://microbit.org/device/?id=9900&amp;v=0250
 <h2><span>Ako aktualizovať firmvér</span></h2>
 <ol>
 <li>Odpoj USB kábel medzi micro:bitom a počítačom.</li>
-<li>Stač a drž tlačidlo <strong>RESET</strong> na zadnej strane micro:bitu. Počas toho, ako tlačidlo RESET držíš, pripoj micro:bit
-USB kábelom späť k počítaču. BBC micro:bit sa teraz ukáže ako úložisko s názvom <strong>MAINTENANCE</strong> (ak by tam stále bol
+<li>Stlač a drž tlačidlo <strong>RESET</strong> na zadnej strane micro:bitu. Počas toho, ako tlačidlo RESET držíš, pripoj micro:bit
+USB káblom späť k počítaču. BBC micro:bit sa teraz ukáže ako úložisko s názvom <strong>MAINTENANCE</strong> (ak by tam stále bol
 názov MICROBIT, odpoj micro:bit, podrž tlačidlo RESET a znovu zapoj).</li>
 <li>Zo stránky <a href="https://microbit.org/guide/firmware">microbit.org/guide/firmware</a> si stiahni najnovšiu verziu
 firmvéru, ktorú nahraj na úložisko MAINTENANCE. Indikačná LEDka na micro:bite by sa mala rozblikať, tak ako keď
 bežne presúvame na micro:bit naše programy.</li>
 <li>Po nahratí sa úložisko MAINTENANCE odpojí a pripojí sa úložisko MICROBIT. Či sa nám firmvér aktualizoval správne
-si vieme jednoducho overiť - otvoríme dúbor <strong>DETAILS.TXT</strong> a porovnáme <strong>Interface Version</strong></li>
+si vieme jednoducho overiť – otvoríme súbor <strong>DETAILS.TXT</strong> a porovnáme <strong>Interface Version</strong>.</li>
 </ol>
                         </div>
                     </div>

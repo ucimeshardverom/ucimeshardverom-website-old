@@ -40,7 +40,7 @@ Na to, aby sme z micro:bitu dokázali prehrávať hudbu, nám stačí vziať ak�
 	signál (a teda aj vlastný kontakt na 3,5 mm JACK). Tretí kovový kontakt (najbližšie k plastovej časti) je spoločné
 	uzemnenie oboch reproduktorov (anglicky *"ground"*, skratka *GND*).
 
-	Niektoré slúchadlá majú namiesto 3 kovových kontaktov až 4 – to vtedy, ak majú slúchadlá v sebe vbudovaný aj mikrofón,
+	Niektoré slúchadlá majú namiesto 3 kovových kontaktov až 4 – to vtedy, ak majú slúchadlá v sebe zabudovaný aj mikrofón,
 	ktorý používaš pri telefonovaní.
 
 

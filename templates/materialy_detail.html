@@ -2,14 +2,7 @@
 
 {% block header %}
 
-<meta content="https://www.ucimeshardverom.sk/sutaz/" property="og:url"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Súťaž SPy Cup pre žiakov ZŠ a SŠ"/>
-<meta property="og:description"
-      content="Žiaci si individuálne alebo v tímoch vypracujú hardvérový projekt s možnosťou prezentácie na konferencii PyCon Slovakia."/>
-<meta property="og:image"
-      content="http://ucimeshardverom.sk{{ url_for('static', filename='img/random/hra-reakcie.jpg') }}"/>
-          <link href="{{ url_for('static', filename='css/print.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/print.css') }}" rel="stylesheet">
 
 {% endblock %}
 
@@ -21,7 +14,6 @@
 <div class="container">
 
     <div class="container">
-            <!-- <button class="openbtn" onclick="openNav()">☰ Zoznam kapitôl</button> -->
 
         <nav aria-label="breadcrumb" class="mt-2">
           <ol class="breadcrumb">
@@ -31,7 +23,7 @@
           </ol>
         </nav>
 
-<!--         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print_telekom.html') }}"
+<!--          <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print_telekom.html') }}"
            class="btn btn-success mb-3">TELEKOM PDF</a>
 
         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print.html') }}"

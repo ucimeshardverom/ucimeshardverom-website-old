@@ -3,7 +3,7 @@ Teacher:  True
 
 # LED diódy
 ## Ako programovať LEDky?
-
+    
 // LEFT
 
 ![Obrázok BBC micro:bitu](images/led-obvod-1.png)
@@ -14,7 +14,7 @@ Teacher:  True
 
 
 **Potrebné pomôcky:**
-BBC micro:bit, USB kábel, batérie pre BBC micro:bit, krokosvorkové káble, počítač pripojený na internet, LED diódy, adekvátne rezistory, vodivé materiály (napr. kľúč, minca, alobal)
+BBC micro:bit, USB kábel, batérie pre BBC micro:bit, krokosvorkové káble, počítač pripojený na internet, LED diódy, rezistory, vodivé materiály (napr. kľúč, minca, alobal)
 
 Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.microbit.org/)
 
@@ -51,7 +51,7 @@ LEDky fungujú v zásade na veľmi jednoduchom princípe - ak na *anódu* pripoj
 // NEWPAGE
 
 !!! primary "Rezistor"
-    Ak by sme zapojili LED diódu k micro:bitu na priamo (anódu na **3V** a katódu na **GND**) tak by sa po chvíli pravdepodobne vypálila. Je to spôsobené tým, že samotnou LEDkou by pretekal príliš veľký prúd, ktorý by ju spáli. Aby sme tomu predišli, použijeme *rezistor* - elektronickú súčiastku, ktorá limituje množstvo prúdu pretekajúceho obvodom a tým ochráni LEDku od vypálenia. Presná hodnota rezistoru (teda jeho *odporu*) sa udáva v ohmoch (symbolom je grécka omega - Ω) a pre každú LEDku sa vypočítava osobitne podľa parametrov LEDky. Kalkulačku na presný výpočet nájdeš napríklad tu: [http://led.linear1.org/1led.wiz](http://led.linear1.org/1led.wiz)
+    Ak by sme zapojili LED diódu k micro:bitu na priamo (anódu na **3V** a katódu na **GND**) tak by sa po chvíli pravdepodobne vypálila. Je to spôsobené tým, že samotnou LEDkou by pretekal príliš veľký prúd, ktorý by ju spálil. Aby sme tomu predišli, použijeme *rezistor* - elektronickú súčiastku, ktorá limituje množstvo prúdu pretekajúceho obvodom a tým ochráni LEDku od vypálenia. Presná hodnota rezistoru (teda jeho *odporu*) sa udáva v ohmoch (symbolom je grécka omega - Ω) a pre každú LEDku sa vypočítava osobitne podľa parametrov LEDky. Kalkulačku na presný výpočet nájdeš napríklad tu: [http://led.linear1.org/1led.wiz](http://led.linear1.org/1led.wiz)
 
     Našťastie pri LED diódach, ktoré používame my, nie je úplne podstatné, aby sme použili presne taký rezistor, ako nám vyjde podľa spomínanej kalkulačky - môže mať aj o trochu vyššiu alebo nižšiu hodnotu. Hodnotu rezistoru je možné zistiť 2 spôsobmi:
 
@@ -60,7 +60,7 @@ LEDky fungujú v zásade na veľmi jednoduchom princípe - ak na *anódu* pripoj
 
 ### Pripojenie diódy k micro:bitu
 
-Ešte pred tým, ako budeme spínanie LEDky programovať, skúsme si ju rozsvietiť pripojením priamo k napájacím kolíkom micro:bitu. Najprv ale radšej odpoj micro:bit od počítaču (prípadne baterky), aby si mal(a) čas zapojenie si posebe riadne skontrolovať. Tým predídeš zoskratovaniu.
+Ešte pred tým, ako budeme spínanie LEDky programovať, skúsme si ju rozsvietiť pripojením priamo k napájacím kolíkom micro:bitu. Najprv ale radšej odpoj micro:bit od počítaču (prípadne baterky), aby si mal(a) čas zapojenie si po sebe riadne skontrolovať. Tým predídeš zoskratovaniu LEDky.
 
 Dlhšiu nožičku (*katódu*) pripoj krokosvorkovým káblikom ku kolíku **GND**. Na obrázku nižšie som použil čierny káblik.
 
@@ -79,7 +79,7 @@ Kratšiu nožičku (*anódu*) musíme prepojiť s kolíkom **3V**, avšak medzi 
 Po zapojení káblikov a skontrolovaní môžeš micro:bit pripojiť USB káblom k počítaču. LEDka by sa mala hneď po pripojení rozsvietiť.
 
 !!! danger "Prečo mi LEDka po pripojení USB kábla alebo baterky nesvieti?"
-    * **Nožičky LED diódy sa nesmú dotýkať! Je potrebné ich od seba roztiahnuť (miernym ohnutím).**
+    * Nožičky LED diódy sa nesmú dotýkať! Je potrebné ich od seba roztiahnuť (miernym ohnutím).
     * Skontroluj, či si náhodou nezamenil(a) *anódu* za *katódu* 
 
 // LEFT

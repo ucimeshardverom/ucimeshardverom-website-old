@@ -79,11 +79,11 @@ Keďže chceme LED diódou komunikovať morzeovou abecedou, je potrebné, aby bo
 
 #### MI:power ochranný obal
 
-Ochranný obal má dva účely: chráni micro:bit, ktorý už má zapojený mi:power board (vysvetlené v predchádzajúcej metodike) a predná časť micro:bitu sa stáva plochou, pričom tlačidlá sú stále stlačiteľné. To znamená, že micro:bit sa stane základom pre odznak, ktorý nebude skrčený a vyčnievajúce tlačidlá nebudú tvoriť škaredý dojem, pretože odznak bude na rovnom podklade.
+Ochranný obal má dva účely: chráni micro:bit, ktorý už má zapojený mi:power board (vysvetlené v predchádzajúcej lekcii) a predná časť micro:bitu sa stáva plochou, pričom tlačidlá sú stále stlačiteľné. To znamená, že micro:bit sa stane základom pre odznak, ktorý nebude skrčený a vyčnievajúce tlačidlá nebudú tvoriť škaredý dojem, pretože odznak bude na rovnom podklade.
 
 Pri ochrannom obale však musíme niečo pozmeniť. Keďže obal sa skladá zo 4 priesvitných častí, pokiaľ pridáme vnútorné časti (druhá a tretia), znemožníme si tým prístup k pinom a nezapojíme LED diódu. Keď ich vynecháme a použijeme len vonkajšie časti (prvá a štvrtá), na piny môžeme pripojiť krokosvorky.
 
-Následne použijeme elektrovodivú niť, ktorú uchytíme na koncoch kratšej nožičky a pripojíme k zemi (GND). Dlhšiu nožičku, anódu, pripojíme k pinu 1. Pokiaľ to nie je nutné, stačí, aby na oboch koncoch boli uzlíky a nemusíme šiť. Dbajme na to, aby bolo niť dostatočne krátka na to, aby ju pri nosení nebolo vidno. Odznak z plsti prilepíme na predný bol micro:bitu.
+Následne použijeme elektrovodivú niť, ktorú uchytíme na koncoch kratšej nožičky a pripojíme k zemi (GND). Dlhšiu nožičku, anódu, pripojíme k pinu 1. Pokiaľ to nie je nutné, stačí, aby na oboch koncoch boli uzlíky a nemusíme šiť. Dbajme na to, aby bola niť dostatočne krátka na to, aby ju pri nosení nebolo vidno. Odznak z plsti prilepíme na predný bol micro:bitu.
 
 Odznak potrebuje mať niečo, čím si ho na seba prichytíme. Môžeme na to využiť zicherku a obyčajnú niť. Cez obal niekoľkokrát prevlečieme niť na oboch stranách a následne ich zopneme zicherkou.
 
@@ -95,9 +95,9 @@ Odznak potrebuje mať niečo, čím si ho na seba prichytíme. Môžeme na to vy
 
 // NEWPAGE
 
-### Programujeme
-
 // LEFT
+
+### Programujeme
 
 Každý si môže naprogramovať vlastné slovo alebo nejaký odkaz cez LED diódu. Keďže projekt Učíme s Hardvérom robia ľudia z občianskeho združenia SPy, chceme, aby nám morzeovou abecedou blikala LED-ka slovo “SPy”.
 
@@ -111,27 +111,25 @@ P .--.
 
 Y -.--
 
-Abeceda nerozlišuje veľké a malé písmená a nebudeme rozlišovať ani medzery. Výsledok teda bude ….--.-.--
-
-Vieme povedať, či sa nejaké znaky opakujú a koľkokrát za sebou? Vidíme (4x). (2x)- (1x). (1x)- (1x). (2x)-
+Abeceda nerozlišuje veľké a malé písmená. Dohodnime sa, že si ešte pridáme dlhšiu pauzu medzi jednotlivými písmenami, aby sme videli, kde písmeno začína a kde končí. Výsledok teda bude ...(pauza).--.(pauza) -.--
 
 Z predchádzajúceho návodu už vieme, že keď chceme zapnúť a vypnúť LED diódu, potrebujeme vybrať z rozšírených kategórií kategóriu _kolíky_ a upravený príkaz _digitálne zapísať kolík P1 hodnota 1_. Následne počkáme, teda z kategórie _základné_ vyberieme príkaz _pozastaviť (ms) 100._
 
 #### Skúsme sa zamyslieť!
 
-Bodka znamená, že zvuk alebo svetlo svieti kratšie. Pre nás to môže byť napríklad 300 ms, ktoré dopíšeme (nevyberáme z možností). Pri čiarke musí svetlo svietiť podstatne dlhšie, napríklad 1000 ms (1 sekunda).
+Bodka znamená, že zvuk alebo svetlo svieti kratšie. Pre nás to môže byť napríklad 300 ms, ktoré dopíšeme (nevyberáme z možností). Pri čiarke musí svetlo svietiť podstatne dlhšie, napríklad 1000 ms (1 sekunda). Každú pauzu si môžeme nastaviť napr. na 500 ms.
 
 Následne LED-ku zhasneme, teda použijeme príkaz _digitálne zapísať kolík P1 hodnota 0_. Pri morzeovej abecede sú rovnaké pauzy, teda pri zhasnutí vyberieme príkaz _pozastaviť (ms) 300_, pretože aj pri bodke, aj pri čiarke by mala byť rovnaká “hluchá medzera”.
 
-#### Cyklus
-
-Pri jednom znaku potrebujeme 4 príkazy. My máme znakov spolu 11, to znamená, že potrebujeme 4\*11 = 44 znakov, čo je príliš veľa. Uľahčíme si prácu tak, že z kategórie _cyklus_ vyberieme _opakovať 4 krát vykonať_ a do nej vložíme príkazy pre bodky a čiarky.
+Koľko znakov budeme potrebovať? Pri jednom znaku potrebujeme 4 príkazy. Spolu ich máme 11, čiže 4 * 11 = 44 a pričítame 2 pauza za písmenami, čo je spolu 46 príkazov. Pritom máme 2 druhy kolíkov a 3 druhy páuz. Vieme tento program nejako zefektívniť?
 
 // RIGHT
 
+<div class="smaller_size_55">
 ```makecode
-_FhH5CeMdCVb7
+_9jgKwtPLt82o
 ```
+</div>
 
 // END
 
@@ -139,12 +137,18 @@ _FhH5CeMdCVb7
 
 #### Funkcia
 
-Pri takomto spôsobe sa tiež pomerne napracujeme. Vieme si to ešte uľahčiť? Skúsme si _vytvoriť funkciu_ z pokročilej kategórie _funkcie. _Pomenujme si ju _bodka_ a vložme tam 4 príkazy pre bodku. Následne si vytvorme ďalšiu funkciu _čiarka_ a vložme 4 príkazy pre čiarku.
+Ak si chceme uľahčiť písanie programu, je možné vytvárať tzv. funkcie. Skúsme si vytvoriť funkciu z pokročilej kategórie
+funkcie. Pomenujme si ju _bodka_ a vložme tam 4 príkazy pre bodku. Následne si vytvorme ďalšiu funkciu _čiarka_ a vložme 4 príkazy
+pre čiarku. Treťou funkciou bude _koniec_pismena_, kde vložíme dlhšiu pauzu.
 
-Hlavný program bude fungovať tak, že pri stlačení tlačidla A budeme 4-krát _volať bodka_ z pokročilej kategórie _funkcie_ a tak ďalej, až kým nevytvoríme program pre všetky znaky.
+
+Hlavný program bude fungovať tak, že pri stlačení tlačidla A budeme volať bodka v hlavnom programe, čím sa vykonajú všetky príkazy pre bodku. To isté platí pre čiarku a koniec_pismena. Hlavný program je takto čitateľnejší a keď chceme program zmeniť, stačí zmeniť príkaz vo funkcii, čím sa akoby prepíše celý hlavný program.
+
+Ďalším zefektívnením je pozrieť sa na program a zistiť, čo sa opakuje. Pre písmeno S sú to tri za sebou idúce bodky. Je zbytočné volať bodka, bodka, bodka, keď môžeme zavolať bodku tri-krát cez opakovať 3-krát vykonať. Takýto program je stále ľahko čitateľný a oveľa kratší ako náš pôvodný.
+
 
 ```makecode
-_RFCRrRbazWEf
+_H5HeEoeo0D3r
 ```
 
 Hotový program stiahneme do micro:bitu a už potrebujeme len doladiť posledné detaily: zapnúť odznak na tričko :)

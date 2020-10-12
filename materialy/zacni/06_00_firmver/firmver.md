@@ -2,15 +2,14 @@ Title:	Firmvér
 
 ## Čo je to firmvér?
 
-**Hardvér** je fyzická časť micro:bitu (doska plošných spojov, senzory, konektory)
+**Hardvér** je fyzická časť micro:bitu (doska plošných spojov, senzory, konektory).
 
-**Softvér** je tvoj program, ktorý vytvoríš napríklad v MakeCode alev v MicroPythone a nahráš na micro:bit.
+**Softvér** je tvoj program, ktorý vytvoríš napríklad v MakeCode alebo v MicroPythone a nahráš na micro:bit.
 
-**Firmvér** je tá časť uprostred - je uložený na micro:bite a pomáha vykonávať tebou napísaný program. Firmvér sa
-sa nedá zmeniť klasickým nahrávaním programov na micro:bit či vypnutím/zapnutím micro:bitu, ale dá sa aktualizovať.
+**Firmvér** je tá časť uprostred – je uložený na micro:bite a pomáha vykonávať tebou napísaný program. Firmvér sa nedá zmeniť klasickým nahrávaním programov na micro:bit či vypnutím/zapnutím micro:bitu, ale dá sa aktualizovať.
 
 BBC micro:bit obsahuje firmvér už od výroby, takže teoreticky je možné začať programovať a zabudnúť na to, že vôbec
-nejaký firmvér existuje. Napriek tomu ale niekedy sú dôvody, prečo firmvér aktualizovať - napríklad ak chcete
+nejaký firmvér existuje. Napriek tomu ale niekedy sú dôvody, prečo firmvér aktualizovať – napríklad ak chcete
 použiť WebUSB (funguje iba pri novších verziách firmvéru).
 
 Najnovší firmvér na stiahnutie ako aj detailný návod nájdeš na stránke
@@ -18,7 +17,7 @@ Najnovší firmvér na stiahnutie ako aj detailný návod nájdeš na stránke
 
 ## Zistenie verzie firmvéru na micro:bite
 
-Ak chceš zistiť, aká verziu firmvéru je nahratá na micro:bite, stačí ho pripojiť cez USB kábel k počítaču
+Ak chceš zistiť, aká verzia firmvéru je nahratá na micro:bite, stačí ho pripojiť cez USB kábel k počítaču
 a keď sa zobrazí USB úložisko s názvom **MICROBIT**, otvor súbor **DETAILS.TXT** a nájdi riadok, ktorý
 sa začína slovami **Interface Version**. V nasledujúcej ukážke je verzia firmvéru 0250:
 
@@ -41,11 +40,11 @@ Remount count: 0URL: https://microbit.org/device/?id=9900&v=0250
 ## Ako aktualizovať firmvér
 
 1. Odpoj USB kábel medzi micro:bitom a počítačom.
-2. Stač a drž tlačidlo **RESET** na zadnej strane micro:bitu. Počas toho, ako tlačidlo RESET držíš, pripoj micro:bit
-USB kábelom späť k počítaču. BBC micro:bit sa teraz ukáže ako úložisko s názvom **MAINTENANCE** (ak by tam stále bol
+2. Stlač a drž tlačidlo **RESET** na zadnej strane micro:bitu. Počas toho, ako tlačidlo RESET držíš, pripoj micro:bit
+USB káblom späť k počítaču. BBC micro:bit sa teraz ukáže ako úložisko s názvom **MAINTENANCE** (ak by tam stále bol
 názov MICROBIT, odpoj micro:bit, podrž tlačidlo RESET a znovu zapoj).
 3. Zo stránky [microbit.org/guide/firmware](https://microbit.org/guide/firmware) si stiahni najnovšiu verziu
 firmvéru, ktorú nahraj na úložisko MAINTENANCE. Indikačná LEDka na micro:bite by sa mala rozblikať, tak ako keď
 bežne presúvame na micro:bit naše programy.
 4. Po nahratí sa úložisko MAINTENANCE odpojí a pripojí sa úložisko MICROBIT. Či sa nám firmvér aktualizoval správne
-si vieme jednoducho overiť - otvoríme dúbor **DETAILS.TXT** a porovnáme **Interface Version**
+si vieme jednoducho overiť – otvoríme súbor **DETAILS.TXT** a porovnáme **Interface Version**.

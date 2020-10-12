@@ -10,7 +10,7 @@ Teacher:  True
 
 // RIGHT
 
-*V tejto lekcii si zostrojíme funkčnú maketu svetelnej križovatky - pomocou červenej, žltej a zelenej LEDky a micro:bitu naprogramujeme semafor.*
+*V tejto lekcii si zostrojíme funkčnú maketu svetelnej križovatky pomocou micro:bitu a červenej, žltej a zelenej LEDky.*
 
 **Potrebné pomôcky:**
 BBC micro:bit, USB kábel, počítač pripojený na internet, krokosvorky, LED diódy, rezistory, [batérie pre BBC micro:bit] 
@@ -19,163 +19,113 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 
 // END
 
+!!! primary "Ako fungujú semafory?"
+	
+	Semafory na križovatkách sa môžu zdať ako veľmi jednoduché zariadenia, no v skutočnosti je za nimi obrovské množtvo plánovania. Viac o plánovaní svetelných križovatie si môžeš pozrieť v tomto videu (v angličtine) [https://www.youtube.com/watch?v=DP62ogEZgkI](https://www.youtube.com/watch?v=DP62ogEZgkI) 
 
-1. **Predstavenie aktivity**
+	// LEFT
 
-Pre tvorbu malého modelu semaforu je potrebné zapojenie 3 LED diód a ich správne naprogramovanie.
+	![Semafor](images/semafor.png)
 
-Krátke video o rekonštrukcii križovakty - [https://www.youtube.com/watch?v=DyTXm3yc4yk](https://www.youtube.com/watch?v=DyTXm3yc4yk)
+	// RIGHT
 
-Toto video odporúčame pustiť na začiatku hodiny a otvoriť tým diskusiu, ako sú riadené svetelné križovatky, kto a ako sa určuje, kedy svieti aká farba.
+	Svetlá na križovatke majú zväčša 4 fázy:
 
-V prípade, že je k dipozícii viac času a žiaci nemajú problém porozumieť anglickému videu, odporúčame pustiť 12 minútové video o svetelných križovatkách:
+	1. Svieti červené svetlo - autá musia stáť.
+	2. Svieti červené aj žlté svetlo - autá sa pripravujú na jazdu.
+	3. Svieti zelené svetlo - autá môžu prejsť križovatkou.
+	4. Svieti žlté svetlo - autá postupne spomaľujú.
 
-[https://www.youtube.com/watch?v=DP62ogEZgkI](https://www.youtube.com/watch?v=DP62ogEZgkI) 
+	// END
 
-Diskusia so žiakmi:
+### Semafor s micro:bitom
 
+Pre tvorbu malého modelu semaforu je potrebné zapojenie troch LED diód a ich správne naprogramovanie. V predchádzajúcej lekcii sme programovali iba 1 LED diódu na micro:bite. Pripojiť ich ale môžeme aj viac. Keď sa pozrieme na micro:bit, uvidíme, že má 3 programovateľné kolíky (anglicky "piny") označené číslami “0”, “1” a “2” a teda môžeme pripojiť až 3 rôzne svetlá. Presne toľko potrebujeme na semafor.
 
+Pre každú z 3 LED diód platí:
 
-*   Ako fungujú svetelné križovatky?
-*   V akom poradí idú svetlá na križovatke?
-*   Kedy svieti žlté svetlo? (len žlté svieti tesne pred červenou, pred zelenou svieti vždy spolu s červeným svetlom)
-*   Čo hrozí, ak nerešpektujeme svetelné križovatky?
-2. **Zapojenie viacerých LED diód na jeden micro:bit**
+*   Plus (anóda) je pripojená cez vlastný rezistor na jeden z troch programovateľných kolíkov
+*   Mínus (katóda) je pripojená ku “GND”  
 
-Doposiaľ sme programovali iba 1 LED diódu na micro:bite. Pripojiť ich ale môže viac. Keď sa pozrieme na micro:bit, uvidíme, že má 3 programovateľné piny “0”, “1” a “2”, a teda môže programovať až 3 rôzne svetlá. Presne toľko potrebujeme na semafor.
+// NEWPAGE
 
-Pre každú z 3 diód platí:
+#### Dve LEDky - preblikávanie medzi "zelenou" a "červenou"
 
-
-
-*   Plus (anóda) je zapojená cez vlastný rezistor na jeden z troch programovateľných pinov
-*   Mínus (katóda) je zapojená ku “GND”  
-
-Zapojenie s 2 LEDkami je nasledovné:
-
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+Najprv si vyskúšame zostrojiť jednoduchší semafor s dvoma LEDkami (aké často bývajú pre chodcov) a budeme preblikávať medzi zelenou a červenou LEDkou.
 
 
-![alt_text](images/image1.png "image_tooltip")
+// LEFT
 
+![alt_text](images/schema1.png)
+*Schéma zapojenia dvoch LEDiek*
 
+Na pripojenie LEDiek (podľa schémy) použijeme krokosvorkové kábliky a rezistory. Každú LEDku pomocou rezistora pripojíme k vlastnému kolíku - zelenú LEDku ku kolíku "0" a červenú ku kolíku "1".
 
+Náš program by sa dal rozdeliť do 2 častí:
 
-3. **Preblikávanie zelená-červená**
+1. Zelenú LEDku zapneme (príkazom `digitálne zapísať kolík P0 hodnota 1`) a červenú vypneme. Následne počkáme 1 sekundu.
+2. Zelenú LEDku vypneme a červenú zapneme. Opäť počkáme 1 sekundu.
 
-So zapojení z predchádzajúceho kroku vieme spraviť program, ktorý striedavo svieti buď červenou, alebo zelenou LEDkou. Vždy pri zmene musíme jednu LEDku zapnúť a druhú vypnúť.
-
+// RIGHT
  
+```makecode
+_6TqVURRKKRDp
+```
 
+// END
 
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+// LEFT
 
+#### Tri LEDky - plnohodnotný semafor
 
-![alt_text](images/image2.png "image_tooltip")
-** **
+Pripojenie 3 LEDiek je podobné zapojeniu v predchádzajúcom kroku - každá LEDka má vlastný rezistor, ktorým je prepojená k vlastnému kolíku. Taktiež sú všetky *katódy* LEDiek pripojené ku kolíku “GND”.
 
-[https://makecode.microbit.org/_6TqVURRKKRDp](https://makecode.microbit.org/_6TqVURRKKRDp) 
+// RIGHT
 
+![alt_text](images/schema2.png)
+*Schéma zapojenia troch LEDiek*
 
+// END
 
-4. **Tri LED diódy - zapojenie**
+#### Program pre manuálny semafor
+*Manuálny semafor* je semafor, ktorý sa ovláda tlačidlami na micro:bite - pri štarte micro:bit zasvieti červenú farbu a potom prepíname na zelenú a späť na červenú pomocou tlačidiel “A” a “B”.
 
-Zapojenie 3 LEDiek je analogické zapojeniu 2 LEDiek z predchádzajúcich krokov - každá LEDka má vlastný rezistor, ktorým je prepojená k pinu. Taktiež je každá mínusová Časť LEDky pripojená ku “GND”.
+Ak chceme zmeniť z červenej farby na zelenú, stlačíme tlačidlo "A". Keďže vieme, že pri tejto zmene fáz chvíľu svieti červená spolu so žltou, zapneme žltú LEDku (pripojenú ku kolíku P1), počkáme sekundu, potom vypneme červenú LEDku (kolík P2), vypneme žltú LEDku (kolík P1) a zapneme zelenú LEDku (kolík P0). 
 
+Ak cheme naspäť zmeniť zo zelenej farby na červenú, stlačíme tlačidlo "B". Micro:bitom následne vypneme zelenú LEDku (kolík P0), zapneme žltú LEDku (kolík P1) a počkáme dve sekundy. Potom vypneme žltú LEDku (kolík P1) a nakoniec zapneme červenú (kolík P2). 
 
+```makecode
+_9jL9ccd3TCeV
+```
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+// NEWPAGE
 
+#### Program pre automatický semafor
 
-![alt_text](images/image3.png "image_tooltip")
+Ďalší typ semaforu, ktorý si naprogramujeme, je *automatický semafor* - sám sa v stanovených intervaloch prepína. Dodržiava pri tom pravidlá, ktoré sme si popísali na začiatku tejto lekcie (prechody medzi 4 fázami). V našom prípade sa prepína každých 5 sekúnd, ale toto číslo si môžeš ľubovoľne upraviť.
 
 
+```makecode
+_Cq1TTzK4bb4m
+```
 
+### Kartónová konštrukcia pre semafor
 
-5. **Semafor - program**
+// LEFT
 
-Semafor sa dá na micro:bite naprogramovať rôznymi spôsobmi. Prvý, ktorý vyskúšame, je **manuálny semafor** - pri štarte semafor zapne červenú farbu, a potom prepíname do zelenej a späť pomocou tlačidiel “A” a “B”.
+![alt_text](images/final.png)
 
-Pri stlačení tlačidla “A” sa chceme dostať z červenej na zelenú. Predpokladáme teda, že červená (P2) je zapnutá a zvyšné vypnuté. Zapneme teda žltú farbu (P1), počkáme sekundu, potom vypneme červenú (P2) a vypneme žltú (P1) a zapneme zelenú (P0). 
+// RIGHT
 
-Pri stlačení tlačidla “B” sa chceme dostať zo zelenej na červenú. Predpokladáme teda, že zelená (P0) je zapnutá a zvyšné vypnuté. Vypneme teda zelený (P0) a zapneme žltú farbu (P1), počkáme dve sekundy, potom vypneme vypneme žltú (P1) a zapneme červenú (P2). 
+![alt_text](images/header.jpg)
 
+// END
 
+Aby sme si vytvorili skutočnú maketu semaforu, použijeme obyčajný kartón, ktorý podľa fotiek vystrihneme a zlepíme tavnou pištoľou. Nožnicami (alebo vŕtačkou) následne spravíme 3 diery, do ktorých vložíme LEDky (aby lepšie držali, môžeš ich prilepiť trochou tavného lepidla).
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+Podobný semafor je možné si aj zakúpiť, napr.: [https://www.kitronik.co.uk/5642-stopbit-traffic-light-for-bbc-microbit.html](https://www.kitronik.co.uk/5642-stopbit-traffic-light-for-bbc-microbit.html)
 
+### NÁPAD NA PROJEKT: Komplexná svetelná križovatka
 
-![alt_text](images/image4.png "image_tooltip")
-
-
-[https://makecode.microbit.org/_9jL9ccd3TCeV](https://makecode.microbit.org/_9jL9ccd3TCeV) 
-
-
-
-Druhý typ semaforu, ktorý si naprogramujeme, je **automatický semafor** - sám sa v stanovenom intervale prepína. V našom prípade sa prepína každých 5 sekúnd.
-
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
-
-[https://makecode.microbit.org/_Cq1TTzK4bb4m](https://makecode.microbit.org/_Cq1TTzK4bb4m) 
-
-
-
-
-
-6. **Semafor - kartónová konštrukcia**
-
-Aby sme vytvorili semafor, použijeme obyčajný kartón, ktorý podľa foto nižšie vystrihneme a spojíme. Nožnicami následne spravíme 3 diery, do ktorých vložíme LEDky. Pre lepšiu stabilitu môžeme semafor prelepiť, prípadne vytvoriť väčšiu podstavu. 
-
-
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
-
-
-Podobný semafor je možné si aj zakúpiť:
-
-[https://www.kitronik.co.uk/5642-stopbit-traffic-light-for-bbc-microbit.html](https://www.kitronik.co.uk/5642-stopbit-traffic-light-for-bbc-microbit.html)
-
-
-
-7. **Komplexná svetelná križovatka **
-
-Ako väčší projekt by bolo možné vytvoriť maketu križovatky (namaľovaný kartón) na ktorom by sa nachádzalo niekoľko semaforov. Tie by prípadne mohli spolu komunikovať bezdrôtovo (viac o bezdrôtovej komunikácii v ďalších metodikách).
-
-
-
-**Záverečná diskusia:**
-
-
-
-*   Musíme pri zapájaní viacerých LEDiek mať viacero rezistorov?
-*   V akej postupnosti svieta na svetelnej križovatke svetlá?
-*   Čo znamená, že na svetelnej križovatke blikajú oranžové svetlá, i keď bežne svietia klasicky zelená, červená, žltá?
-*   Vedľa semafóru, na ktorom svieti zelené svetlo, je tabuľa STOP. Kedy sa riadime podľa tabule a kedy podľa svetiel na semafore?
-*   Kedy svieti len žltá na semafore? A kedy svieti spolu s červenou?
-*   Čo znamená pre vodiča, keď vidí, že svieti žltá farba na senafore?
-
-**Na konci hodiny vie žiak:**
-
-
-
-*   Popísať, na čo slúži semafor a v akom poradí svietia rôzne kombinácie svetiel.
-*   Pripojiť a naprogramovať viacero LED diód k BBC micro:bit.
-*   Naprogramovať funkcionalitu semaforu pomocou BBC micro:bit
+Ako väčší projekt by bolo možné vytvoriť maketu križovatky, v ktorej by sa nachádzalo niekoľko semaforov. Tie by mohli spolu komunikovať bezdrôtovo, aby sa koordinovali, kedy ktorý semafor má svietiť na zeleno a kedy na červeno (viac o bezdrôtovej komunikácii v ďalšej kapitole).
