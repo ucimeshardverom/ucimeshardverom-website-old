@@ -383,7 +383,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

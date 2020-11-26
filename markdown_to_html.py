@@ -99,6 +99,13 @@ def markdown_to_html(raw_markdown, img_url="", html_template=None):
                                           f"""<a target="_blank" href="http://makecode.microbit.org/{code_id}">"""
                                           f"""http://makecode.microbit.org/{code_id}</a></p></div>""", "html.parser")
             tag.replace_with(makecode_html)
+        elif not tag.get('data-packageid') and not tag.get('id') and tag.code and tag.code.get('class') and \
+                tag.code.get('class')[0] == "makecode-snippet":
+            code_id = tag.code.string.strip()
+            makecode_html = BeautifulSoup(f"""<div class="text-center">"""
+                                          f"""<pre id="{code_id}" data-packageid="{code_id}" class="makecode-snippet"></pre>"""
+                                          f"""</div>""", "html.parser")
+            tag.replace_with(makecode_html)
 
     # MakeCode images - load from buffer (if image present)
     for tag in soup.find_all('pre'):
