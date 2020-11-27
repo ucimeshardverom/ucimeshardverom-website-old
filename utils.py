@@ -40,7 +40,7 @@ def get_tutorial_settings(tutorial_slug, chapter_slug):
         _chapter_slug = _folder.split("_")[2:]
         _chapter_slug = "_".join(_chapter_slug)
         material_settings['content'][_chapter_slug] = {}
-        material_settings['content'][_chapter_slug]['path'] = f"{_folder}/{_chapter_slug}.md"
+        material_settings['content'][_chapter_slug]['path'] = f"{os.path.join(_folder, _chapter_slug)}.md"
 
         if not chapter_name:
             material_settings['chapter_name'] = _chapter_slug
