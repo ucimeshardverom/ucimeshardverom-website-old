@@ -47,6 +47,7 @@ pip-log.txt
 # Selenium
 chromedriver
 geckodriver
+chromedriver.exe
 
 # Ucime s Hardverom specific stuff
 static/pdfs
