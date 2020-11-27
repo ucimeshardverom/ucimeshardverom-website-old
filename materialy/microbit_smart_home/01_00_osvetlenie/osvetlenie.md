@@ -1,7 +1,6 @@
 Title:   	Inteligentné osvetlenie 
 
 # Inteligentné osvetlenie
-## podnadpis?
 
 // LEFT
 

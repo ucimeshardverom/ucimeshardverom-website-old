@@ -224,8 +224,6 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/<string:html_template>/pdf')
 def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='materialy_print.html'):
 
-    return ""
-
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
     if not chapter_name:
