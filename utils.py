@@ -23,7 +23,7 @@ def get_tutorial_settings(tutorial_slug, chapter_slug):
         if os.path.isdir(os.path.join(material_path, _file)):
             folders_in_dir.append(_file)
 
-    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml')) as file:
+    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml'), encoding="utf8") as file:
         material_settings = yaml.full_load(file)
 
     material_settings['content'] = OrderedDict()

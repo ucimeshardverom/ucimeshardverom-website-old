@@ -154,7 +154,7 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 
     material_content = material_settings.get('content')
 
-    md_file_path = str(material_content.get(chapter_name).get("path")).split("/")
+    md_file_path = os.path.split(str(material_content.get(chapter_name).get("path")))
 
     content_path = os.path.join('materialy', tutorial_name, *md_file_path)
 
@@ -270,7 +270,14 @@ def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='materi
     chrome_options.add_argument('--kiosk-printing')
     # chrome_options.add_argument("--headless")
 
-    driver = webdriver.Chrome(options=chrome_options, executable_path="/home/marek/Desktop/git/ucimeshardverom-website/chromedriver")
+    if os.path.exists("chromedriver.exe"):
+        chromedriver_path = os.path.abspath("chromedriver.exe")
+    elif os.path.exists("chromedriver"):
+        chromedriver_path = os.path.abspath("chromedriver")
+    else:
+        return "Please put 'chromedriver' or 'chromedriver.exe' into the project directory."
+
+    driver = webdriver.Chrome(options=chrome_options, executable_path=chromedriver_path)
     driver.get(url_for('materialy_detail_print', metodika=tutorial_name, kapitola=chapter_name, html_template=html_template, _external=True))
     driver.execute_script(f"var tempTitle = document.title;document.title = '{filename}';window.print();document.title = tempTitle;")
     while not os.path.exists(os.path.join(save_directory, filename)):
