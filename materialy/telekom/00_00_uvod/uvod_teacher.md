@@ -1,2 +1,0 @@
-# Úvod
-## 	Metodika pre učiteľa
