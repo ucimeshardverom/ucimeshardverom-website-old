@@ -61,7 +61,7 @@ Micro:bitom je možné snímať, do ktorej strany je naklonený a podľa toho ot
 
 Na snímanie naklonenia je potrebné použiť príkaz `keď potrasenie` z kategórie *"Vstup"*. Keď žiaci a žiačky kliknú na slovo "potrasenie", zobrazí sa im viacero polôh, ktoré dokáže micro:bit zosnímať. Na tvorbu otáčajúceho sa smajlíka budú potrebovať polohy *"naklonenie vľavo"*, *"naklonenie vpravo"*, *"logo hore"* a *"logo dole"*. Do nich pomocou príkazu `zobraziť LED` z kategórie *"Základné"* následne nakreslia štyroch smajlíkov tak, aby sa pri otáčaní micro:bitom otáčal aj smajlík -- viď program vpravo.
 
-Program je možné ešte pred nahratím na micro:bit odskúšať aj v simulátore -- micro:bit v ňom síce nevieme otočiť, no vieme ho "nakloniť" prechádzním myškou po jeho okrajoch. Pri prechádzaní myškou po štyroch stranách micro:bitu by sa mal obrázok na displeji otáčať.
+Program je možné ešte pred nahratím na micro:bit odskúšať aj v simulátore -- micro:bit v ňom síce nevieme otočiť, no vieme ho "nakloniť" prechádzaním myškou po jeho okrajoch. Pri prechádzaní myškou po štyroch stranách micro:bitu by sa mal obrázok na displeji otáčať.
 
 Ďalšie jednoduché aktivity s akcelerometrom a gyroskopom -- *digitálnu kocku*, *náhodný generátor čísel* a *digitálnu mincu* -- nájdete v lekcii ["SENZOR POHYBU (AKCELEROMETER)"](https://enter.study/navod/senzor-pohybu-akcelerometer/).
 
