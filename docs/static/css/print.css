@@ -1,0 +1,54 @@
+h1, h2 {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h3 {
+	text-transform: uppercase;
+}
+
+@page {
+  margin-left: 10mm;
+  margin-right: 10mm;
+  margin-top: 10mm;
+  margin-bottom: 10mm;
+}
+
+@media print {  
+   body {margin: 0;}
+}
+
+.alert .h4 {
+  text-transform: uppercase;
+}
+
+body { 
+	font-family: Open Sans !important; 
+}
+
+.header, .header-space,
+.footer, .footer-space {
+  height: 30px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.lection-desc {
+  font-style: italic;
+}
+
+.smaller_size_55 .img-fluid {
+  max-width: 55% !important;
+}

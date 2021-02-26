@@ -11,7 +11,7 @@ bezpečnostného analytika a budeš navrhovať domáci alarm. Je to ideálne odp
 // LEFT
 
 
-![Základná sada](images/zakladna-sada.jpg)
+![](images/zakladna-sada.jpg)
 
 // RIGHT
 
