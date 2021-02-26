@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/zacni/prvy_program/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/zacni/prvy_program/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/zacni/prvy_program/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -285,13 +285,16 @@
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
                             <p>Náš prvý program vyskúšame spraviť v online prostredí <a href="https://makecode.microbit.org/">makecode.microbit.org</a>.
-V ňom si vytvoríme digitálnu "menovku", ktorá bude zobrazovať naše meno a aj nejaké obrázky. Bude nám k tomu stačiť iba
+V ňom si vytvoríme digitálnu „menovku“, ktorá bude zobrazovať naše meno a aj nejaké obrázky. Bude nám k tomu stačiť iba
 BBC micro:bit a micro USB kábel.</p>
 <h2><span>Napísanie programu</span></h2>
 <p>V prostredí <a href="https://makecode.microbit.org/">MakeCode</a> klikneme na <em>Nový projekt</em>. V prípade, že máte prostredie
 v anglickom jazyku, prepnúť ho viete kliknutím na ozubené koliesko hore vpravo, kde v sekcii <em>Language</em> vyberieme
 <em>Slovenčinu</em>.</p>
-<p class="mb-0"><div class="text-center"><img alt="Animácia výberu jazyka v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_language.gif"/></div></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_language.gif"/></div><figcaption class="text-center text-muted font-italic">Animácia výberu jazyka v MakeCode</figcaption>
+</figure>
+</p>
 <p>V našom prostredí máme 3 časti:</p>
 <ul>
 <li>Vpravo je miesto na tvorbu nášho programu.</li>
@@ -300,9 +303,15 @@ v anglickom jazyku, prepnúť ho viete kliknutím na ozubené koliesko hore vpra
 </ul>
 <p>Keďže cheme vytvoriť menovku, musíme na displej vypísať naše meno. To spravíme príkazom <em>zobraziť reťazec</em> z kategórie
 <em>Základné</em>, ktorý vložíme do príkazu <em>vždy</em>. Následne doň vpíšeme svoje meno, ktoré by sa nám malo na simulátore začať zobrazovať.</p>
-<p class="mb-0"><div class="text-center"><img alt="Animácia tvorby kódu v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_string.gif"/></div></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_string.gif"/></div><figcaption class="text-center text-muted font-italic">Animácia tvorby kódu v MakeCode</figcaption>
+</figure>
+</p>
 <p>Do programu ešte pridáme obrázok pomocou príkazu <em>zobraziť LED</em> z kategórie <em>Základné</em>.</p>
-<p class="mb-0"><div class="text-center"><img alt="Animácia tvorby kódu v MakeCode" class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_heart.gif"/></div></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/prvy_program/images/makecode_heart.gif"/></div><figcaption class="text-center text-muted font-italic">Animácia tvorby kódu v MakeCode</figcaption>
+</figure>
+</p>
 <p>Keď sme so svojím programom spokojní, môžeme kliknúť na tlačilo <em>Stiahnuť</em>, ktoré stiahne náš program s príponou <em>.hex</em> na
 počítač.</p>
 <p>Posledný krok, ktorý nám zostáva, je nahrať náš novo vytvorený program na samotný micro:bit. Ten si môžeme pripojiť
@@ -409,7 +418,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

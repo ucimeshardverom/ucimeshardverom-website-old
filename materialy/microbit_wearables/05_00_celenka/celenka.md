@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Uvod](images/01_uvod.jpg)
+![](images/01_uvod.jpg)
 
 // RIGHT
 
@@ -26,7 +26,7 @@ Určite poznáte svietiace čelenky. Zamýšľali ste sa nad tým, že by ste si
 
 // LEFT
 
-![Uvod](images/03_zapojenie.jpg)
+![](images/03_zapojenie.jpg)
 
 #### LED pásik
 
@@ -40,13 +40,13 @@ LED pásik, prípadne NeoPixel pásik, je sled za sebou idúcich LED diód v par
 
 // RIGHT
 
-![Uvod](images/02_dekoracia.jpg)
+![](images/02_dekoracia.jpg)
 
 #### Čelenka
 
 Zoberieme si čelenku a LED pásik. Z vnútornej strany LED pásika máme žltú fóliu, ktorú keď odstránime, môžeme nalepiť na čelenku bez toho, aby sme použili lepidlo. LED pásik lepíme symetricky na stred a kábliky necháme zatiaľ voľne.
 
-![Uvod](images/04_pasik.jpg)
+![](images/04_pasik.jpg)
 
 // END
 
@@ -54,7 +54,7 @@ Zoberieme si čelenku a LED pásik. Z vnútornej strany LED pásika máme žltú
 
 // LEFT
 
-![Uvod](images/05_dekoracia.jpg)
+![](images/05_dekoracia.jpg)
 
 // RIGHT
 
@@ -117,10 +117,10 @@ Keď chceme, aby LED pásik zhasol, použijeme príkaz _led_pasik clear_. Takto 
 
 ### Výsledok:
 #### Svietiaca Čelenka
-![Uvod](images/final.gif)
+![](images/final.gif)
 
 // RIGHT
 
-![Uvod](images/06_final.jpg)
+![](images/06_final.jpg)
 
 // END

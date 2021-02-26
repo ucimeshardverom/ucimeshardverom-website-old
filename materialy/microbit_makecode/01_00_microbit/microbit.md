@@ -3,7 +3,7 @@ Title:   BBC micro:bit
 # BBC micro:bit
 ## Prvá kapitola
 
-![micro:bit](images/project-arrow.JPG)
+![](images/project-arrow.JPG)
 
 // LEFT
 

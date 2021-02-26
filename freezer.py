@@ -43,14 +43,14 @@ def materialy_images():
             _chapter_folder = material_settings['content'][_chapter_name]['path'].split("/")[0]
             _img_folder_path = os.path.join('materialy', material, _chapter_folder, 'images')
 
-            print(_chapter_name)
+            # print(_chapter_name)
 
             if os.path.exists(_img_folder_path):
                 _images = os.listdir(_img_folder_path)
                 for _image in _images:
                     yield {"tutorial_name": material, "image": _image, 'chapter_name': _chapter_name}
-                    print({"tutorial_name": material, "image": _image, 'chapter_name': _chapter_name})
+                    # print({"tutorial_name": material, "image": _image, 'chapter_name': _chapter_name})
 
 
 if __name__ == '__main__':
-    freezer.freeze()
+    freezer.run()

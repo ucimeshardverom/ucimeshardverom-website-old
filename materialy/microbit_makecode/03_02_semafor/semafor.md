@@ -6,7 +6,7 @@ Teacher:  True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/header.jpg)
+![](images/header.jpg)
 
 // RIGHT
 
@@ -25,7 +25,7 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 
 	// LEFT
 
-	![Semafor](images/semafor.png)
+	![](images/semafor.png)
 
 	// RIGHT
 
@@ -56,7 +56,7 @@ Najprv si vyskúšame zostrojiť jednoduchší semafor s dvoma LEDkami (aké ča
 
 // LEFT
 
-![alt_text](images/schema1.png)
+![](images/schema1.png)
 *Schéma zapojenia dvoch LEDiek*
 
 Na pripojenie LEDiek (podľa schémy) použijeme krokosvorkové kábliky a rezistory. Každú LEDku pomocou rezistora pripojíme k vlastnému kolíku - zelenú LEDku ku kolíku "0" a červenú ku kolíku "1".
@@ -83,7 +83,7 @@ Pripojenie 3 LEDiek je podobné zapojeniu v predchádzajúcom kroku - každá LE
 
 // RIGHT
 
-![alt_text](images/schema2.png)
+![](images/schema2.png)
 *Schéma zapojenia troch LEDiek*
 
 // END
@@ -114,11 +114,11 @@ _Cq1TTzK4bb4m
 
 // LEFT
 
-![alt_text](images/final.png)
+![](images/final.png)
 
 // RIGHT
 
-![alt_text](images/header.jpg)
+![](images/header.jpg)
 
 // END
 

@@ -8,7 +8,7 @@ Teacher:    True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/project-arrow.JPG)
+![](images/project-arrow.JPG)
 
 
 // RIGHT
@@ -102,7 +102,7 @@ Zopár senzorov, ako napríklad tlačidlá a senzor naklonenia/zatrasenia, sme s
 aké ďalšie súčiastky micro:bit obsahuje? Čiastočne nám napovie aj samotný micro:bit – skús nájsť čo najviac
 názvov senzorov, ktoré sú na doske vypísané.
 
-![Obrázok micro:bitu s popisom jeho častí](images/microbit_parts.png)
+![](images/microbit_parts.png)
 
 // NEWPAGE
 

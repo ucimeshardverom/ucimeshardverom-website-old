@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_micropython/displej_animacie/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_micropython/displej_animacie/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_micropython/displej_animacie/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -262,7 +262,7 @@
                             <h1><span>Animácie</span></h1>
 <h2><span>Displej</span></h2>
 <div class="alert alert-warning">
-<p class="h4">Pracujeme...</p>
+<p class="h4">Pracujeme…</p>
 <p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
 </div>
 <p>Čo sa týka grafického umenia, MicroPython ja asi rovnako dobrý ako človek, ktorý má k dispozícii iba 5x5 červených LED diód. Napriek tomu má MicroPython pomerne veľa možností, ako ovládať displej, a vytvoriť si tým rôyne efekty a animácie.</p>
@@ -412,7 +412,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

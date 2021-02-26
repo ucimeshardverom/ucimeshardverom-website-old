@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_wearables/uvod/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_wearables/uvod/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_wearables/uvod/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -273,10 +273,10 @@
                             <h1><span>Úvod</span></h1>
 <h2><span>O tomto tutoriáli</span></h2>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Final" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/09_final.jpg"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/09_final.jpg"/></div></p>
 </div><div class="col-lg-6">
 <p>Už ste niekedy nosili na tele alebo oblečení nejakú elektroniku? Možno máte smart hodinky, fitness náramky alebo iné mini elektronické zariadenia, ktoré nosíte na sebe. Nositeľná elektronika môže byť však čokoľvek, kde sa vyskytujú elektrické obvody. Napríklad na tričku.</p>
-<p>Predstavme si, že chceme mať svietiace tričko. Čo k tomu potrebujeme? – tričko, BBC micro:bit, rezistor, LED diódu, krokosvorkové káble... bolo by také „káblové tričko“ nositeľné? Asi by nosenie bolo náročné. Preto existuje nositeľná elektronika, ktorá nahrádza bežne dostupnú elektroniku.</p>
+<p>Predstavme si, že chceme mať svietiace tričko. Čo k tomu potrebujeme? – tričko, BBC micro:bit, rezistor, LED diódu, krokosvorkové káble… bolo by také „káblové tričko“ nositeľné? Asi by nosenie bolo náročné. Preto existuje nositeľná elektronika, ktorá nahrádza bežne dostupnú elektroniku.</p>
 </div></div>
 <h3 id="rozdiely-v-nositelnej-elektronike">Rozdiely v nositeľnej elektronike</h3>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
@@ -287,12 +287,18 @@
 <h4 id="mipower-board-doska-so-zdrojom-napajania">MI:power board (doska so zdrojom napájania)</h4>
 <p>Tretím najväčším rozdielom je zdroj napätia (batéria). Keďže bežne dostupné AAA batérie sú príliš veľké k nositeľnej elektronike a zároveň sú aj ťažšie, využívame okrúhlu („plochú“) 3V batériu, ktorá je vsadená do MI:power dosky. Doska sa pomocou skrutiek a matiek (obe sú vodivé) pripojí k pinom na micro:bite, čo nám pri šití uľahčí prácu. Navyše, doska neobsahuje len držiak na baterku so spínačom, ale aj malý reproduktor.</p>
 </div><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Elektrovodivá niť" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/01_nit.jpg"/></div>
-<em>Elektrovodivá niť</em></p>
-<p class="mb-0"><div class="text-center"><img alt="LED diódy" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/02_led.jpg"/></div>
-<em>LED diódy</em></p>
-<p class="mb-0"><div class="text-center"><img alt="MI:power board" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/03_power.jpg"/></div>
-<em>MI:power board</em></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/01_nit.jpg"/></div><figcaption class="text-center text-muted font-italic">Elektrovodivá niť</figcaption>
+</figure>
+</p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/02_led.jpg"/></div><figcaption class="text-center text-muted font-italic">LED diódy</figcaption>
+</figure>
+</p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/uvod/images/03_power.jpg"/></div><figcaption class="text-center text-muted font-italic">MI:power board</figcaption>
+</figure>
+</p>
 </div></div>
 <div style="page-break-after: always;"></div>
 <h3 id="ako-zapajame-nositelnu-led-diodu">Ako zapájame nositeľnú LED diódu?</h3>
@@ -405,7 +411,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_makecode/microbit/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_makecode/microbit/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_makecode/microbit/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -531,7 +531,7 @@
                         <div class="mt-4">
                             <h1><span>BBC micro:bit</span></h1>
 <h2><span>Prvá kapitola</span></h2>
-<p class="mb-0"><div class="text-center"><img alt="micro:bit" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/microbit/images/project-arrow.JPG"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/microbit/images/project-arrow.JPG"/></div></p>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
 <p>V prvej kapitole budeme pracovať iba s micro:bitom, USB káblom a baterkou. Prejdeme si, aké súčiastky micro:bit obsahuje a ako ho programovať v prostredí <a href="https://makecode.microbit.org/">Microsoft Makecode</a>.</p>
 </div><div class="col-lg-6">
@@ -643,7 +643,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

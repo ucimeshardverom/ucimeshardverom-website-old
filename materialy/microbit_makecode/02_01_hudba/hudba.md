@@ -7,7 +7,7 @@ Teacher:	True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/microbit-speaker.png)
+![](images/microbit-speaker.png)
 
 // RIGHT
 
@@ -62,8 +62,8 @@ a uzemnenie (GND). Reproduktor k micro:bitu pripojíme takto:
  
 // RIGHT
 
-![alt_text](images/microbit-speaker-jack-desc.png)
-![Obrázok BBC micro:bitu](images/microbit-speaker.png)
+![](images/microbit-speaker-jack-desc.png)
+![](images/microbit-speaker.png)
 
 
 // END
@@ -122,7 +122,7 @@ Na to použijeme hudobné noty, no najprv budeme potrebovať vedieť, ako číta
 
 Pozri sa na nasledujúce noty:
 
-![alt_text](images/microbit-speaker-kohutik.png)
+![](images/microbit-speaker-kohutik.png)
 
 Veľa čiar a nôt, ale čo znamenajú?
 
@@ -147,7 +147,7 @@ a ako dlho má trvať (koľko úderov). Oboje sa dá z hudobných nôt ľahko zi
 
 	// RIGHT
 
-	![alt_text](images/microbit-speaker-notes.png)
+	![](images/microbit-speaker-notes.png)
 
 	// END
 

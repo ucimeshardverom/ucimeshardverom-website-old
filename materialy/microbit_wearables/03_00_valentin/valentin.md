@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Fianal](images/05_final.jpg)
+![](images/05_final.jpg)
 
 // RIGHT
 

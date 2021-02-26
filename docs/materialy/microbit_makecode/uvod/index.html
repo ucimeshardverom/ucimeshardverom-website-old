@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_makecode/uvod/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_makecode/uvod/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_makecode/uvod/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -546,7 +546,7 @@
 – v niektorých sa ocitneš v roli grafika a budeš tvoriť na displeji micro:bitu animácie, v iných zas prevezmeš rolu
 bezpečnostného analytika a budeš navrhovať domáci alarm. Je to ideálne odpichnutie sa vo svete programovania hardvéru.</p>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Základná sada" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/uvod/images/zakladna-sada.jpg"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/uvod/images/zakladna-sada.jpg"/></div></p>
 </div><div class="col-lg-6">
 <p>Okrem <strong>BBC micro:bitu</strong> využívame najmä v neskorších kapitolách aj ďalšie pomôcky. Sú to hlavne:</p>
 <ul>
@@ -574,7 +574,7 @@ elektrickom zariadení – či už je to hriankovač, chladnička, práčka aleb
 <div class="alert alert-info">
 <p class="h4">BBC micro:bit na vyučovaní </p>
 <p>Pre každú aktivitu sme pripravili aj materiály pre učiteľa (metodiku, prípadne prezentáciu a pracovné listy).
-Na zobrazenie stačí na začiatku každej aktivity kliknúť na "Metodika pre učiteľa". Ak ale postupuješ podľa návodu
+Na zobrazenie stačí na začiatku každej aktivity kliknúť na „Metodika pre učiteľa“. Ak ale postupuješ podľa návodu
 doma bez učiteľa, tak môžeš túto sekciu úplne odignorovať.</p>
 </div>
 <div class="alert alert-primary">
@@ -595,7 +595,7 @@ Táto licencia ti umožňuje používať, upravovať a zdieľať tento materiál
 moderné využitia informatiky, princípy, na ktorých funguje každodenný svet okolo nás, a zvýšiť ich záujem o rozvíjanie
 si svojich digitálnych zručností. Hardvéru a programovania sa nemusí nik báť, a práve to chceme našim prístupom ukázať
 aj žiakom. Mnohé aktivity sú poňaté viac projektovo, pričom sme zahrnuli do nich aj kreatívne zložky (kreslenie,
-maľovanie, skupinové hry, ...). Veríme, že takto si každý žiak nájde aktivitu a tému, ktorá ho zaujme.</p>
+maľovanie, skupinové hry, …). Veríme, že takto si každý žiak nájde aktivitu a tému, ktorá ho zaujme.</p>
 <p>Pre každú kapitolu sme pre vás pripravili metodiku, podľa ktorej môžete postupovať pre využívaní micro:bitu na
 hodinách. Našim cieľom je, aby sa microb:bity v školách využívali čo najviac a preto sa potešíme akejkoľvek spätnej
 väzbe na naše materiály.</p>
@@ -688,7 +688,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

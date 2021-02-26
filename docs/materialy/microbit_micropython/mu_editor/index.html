@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_micropython/mu_editor/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_micropython/mu_editor/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_micropython/mu_editor/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -277,7 +277,9 @@
 <li>Check - pomáha nám hľadať chyby pri programovaní</li>
 </ul>
 <p><a href="https://madewith.mu/">Mu - blog o projektoch vytvorených v Mu v angličtine</a></p>
-<p class="mb-0"><div class="text-center"><img alt="alt text" class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/mu_editor/images/mu.gif"/></div>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/microbit_micropython/mu_editor/images/mu.gif"/></div><figcaption class="text-center text-muted font-italic">alt text</figcaption>
+</figure>
 <em><a href="https://codewith.mu/">Obrázok od Nicholas H.Tollervey, 2019. Zverejnené pod licenciou Creative Commons BY-NC-SA 4.0</a></em></p>
 <p>Posledná zmena: <strong>28.2.2020</strong></p>
                         </div>
@@ -376,7 +378,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

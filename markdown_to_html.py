@@ -11,8 +11,22 @@ def markdown_meta(raw_markdown):
 
 
 def markdown_to_html(raw_markdown, img_url="", html_template=None):
+
+    extension_configs = {
+        'smarty': {
+            'substitutions': {
+                'left-double-quote': '&bdquo;',
+                'right-double-quote': '&ldquo;'
+            }
+        }
+    }
+
     content_html = markdown.markdown(raw_markdown, extensions=[
-        'meta', 'admonition', 'fenced_code', 'tables', 'footnotes', 'extra', TocExtension(toc_depth="3-6")])
+        'meta', 'admonition', 'markdown_captions', 'fenced_code', 'smarty', 'tables', 'footnotes', 'extra', TocExtension(toc_depth="3-6")], extension_configs=extension_configs)
+
+    # Figures and FigCaptions
+    content_html = content_html.replace("<figure", "<figure class='mt-2 mb-2'")
+    content_html = content_html.replace("<figcaption", "<figcaption class='text-center text-muted font-italic'")
 
     # Alerts
     content_html = content_html.replace("<div class=\"admonition danger\">", "<div class=\"alert alert-danger\">")
@@ -98,6 +112,13 @@ def markdown_to_html(raw_markdown, img_url="", html_template=None):
                                           f"""<p class="text-muted font-italic">Edituj a stiahni: """
                                           f"""<a target="_blank" href="http://makecode.microbit.org/{code_id}">"""
                                           f"""http://makecode.microbit.org/{code_id}</a></p></div>""", "html.parser")
+            tag.replace_with(makecode_html)
+        elif not tag.get('data-packageid') and not tag.get('id') and tag.code and tag.code.get('class') and \
+                tag.code.get('class')[0] == "makecode-snippet":
+            code_id = tag.code.string.strip()
+            makecode_html = BeautifulSoup(f"""<div class="text-center">"""
+                                          f"""<pre id="{code_id}" data-packageid="{code_id}" class="makecode-snippet"></pre>"""
+                                          f"""</div>""", "html.parser")
             tag.replace_with(makecode_html)
 
     # MakeCode images - load from buffer (if image present)

@@ -23,7 +23,7 @@ def get_tutorial_settings(tutorial_slug, chapter_slug):
         if os.path.isdir(os.path.join(material_path, _file)):
             folders_in_dir.append(_file)
 
-    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml')) as file:
+    with open(os.path.join('materialy', tutorial_name, 'SETTINGS.yaml'), encoding="utf8") as file:
         material_settings = yaml.full_load(file)
 
     material_settings['content'] = OrderedDict()
@@ -40,7 +40,7 @@ def get_tutorial_settings(tutorial_slug, chapter_slug):
         _chapter_slug = _folder.split("_")[2:]
         _chapter_slug = "_".join(_chapter_slug)
         material_settings['content'][_chapter_slug] = {}
-        material_settings['content'][_chapter_slug]['path'] = f"{_folder}/{_chapter_slug}.md"
+        material_settings['content'][_chapter_slug]['path'] = f"{os.path.join(_folder, _chapter_slug)}.md"
 
         if not chapter_name:
             material_settings['chapter_name'] = _chapter_slug

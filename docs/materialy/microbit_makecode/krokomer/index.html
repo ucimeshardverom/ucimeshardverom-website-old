@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_makecode/krokomer/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_makecode/krokomer/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_makecode/krokomer/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -545,7 +545,7 @@
                             <h1><span>Krokomer</span></h1>
 <h2><span>Koľko krokov denne spravíš?</span></h2>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/krokomer.png"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/krokomer.png"/></div></p>
 </div><div class="col-lg-6">
 <div class="lection-desc">
 <p>Krokomer (anglicky pedometer) je zariadenie na meranie počtu krokov. Dnes sa často nachádza vbudovaný aj v mobilných
@@ -570,7 +570,7 @@ viac krokov, ako v skutočnosti človek spravil. </p>
 <p>Ako na micro:bite vytvoriť krokomer? Najprv si navrhneme požiadavky (aký má byť výsledok), potom vytvoríme program
 a následne micro:bit pripevníme na topánku a otestujeme. </p>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Screenshot" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/screenshot-premenna-2.png"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/screenshot-premenna-2.png"/></div></p>
 <p>Požiadavky na micro:bit krokomer:  </p>
 <ul>
 <li>Pri potrasení micro:bit zväčší premennú <code>kroky</code> o 1.</li>
@@ -597,9 +597,9 @@ a lacnejšie, ako vždy program nahrať do hardvéru a testovať ho tam.</p>
 <p>Koľko krokov je vhodných pre človeka denne? Presná odpoveď
 neexistuje, no štúdie dokazujú, že približne 7000 krokov je dostatočne veľa
 <a href="https://www.noviny.sk/zaujimavosti/367839-malo-sa-hybeme-tvrdia-odbornici-kolko-krokov-by-sme-teda-mali-spravit">(článok)</a>.
-Vedci taktiež tvrdia, že ak človek pravidelne prejde <em>"menej ako 5000 krokov denne, zvyšuje sa u neho riziko priberania,
-rednutia kostí a ďalších problémov... Vedci sa zaujímajú aj o hornú hranicu. Avšak podľa doteraz zistených štúdií je
-čím viac, tým lepšie a najmä podľa toho, koľko človek vládze."</em></p>
+Vedci taktiež tvrdia, že ak človek pravidelne prejde <em>„menej ako 5000 krokov denne, zvyšuje sa u neho riziko priberania,
+rednutia kostí a ďalších problémov… Vedci sa zaujímajú aj o hornú hranicu. Avšak podľa doteraz zistených štúdií je
+čím viac, tým lepšie a najmä podľa toho, koľko človek vládze.“</em></p>
 </div>
 <h3 id="hardver-pre-krokomer">Hardvér pre krokomer</h3>
 <p>Ak máme program odskúšaný v simulátore aj fyzicky na micro:bite, môžeme ho odpojiť od počítača a pripojiť k batérii.
@@ -608,10 +608,10 @@ Takýto krokomer je potrebné umiestniť na topánku – odporúčame pripevniť
 ale z našich skúseností bývajú merania na tomto mieste nepresnejšie. Krokomer sme prilepili papierovou lepiacou páskou,
 ktorá ide dolu z topánky ľahšie ako klasická páska a nemala by zanechávať žiadne stopy.</p>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/krokomer_nastroje.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/krokomer_nastroje.png"/></div>
 Pomôcky pre tvorbu krokomeru</p>
 </div><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/krokomer.png"/></div>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/krokomer/images/krokomer.png"/></div>
 Výsledok – krokomer pripevnený papierovou lepiacou páskou</p>
 </div></div>
 <div class="alert alert-primary">
@@ -812,7 +812,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

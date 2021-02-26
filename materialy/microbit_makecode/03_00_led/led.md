@@ -4,7 +4,7 @@ Title:   LED
 ## Tretia kapitola
 
 
-![micro:bit](images/led-topanka.png)
+![](images/led-topanka.png)
 
 // LEFT
 

@@ -7,7 +7,7 @@ Teacher:	True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/microbit-obvod.jpg)
+![](images/microbit-obvod.jpg)
 
 // RIGHT
 
@@ -41,7 +41,7 @@ pomocou kolíkov. Kolíky sú malé kovové plôšky na spodnej strane micro:bit
 
 // RIGHT
 
-![alt_text](images/microbit-pinout.png)
+![](images/microbit-pinout.png)
 
 
 Zdroj: [https://makecode.microbit.org/device/pins](https://makecode.microbit.org/device/pins) 
@@ -82,7 +82,7 @@ na obrázku nižšie.)
 
 // RIGHT
 
-![alt_text](images/microbit-obvod-heart.png)
+![](images/microbit-obvod-heart.png)
 
 // END
 
@@ -97,7 +97,7 @@ na obrázku nižšie.)
 
 // LEFT
 
-![alt_text](images/microbit-obvod-heart2.png)
+![](images/microbit-obvod-heart2.png)
 
 V ďalšom kroku použijeme na uzatvorenie obvodu 2 káble. Jeden pripojíme ku kolíku `0` a druhý ku kolíku `GND`.
 Program z predchádzajúceho kroku nemeníme.
@@ -105,7 +105,7 @@ Dotykom ich voľných koncov by sme mali na micro:bite zobrazovať srdiečko.
 
 // RIGHT
 
-![alt_text](images/microbit-obvod.png)
+![](images/microbit-obvod.png)
 
 Na voľné konce pripojených dvoch krokosvorkových káblov pripevníme dva kúsky alobalu tak, aby sa nedotýkali (podľa
 obrázku). Program nemeníme.
@@ -144,7 +144,7 @@ Napríklad *mince, nožnice, platový príbor, kovový príbor, papier atď.*
 
 // RIGHT
 
-![alt_text](images/microbit-obvod-scissors.png)
+![](images/microbit-obvod-scissors.png)
 
 // END
 

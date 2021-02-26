@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/zacni/kreativne_projekty/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/zacni/kreativne_projekty/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/zacni/kreativne_projekty/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -287,9 +287,15 @@
                             <p>Dôležitým aspektom micro:bitov je kreativita. Tá môže mať veľa podôb – stačí pár LED diód, papierový pohár, nejaké fixky
 a glitre a vznikne unikátny papierový robot s vlastným príbehom. Alebo môžeš spraviť elektronickú gitaru
 z kartónu či banánový klavír.</p>
-<p class="mb-0"><div class="text-center"><img alt="Micor:bit papierové roboty" class="img-fluid img-fluid pt-2" src="/materialy/zacni/kreativne_projekty/images/microbit-paper-robots.jpg"/></div><br/>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/kreativne_projekty/images/microbit-paper-robots.jpg"/></div><figcaption class="text-center text-muted font-italic">Micor:bit papierové roboty</figcaption>
+</figure>
+<br/>
 <em>Triedna výstava papierových robotov s blikajúcimi nosmi/očami/ušami</em></p>
-<p class="mb-0"><div class="text-center"><img alt="Micor:bit banánové piano" class="img-fluid img-fluid pt-2" src="/materialy/zacni/kreativne_projekty/images/microbit-banana-piano.JPG"/></div><br/>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/kreativne_projekty/images/microbit-banana-piano.JPG"/></div><figcaption class="text-center text-muted font-italic">Micor:bit banánové piano</figcaption>
+</figure>
+<br/>
 <em>Banánové piano – hudbu hráme dotykom na banán</em></p>
 <h2><span>Ukážky žiackych projektov</span></h2>
 <p>Nemálo kreatívnych projektov vytvorili aj žiaci v rámci súťaže SPyCup a každý starostlivo zdokumentovali.</p>
@@ -395,7 +401,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

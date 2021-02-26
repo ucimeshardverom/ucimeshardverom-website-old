@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_wearables/valentin/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_wearables/valentin/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_wearables/valentin/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -275,13 +275,16 @@
                             <h1><span>Valentínsky odkaz</span></h1>
 <h2><span>Wearables (nositeľná elektronika)</span></h2>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Fianal" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/valentin/images/05_final.jpg"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/valentin/images/05_final.jpg"/></div></p>
 </div><div class="col-lg-6">
 <p>Už ste niekedy písali alebo dostali valentínsky odkaz? Vraj keď niečo darujeme, tešíme sa z toho ešte viac, akoby sme niečo dostali. Je to podľa vás pravda?</p>
 <p>Valentínsky odkaz môžeme darovať komukoľvek a nemusí tam byť napísané “Ľúbim Ťa”. Skúsme si vytvoriť taký odkaz, ktorý môžeme darovať aj svojim kamarátom/kamarátkam. Každý má rád prekvapenia, preto ich skúsme prekvapiť nielen odkazom, ale aj tým, že odkaz bude v micro:bite, ktorý sa bude zapínať LEN vtedy, keď otvoríme pohľadnicu.</p>
 </div></div>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Pomôcky" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/valentin/images/01_uvod.jpg"/></div></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/valentin/images/01_uvod.jpg"/></div><figcaption class="text-center text-muted font-italic">Pomôcky</figcaption>
+</figure>
+</p>
 </div><div class="col-lg-6">
 <p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_wearables/valentin/images/02_tvary.jpg"/></div></p>
 </div></div>
@@ -430,7 +433,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

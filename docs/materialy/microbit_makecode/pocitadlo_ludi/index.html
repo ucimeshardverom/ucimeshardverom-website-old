@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_makecode/pocitadlo_ludi/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_makecode/pocitadlo_ludi/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_makecode/pocitadlo_ludi/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -545,7 +545,7 @@
                             <h1><span>Počítadlo ľudí</span></h1>
 <h2><span>Objavujeme premenné</span></h2>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/pocitadlo_ludi/images/pocitadlo_ludi.jpg"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/pocitadlo_ludi/images/pocitadlo_ludi.jpg"/></div></p>
 </div><div class="col-lg-6">
 <div class="lection-desc">
 <p>V tejto lekcii si vytvoríš užitočnú pomôcku – počítadlo ľudí. Tie využívajú napríklad na festivaloch, podujatiach
@@ -573,21 +573,21 @@ zväčšovať alebo zmenšovať, podľa toho, ako ľudia vchádajú a vychádzaj
 <p>Túto premennú na začiatku nášho programu nastavíme na nulu, keďže predpokladáme,
 že začíname počítať ešte v okamihu, keď žiaden účastník nie je vo vnútri.</p>
 </div><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/pocitadlo_ludi/images/makecode_premenna.png"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/pocitadlo_ludi/images/makecode_premenna.png"/></div></p>
 </div></div>
 <div style="page-break-after: always;"></div>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
 <p>Premenné majú v prostredí MakeCode vlastnú kategóriu <code>Premenná</code>. Prostredníctvom tejto kategórie je možné vytvoriť si jednu alebo aj viac
 premennych a ľubovoľne si ich pomenovávať. Pre naše počítadlo klikneme na tlačidlo <code>Vytvoriť premennú</code>
-a následne zadáme názov novej premennej, napríklad <em>"pocet_ludi"</em>.
+a následne zadáme názov novej premennej, napríklad <em>„pocet_ludi“</em>.
 Po jej vytvorení sa nám zobrazia 3 bloky:</p>
 <ul>
-<li>Okrúhly blok <em>"pocet_ludi"</em>, ktorý reprezentuje samotnú premennú. Využívať ho budeme napríklad vtedy, keď budeme chcieť vypísať číslo v premennej na obrazovku. </li>
+<li>Okrúhly blok <em>„pocet_ludi“</em>, ktorý reprezentuje samotnú premennú. Využívať ho budeme napríklad vtedy, keď budeme chcieť vypísať číslo v premennej na obrazovku. </li>
 <li>Príkaz na nastavenie premennej na nejaké dané číslo.</li>
 <li>Príkaz na zmenu čísla – hodnoty premennej, – vďaka ktorému vieme pripočítavať a odpočítavať z premennej.</li>
 </ul>
 </div><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/pocitadlo_ludi/images/makecode_premenna_2.png"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/pocitadlo_ludi/images/makecode_premenna_2.png"/></div></p>
 </div></div>
 <h3 id="nastavenie-pocitadla-na-nula-a-zobrazenie-poctu-ludi">Nastavenie počítadla na nula a zobrazenie počtu ľudí</h3>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
@@ -740,7 +740,7 @@ môžu ukladať čísla (viac popísané v návode tejto aktivity).</p>
 </ul>
 <p>So žiakmi naviažte na informácie spomenuté v návode tejto aktivity (RAM a FLASH pamäť).</p>
 <h4 id="nekonecne-pocitadlo-5-min">Nekonečné počítadlo [5 min]</h4>
-<p>Ako osobitnú pod-aktivitu je možné pridať ešte "nekonečné počítadlo" (v krátkosti času je možné preskočiť).</p>
+<p>Ako osobitnú pod-aktivitu je možné pridať ešte „nekonečné počítadlo“ (v krátkosti času je možné preskočiť).</p>
 <h4 id="diskusia-a-zhrnutie-aktivity-3-min">Diskusia a zhrnutie aktivity [3 min]</h4>
 <p>Na záver veďte so žiakmi diskusiu o premenných a o druhoch pamätí v počítačoch:</p>
 <p>Otázky:</p>
@@ -848,7 +848,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

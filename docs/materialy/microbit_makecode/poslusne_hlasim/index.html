@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_makecode/poslusne_hlasim/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_makecode/poslusne_hlasim/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_makecode/poslusne_hlasim/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -545,7 +545,7 @@
                             <h1><span>Hra Poslušne hlásim!</span></h1>
 <h2><span>Matematická hra</span></h2>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p class="mb-0"><div class="text-center"><img alt="Obrázok BBC micro:bitu" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/poslusne_hlasim/images/header.jpg"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/poslusne_hlasim/images/header.jpg"/></div></p>
 </div><div class="col-lg-6">
 <div class="lection-desc">
 <p>Poslušne hlásim! je matematická hra pre <strong>3 hráčov/hráčky</strong>, pričom <strong>sú potrebné 2 micro:bity.</strong></p>
@@ -571,7 +571,7 @@ bodu na papier hráči čakajú, kým rozhodca nedá pokyn na vytiahnutie ďalš
 <p>Ešte pred tým, ako budeš pokračovať v programovaní micro:bitu, si spolu so spoluhráčmi priprav papierové kartičky
 a zahraj si hru <em>Poslušne hlásim!</em></p>
 </div>
-<h3 id="elektronicke-ciselne-karticky">Elektronické "číselné kartičky"</h3>
+<h3 id="elektronicke-ciselne-karticky">Elektronické „číselné kartičky“</h3>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
 <p>Prvou úlohou hráčov je kartičky s číslami nahradiť dvoma micro:bitmi. Tie budú naprogramované veľmi jednoduchým kódom.
 Ako vstup si môžeš zvoliť ľubovoľný príkaz – či už stlačenie tlačidla, zatrasenie, naklonenie… Zvyšné pravidlá hry
@@ -749,7 +749,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

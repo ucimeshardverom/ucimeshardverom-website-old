@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/zacni/webusb/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/zacni/webusb/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/zacni/webusb/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -295,7 +295,10 @@ Python editora bez nutnosti sťahovať program na počítač a následne kopíro
 <li><strong>Firmvér verzia 0243 alebo vyššia</strong> na micro:bite (návod na upgrade firmvéru nájdeš v ďalšej kapitole).</li>
 </ul>
 <h2><span>MakeCode</span></h2>
-<p class="mb-0"><div class="text-center"><img alt="Ukážka WebUSB v MakeCode edtore" class="img-fluid img-fluid pt-2" src="/materialy/zacni/webusb/images/webusb_makecode.gif"/></div></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/webusb/images/webusb_makecode.gif"/></div><figcaption class="text-center text-muted font-italic">Ukážka WebUSB v MakeCode edtore</figcaption>
+</figure>
+</p>
 <ol>
 <li>Pripoj svoj micro:bit k počítaču pomocou micro USB kábla.</li>
 <li>V <a href="https://makecode.microbit.org/">MakeCode editore</a> klikni na tlačidlo <em>nastavenia</em> (ozubené koliesko hore vpravo)
@@ -306,7 +309,10 @@ Mala by sa zobraziť informácia o úspešnom pripojení.</li>
 <li>Vyskúšaj stihnuť svoj program priamo z prehliadača na micro:bit stlačením tlačidla <em>Stiahnuť</em>.</li>
 </ol>
 <h2><span>Python</span></h2>
-<p class="mb-0"><div class="text-center"><img alt="Ukáka WebUSB v Python editore" class="img-fluid img-fluid pt-2" src="/materialy/zacni/webusb/images/webusb_python.gif"/></div></p>
+<p>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/zacni/webusb/images/webusb_python.gif"/></div><figcaption class="text-center text-muted font-italic">Ukáka WebUSB v Python editore</figcaption>
+</figure>
+</p>
 <ol>
 <li>Pripoj svoj micro:bit k počítaču pomocou micro USB kábla.</li>
 <li>V <a href="https://python.microbit.org/">MicroPython editore</a> klikni na tlačidlo <em>Connect</em> (hore vľavo).</li>
@@ -412,7 +418,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

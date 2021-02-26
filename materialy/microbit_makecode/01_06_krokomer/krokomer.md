@@ -7,7 +7,7 @@ Teacher:	True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/krokomer.png)
+![](images/krokomer.png)
 
 // RIGHT
 
@@ -44,7 +44,7 @@ a následne micro:bit pripevníme na topánku a otestujeme.
 
 // LEFT
 
-![Screenshot](images/screenshot-premenna-2.png)
+![](images/screenshot-premenna-2.png)
 
 Požiadavky na micro:bit krokomer:  
 
@@ -92,12 +92,12 @@ ktorá ide dolu z topánky ľahšie ako klasická páska a nemala by zanecháva�
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/krokomer_nastroje.png)
+![](images/krokomer_nastroje.png)
 Pomôcky pre tvorbu krokomeru
 
 // RIGHT
 
-![Obrázok BBC micro:bitu](images/krokomer.png)
+![](images/krokomer.png)
 Výsledok – krokomer pripevnený papierovou lepiacou páskou
 
 // END

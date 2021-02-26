@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_makecode/led/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_makecode/led/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_makecode/led/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -531,7 +531,7 @@
                         <div class="mt-4">
                             <h1><span>LED</span></h1>
 <h2><span>Tretia kapitola</span></h2>
-<p class="mb-0"><div class="text-center"><img alt="micro:bit" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/led/images/led-topanka.png"/></div></p>
+<p class="mb-0"><div class="text-center"><img alt="" class="img-fluid img-fluid pt-2" src="/materialy/microbit_makecode/led/images/led-topanka.png"/></div></p>
 <div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
 <p>V tretej kapitole budeme pomocou micro:bitu rozsvecovať LEDky - od klasických jednofarebných LED diód, až po LED pásiky. Na tých si budeme zobrazovať aj rôzne animácie.</p>
 </div><div class="col-lg-6">
@@ -639,7 +639,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

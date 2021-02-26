@@ -23,7 +23,7 @@ Diskutujte so žiakmi: “Čo je to reproduktor? Kde všade ho môžeme nájsť?
 
 Býva tak niekedy označovaná rýchlosť hudobnej skladby pomocou metronómu:
 
-![alt_text](images/microbit-speaker-bpm.png)
+![](images/microbit-speaker-bpm.png)
 
 
 Tento symbol/vzorec udáva 120 štvorštvrtinových úderov za minútu. Zvyčajne sa ale rýchlosť skladby popisuje slovne,

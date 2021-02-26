@@ -102,14 +102,14 @@
           </ol>
         </nav>
 
-<!--          <a href="/materialy/microbit_micropython/displej_menovka/materialy_print_telekom.html/pdf"
-           class="btn btn-success mb-3">TELEKOM PDF</a>
 
-        <a href="/materialy/microbit_micropython/displej_menovka/materialy_print.html/pdf"
-           class="btn btn-primary mb-3">UsH PDF</a>
 
-        <a href="/materialy/microbit_micropython/displej_menovka/telekom_obalka.html/pdf"
-           class="btn btn-success mb-3">TELEKOM COVER</a> -->
+
+
+
+
+
+
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -262,12 +262,12 @@
                             <h1><span>Digitálna menovka</span></h1>
 <h2><span>Displej</span></h2>
 <div class="alert alert-warning">
-<p class="h4">Pracujeme...</p>
+<p class="h4">Pracujeme…</p>
 <p>Táto kapitola je ešte rozpracovaná, zatiaľ tu nájdeš iba základné informácie. V najbližšom čase ju budeme ešte dopĺňať.</p>
 </div>
 <h3 id="menovka">Menovka</h3>
 <p>Ako si si mohol/mohla všimnúť, micro:bit má na svojej prednej strane 5x5 červených LED diód. MicroPython Ti dáva viacero možností, akými na displeji niečo vykreslovať či vypisovať.</p>
-<p>Najbežnejším prvým programom pri učení sa nového programovacieho jazyka býva vypísanie textu "Ahoj, Svet!". </p>
+<p>Najbežnejším prvým programom pri učení sa nového programovacieho jazyka býva vypísanie textu „Ahoj, Svet!“. </p>
 <p>V MicroPythone vieme napísať tento program v dvoch riadkoch kódu:</p>
 <pre><code>from microbit import display
 display.scroll("Ahoj, Svet!")
@@ -275,11 +275,11 @@ display.scroll("Ahoj, Svet!")
 <p>Každý riadok vykaná niečo iné. Prvý riadok:</p>
 <pre><code>from microbit import dispay
 </code></pre>
-<p>povie micro:bitu, aby pre nás pripravil funkcionalitu <code>display</code> z modulu <code>microbit</code>. Tento modul obsahuje predprogramované funkcie, ktoré ovládajú napríklad zobrazovanie textu na obrazovke. Takéto 'zavolanie' voláme <code>import</code>. Moduly sa taktiež niekedy nazývajú aj knižnicami (no namiesto kníh majú v sebe kód).</p>
+<p>povie micro:bitu, aby pre nás pripravil funkcionalitu <code>display</code> z modulu <code>microbit</code>. Tento modul obsahuje predprogramované funkcie, ktoré ovládajú napríklad zobrazovanie textu na obrazovke. Takéto ‘zavolanie’ voláme <code>import</code>. Moduly sa taktiež niekedy nazývajú aj knižnicami (no namiesto kníh majú v sebe kód).</p>
 <p>Druhý riadok:</p>
 <pre><code>display.scroll("Ahoj, Svet!")
 </code></pre>
-<p>povie micro:bitu, aby na displej postupne vypísal reťazec znakov "Ahoj, Svet!". Slovo <code>display</code> je objekt z modulu <code>microbit</code>, ktorý predstavuje fyzický displej zariadenia (hovoríme „objekt“ namiesto „hento“, „oné“ alebo „tá vec“). Za objekt sme napísali bodku, za ktorou nasleduje príkaz (po správnosti nazývaný <code>metóda</code>). V tomto prípade používame metódu <code>scroll</code>, čo po slovensky znamená posúvať. Aby ale micro:bit vedel, aký text má na obrazovke posúvať, musíme ho označiť pomocou dvojitých úvodzoviek <code>"</code> (na začiatku a aj na konci) a poslať do príkazu scroll. To spravíme vložením textu do  zátvoriek za metódou <code>scroll()</code>. Obsah zátvoriek nazývame argument. Takže display.scroll("Ahoj, svet!") znamená po slovensky „Chcem, aby si použil displej a posúval na ňom text ‚Ahoj, svet!‘“. Ak metóda nepotrebuje argumenty, musíme to dať jasne najavo použitím prádznych zátvoriek - takto: <code>scroll()</code>.</p>
+<p>povie micro:bitu, aby na displej postupne vypísal reťazec znakov „Ahoj, Svet!“. Slovo <code>display</code> je objekt z modulu <code>microbit</code>, ktorý predstavuje fyzický displej zariadenia (hovoríme „objekt“ namiesto „hento“, „oné“ alebo „tá vec“). Za objekt sme napísali bodku, za ktorou nasleduje príkaz (po správnosti nazývaný <code>metóda</code>). V tomto prípade používame metódu <code>scroll</code>, čo po slovensky znamená posúvať. Aby ale micro:bit vedel, aký text má na obrazovke posúvať, musíme ho označiť pomocou dvojitých úvodzoviek <code>"</code> (na začiatku a aj na konci) a poslať do príkazu scroll. To spravíme vložením textu do  zátvoriek za metódou <code>scroll()</code>. Obsah zátvoriek nazývame argument. Takže display.scroll(„Ahoj, svet!“) znamená po slovensky „Chcem, aby si použil displej a posúval na ňom text ‚Ahoj, svet!‘“. Ak metóda nepotrebuje argumenty, musíme to dať jasne najavo použitím prádznych zátvoriek - takto: <code>scroll()</code>.</p>
 <p>Teraz svoj kód ešte skontroluj - či už opticky, alebo v <code>Mu editore</code> pomocou tlačidla <code>check</code> (veľký palec). Ak si v programe nenašiel žiadne chyby, nahraj ho na micro:bit (v Mu editore pomocou tlačidla <code>Flash</code>).</p>
 <p>Ak by si chcel zistiť, aké iné argumenty môžeš pre príkaz <code>scroll()</code> použiť, pozri si <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html?highlight=scroll#microbit.display.scroll&gt;">dokumentáciu</a></p>
 <div class="alert alert-warning">
@@ -325,8 +325,8 @@ while True:
     display.scroll("Z Bratislavy")
 display.scroll("toto sa nikdy nevypise")
 </code></pre>
-<p>Z kódu vieme vyčítať, že donekonečna budeme vypisovať "Marek" a "z Bratislavy". Príkaz s textom "toto sa nikdy nevypise" nie je odsadený, a tak nie je súčasťou while cyklu. Preto by sa vykonal až keď while cyklus skončí. Ten ale nikdy neskončí, keďže <code>True</code> má vždy pravdivú hodnotu, a tak sa tento riadok kódu nikdy nespustí.</p>
-<p>Kým v predchádzajúcej ukážke sa posledný riadok kódu nikdy nespustí, aspoň sa nám zobrazovali príkazy "Marek" a "z Bratislavy". Čo ak by sme ale doplnili takýto riadok:</p>
+<p>Z kódu vieme vyčítať, že donekonečna budeme vypisovať „Marek“ a „z Bratislavy“. Príkaz s textom „toto sa nikdy nevypise“ nie je odsadený, a tak nie je súčasťou while cyklu. Preto by sa vykonal až keď while cyklus skončí. Ten ale nikdy neskončí, keďže <code>True</code> má vždy pravdivú hodnotu, a tak sa tento riadok kódu nikdy nespustí.</p>
+<p>Kým v predchádzajúcej ukážke sa posledný riadok kódu nikdy nespustí, aspoň sa nám zobrazovali príkazy „Marek“ a „z Bratislavy“. Čo ak by sme ale doplnili takýto riadok:</p>
 <pre><code>from microbit import display
 while True:
     display.scroll("Marek")
@@ -336,7 +336,7 @@ display.scroll("toto sa nikdy nevypise")
 </code></pre>
 <p>V tomto prípade by nám program vôbec nespustil a vypísal by chybu, pretože posledný riadok je odsadený aj keď by nemal byť.</p>
 <div class="alert alert-primary">
-<p class="h4">Chyby sú bežné...</p>
+<p class="h4">Chyby sú bežné…</p>
 <p>Skús spustiť posledný kód (s nesprávnym odsadzovaním) a zistiť, aký chybu vypíše micro:bit na displej.</p>
 </div>
 <div class="alert alert-primary">
@@ -355,12 +355,12 @@ display.scroll("Ahoj")
 sleep(5000)
 display.scroll("Ako sa mas?")
 </code></pre>
-<p>Príkaz <code>sleep()</code> sme vložili medzi dva výpisy textu, a tak sa najprv zobrazí text "Ahoj", chvíľu počká a potom vypíše text "Ako sa mas?". To, ako dlho má čakať povieme micro:bitu pomocou argumentu, ktorý napíšeme do zátvoriek za metódou <code>sleep</code>. Tento krát vkladáme číslo a nie reťazec, preto nepoužívame úvodzovky <code>"</code>. Napíšeme tam, koľko milisekúnd má micro:bit čakať. Jedna milisekunda je tisícina sekundy, 1000 milisekúnd je 1 sekunda a 5000 milisekúnd je 5 sekúnd, čiže náš kód počká 5 sekúnd.</p>
+<p>Príkaz <code>sleep()</code> sme vložili medzi dva výpisy textu, a tak sa najprv zobrazí text „Ahoj“, chvíľu počká a potom vypíše text „Ako sa mas?“. To, ako dlho má čakať povieme micro:bitu pomocou argumentu, ktorý napíšeme do zátvoriek za metódou <code>sleep</code>. Tento krát vkladáme číslo a nie reťazec, preto nepoužívame úvodzovky <code>"</code>. Napíšeme tam, koľko milisekúnd má micro:bit čakať. Jedna milisekunda je tisícina sekundy, 1000 milisekúnd je 1 sekunda a 5000 milisekúnd je 5 sekúnd, čiže náš kód počká 5 sekúnd.</p>
 <div class="alert alert-primary">
 <p class="h4">Úlohy</p>
 <ul>
 <li>Využi príkaz <code>sleep()</code> v nekonečnom cykle.</li>
-<li>Uprav nasledujúci kód tak, aby micro:bit vypísal "Ahoj Martin", počkal 3 sekundy, vypísal "Ahoj Vanessa" a zas počkal 3 sekundy::</li>
+<li>Uprav nasledujúci kód tak, aby micro:bit vypísal „Ahoj Martin“, počkal 3 sekundy, vypísal „Ahoj Vanessa“ a zas počkal 3 sekundy::</li>
 </ul>
 </div>
 <pre><code>from microbit import display
@@ -473,7 +473,8 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
                 id: pre.id,
                 code: pre.innerText,
                 options: {
-                  packageId: pre.getAttribute("data-packageid")
+                  packageId: pre.getAttribute("data-packageid"),
+                  snippetMode: ((pre.getAttribute("class") && pre.getAttribute("class").includes("makecode-snippet")) ? true : false)
                 }
             }, "https://makecode.microbit.org/");
         }

@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Final](images/09_final.jpg)
+![](images/09_final.jpg)
 
 // RIGHT
 
@@ -36,13 +36,10 @@ Tretím najväčším rozdielom je zdroj napätia (batéria). Keďže bežne dos
 // RIGHT
 
 ![Elektrovodivá niť](images/01_nit.jpg)
-*Elektrovodivá niť*
 
 ![LED diódy](images/02_led.jpg)
-*LED diódy*
 
 ![MI:power board](images/03_power.jpg)
-*MI:power board*
 
 // END
  

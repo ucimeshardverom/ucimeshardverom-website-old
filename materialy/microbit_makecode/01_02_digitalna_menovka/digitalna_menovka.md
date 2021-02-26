@@ -8,7 +8,7 @@ Teacher:    True
 
 // LEFT
 
-![Animácia výberu jazyka v MakeCode](images/makecode_home.png)
+![](images/makecode_home.png)
 
 
 // RIGHT
@@ -38,7 +38,7 @@ BBC micro:bit a micro USB kábel.
 
 // LEFT
 
-![Animácia tvorby kódu v MakeCode](images/makecode_show_string.png)
+![](images/makecode_show_string.png)
 
 // RIGHT
 
@@ -71,7 +71,7 @@ Keďže chceme vytvoriť menovku, musíme na displej vypísať naše meno. To sp
 
 // RIGHT
 
-![Animácia tvorby kódu v MakeCode](images/makecode_string.png)
+![](images/makecode_string.png)
 
 // END
 
@@ -128,7 +128,7 @@ reťazec`.
 
 // LEFT
 
-![Animácia tvorby kódu v MakeCode](images/makecode_heart.png)
+![](images/makecode_heart.png)
 
 // RIGHT
 

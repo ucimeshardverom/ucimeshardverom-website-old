@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Final](images/09_final.jpg)
+![](images/09_final.jpg)
 
 // RIGHT
 
@@ -106,4 +106,4 @@ Následne lepíme krovky, ktoré sa vzájomne prekrývajú a k tomu vytvoríme z
 
 // END
 
-![Final](images/09_final.jpg)
+![](images/09_final.jpg)
