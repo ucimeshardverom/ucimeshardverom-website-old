@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Img](images/01_uvod.jpg)
+![](images/01_uvod.jpg)
 
 // RIGHT
 
@@ -36,11 +36,11 @@ V prípade, že nemáme takúto hračku, stačí, keď si vytvoríme prednú a z
 
 Na oči použijeme 2 nositeľné LED diódy s už zabudovanými rezistormi a pripojíme ho paralelným zapojením k micro:bitu. Krokosvorky pripojíme k micro:bitu a umiestnime ich tak, aby sa micro:bit zmestil do vnútra. Následne začíname od pinu 1 a našijeme 2 nositeľné LED diódy. Aj pri tomto projekte si treba uvedomiť, že šijeme dve vety - od pinu 1 k plusu a od GND k mínusu. Výsledok je taký, že micro:bit s krokosvorkami budú vo vnútri, zatiaľ čo LED diódy sú na vonkajšej strane.
 
-![Img](images/04_vonka.jpg)
+![](images/04_vonka.jpg)
 
 // RIGHT
 
-![Img](images/02_predok.jpg)
+![](images/02_predok.jpg)
 
 // END
 
@@ -48,11 +48,11 @@ Na oči použijeme 2 nositeľné LED diódy s už zabudovanými rezistormi a pri
 
 // LEFT
 
-![Img](images/03_vnutro.jpg)
+![](images/03_vnutro.jpg)
 
 // RIGHT
 
-![Img](images/05_vypln.jpg)
+![](images/05_vypln.jpg)
 
 // END
 
@@ -60,7 +60,7 @@ Na oči použijeme 2 nositeľné LED diódy s už zabudovanými rezistormi a pri
 
 // LEFT
 
-![Img](images/06_H.jpg)
+![](images/06_H.jpg)
 
 Okolo micro:bitu pridáme výplň, ktorá nesmie obsahovať vodivé látky. Väčšinou však obsahuje len plast, ktorý nie je vodivý. Keď výplň máme, zošije všetky strany hračky tak, aby výplň nevypadla. Teraz však máme 2 problémy - micro:bit nevieme vybrať a nemáme v ňom nahratý žiadny program.
 
@@ -68,7 +68,7 @@ Keď hračku otočíme na zadnú časť, v mieste micro:bitu do nej nastrihneme 
 
 // RIGHT
 
-![Img](images/07_final.jpg)
+![](images/07_final.jpg)
 
 // END
 
@@ -88,7 +88,7 @@ Z kategórie _vstup_ vyberieme príkaz _keď potrasenie_. Potrebujeme nastaviť 
 
 Následne program stiahneme a vyskúšame potriasť plyšovou hračkou. 
 
-![Img](images/video.gif)
+![](images/video.gif)
 
 // RIGHT
 

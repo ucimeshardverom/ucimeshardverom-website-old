@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Odznak](images/08_final.jpg)
+![](images/08_final.jpg)
 
 // RIGHT
 
@@ -42,7 +42,7 @@ Najskôr sa pozrime na logo, ktoré chceme vytvoriť. Čo je v ňom? Vidíme tam
 
 // RIGHT
 
-![Logo](images/02_logo.png)
+![](images/02_logo.png)
 
 // END
 
@@ -54,7 +54,7 @@ Najskôr si zoberieme plste a začneme fialovou. Tá bude predstavovať náš z�
 
 // RIGHT
 
-![Tvary](images/03_tvary.jpg)
+![](images/03_tvary.jpg)
 
 // END
 
@@ -70,8 +70,8 @@ Keďže chceme LED diódou komunikovať morzeovou abecedou, je potrebné, aby bo
 
 // RIGHT
 
-![LED](images/04_led.jpg)
-![Obal](images/05_obal.jpg)
+![](images/04_led.jpg)
+![](images/05_obal.jpg)
 
 // END
 
@@ -89,7 +89,7 @@ Odznak potrebuje mať niečo, čím si ho na seba prichytíme. Môžeme na to vy
 
 // RIGHT
 
-![Final](images/08_final.jpg)
+![](images/08_final.jpg)
 
 // END
 
@@ -155,10 +155,10 @@ Hotový program stiahneme do micro:bitu a už potrebujeme len doladiť posledné
 
 // LEFT
 
-![Final](images/07_video.gif)
+![](images/07_video.gif)
 
 // RIGHT
 
-![Final](images/08_final.jpg)
+![](images/08_final.jpg)
 
 // END

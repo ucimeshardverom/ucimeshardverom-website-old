@@ -6,7 +6,7 @@ Teacher:	True
 
 // LEFT
 
-![Uvod](images/01_uvod.jpg)
+![](images/01_uvod.jpg)
 
 // RIGHT
 
@@ -32,14 +32,14 @@ A4 plsť prestrihneme na polovicu, pretože budeme potrebovať vonkajšiu a vnú
 
 // LEFT
 
-![Uvod](images/02_kombinacky.jpg)
+![](images/02_kombinacky.jpg)
 
 
 Potrebujeme zapojiť viacero LED diód, ktoré budú pripojené k jednému micro:bitu na spoločný programovateľný pin. To dosiahneme prostredníctvom paralelného pripojenie, t.j. pod sebou. Najskôr si kombinovanými kliešťami upravíme nožičky na kruhovité útvary. Dajme pozor na to, aby sme rozpoznali katódy od anód. To docielime tak, že jeden typ nožičiek budeme ohýbať do kruhu silnejšie, čím vznikne menší kruh a druhý typ ohneme slabšie, aby bol kruh väčší. LED diódy naukladáme na vnútornú stranu tak, aby sme dokázali jedným predným ťahom zapojiť elektrovodivou niťou katódy a ďalším jedným ťahom anódy, pričom sa jednotlivé ťahy nebudú prekrývať, aby nedošlo k skratu. 
 
 // RIGHT
 
-![Uvod](images/04_zapojenie.jpg)
+![](images/04_zapojenie.jpg)
 
 
 Namiesto pripojenia krokosvoriek môžeme použiť iný typ zapojenia micro:bitu. Na ihlu si navlečieme niť. Niť si na jednej časti rozdelíme na polovicu (“rozšuchoríme” niť) a asi o 4 - 5 cm spravíme uzlík. Takto nám vyčnievajú 2 nite, ktorými si môžeme prichytiť micro:bit tak, že v dierke pinu spravíme uzlík. Potom predným ťahom prišívame jednotlivé LED diódy. Podobný postup opakujeme pri zemi, pine GND. Vytvoríme si časť nite, na ktorú pripevníme pin a šijeme zvyšné nožičky LED diód za sebou. Pokiaľ to bude potrebné, stačí rozopnúť niť a micro:bit môžeme vybrať.
@@ -59,7 +59,7 @@ Najskôr si vyskúšajme, či LED diódy svietia. Vyberieme príkaz _digitálne 
 
 // RIGHT
 
-![Uvod](images/03_uzlik.jpg)
+![](images/03_uzlik.jpg)
 
 // END
 
@@ -97,11 +97,11 @@ Teraz nám vyberie náhodne od 1 do 10 sekúnd, ale potrebujeme to priradiť do 
 
 // LEFT
 
-![Uvod](images/05_plst.jpg)
+![](images/05_plst.jpg)
 
 // RIGHT
 
-![Uvod](images/final.gif)
+![](images/final.gif)
 
 // END
 
