@@ -4,7 +4,7 @@ Title:   Krokosvorkové káble
 ## Druhá kapitola
 
 
-![micro:bit](images/microbit-obvod.png)
+![](images/microbit-obvod.png)
 
 // LEFT
 

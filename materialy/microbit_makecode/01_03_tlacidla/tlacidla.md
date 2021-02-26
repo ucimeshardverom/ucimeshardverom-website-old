@@ -7,7 +7,7 @@ Teacher:	True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/microbit_two_smile.png)
+![](images/microbit_two_smile.png)
 
 // RIGHT
 
@@ -73,7 +73,7 @@ _YYbcCri139yV
 Doteraz sme jednoducho zobrazovali obrázky bez nejakej animácie. To teraz ale zmeníme – vytvoríme animáciu smajlíka,
 ktorý k nám postupne prichádza a potom naopak odchádza.
 
-![Animácia micro:bitu](images/makecode_smile_animation.gif)
+![](images/makecode_smile_animation.gif)
 
 Chceme docieliť, aby sa nám pri stlačení tlačidla A z pravej strany postupne posúval smajlík, až kým ho neuvidíme celého.
 Keď následne stlačíme tlačidlo B, smajlík sa bude posúvať ďalej do ľavej strany a postupne odíde. Využijeme na to príkaz
@@ -102,7 +102,7 @@ animácie, na jednom micro:bite sa začne ihneď po stlačení oboch tlačidiel 
 sekundách. Ako ale určiť po koľkých sekundách sa má smajlík zobraziť na druhom micro:bite? Najjednoduchšie je odmerať čas stopkami a potom na začiatku
 animácie pre druhý micro:bit použiť príkaz `pozastaviť (ms)`.
 
-![Animácia BBC micro:bitu](images/makecode_smile_animation_moving.gif) 
+![](images/makecode_smile_animation_moving.gif) 
 
 Do jedného micro:bitu nahraj animáciu bez pauzy a do druhého s pauzou pred animáciou.
 

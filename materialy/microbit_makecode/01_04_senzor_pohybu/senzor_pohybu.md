@@ -7,7 +7,7 @@ Teacher:	True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/microbit_hands.png)
+![](images/microbit_hands.png)
 
 // RIGHT
 

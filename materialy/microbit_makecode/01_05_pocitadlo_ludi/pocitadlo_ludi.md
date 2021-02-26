@@ -7,7 +7,7 @@ Teacher:	True
 
 // LEFT
 
-![Obrázok BBC micro:bitu](images/pocitadlo_ludi.jpg)
+![](images/pocitadlo_ludi.jpg)
 
 // RIGHT
 
@@ -46,7 +46,7 @@ Túto premennú na začiatku nášho programu nastavíme na nulu, keďže predpo
 
 // RIGHT
 
-![Obrázok BBC micro:bitu](images/makecode_premenna.png)
+![](images/makecode_premenna.png)
 
 // END
 
@@ -66,7 +66,7 @@ Po jej vytvorení sa nám zobrazia 3 bloky:
 
 // RIGHT
 
-![Obrázok BBC micro:bitu](images/makecode_premenna_2.png)
+![](images/makecode_premenna_2.png)
 
 // END
 

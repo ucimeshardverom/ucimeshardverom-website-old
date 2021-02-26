@@ -6,7 +6,7 @@ Teacher:  True
     
 // LEFT
 
-![Obrázok BBC micro:bitu](images/led-obvod-1.png)
+![](images/led-obvod-1.png)
 
 // RIGHT
 
@@ -29,7 +29,7 @@ Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.mi
 
 // LEFT
 
-![alt_text](images/ledky.png "image_tooltip")
+![](images/ledky.png "image_tooltip")
 *3 rôzne LED diódy // ToDo: spraviť foto aj s rezistormi*
 
 LEDka je súčiastka, ktorá sa vyrába v rozdielnych veľkostiach, tvaroch a farbách. My budeme pracovať s okrúhlymi LEDkami, ktoré majú dve *nožičky* - elektrické kontakty. Tie majú rozdielnu dĺžku:
@@ -40,7 +40,7 @@ LEDka je súčiastka, ktorá sa vyrába v rozdielnych veľkostiach, tvaroch a fa
 // RIGHT
 
 
-![a](images/LED-schema.png)
+![](images/LED-schema.png)
 *Označenie anódy a katódy, vpravo dolu schématická značka*
 
 LEDky fungujú v zásade na veľmi jednoduchom princípe - ak na *anódu* pripojíme správne plusové napätie (na micro:bite kolík **3V**) a na *katódu* uzemnenie (na micro:bite kolík **GND**), mala by sa rozsvietiť. Na rozdiel od klasických žiaroviek LEDkám nevadí, ak ich veľa krát zapíname a vypíname.
@@ -68,11 +68,11 @@ Kratšiu nožičku (*anódu*) musíme prepojiť s kolíkom **3V**, avšak medzi 
 
 // LEFT
 
-![alt_text](images/led-schema-2.png "image_tooltip")
+![](images/led-schema-2.png "image_tooltip")
 
 // RIGHT
 
-![alt_text](images/led-obvod-1.png "image_tooltip")
+![](images/led-obvod-1.png "image_tooltip")
 
 // END
 
@@ -95,7 +95,7 @@ Po zapojení káblikov a skontrolovaní môžeš micro:bit pripojiť USB káblom
 
 // RIGHT
 
-![alt_text](images/led-obvod-2.png "image_tooltip")
+![](images/led-obvod-2.png "image_tooltip")
 
 // END
     
@@ -106,7 +106,7 @@ Keď sa nám už podarilo LEDku rozsvietiť, čo takto ňou blikať? Micro:bit m
 
 // LEFT
 
-![alt_text](images/led-schema-3.png "image_tooltip")
+![](images/led-schema-3.png "image_tooltip")
 
 Na konci predchádzajúcom kroku si mal(a) za úlohu odpojiť *anódu* LEDky od kolíka **3V** a pripojiť ju tiež ku kolíku **GND**. Takto zapojená LEDka nesvietila. Presne takto funguje programovanie výstupu na programovateľných kolíkoch **0**, **1** a **2** - každému z týchto troch kolíkov vieme nastaviť, či sa má byť **GND** alebo **3V**.
 
@@ -114,7 +114,7 @@ Na konci predchádzajúcom kroku si mal(a) za úlohu odpojiť *anódu* LEDky od 
 
 // RIGHT
 
-![alt_text](images/makecode-koliky.png "image_tooltip")
+![](images/makecode-koliky.png "image_tooltip")
 
 Nastavovanie hodnoty pre programovateľné kolíky v MakeCode robíme pomocou príkazu `digitálne zapísať kolík P0 hodnota 0` z kategórie *Kolíky* (nájdeš ju medzi Pokročilými kategóriami). Hodnota `P0` označuje, ktorý kolík chceme nastaviť (`P0` označuje kolík **0**. `P1` je kolík **1** a `P2` je kolík **2**). _Hodnota_ v príkaze označuje, do akého stavu sa má kolík prepnúť:
 
@@ -143,7 +143,7 @@ _Am7hVo6oTF0E
 
 Funkčnosť kódu je možné si overiť v simulátore - na micro:bite by sa vedľa kolíku **0** malo zobrazovať malé číslo, ktoré sa každú sekundu mení medzi *1* a *0*. Zároveň aj celý kolík mení každú sekundu farbu.
 
-![alt_text](images/simulator.png "image_tooltip")
+![](images/simulator.png "image_tooltip")
 
 // END
 
