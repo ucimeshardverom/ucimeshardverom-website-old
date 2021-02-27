@@ -102,14 +102,7 @@
           </ol>
         </nav>
 
-
-
-
-
-
-
-
-
+    
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -207,7 +200,7 @@
 
             <div class="col-xl-12 text-justify">
 
-<!--                  -->
+                
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
@@ -321,8 +314,7 @@ Pracovať budeme v online prostredí <a href="https://makecode.microbit.org/">ma
                         </div>
                     </div>
                     <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
-                        <div class="mt-4">
-                            DOWNLOADS
+                        <div class="mt-4 mb-4" style="min-height: 300px">
                             <ul>
                             
                             </ul>
@@ -343,7 +335,7 @@ Pracovať budeme v online prostredí <a href="https://makecode.microbit.org/">ma
                 
             </div>
                 </div>
-                
+
     </div>
 
 </div>
@@ -557,6 +549,20 @@ function closeNav() {
     gtag('js', new Date());
     gtag('config', 'UA-69278502-7');
 
+</script>
+<script>
+/**
+* Function that captures a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
 </script>
 </body>
 </html>

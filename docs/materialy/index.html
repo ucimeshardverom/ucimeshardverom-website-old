@@ -192,6 +192,7 @@
                 <div>
                     <a class="btn btn-primary"
                        href="https://drive.google.com/drive/folders/1GyLhAXyp7hrBULE5jkgTYUrPZdK2OK8y"
+                       onclick="captureOutboundLink('https://drive.google.com/drive/folders/1GyLhAXyp7hrBULE5jkgTYUrPZdK2OK8y'); return false;"
                        target="_blank"
                        role="button">
                         Otvoriť materiály <i class="fas fa-external-link-alt fa-xs"></i></a>
@@ -212,6 +213,7 @@
                 <div>
                     <a class="btn btn-primary"
                        href="https://imysleni.cz/ucebnice/robotika-ucebnice-pro-stredni-skoly-micro-bit"
+                       onclick="captureOutboundLink('https://imysleni.cz/ucebnice/robotika-ucebnice-pro-stredni-skoly-micro-bit'); return false;"
                        target="_blank"
                        role="button">
                         Otvoriť materiály <i class="fas fa-external-link-alt fa-xs"></i></a>
@@ -233,6 +235,7 @@
                 <div>
                     <a class="btn btn-primary"
                        href="https://microbitvpraxi.wordpress.com/"
+                       onclick="captureOutboundLink('https://microbitvpraxi.wordpress.com/'); return false;"
                        target="_blank"
                        role="button">
                         Otvoriť materiály <i class="fas fa-external-link-alt fa-xs"></i></a>
@@ -314,6 +317,20 @@
     gtag('js', new Date());
     gtag('config', 'UA-69278502-7');
 
+</script>
+<script>
+/**
+* Function that captures a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
 </script>
 </body>
 </html>

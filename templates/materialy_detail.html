@@ -23,14 +23,18 @@
           </ol>
         </nav>
 
-{#         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print_telekom.html') }}"#}
-{#           class="btn btn-success mb-3">TELEKOM PDF</a>#}
-{##}
-{#        <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='materialy_print.html') }}"#}
-{#           class="btn btn-primary mb-3">UsH PDF</a>#}
-{##}
-{#        <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='telekom_obalka.html') }}"#}
-{#           class="btn btn-success mb-3">TELEKOM COVER</a>#}
+    {% if development_environment %}
+
+         <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='pdf_template_telekom.html') }}"
+           class="btn btn-success mb-3">TELEKOM PDF</a>
+
+        <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='pdf_template_default.html') }}"
+           class="btn btn-success mb-3">UsH PDF</a>
+
+        <a href="{{ url_for('materialy_detail_pdf', tutorial_name=material_slug, chapter_name=chapter_slug, html_template='pdf_template_telekom_cover.html') }}"
+           class="btn btn-success mb-3">TELEKOM COVER</a>
+
+    {% endif %}
 
         <div id="accordion" class="mb-2">
             <div class="card">
@@ -85,20 +89,20 @@
 
             <div class="col-xl-12 text-justify">
 
-<!--                 {% if teacher_content_html %}
-                <nav>
+                {% if development_environment %}
+                <nav class="mt-4">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="navod-tab" data-toggle="tab" href="#navod"
-                           role="tab" aria-controls="navod" aria-selected="true">Návod</a>
+                           role="tab" aria-controls="navod" aria-selected="true">Lekcia</a>
                         {% if teacher_content_html %}
                         <a class="nav-item nav-link" id="metodika-tab" data-toggle="tab" href="#metodika"
-                           role="tab" aria-controls="metodika" aria-selected="false">Metodika pre učiteľa</a>
+                           role="tab" aria-controls="metodika" aria-selected="false">Príručka pre učiteľa</a>
                         {% endif %}
                         <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#zdroje"
                            role="tab" aria-controls="zdroje" aria-selected="false">Na stiahnutie</a>
                     </div>
                 </nav>
-                {% endif %} -->
+                {% endif %}
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
@@ -112,8 +116,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
-                        <div class="mt-4">
-                            DOWNLOADS
+                        <div class="mt-4 mb-4" style="min-height: 300px">
                             <ul>
                             {% for item in settings.downloads %}
                             <li><a href="{{ settings.downloads[item] }}">{{ item }}</a></li>
@@ -138,7 +141,7 @@
                 {% endif %}
             </div>
                 </div>
-                
+
     </div>
 
 </div>

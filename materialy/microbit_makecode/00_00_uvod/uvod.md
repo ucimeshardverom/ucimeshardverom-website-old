@@ -47,8 +47,8 @@ Po prejdení tohto tutoriálu budeš mať veľmi dobrý prehľad o tom, ako vyu�
 
 
 !!! info "BBC micro:bit na vyučovaní "
-    Pre každú aktivitu sme pripravili aj materiály pre učiteľa (metodiku, prípadne prezentáciu a pracovné listy).
-    Na zobrazenie stačí na začiatku každej aktivity kliknúť na "Metodika pre učiteľa". Ak ale postupuješ podľa návodu
+    Pre väčšinu lekcií sme pripravili aj podporné materiály pre učiteľov (metodiku, prípadne prezentáciu a pracovné listy).
+    Na zobrazenie stačí na začiatku každej lekcie kliknúť na "Príručka pre učiteľa". Ak ale postupuješ podľa návodu
     doma bez učiteľa, tak môžeš túto sekciu úplne odignorovať.
 
 !!! primary "Autor"
