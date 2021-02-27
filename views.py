@@ -5,11 +5,8 @@ import codecs
 import os
 from time import sleep
 
-import pdfkit
-import yaml
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory
 from markdown_to_html import markdown_to_html, markdown_meta
-from collections import OrderedDict
 from utils import get_tutorial_settings
 
 from selenium import webdriver
@@ -25,10 +22,12 @@ LOGO_PYCON = 'logo/pycon.svg'
 
 
 def _get_template_variables(**kwargs):
+    global app
     variables = {
         'title': 'Učíme s Hardvérom',
         'logo': LOGO_PYCON,
         'CNAME': CNAME,
+        'development_environment': app.config.get("development_environment", True)
     }
     variables.update(kwargs)
 
@@ -118,7 +117,7 @@ def press_kit():
 @app.route('/materialy/<string:metodika>/print/<string:html_template>')
 @app.route('/materialy/<string:metodika>/<string:kapitola>/print/')
 @app.route('/materialy/<string:metodika>/<string:kapitola>/print/<string:html_template>')
-def materialy_detail_print(metodika, kapitola=None, html_template='materialy_print.html'):
+def materialy_detail_print(metodika, kapitola=None, html_template='pdf_template_default.html'):
     return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template)
 
 
@@ -126,15 +125,8 @@ def materialy_detail_print(metodika, kapitola=None, html_template='materialy_pri
 @app.route('/materialy/<string:metodika>/print/<string:html_template>/teacher/')
 @app.route('/materialy/<string:metodika>/<string:kapitola>/print/teacher/')
 @app.route('/materialy/<string:metodika>/<string:kapitola>/print/<string:html_template>/teacher/')
-def materialy_detail_print_teacher(metodika, kapitola=None, html_template='materialy_print.html'):
+def materialy_detail_print_teacher(metodika, kapitola=None, html_template='pdf_template_default.html'):
     return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template, print_teacher_pdf=True)
-
-
-# @app.route('/materialy/<string:metodika>/telekom/')
-# @app.route('/materialy/<string:metodika>/<string:kapitola>/telekom/')
-# def materialy_detail_print_telekom(metodika, kapitola=None, html_template='materialy_print_telekom.html'):
-    
-#     return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template)
 
 
 @app.route('/zacni/')
@@ -146,7 +138,7 @@ def zacni(kapitola=None):
 @app.route('/materialy/<string:tutorial_name>/')
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/')
 def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/", print_teacher_pdf=False):
-    
+
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
     if not chapter_name:
@@ -195,18 +187,18 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
             return ""
         content_html = teacher_content_html
 
-
     material_settings['downloads'] = {}
-    
+
     ## Donwloads Tab
-    pdf_to_download = os.path.join(os.getcwd(), 'static', 'pdfs', f"{tutorial_name}-{chapter_name}.pdf")
-    if os.path.exists(pdf_to_download):
-        material_settings['downloads']["Stiahnuť Návod ako PDF"] = url_for('static', filename=os.path.join('pdfs', f"{tutorial_name}-{chapter_name}.pdf"))
+    material_content = material_settings.get('content')
 
-    pdf_teacher_to_download = os.path.join(os.getcwd(), 'static', 'pdfs', f"{tutorial_name}-{chapter_name}-teacher.pdf")
-    if os.path.exists(pdf_to_download):
-        material_settings['downloads']["Stiahnuť Meodiku pre učiteľa ako PDF"] = url_for('static', filename=os.path.join('pdfs', f"{tutorial_name}-{chapter_name}-teacher.pdf"))
+    md_file_path = str(material_content.get(chapter_name).get("path")).split("/")
+    md_folder_name = str(md_file_path[0])
+    md_folder_number = "_".join(md_folder_name.split("_")[0:2])
 
+    if os.path.exists(os.path.join(os.getcwd(), 'static', 'pdfs', tutorial_name, "pdf_template_default",
+                 f"{md_folder_number}-{tutorial_name}-{chapter_name}.pdf")):
+        material_settings['downloads']["Stiahnuť Lekciu ako PDF"] = url_for('static', filename=f"pdfs/{tutorial_name}/pdf_template_default/{md_folder_number}-{tutorial_name}-{chapter_name}.pdf")
 
     template_variables = _get_template_variables(chapter_title=chapter_title,
                                                  chapter_subtitle=chapter_subtitle,
@@ -220,9 +212,35 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
     return render_template(html_template, **template_variables)
 
 
+@app.route('/materialy/<string:tutorial_name>/<string:chapter_name>.pdf')
+@app.route('/materialy/<string:html_template>/<string:tutorial_name>-<string:chapter_name>.pdf')
+def materialy_detail_pdf_static(tutorial_name, chapter_name=None, html_template='pdf_template_default.html'):
+
+    material_settings = get_tutorial_settings(tutorial_name, chapter_name)
+
+    if not chapter_name:
+        first_chapter_name = list(material_settings.get('content'))[0]
+        chapter_name = first_chapter_name
+
+    material_content = material_settings.get('content')
+
+    md_file_path = str(material_content.get(chapter_name).get("path")).split("/")
+    md_folder_name = str(md_file_path[0])
+    md_folder_number = "_".join(md_folder_name.split("_")[0:2])
+
+    save_directory = os.path.join(os.getcwd(), 'static', 'pdfs', tutorial_name, html_template.split('.')[0])
+    filename = f"{md_folder_number}-{tutorial_name}-{chapter_name}.pdf"
+
+    if os.path.exists(os.path.join(save_directory, filename)):
+        return send_from_directory(save_directory, filename, mimetype='application/pdf',
+                                   as_attachment=False, attachment_filename=filename)
+    else:
+        return "No PDF ..."
+
+
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/pdf')
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/<string:html_template>/pdf')
-def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='materialy_print.html'):
+def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='pdf_template_default.html'):
 
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
@@ -250,9 +268,12 @@ def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='materi
         "isCssBackgroundEnabled": True,
     }
 
-    save_directory = os.path.join(os.getcwd(), 'static', 'pdfs')
+    save_directory = os.path.join(os.getcwd(), 'static', 'pdfs', tutorial_name, html_template.split('.')[0])
     filename = f"{md_folder_number}-{tutorial_name}-{chapter_name}.pdf"
     filename_teacher = f"{md_folder_number}-{tutorial_name}-{chapter_name}-teacher.pdf"
+
+    if not os.path.exists(save_directory):
+        os.makedirs(save_directory)
 
     if os.path.exists(os.path.join(save_directory, filename)):
         os.remove(os.path.join(save_directory, filename))
@@ -284,14 +305,13 @@ def materialy_detail_pdf(tutorial_name, chapter_name=None, html_template='materi
         sleep(1)
     driver.quit()
 
-
-
     return send_from_directory(save_directory, filename, mimetype='application/pdf',
                                as_attachment=False, attachment_filename=filename)
 
+
 @app.route('/materialy/<string:tutorial_name>/all_pdfs')
 @app.route('/materialy/<string:tutorial_name>/<string:html_template>/all_pdfs')
-def materialy_detail_all_pdfs(tutorial_name, html_template='materialy_print.html'):
+def materialy_detail_all_pdfs(tutorial_name, html_template='pdf_template_default.html'):
 
     material_settings = get_tutorial_settings(tutorial_name, None)
 
@@ -300,9 +320,10 @@ def materialy_detail_all_pdfs(tutorial_name, html_template='materialy_print.html
 
     # return str(material_settings.get('content'))
 
+
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/images/<string:image>')
 def materialy_images(tutorial_name, image, chapter_name=None):
-    
+
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
     return send_from_directory(os.path.join('materialy', tutorial_name, material_settings['chapter_folder'], 'images'), image, mimetype='image/gif')
@@ -319,4 +340,4 @@ def save_makecode_image(id):
 
 if __name__ == "__main__":
     app.run(debug=True, host=os.environ.get('FLASK_HOST', '127.0.0.1'),
-            port=int(os.environ.get('FLASK_PORT', 5000)))
+            port=int(os.environ.get('FLASK_PORT', 5001)))

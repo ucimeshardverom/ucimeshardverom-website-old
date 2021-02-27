@@ -2,11 +2,11 @@ import os
 
 from flask_frozen import Freezer
 from views import app
-import yaml
 
 from utils import get_tutorial_settings
 
 app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
+app.config['development_environment'] = False
 freezer = Freezer(app)
 
 

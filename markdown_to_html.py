@@ -39,7 +39,7 @@ def markdown_to_html(raw_markdown, img_url="", html_template=None):
     content_html = content_html.replace("<div class=\"admonition dark\">", "<div class=\"alert alert-dark\">")
 
 
-    if html_template in ["materialy_print_telekom.html", "materialy_print.html"]:
+    if html_template in ["pdf_template_telekom.html", "pdf_template_default.html"]:
         content_html = content_html.replace("<p>// LEFT</p>", "<div class=\"row text-justify mt-4 mb-4\"><div class=\"col-6\">")
         content_html = content_html.replace("<p>// RIGHT</p>", "</div><div class=\"col-6\">")
     else:
