@@ -1,3 +1,9 @@
+@font-face {
+     font-family: "OpenSans-Bold";
+     src: url('/static/fonts/OpenSans-Bold.ttf');
+}
+
+
 h1, h2 {
 	text-transform: uppercase;
 	text-align: center;
