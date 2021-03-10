@@ -108,6 +108,12 @@ def test():
     return render_template('test.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/camera/')
+@app.route('/cam/')
+def camera():
+    return render_template('camera.html', **_get_template_variables(li_index='active'))
+
+
 @app.route('/press_kit/')
 def press_kit():
     template_variables = _get_template_variables()

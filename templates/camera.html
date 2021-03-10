@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>Simple Webcam Viewer</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .menu {
+            height: 100%;
+            width: 50px;
+            background: #444;
+            float: left;
+        }
+
+        #view {
+            background: #000;
+            height: 100%;
+            width: calc(100% - 50px);
+            float: left;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn {
+            margin: 10px 5px;
+            width: 40px;
+            text-align: center;
+            background: #737373;
+            height: 40px;
+            line-height: 43px;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        .flipped-x {
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+
+        .flipped-y {
+            -moz-transform: scaleY(-1);
+            -o-transform: scaleY(-1);
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+        }
+
+        .flipped-x.flipped-y {
+            -moz-transform: scaleX(-1) scaleY(-1);
+            -o-transform: scaleX(-1) scaleY(-1);
+            -webkit-transform: scaleX(-1) scaleY(-1);
+            transform: scaleX(-1) scaleY(-1);
+        }
+
+    </style>
+</head>
+<body>
+<div class="menu">
+    <div class="btn flipx">
+        <i class="fa fa-arrows-h" aria-hidden="true"></i>
+    </div>
+    <div class="btn flipy">
+        <i class="fa fa-arrows-v" aria-hidden="true"></i>
+    </div>
+    <div class="btn">
+        <a href="https://sketch.io/sketchpad/" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i>
+    </div>
+    <div class="btn">
+        <a href="https://cdn.sanity.io/images/ajwvhvgo/production/86e5da4fed89ce6729b522e6e8a8f12c88a2d7f1-790x635.png?rect=0,27,790,580&bg=fff&w=648&h=476&q=80&fit=min&auto=format" target="_blank"><i class="fa fa-image" aria-hidden="true"></i>
+    </div>
+</div>
+<div id="view" data-active="false">
+    <video autoplay class="flipped-x flipped-y"  id="videoElement"></video>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+
+    $(function () {
+
+        $('.flipx').click(function () {
+            $('video').toggleClass('flipped-x');
+        });
+        $('.flipy').click(function () {
+            $('video').toggleClass('flipped-y');
+        });
+
+    });
+
+var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+          video.srcObject = stream;
+        })
+        .catch(function (err0r) {
+          console.log("Something went wrong!");
+        });
+    }
+
+</script>
+
+</body>
+</html>
