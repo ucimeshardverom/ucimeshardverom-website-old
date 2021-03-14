@@ -17,13 +17,13 @@ Táto hodina je zameraná na tvorbu "počítadiel" -- programov, ktoré si pomoc
 Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.microbit.org/)
 
 
-Pred aktivitami s micro:bitmi by si žiaci a žiačky mali pozrieť video youtubera GoGa s [bubeníčkou Nikoletou Šurinovou](XXX) (ako prípravu na hodinu).
+Pred aktivitami s micro:bitmi by si žiaci a žiačky mali pozrieť video youtubera GoGa s [bubeníčkou Nikoletou Šurinovou](https://youtu.be/J5X05EGhyH8) (ako prípravu na hodinu).
 
 // END
 
 ### 1. Otvorenie hodiny
 
-Pred začatím aktivít s micro:bitmi sa žiakov a žiačok spýtajte, čo nové sa dozvedeli vo videu s [bubeníčkou Nikoletou Šurinovou](XXX). Prejsť môžete témy:
+Pred začatím aktivít s micro:bitmi sa žiakov a žiačok spýtajte, čo nové sa dozvedeli vo videu s [bubeníčkou Nikoletou Šurinovou](https://youtu.be/J5X05EGhyH8). Prejsť môžete témy:
 
 * Ako micro:bit vo videu snímal počet úderov? *(Pomocou snímania uzatvorenia elektrického obvodu -- na bubon aj na paličky bola preto pripevnená vodivá páska a z oboch viedli kábliky k micro:bitu.)*
 * Kde sa zobrazoval počet úderov, ktoré snímal micro:bit? *(Na počítači v prostredí Microsoft MakeCode.)*
