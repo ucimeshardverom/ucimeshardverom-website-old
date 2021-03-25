@@ -22,7 +22,7 @@ Pillow==7.2.0
 pycparser==2.20
 Pyphen==0.9.5
 pytz==2018.9
-PyYAML==5.3
+PyYAML==5.4
 selenium==3.141.0
 six==1.15.0
 soupsieve==2.0.1
