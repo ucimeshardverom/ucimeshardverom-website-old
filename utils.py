@@ -62,6 +62,9 @@ def get_tutorial_settings(tutorial_slug, chapter_slug):
             material_settings['prev_chapter'] = prev_chapter
             _next_chapter_flag = True
 
+        if os.path.exists(os.path.join(material_path, _folder, "video.md")):
+            material_settings['content'][_chapter_slug]['video'] = True
+
         prev_chapter = _chapter_slug
 
     return material_settings

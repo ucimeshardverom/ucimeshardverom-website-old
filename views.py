@@ -127,14 +127,6 @@ def materialy_detail_print(metodika, kapitola=None, html_template='pdf_template_
     return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template)
 
 
-@app.route('/materialy/<string:metodika>/print/teacher/')
-@app.route('/materialy/<string:metodika>/print/<string:html_template>/teacher/')
-@app.route('/materialy/<string:metodika>/<string:kapitola>/print/teacher/')
-@app.route('/materialy/<string:metodika>/<string:kapitola>/print/<string:html_template>/teacher/')
-def materialy_detail_print_teacher(metodika, kapitola=None, html_template='pdf_template_default.html'):
-    return materialy_detail(metodika, chapter_name=kapitola, html_template=html_template, print_teacher_pdf=True)
-
-
 @app.route('/zacni/')
 @app.route('/zacni/<string:kapitola>/')
 def zacni(kapitola=None):
@@ -143,7 +135,7 @@ def zacni(kapitola=None):
 
 @app.route('/materialy/<string:tutorial_name>/')
 @app.route('/materialy/<string:tutorial_name>/<string:chapter_name>/')
-def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/", print_teacher_pdf=False):
+def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_detail.html', material_base_url="materialy/"):
 
     material_settings = get_tutorial_settings(tutorial_name, chapter_name)
 
@@ -179,19 +171,39 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
     chapter_title = material_settings.get('content').get(chapter_name).get('title')
     chapter_subtitle = material_settings.get('content').get(chapter_name).get('subtitle')
 
-    # Retrieve Teacher Guite
-    teacher_content_html = None
-    teacher_guide = markdown_meta(content_raw).get('teacher')
-    if teacher_guide:
-        content_path = os.path.join('materialy', tutorial_name, md_file_path[0], md_file_path[1].split('.')[0] + "_teacher.md")
-        with codecs.open(content_path, mode="r", encoding="utf-8") as file:
-            teacher_content_raw = file.read()
-            teacher_content_html = markdown_to_html(teacher_content_raw, img_url=f"/materialy/{tutorial_name}/", html_template=html_template)
+    # Retrieve Video Tab
+    video_content_html = None
+    video_content_path = os.path.join('materialy', tutorial_name, md_file_path[0], "video.md")
+    if os.path.exists(video_content_path):
+        with codecs.open(video_content_path, mode="r", encoding="utf-8") as file:
+            video_content_raw = file.read()
+            video_content_html = markdown_to_html(video_content_raw, img_url=f"/materialy/{tutorial_name}/{chapter_name}/", html_template=html_template)
 
-    if print_teacher_pdf:
-        if not teacher_guide:
-            return ""
-        content_html = teacher_content_html
+    # Retrieve Hidden Video Tab
+    hidden_video_content = False
+    hidden_video_content_path = os.path.join('materialy', tutorial_name, md_file_path[0], "_video.md")
+    if os.path.exists(hidden_video_content_path):
+        with codecs.open(hidden_video_content_path, mode="r", encoding="utf-8") as file:
+            hidden_video_content_raw = file.read()
+            video_content_html = markdown_to_html(hidden_video_content_raw, img_url=f"/materialy/{tutorial_name}/{chapter_name}/", html_template=html_template)
+        hidden_video_content = True
+
+    # Retrieve Teacher Tab
+    teacher_content_html = None
+    teacher_content_path = os.path.join('materialy', tutorial_name, md_file_path[0], "teacher.md")
+    if os.path.exists(teacher_content_path):
+        with codecs.open(teacher_content_path, mode="r", encoding="utf-8") as file:
+            teacher_content_raw = file.read()
+            teacher_content_html = markdown_to_html(teacher_content_raw, img_url=f"/materialy/{tutorial_name}/{chapter_name}/", html_template=html_template)
+
+    # Retrieve Hidden Teacher Tab
+    hidden_teacher_content = False
+    hidden_teacher_content_path = os.path.join('materialy', tutorial_name, md_file_path[0], "_teacher.md")
+    if os.path.exists(hidden_teacher_content_path):
+        with codecs.open(hidden_teacher_content_path, mode="r", encoding="utf-8") as file:
+            hidden_teacher_content_raw = file.read()
+            teacher_content_html = markdown_to_html(hidden_teacher_content_raw, img_url=f"/materialy/{tutorial_name}/{chapter_name}/", html_template=html_template)
+        hidden_teacher_content = True
 
     material_settings['downloads'] = {}
 
@@ -208,12 +220,17 @@ def materialy_detail(tutorial_name, chapter_name=None, html_template='materialy_
 
     template_variables = _get_template_variables(chapter_title=chapter_title,
                                                  chapter_subtitle=chapter_subtitle,
-                                                 material_slug=tutorial_name, chapter_slug=chapter_name,
-                                                 settings=material_settings, content_html=content_html,
+                                                 material_slug=tutorial_name,
+                                                 chapter_slug=chapter_name,
+                                                 settings=material_settings,
+                                                 content_html=content_html,
                                                  material_settings=material_settings,
                                                  material_base_url=material_base_url,
+                                                 chapter_id=material_settings['chapter_id'],
                                                  teacher_content_html=teacher_content_html,
-                                                 chapter_id=material_settings['chapter_id'])
+                                                 hidden_teacher_content=hidden_teacher_content,
+                                                 video_content_html=video_content_html,
+                                                 hidden_video_content=hidden_video_content)
 
     return render_template(html_template, **template_variables)
 

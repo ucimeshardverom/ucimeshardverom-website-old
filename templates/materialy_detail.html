@@ -53,11 +53,13 @@
                         <li>
                             {% if item == chapter_slug %} <b> {% endif %}
                                 {% if not settings.content[item].chapter %} &nbsp;&nbsp;&nbsp;&nbsp; {% endif %}
-                                <a class="" href="/{{ material_base_url }}{{ material_slug }}/{% if loop.index != 1 %}{{ item }}{% endif %}">
+                                <a class="" href="/{{ material_base_url }}{{ material_slug }}/{% if loop.index != 1 %}{{ item }}/{% endif %}">
                                     {% if material_settings.numbering %}
                                         {{ settings.content[item].index }}
                                     {% endif%}
                                     {{ settings.content[item].title }}
+
+                                {% if settings.content[item].video %} <i class="fab fa-youtube"></i>{% endif %}
                                 </a>
                                     
                                 {% if item == chapter_slug %} </b> {% endif %}
@@ -89,22 +91,43 @@
 
             <div class="col-xl-12 text-justify">
 
-                {% if development_environment %}
                 <nav class="mt-4">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="navod-tab" data-toggle="tab" href="#navod"
                            role="tab" aria-controls="navod" aria-selected="true">Lekcia <i class="fas fa-book-open"></i></a>
-                        <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#video"
+
+
+                        {% if video_content_html %}
+
+                            {% if not hidden_video_content %}
+                            <!-- Visible in production and development mode -->
+                            <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#video"
                             role="tab" aria-controls="video" aria-selected="false">Video <i class="fab fa-youtube"></i></a>
-                        {% if teacher_content_html %}
-                        <a class="nav-item nav-link" id="metodika-tab" data-toggle="tab" href="#metodika"
-                           role="tab" aria-controls="metodika" aria-selected="false">Príručka pre učiteľa <i class="fas fa-graduation-cap"></i></a>
+                            {% elif development_environment and hidden_video_content %}
+                            <!-- Visible only in development mode -->
+                            <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#video"
+                            role="tab" aria-controls="video" aria-selected="false"><strike>Video <i class="fab fa-youtube"></i></strike></a>
+                            {% endif %}
+
                         {% endif %}
-                        <!-- <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#zdroje" -->
-                           <!-- role="tab" aria-controls="zdroje" aria-selected="false">Na stiahnutie <i class="fas fa-download"></i></a> -->
+
+
+                        {% if teacher_content_html %}
+
+                            {% if not hidden_teacher_content %}
+                            <!-- Visible in production and development mode -->
+                            <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#metodika"
+                                role="tab" aria-controls="metodika" aria-selected="false">Príručka pre učiteľa <i class="fas fa-graduation-cap"></i></a>
+                            {% elif development_environment and hidden_teacher_content %}
+                            <!-- Visible only in development mode -->
+                            <a class="nav-item nav-link" id="zdroje-tab" data-toggle="tab" href="#metodika"
+                                role="tab" aria-controls="metodika" aria-selected="false"><strike>Príručka pre učiteľa <i class="fas fa-graduation-cap"></i></strike></a>
+                            {% endif %}
+
+                        {% endif %}
+
                     </div>
                 </nav>
-                {% endif %}
 
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
@@ -118,8 +141,8 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
-                        <div class="mt-4" style="min-height: 500px;">
-                            Video sem šupni...
+                        <div class="mt-4 mb-4" style="min-height: 500px;">
+                            {{ video_content_html|safe }}
                         </div>
                     </div>
                     <div class="tab-pane fade" id="zdroje" role="tabpanel" aria-labelledby="zdroje-tab">
