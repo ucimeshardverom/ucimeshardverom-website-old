@@ -20,7 +20,7 @@ Táto lekcia slúži na zoznámenie sa s BBC micro:bit – čo to vlastne je, ak
 **Potrebné pomôcky:**  
 BBC micro:bit, USB kábel, batéria k micro:bitu, počítač pripojený k internetu
 
-Na micro:bit budeme nahrávať [zoznamovací program](https://support.microbit.org/helpdesk/attachments/19033089764).
+Na micro:bit budeme nahrávať [zoznamovací program](https://microbit.org/get-started/user-guide/out-of-box-experience/).
 
 // END
 
@@ -77,7 +77,7 @@ Ak držíš v ruke úplne nový micro:bit, pravdepodobne má na sebe nahratý š
 sa ti na obrazovke micro:bitu začne zobrazovať písmeno A spolu so šípkou vľavo.
 
 Ak ale na micro:bite tento program nemáš, nezúfaj, veľmi jednoducho ho vieme stiahnuť.
-Z [tohto odkazu](https://support.microbit.org/helpdesk/attachments/19033089764) si stiahni súbor, ktorý sa nazýva
+Z [tohto odkazu](https://microbit.org/get-started/user-guide/out-of-box-experience/) si stiahni súbor, ktorý sa nazýva
 *OutOfBoxExperience-v2.hex*. Potom pripoj svoj micro:bit k počítaču – ak si pozorne všimneš, počítač ti oznámi, že
 sa k nemu pripojilo USB úložisko s názom **MICROBIT**. Teraz už len stačí stiahnutý program *OutOfBoxExperience-v2.hex*
 prekopírovať do úložiska **MICROBIT**. Počas nahrávania by sa mala na chvíľu rozbliklikať malá žltá LED dióda na zadnej strane micro:bitu a po
