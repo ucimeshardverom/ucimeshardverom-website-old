@@ -93,6 +93,10 @@ def gdpr():
     return render_template('gdpr.html', **_get_template_variables(li_index='active'))
 
 
+@app.route('/mail_archive/')
+def mail_archive():
+    return render_template('mail_archive.html', **_get_template_variables(li_index='active'))
+
 @app.route('/partneri/')
 def partneri():
     return render_template('partneri.html', **_get_template_variables(li_index='active'))
