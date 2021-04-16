@@ -62,9 +62,9 @@ LEDky fungujú v zásade na veľmi jednoduchom princípe - ak na *anódu* pripoj
 
 Ešte pred tým, ako budeme spínanie LEDky programovať, skúsme si ju rozsvietiť pripojením priamo k napájacím kolíkom micro:bitu. Najprv ale radšej odpoj micro:bit od počítaču (prípadne baterky), aby si mal(a) čas zapojenie si po sebe riadne skontrolovať. Tým predídeš zoskratovaniu LEDky.
 
-Dlhšiu nožičku (*katódu*) pripoj krokosvorkovým káblikom ku kolíku **GND**. Na obrázku nižšie som použil čierny káblik.
+Kratšiu nožičku (*katódu*) pripoj krokosvorkovým káblikom ku kolíku **GND**. Na obrázku nižšie som použil čierny káblik.
 
-Kratšiu nožičku (*anódu*) musíme prepojiť s kolíkom **3V**, avšak medzi kolík a LEDku musím dať ešte *rezistor*, ktorý zabráni vypáleniu LEDky. Preto použijeme dva krokosvorkové kábliky - jeden medzi kolíkom **3V** a jednou nožičkou rezistora, a druhý káblik medzi *anódou* a druhou stranou rezistora. Na obrázku nižšie som na to použil dva červené kábliky.
+Dlhšiu nožičku (*anódu*) musíme prepojiť s kolíkom **3V**, avšak medzi kolík a LEDku musím dať ešte *rezistor*, ktorý zabráni vypáleniu LEDky. Preto použijeme dva krokosvorkové kábliky - jeden medzi kolíkom **3V** a jednou nožičkou rezistora, a druhý káblik medzi *anódou* a druhou stranou rezistora. Na obrázku nižšie som na to použil dva červené kábliky.
 
 // LEFT
 
