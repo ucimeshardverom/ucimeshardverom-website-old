@@ -17,13 +17,13 @@ Táto hodina je zameraná na bezdrôtovú komunikáciu s micro:bitmi.
 Pracovať budeme v online prostredí [makecode.microbit.org](https://makecode.microbit.org/)
 
 
-Pred aktivitami s micro:bitmi by si žiaci a žiačky mali pozrieť video youtubera GoGa s [Michaelou Dorčíkovou](xxx) (ako prípravu na vyučovanie).
+Pred aktivitami s micro:bitmi by si žiaci a žiačky mali pozrieť video youtubera GoGa s [Michaelou Dorčíkovou](https://www.youtube.com/watch?v=VLhWF5yXNAI) (ako prípravu na vyučovanie).
 
 // END
 
 ### 1. Otvorenie hodiny
 
-Pred začatím aktivít s micro:bitmi sa žiakov a žiačok spýtajte, čo nové sa dozvedeli vo videu s [Michaelou Dorčíkovou](xxx). Prejsť môžete témy:
+Pred začatím aktivít s micro:bitmi sa žiakov a žiačok spýtajte, čo nové sa dozvedeli vo videu s [Michaelou Dorčíkovou](https://www.youtube.com/watch?v=VLhWF5yXNAI). Prejsť môžete témy:
 
 * Aký je rozdiel v technológiách medzi F1 a NASCAR? *(Kým autá v NASCAR majú iba málo technológií a pretekári sa spoliehajú predovšetkým na svoje zručnosti, monopost F1 je plný elektroniky, ktorá vo veľkej miere pretekárom pomáha.)*
 * Čo je to "telemetria"? *(Telemetria je meranie údajov na diaľku, napr. výkon a teplotu motora, spotrebu, tlak v kolesách, šmyk či rýchlosť. Na pretekoch F1 má každý tím svojho inžiniera, ktorý tieto údaje analyzuje a na ich základe radí pretekárovi.)*
@@ -56,7 +56,7 @@ _XoRabmHcb3F8
 
 V prostredí MakeCode sa nachádzajú príkazy na bezdrôtovú komunikáciu v kategórii "Rádio". Úplne prvý príkaz v tejto kategórii, "rádio nastaviť skupinu", je potrebné umiestniť do bloku "počas spustenia".
 
-Keďže chceme druhý micro:bit ovládať stláčaním tlačidiel, z "Vstup" vezmem príkaz "keď sa tlačidlo A stlačí". Doň potrebujem umiestniť príkaz na odoslanie smajíka -- taký, však, neexistuje. Preto namiesto smajíkov budeme posielať čísla pomocou príkazu "rádio odoslať číslo". Ak chceme zobraziť šťastného smajlíka, pri stlačení tlačidla A odošleme číslo 1. A ak chceme zobraziť smutného smajlíka, pri stlačení tlačidla B odošleme číslo 2.
+Keďže chceme druhý micro:bit ovládať stláčaním tlačidiel, z "Vstup" vezmem príkaz "keď sa tlačidlo A stlačí". Doň potrebujem umiestniť príkaz na odoslanie smajlíka -- taký, však, neexistuje. Preto namiesto smajlíkov budeme posielať čísla pomocou príkazu "rádio odoslať číslo". Ak chceme zobraziť šťastného smajlíka, pri stlačení tlačidla A odošleme číslo 1. A ak chceme zobraziť smutného smajlíka, pri stlačení tlačidla B odošleme číslo 2.
 
 Výsledný program je potrebné nahrať do prvého micro:bitu (program sa nachádza vľavo).
 
