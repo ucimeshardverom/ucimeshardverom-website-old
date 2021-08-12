@@ -65,3 +65,7 @@ Keď už vieme, že existuje nositeľná elektronika, musí existovať aj elektr
 	Autorom tohto materiálu je **Nika Klimová** a je zverejnený pod licenciou [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), ktorá ti umožňuje používať, upravovať a zdieľať tento materiál akokoľvek uznáš za vhodné, pod podmienkou uvedenia autora a zachovania rovnakej licencie.
 
 	Ak nie je uvedené inak, licencia a autorstvo sa vzťahuje aj na fotografie.
+
+
+!!! primary "Poďakovanie"
+	Tento materiál vznikol s podporou Nadačného fondu Accenture.
