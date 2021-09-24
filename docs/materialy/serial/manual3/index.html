@@ -15,7 +15,7 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/python.css" rel="stylesheet">
     
-    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/serial/"/>
+    <link rel="canonical" href="https://www.ucimeshardverom.sk/materialy/serial/manual3/"/>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -84,7 +84,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/materialy/">Materiály</a></li>
             <li class="breadcrumb-item"><a href="/materialy/serial/">Telekom</a></li>
-            <li class="breadcrumb-item active" aria-current="page">1. MakeCode simulátor</li>
+            <li class="breadcrumb-item active" aria-current="page">1. Bezdrôtová komunikácia v MakeCode Multi Editore</li>
           </ol>
         </nav>
 
@@ -105,7 +105,7 @@
                             
                             
                         <li>
-                             <b> 
+                            
                                 
                                 <a class="" href="/materialy/serial/">
                                     
@@ -116,7 +116,7 @@
                                 
                                 </a>
                                     
-                                 </b> 
+                                
                         </li>
                             
                             
@@ -139,7 +139,7 @@
                             
                             
                         <li>
-                            
+                             <b> 
                                 
                                 <a class="" href="/materialy/serial/manual3/">
                                     
@@ -150,7 +150,7 @@
                                 
                                 </a>
                                     
-                                
+                                 </b> 
                         </li>
                             
                             
@@ -164,8 +164,8 @@
                     <div class="col-xl-12 text-justify">
 
                 
+                    <a href="/materialy/serial/manual2/" class="btn btn-outline-primary" role="button" aria-pressed="true">← Predchádzajúca lekcia</a>
                 
-                    <a href="/materialy/serial/manual2/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
                 
             </div>
                 </div>
@@ -194,78 +194,38 @@
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="navod" role="tabpanel" aria-labelledby="navod-tab">
                         <div class="mt-4">
-                            <h1><span>MakeCode simulátor</span></h1>
-<h2><span>Dištančne s micro:bitmi diel 1</span></h2>
-<p>Vzhľadom‌ ‌na‌ ‌pandemickú‌ ‌situáciu‌ ‌je‌ ‌ešte‌ ‌stále‌ ‌väčšina‌ ‌žiakov‌ ‌doma,‌ ‌čo‌ ‌sťažuje‌ ‌aj‌ ‌vyučovanie‌ ‌informatiky. Napriek‌ ‌tomu‌ ‌existuje ‌viacero‌ ‌možností,‌ ‌ako‌ takú hodinu informatiky kreatívne a zaujímavo odučiť aj na diaľku. Napríklad pomocou využitia micro:bitov.</p>
-<p>Preto‌ ‌sme‌ ‌pre‌ ‌učiteľov‌ ‌pripravili‌ ‌viacdielny‌ ‌seriál článkov,‌ ‌kde‌ ‌im‌ postupne predstavíme‌ ‌rôzne‌ ‌prístupy‌ ‌a‌ ‌pomôcky využiteľné pri dištančnom vzdelávaní na hodinách informatiky.‌ ‌V‌ ‌prvom‌ ‌dieli‌ ‌sa‌ ‌pozrieme‌ ‌na‌ ‌online‌ ‌vyučovanie‌ ‌s‌ ‌pomocou‌ využitia ‌MakeCode‌ ‌simulátora.‌</p>
-<div class="row text-justify mt-4 mb-4"><div class="col-lg-6">
-<p>Ak ste už pracovali s micro:bitmi, blokové programovacie prostredie <a href="http://makecode.microbit.org/">Microsoft MakeCode</a> a simulátor, ktorý ponúka, pravdepodobne už poznáte. V tomto prostredí odporúčame začať pracovať najmä na základných školách, ale využiteľný je aj na stredných školách – najmä na zoznámenie sa s micro:bitmi či programovaním vo všeobecnosti. V micro:bit simulátore, ktorý sa nachádza v ľavej časti prostredia, je možné spustiť vytvorený program a simulovať stlačenie tlačidiel, pohyb či potrasenie micro:bitom alebo bezdrôtovú komunikáciu. Samozrejme, simulátor má svoje limity, najmä čo sa týka pripojenia externých senzorov a aktorov k micro:bitu, no aj tu sa dajú nájsť zaujímavé podporované zariadenia – napr. servomotorček či Neopixel LED pásik.</p>
-</div><div class="col-lg-6">
-<p>
-<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual1/images/simulator.png"/></div><figcaption class="text-center text-muted font-italic">V Microsoft MakeCode simulátore je možné ovládať aj LED pásik, reproduktor či servomotorček.</figcaption>
-</figure>
-</p>
-</div></div>
-<p>Pri dištančnom vyučovaní s MakeCode simulátorom viete zvoliť dva prístupy podľa toho, či vaši žiaci:</p>
-<ul>
-<li>majú zaradenú informatiku do rozvrhu (záleží aj na počte hodín),</li>
-<li>nemajú zaradenú v rozvrhu na dištančné vzdelávanie.</li>
-</ul>
-<h4 id="priamo-pocas-online-hodin">Priamo počas online hodín</h4>
-<p>Prvý prístup si vyžaduje prácu so žiakmi priamo počas online hodín, ktoré majú v rozvrhu. Na začiatku hodiny sa žiaci pripoja napr. cez Zoom a postupne im zadávate menšie alebo väčšie úlohy. Vždy je vhodné im na začiatku pomocou zdieľanej obrazovky ukázať, ako sa v MakeCode orientovať, aké príkazy a kategórie na danej hodine budete používať a ako pracovať so simulátorom.</p>
-<p>Žiaci pracujú buď v klasickom Microsoft MakeCode prostredí, alebo v špeciálnom <a href="http://classroom.microbit.org/">Microbit Classroom</a> prostredí, ktoré „zaobalí“ Microsoft MakeCode a ponúka tak učiteľovi niekoľko užitočných vecí:</p>
-<ul>
-<li>Učiteľ vidí, ktorí žiaci sa mu prihlásili do Microbit Classroom.</li>
-<li>Učiteľ si môže kedykoľvek na svojom počítači pozrieť program, ktorý žiak tvorí v MakeCode, a to bez komplikovaného zdieľania obrazovky.</li>
-<li>Učiteľ môže všetkým (alebo len niekoľkým) žiakom zaslať program (či už aby videli správne riešenie, alebo aby v ňom našli a pomenovali chybu a opravili ju).</li>
-<li>Učiteľ si na konci hodiny môže stiahnuť „report“ vo formáte <em>docx</em>, v ktorom bude mať obrázky programov, ktoré žiaci počas hodiny vytvorili.</li>
-<li>Učiteľ si môže Microbit Classroom aktivitu uložiť a na ďalšej vyučovacej hodine obnoviť – žiaci tak pokračujú v práci presne tam, kde na poslednej hodine skončili.</li>
-</ul>
-<p>Microbit Classroom používame takmer každodenne, či už so žiakmi, alebo na školeniach pre učiteľov v rámci projektu ENTER, a veľmi nám uľahčuje prácu. Žiaľ, niekedy sa stáva, že „zblbne“ a chvíľu sa nedarí žiakom pripojiť, prípadne všetkých žiakov odpojí. Z našich skúseností je to ale skôr výnimočné a riešenie v štýle „vypnúť – zapnúť“ (teda odhlásiť sa a znovu sa prihlásiť) nám zatiaľ takmer vždy zabralo.</p>
-<p>Viac o fungovaní a práci s Microbit Classroom sa môžete dozvedieť na našich <a href="http://ucimeshardverom.sk/skolenia/">školeniach</a>, kde ho využívame takmer na každom jednom online stretnutí.</p>
-<div style="page-break-after: always;"></div>
-<h4 id="samostatna-praca">Samostatná práca</h4>
-<p>Druhý prístup – samostatná práca – je využiteľný najmä vtedy, ak žiaci nemajú v rozvrhu zaradený dostatočný počet hodín informatiky. Aj tu ale odporúčame aspoň prvú, zoznamovaciu hodinu urobiť spoločne so žiakmi (ako bolo popísané vyššie) a až potom im zadávať úlohy na samostatnú prácu. Pri samostatnej práci je možné používať iba Microsoft MakeCode prostredie, ale nie prostredie Microbit Classroom.</p>
-<p>Zadávať úlohy na samostatnú prácu je možné aj priamo v MakeCode pomocou komentárov. Môžete pre svojich žiakov pripraviť rôzne typy úloh, napr. prázdny projekt s komentárom, čo majú žiaci naprogramovať, alebo už existujúci projekt s komentárom, čo majú žiaci opraviť, prípadne doplniť program, aby fungoval správne. Takéto komentáre je možné využívať aj v Microbit Classroom.</p>
+                            <h1><span>MakeCode Multi Editor</span></h1>
+<h2><span>Dištančne s micro:bitmi diel 3</span></h2>
+<p>V treťom dieli k dištančnej výučbe s micro:bitmi sa pozrieme na špeciálny mód v prostredí MakeCode na prácu s dvoma programami naraz, čo pomôže najmä pri tvorbe programov s bezdrôtovou komunikáciou.</p>
+<p>Na vstup do MakeCode Multi Editora slúži odkaz: <a href="https://makecode.microbit.org/---multi#">makecode.microbit.org/---multi#</a></p>
 <div class="mx-auto" style="width: 80%;">
 <p>
-<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual1/images/makecode_1.png"/></div><figcaption class="text-center text-muted font-italic">Prostredie Microsoft MakeCode so zadaním v komentári.</figcaption>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual3/images/multi1.png"/></div><figcaption class="text-center text-muted font-italic">Úvodná stránka MakeCode Multi Editora.</figcaption>
 </figure>
 </p>
 </div>
-<p>Akonáhle projekt s komentárom pripravíte, môžete ho žiakom zdieľať pomocou linku – kliknutím na tlačidlo „Zdieľať“ vľavo hore. Pri zdieľaní je možné nastaviť aj zdieľaný názov projektu. Následne sa zobrazí link, ktorý môžete poslať žiakom napr. cez e-mail, EduPage, Teams… Žiaci úlohy vypracujú a buď vám riešenia pošlú rovnakým spôsobom späť, alebo si ich spoločne prejdete na online hodine.</p>
+<p>Po otvorení MakeCode Multi Editora sa zobrazí klasická úvodná MakeCode stránka, ale hneď dvakrát. V oboch častiach je možné buď vytvoriť nové projekty, alebo otvoriť už existujúce projekty. Dôležité je neotvárať ten istý projekt v oboch častiach naraz, keďže vtedy editor nefunguje správne, pretože nevie, ktorý program má automaticky ukladať – najmä vtedy, ak sú zrazu oba odlišné, ale projekt je len jeden.</p>
+<p>V nasledujúcom kroku si prejdeme, ako v Multi Editore vytvoriť dva jednoduché programy na vysielanie a prijímanie bezdrôtových správ. V každej polovici prostredia si vytvoríme jeden nový projekt – napr. vľavo „Vysielač“ a vpravo „Prijímač“.</p>
+<p>Otvoria sa nám dve MakeCode prostredia, ktoré sú úplne samostatné – každá polovica má vlastnú knižnicu príkazov (vrátane rozšírení), micro:bit simulátor či tlačidlo na stiahnutie programu do micro:bita. Okrem toho sa stredová lišta dá posúvať v prípade, že potrebujete pre jeden projekt viac priestoru ako pre druhý.</p>
+<p>Aby sme si prostredie vyskúšali, vytvoríme si dva programy, nech sa pri stlačení tlačidla A na vysielači na druhom micro:bite zobrazí šťastný smajlík. A pri stlačení tlačidla B na vysielači sa na druhom micro:bite zobrazí smutný smajlík. Detailný postup s vysvetlením jednotlivých príkazov nájdete na <a href="https://enter.study/wp-content/uploads/2021/06/enter.study-kto-soferuje-lepsie-gogo-vs-michaela-dorcikova-microbattle-7-mat7d.pdf">enter.study</a>, výsledné programy by mali vyzerať ako na obrázku nižšie.</p>
 <div class="mx-auto" style="width: 80%;">
 <p>
-<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual1/images/makecode_2.png"/></div><figcaption class="text-center text-muted font-italic">Ukážka zdieľania projektu v prostredí Microsoft MakeCode.</figcaption>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual3/images/multi2.png"/></div><figcaption class="text-center text-muted font-italic">Dva vytvorené programy – „Prijímač“ a „Vysielač“.</figcaption>
 </figure>
 </p>
 </div>
-<div style="page-break-after: always;"></div>
-<h4 id="konkretne-aktivity">Konkrétne aktivity</h4>
-<p>Čo sa týka aktivít, ktoré je možné robiť so žiakmi, odporúčame začať týmito:</p>
-<ul>
-<li><a href="https://enter.study/navod/programovanie-displeja-digitalna-menovka/">Výpis textu na displeji.</a></li>
-<li><a href="https://enter.study/navod/tlacidla-na-microbite/">Animácie pri stlačení tlačidiel.</a></li>
-<li>Programy, ktoré pracujú s <a href="https://enter.study/navod/senzor-pohybu-akcelerometer/">nakláňaním či potrasením micro:bitu.</a></li>
-<li>Aktivity so zvukom –<a href="https://enter.study/navod/programovanie-hudby-zahraj-kohutika-jarabeho/"> simulátor vie prehrávať aj hudbu.</a></li>
-</ul>
-<p>Následne môžete prejsť aj na náročnejšie aktivity:</p>
-<ul>
-<li>Aktivity využívajúce zabudované senzory teploty, hluku, svetla…</li>
-<li>Ovládanie NeoPixel LED pásika.</li>
-<li>Programy, ktoré využívajú bezdrôtovú komunikáciu. Na takéto aktivity môže byť vhodný aj špeciálny Multi mód v MakeCode, ktorý si predstavíme v ďalšom z dielov tejto série.</li>
-</ul>
-<p>Inšpiráciu môžete čerpať zo stránok <a href="http://enter.study/databaza-vedomosti/">enter.study</a>, <a href="https://www.ucimeshardverom.sk/materialy/microbit_makecode">Učíme s Hardvérom</a> či <a href="https://akademiaprogramovania.sk/ako-kodit-doma/">Akadémia programovania</a>. Pre všetky spomenuté aktivity v súčasnosti organizujeme <a href="http://ucimeshardverom.sk/skolenia/">školenia pre učiteľov</a>. Zároveň máte možnosť prihlásiť svoju triedu na <a href="https://docs.google.com/forms/d/e/1FAIpQLSdt9VDNw6n-l-MgZcJtNETB4368aZ4GsXnJABW-pbO-iVLkTg/viewform">online workshop</a>.</p>
+<h3 id="simulator">Simulátor</h3>
+<p>Vytvorené programy už stačí iba vyskúšať. Malé simulované micro:bity sa zobrazovali v pravej spodnej časti okien aj doteraz, ale aby sa simulované micro:bity zobrazovali na celé okno, je potrebné na ne kliknúť (prípadne na ikonku „Spustiť v režime na celú obrazovku“, ktorá sa nachádza vedľa simulovaného micro:bitu).</p>
+<p>Správnosť programov overíme stláčaním tlačidiel na prvom micro:bite (kliknutím ľavým tlačidlom na myši). Okrem rozsvietenia malej anténky na simulovanom micro:bite by sa na druhom micro:bite mal zobraziť šťastný alebo smutný smajlík.</p>
 <div class="mx-auto" style="width: 80%;">
 <p>
-<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual1/images/makecode_3.png"/></div><figcaption class="text-center text-muted font-italic">Simulované hodnoty sa dajú manuálne nastaviť.</figcaption>
+<figure class="mt-2 mb-2"><div class="text-center"><img class="img-fluid img-fluid pt-2" src="/materialy/serial/manual3/images/multi3.png"/></div><figcaption class="text-center text-muted font-italic">Po kliknutí na tlačidlo A na ľavom micro:bite sa na pravom micro:bite zobrazil smajlík.</figcaption>
 </figure>
 </p>
 </div>
-<p>V prostredí MakeCode je možné programovať aj v JavaScripte a Pythone a oba tieto kódy je možné taktiež simulovať. Kým JavaScript na slovenských školách nie je až taký rozšírený, Python áno. Tu by sme ale chceli veľmi dôrazne upozorniť na to, že Python v MakeCode je úplne iný ako Python pre micro:bity, ktorý sa využíva v <a href="https://codewith.mu/">Mu</a> editore alebo v <a href="https://python.microbit.org/">Online Python editore</a>. Zároveň bol Python v MakeCode narýchlo „spackaný“ z JavaScriptu v MakeCode, a to znamená, že pri pohľade naň má človek pocit, že sa skôr pozerá na JavaScript ako na Python. Výsledok – <strong>neodporúčame používať Python v MakeCode editore.</strong> Hore spomenuté alternatívy (<a href="https://codewith.mu/">Mu</a> a <a href="https://python.microbit.org/">Online Python Editor</a>) sú oveľa vhodnejšie na vyučovanie Pythonu, aj keď, žiaľ, tie neposkytujú simulátor.</p>
-<div class="alert alert-info">
-<p>Ak vám po prečítaní tohto článku napadli nejaké otázky, prípadne ďalšie nápady k online vyučovaniu, neváhajte nám ich poslať na <a href="mailto:microbit@python.sk">microbit@python.sk</a> – budeme vďační za každú jednu otázku či podnet. V ďalšom dieli sa pozrieme na to, ako učiť s micro:bitmi, keď ich učitelia rozdajú žiakom domov.</p>
-</div>
+<p>MakeCode Multi Editor môže byť vhodné používať napríklad vtedy, ak chcete chcete so žiakmi preberať bezdrôtovú komunikáciu, ale nemajú k dispozícii dva fyzické micro:bity. Zároveň aj pri nahrávaní programov na fyzické micro:bity môže byť využitie Multi Editora praktické – žiak môže mať otvorený naraz program pre prijímač aj pre vysielač a tým sa mu budú ľahšie dohľadávať prípadné chyby či robiť úpravy v oboch programoch, pretože programy medzi sebou skutočne komunikujú.</p>
+<hr/>
+<p>Ak vám po prečítaní tohto článku napadli nejaké otázky, prípadne ďalšie nápady k online vyučovaniu, neváhajte nám ich napísať na microbit@python.sk – budeme vďační za každú jednu otázku či podnet.</p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="metodika" role="tabpanel" aria-labelledby="metodika-tab">
@@ -295,8 +255,8 @@
                     <div class="col-xl-12 text-justify">
 
                 
+                    <a href="/materialy/serial/manual2/" class="btn btn-outline-primary" role="button" aria-pressed="true">← Predchádzajúca lekcia</a>
                 
-                    <a href="/materialy/serial/manual2/" class="btn btn-outline-primary float-right" role="button" aria-pressed="true">Ďalšia lekcia →</a>
                 
             </div>
                 </div>
